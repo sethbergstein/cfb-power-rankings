@@ -1,0 +1,29 @@
+# Secrets
+.env
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+venv/
+.venv/
+
+# Data cache (raw API pulls)
+data/cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

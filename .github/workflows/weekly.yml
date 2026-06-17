@@ -1,0 +1,40 @@
+name: Weekly BCPI Rankings
+
+on:
+  schedule:
+    # Tuesday 06:00 UTC — after most weekend games are final and lines are settled.
+    - cron: "0 6 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rankings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run BCPI pipeline
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python run_bcpi.py rank --season 2026 --refresh
+
+      - name: Commit rankings output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/
+          if git diff --staged --quiet; then
+            echo "No ranking changes to commit."
+          else
+            git commit -m "Update BCPI rankings [automated]"
+            git push
+          fi
