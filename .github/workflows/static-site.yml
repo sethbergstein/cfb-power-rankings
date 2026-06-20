@@ -26,6 +26,7 @@ jobs:
       - name: Build rankings and static site
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+          BCPI_SITE_URL: ${{ vars.BCPI_SITE_URL }}
         run: python run_bcpi.py export-site --refresh
 
       - name: Commit site and rankings

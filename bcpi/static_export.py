@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 from datetime import date
 from pathlib import Path
@@ -22,6 +23,12 @@ from bcpi.teams import get_fbs_teams
 WEB_DIR = PROJECT_ROOT / "web"
 DOCS_DIR = PROJECT_ROOT / "docs"
 DATA_DIR = DOCS_DIR / "data"
+
+DEFAULT_SITE_URL = "https://sethbergstein.github.io/cfb-power-rankings"
+
+
+def site_url() -> str:
+    return os.environ.get("BCPI_SITE_URL", DEFAULT_SITE_URL).rstrip("/")
 
 
 def infer_season(today: Optional[date] = None) -> int:
@@ -228,6 +235,13 @@ def _rewrite_asset_paths(html: str) -> str:
     )
 
 
+def _apply_site_url(html: str) -> str:
+    url = site_url()
+    if url != DEFAULT_SITE_URL:
+        return html.replace(DEFAULT_SITE_URL, url)
+    return html
+
+
 def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Path:
     """Publish docs/ for GitHub Pages."""
     season = season or infer_season()
@@ -244,6 +258,7 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
         dst = DOCS_DIR / name
         html = src.read_text(encoding="utf-8")
         html = _rewrite_asset_paths(html)
+        html = _apply_site_url(html)
         html = _inject_static_config(html)
         dst.write_text(html, encoding="utf-8")
 

@@ -99,6 +99,24 @@ a {
   flex-shrink: 0;
 }
 
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.wordmark-expansion {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  color: var(--ink-muted);
+  border-left: 1px solid var(--rule-strong);
+  padding-left: 0.65rem;
+  max-width: 9.5rem;
+}
+
 .wordmark span {
   color: var(--accent);
 }
@@ -920,6 +938,20 @@ a {
 
   .season-badge {
     display: none;
+  }
+
+  .site-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .wordmark-expansion {
+    border-left: none;
+    padding-left: 0;
+    font-size: 0.62rem;
+    max-width: none;
+    line-height: 1.2;
   }
 
   .wordmark {
