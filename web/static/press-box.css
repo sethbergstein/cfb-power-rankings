@@ -3,7 +3,6 @@
 :root {
   --font-display: "Barlow Condensed", system-ui, sans-serif;
   --font-ui: "IBM Plex Sans", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --accent: #d4a017;
   --accent-muted: rgba(212, 160, 23, 0.18);
   --rule: rgba(20, 18, 16, 0.12);
@@ -159,10 +158,10 @@ a {
 }
 
 .season-badge {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.75rem;
+  font-weight: 500;
   color: var(--ink-muted);
-  letter-spacing: 0.02em;
 }
 
 .btn-ghost {
@@ -377,9 +376,10 @@ a {
 .board-meta {
   padding: 0.65rem 1rem;
   border-bottom: 1px solid rgba(243, 237, 228, 0.08);
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--board-muted);
   display: flex;
@@ -404,9 +404,10 @@ a {
   content: "HOME";
   display: block;
   margin-top: 0.35rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
@@ -490,7 +491,7 @@ a {
 }
 
 .result-line .mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-weight: 600;
   color: var(--accent);
 }
@@ -517,8 +518,9 @@ a {
 .win-pcts {
   display: flex;
   justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--board-muted);
 }
 
@@ -613,7 +615,7 @@ a {
 }
 
 .col-rank {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-weight: 600;
   font-size: 0.8rem;
   color: var(--ink-muted);
@@ -647,14 +649,16 @@ a {
 }
 
 .team-cell-abbr {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.7rem;
+  font-weight: 500;
   color: var(--ink-faint);
 }
 
 .col-num {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.8rem;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -774,8 +778,9 @@ a {
 }
 
 .team-picker-abbr {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.65rem;
+  font-weight: 500;
   color: var(--ink-faint);
 }
 
@@ -857,8 +862,9 @@ a {
 }
 
 .team-picker-option-abbr {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 0.65rem;
+  font-weight: 500;
   color: var(--ink-faint);
 }
 
