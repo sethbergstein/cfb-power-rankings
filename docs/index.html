@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#141210" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>BCPI · Matchup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./static/press-box.css" />
+    <script>window.BCPI_CONFIG={mode:"static",dataUrl:"./data"};</script>
+    <script src="./static/theme.js" defer></script>
+    <script src="./static/nav.js" defer></script>
+  </head>
+  <body>
+    <header class="site-chrome">
+      <a class="wordmark" href="./index.html">BC<span>PI</span></a>
+      <nav class="site-nav">
+        <a href="./power.html">Power</a>
+        <a href="./poll.html">Poll</a>
+        <a href="./index.html">Matchup</a>
+      </nav>
+      <div class="chrome-actions">
+        <span class="season-badge" id="season-badge">2025 season</span>
+        <button type="button" class="btn-ghost" id="theme-toggle" data-theme-label>
+          Dark mode
+        </button>
+      </div>
+    </header>
+
+    <main class="page">
+      <header class="page-header">
+        <h1 class="page-title">Matchup predictor</h1>
+        <p class="page-sub">
+          Neutral-field power ratings with venue adjustment. Who wins, and by how much?
+        </p>
+      </header>
+
+      <div class="layout-split">
+        <aside class="control-rail">
+          <div class="rail-section">
+            <p class="rail-label">Season</p>
+            <div class="field-row">
+              <input class="field" id="season" type="number" value="2025" min="2018" max="2026" />
+              <label class="checkbox-row" id="postseason-wrap">
+                <input id="postseason" type="checkbox" checked />
+                Postseason
+              </label>
+            </div>
+          </div>
+
+          <div class="rail-section rail-section-teams">
+            <p class="rail-label">Teams</p>
+            <div id="team-a-picker" class="team-picker-slot"></div>
+            <div id="team-b-picker" class="team-picker-slot"></div>
+          </div>
+
+          <div class="rail-section">
+            <p class="rail-label">Venue</p>
+            <div class="venue-cards">
+              <label class="venue-card selected">
+                <input type="radio" name="site" value="neutral" checked />
+                <div class="venue-card-inner">
+                  <div class="venue-card-text">
+                    <p class="venue-card-team">Neutral site</p>
+                    <p class="venue-card-title">No home field</p>
+                    <p class="venue-card-sub" id="venue-neutral-sub">No home field advantage</p>
+                  </div>
+                </div>
+              </label>
+              <label class="venue-card">
+                <input type="radio" name="site" value="home_a" />
+                <div class="venue-card-inner">
+                  <img class="venue-card-logo" id="venue-home-a-logo" alt="" hidden />
+                  <div class="venue-card-text">
+                    <p class="venue-card-team" id="venue-home-a-team">Team A</p>
+                    <p class="venue-card-title" id="venue-home-a-stadium">Select a team</p>
+                    <p class="venue-card-sub" id="venue-home-a-sub">Pick Team A above</p>
+                  </div>
+                </div>
+              </label>
+              <label class="venue-card">
+                <input type="radio" name="site" value="home_b" />
+                <div class="venue-card-inner">
+                  <img class="venue-card-logo" id="venue-home-b-logo" alt="" hidden />
+                  <div class="venue-card-text">
+                    <p class="venue-card-team" id="venue-home-b-team">Team B</p>
+                    <p class="venue-card-title" id="venue-home-b-stadium">Select a team</p>
+                    <p class="venue-card-sub" id="venue-home-b-sub">Pick Team B above</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="button" class="btn-primary" id="predict-btn">Run predictor</button>
+        </aside>
+
+        <section class="scoreboard" id="scoreboard" aria-live="polite"></section>
+      </div>
+    </main>
+
+    <script src="./static/shared.js"></script>
+    <script src="./static/matchup.js"></script>
+  </body>
+</html>

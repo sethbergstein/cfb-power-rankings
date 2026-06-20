@@ -1,0 +1,21 @@
+{
+  "resume_weights": {
+    "record": 0.26,
+    "schedule": 0.22,
+    "results": 0.24,
+    "elite_wins": 0.14,
+    "playoff": 0.14
+  },
+  "playoff_appearance_bonus": 0.05,
+  "playoff_round_participation": {
+    "first_round": 0.04,
+    "quarterfinal": 0.06,
+    "semifinal": 0.08,
+    "championship": 0.14
+  },
+  "playoff_round_win_bonus": 0.04,
+  "playoff_champion_bonus": 0.06,
+  "elite_win_top_n": 30,
+  "loss_penalty_factor": 0.65,
+  "sub500_poll_penalty": 0.85
+}

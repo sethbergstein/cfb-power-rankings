@@ -1,16 +1,17 @@
-name: Weekly BCPI Rankings
+name: Publish static site
 
 on:
   schedule:
-    # Tuesday 06:00 UTC — after most weekend games are final and lines are settled.
-    - cron: "0 6 * * 2"
+    # Monday noon UTC — after Sunday slate; Tuesday catches rare Monday games.
+    - cron: "0 12 * * 1"
+    - cron: "0 12 * * 2"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  rankings:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,19 +23,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run BCPI pipeline
+      - name: Build rankings and static site
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
-        run: python run_bcpi.py rank --season 2026 --refresh
+        run: python run_bcpi.py export-site --refresh
 
-      - name: Commit rankings output
+      - name: Commit site and rankings
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/
+          git add docs/ output/
           if git diff --staged --quiet; then
-            echo "No ranking changes to commit."
+            echo "No changes to publish."
           else
-            git commit -m "Update BCPI rankings [automated]"
+            git commit -m "Publish BCPI site and rankings [automated]"
             git push
           fi

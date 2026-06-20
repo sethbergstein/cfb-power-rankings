@@ -1,0 +1,30 @@
+{
+  "recency_lambda": 0.35,
+  "form_weight": 0.55,
+  "k_factor": 18.0,
+  "margin_scale": 25.0,
+  "hfa": 2.75,
+  "fcs_margin_cap": 21.0,
+  "prior_fade_start": 1,
+  "prior_fade_end": 8,
+  "win_prob_scale": 13.5,
+  "power_weights": {
+    "quality": 0.65,
+    "game_value": 0.2,
+    "market": 0.1,
+    "talent_prior": 0.05
+  },
+  "quality_weights": {
+    "epa_diff": 0.45,
+    "success_diff": 0.25,
+    "explosiveness_diff": 0.15,
+    "passing_diff": 0.1,
+    "havoc_diff": 0.05
+  },
+  "prior_weights": {
+    "previous_season": 0.45,
+    "talent": 0.35,
+    "returning": 0.15,
+    "consensus": 0.05
+  }
+}

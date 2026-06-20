@@ -44,6 +44,17 @@ Output is written to `output/bcpi_power_2026_preseason.csv` (preseason) or `outp
 python run_bcpi.py backtest --start 2018 --end 2025
 ```
 
+Walk-forward evaluation: train through week *t*, predict week *t+1* FBS games.
+
+### 5. Tune weights
+
+```bash
+python run_bcpi.py tune --start 2018 --end 2025
+```
+
+Searches for better weights via random search + local refinement. Saves results to `config/tuned_params.json` (used automatically by `rank` unless `--use-defaults`).
+
+
 ## GitHub Actions (weekly cron)
 
 1. Push this repo to GitHub.
@@ -53,6 +64,38 @@ python run_bcpi.py backtest --start 2018 --end 2025
 
 You can also trigger manually from the **Actions** tab (`workflow_dispatch`).
 
+## Web UI (mobile-friendly)
+
+Local dev:
+
+```bash
+python run_bcpi.py serve
+# → http://127.0.0.1:8765
+```
+
+On phones/tablets the layout switches to a bottom tab bar (Power · Poll · Matchup), touch-sized controls, and horizontally scrollable ranking tables.
+
+### Free hosting (GitHub Pages — recommended for mobile)
+
+Rankings publish automatically **Monday and Tuesday at noon UTC** via `.github/workflows/static-site.yml` (Tuesday catches rare Monday games). The workflow runs `export-site`, commits `docs/`, and you serve from GitHub Pages — no Netlify, no Render, no API key on your phone.
+
+**One-time setup:**
+1. Push repo to GitHub with `CFBD_API_KEY` in **Settings → Secrets → Actions**
+2. **Settings → Pages → Build and deployment → Deploy from branch → `main` → `/docs`**
+3. Site URL: `https://<user>.github.io/<repo>/`
+
+Manual publish locally:
+
+```bash
+python run_bcpi.py export-site --refresh   # needs CFBD_API_KEY in .env
+```
+
+The static site reads pre-built JSON in `docs/data/` — rankings, matchups, logos all work offline after load. **Recalculate** is hidden; data updates when the Action runs.
+
+### Free hosting (Render — live API)
+
+For on-demand Recalculate, use `render.yaml` (see above). Set `CFBD_API_KEY` once in Render's dashboard.
+
 ## Project layout
 
 ```
@@ -61,6 +104,10 @@ data/teams/     Season FBS team snapshots
 data/cache/     Cached CFBD API responses (local only)
 output/         Published ranking CSV/JSON
 run_bcpi.py     CLI entrypoint
+web/            Press Box Ledger UI (Flask + static assets)
+docs/           GitHub Pages static site (auto-generated)
+wsgi.py         Production entrypoint for gunicorn
+render.yaml     Optional Render deploy (live API)
 ```
 
 ## Data source

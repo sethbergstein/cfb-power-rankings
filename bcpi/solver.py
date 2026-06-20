@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
+import math
+
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List
 
 from bcpi.constants import (
     FCS_INITIAL_RATING_OFFSET,
     FCS_OPPONENT_KEY,
-    HOME_FIELD_ADVANTAGE,
     RATING_MEAN,
     SOLVER_ITERATIONS,
 )
@@ -19,6 +20,7 @@ from bcpi.games import (
     market_residual,
     opponent_key,
 )
+from bcpi.params import ModelParams
 from bcpi.priors import decay_prior_weight
 from bcpi.recency import recency_weight
 
@@ -33,8 +35,29 @@ class TeamRatingState:
     market_weight: float = 0.0
 
 
-def expected_margin(rating_team: float, rating_opp: float) -> float:
-    return (rating_team - rating_opp) / 25.0
+def expected_margin(
+    rating_team: float,
+    rating_opp: float,
+    params: ModelParams,
+) -> float:
+    return (rating_team - rating_opp) / params.margin_scale
+
+
+def predict_home_margin(
+    home_rating: float,
+    away_rating: float,
+    neutral_site: bool,
+    params: ModelParams,
+) -> float:
+    margin = expected_margin(home_rating, away_rating, params)
+    if not neutral_site:
+        margin += params.hfa
+    return margin
+
+
+def margin_to_win_probability(margin: float, scale: float) -> float:
+    """Logistic win probability from expected margin (home perspective)."""
+    return 1.0 / (1.0 + math.exp(-margin / scale))
 
 
 def solve_ratings(
@@ -42,7 +65,7 @@ def solve_ratings(
     games: List[GameResult],
     prior_ratings: Dict[str, float],
     current_week: int,
-    k_factor: float = 18.0,
+    params: ModelParams,
 ) -> Dict[str, TeamRatingState]:
     ratings = {team: prior_ratings.get(team, RATING_MEAN) for team in teams}
     ratings[FCS_OPPONENT_KEY] = prior_ratings.get(
@@ -50,13 +73,19 @@ def solve_ratings(
         RATING_MEAN + FCS_INITIAL_RATING_OFFSET,
     )
 
-    prior_blend = decay_prior_weight(current_week)
-    game_states = {team: TeamRatingState(school=team, rating=ratings[team]) for team in teams}
+    prior_blend = decay_prior_weight(
+        current_week,
+        fade_start=params.prior_fade_start,
+        fade_end=params.prior_fade_end,
+    )
+    game_states = {
+        team: TeamRatingState(school=team, rating=ratings[team]) for team in teams
+    }
 
     active_games = [
-        g
-        for g in filter_games_through_week(games, current_week)
-        if g.involves_fbs and g.completed
+        game
+        for game in filter_games_through_week(games, current_week)
+        if game.involves_fbs and game.completed
     ]
 
     for _ in range(SOLVER_ITERATIONS):
@@ -74,21 +103,23 @@ def solve_ratings(
 
             for game in active_games:
                 opp = opponent_key(game, team)
-                if opp is None:
-                    continue
-                if team not in (game.home_team, game.away_team):
+                if opp is None or team not in (game.home_team, game.away_team):
                     continue
 
-                margin = effective_margin_for_rating(game, team)
+                margin = effective_margin_for_rating(game, team, params)
                 if margin is None:
                     continue
 
                 opp_rating = ratings.get(opp, RATING_MEAN)
-                expected = expected_margin(rating, opp_rating)
+                expected = expected_margin(rating, opp_rating, params)
                 residual = margin - expected
-                weight = recency_weight(current_week, game.week)
+                weight = recency_weight(
+                    current_week,
+                    game.week,
+                    lambda_=params.recency_lambda,
+                )
 
-                total_delta += k_factor * weight * residual
+                total_delta += params.k_factor * weight * residual
                 total_weight += weight
                 gv_accum += weight * residual
                 gv_weight += weight
@@ -107,7 +138,6 @@ def solve_ratings(
                     game_states[team].market_value = mkt_accum / mkt_weight
                     game_states[team].market_weight = mkt_weight
 
-        # FCS aggregate stays near fixed anchor (don't drift from FCS game noise).
         ratings[FCS_OPPONENT_KEY] = prior_ratings.get(
             FCS_OPPONENT_KEY,
             RATING_MEAN + FCS_INITIAL_RATING_OFFSET,

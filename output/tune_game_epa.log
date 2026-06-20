@@ -1,0 +1,123 @@
+Tuning BCPI on seasons 2018-2025...
+Loading season data (cached API responses when available)...
+Tuning BCPI on seasons 2018-2025...
+Loading season data (cached API responses when available)...
+=== BCPI tune started Wed Jun 17 19:40:12 PDT 2026 ===
+Tuning BCPI on seasons 2018-2025...
+Traceback (most recent call last):
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/run_bcpi.py", line 4, in <module>
+    cli()
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/.venv/lib/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/.venv/lib/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/.venv/lib/python3.9/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/.venv/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/.venv/lib/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/sethbergstein/Documents/Projects/College Football Rankings/bcpi/cli.py", line 64, in tune
+    click.echo("Loading season data (cached API responses when available)...", flush=True)
+TypeError: echo() got an unexpected keyword argument 'flush'
+=== BCPI tune started Wed Jun 17 19:40:54 PDT 2026 ===
+Tuning BCPI on seasons 2018-2025...
+Loading season data (cached API responses when available)...
+=== BCPI tune started Wed Jun 17 19:43:02 PDT 2026 ===
+Tuning BCPI on seasons 2018-2025...
+Loading season data (cached API responses when available)...
+=== BCPI tune started Wed Jun 17 19:43:56 PDT 2026 ===
+Tuning BCPI on seasons 2018-2025...
+Loading season data (cached API responses when available)...
+  sample 1/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 2/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 3/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 4/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 5/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 6/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 7/80 | best MAE=14.78 logloss=0.622 score=15.399
+  sample 8/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 9/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 10/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 11/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 12/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 13/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 14/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 15/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 16/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 17/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 18/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 19/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 20/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 21/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 22/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 23/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 24/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 25/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 26/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 27/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 28/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 29/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 30/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 31/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 32/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 33/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 34/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 35/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 36/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 37/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 38/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 39/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 40/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 41/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 42/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 43/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 44/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 45/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 46/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 47/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 48/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 49/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 50/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 51/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 52/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 53/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 54/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 55/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 56/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 57/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 58/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 59/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 60/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 61/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 62/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 63/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 64/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 65/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 66/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 67/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 68/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 69/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 70/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 71/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 72/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 73/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 74/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 75/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 76/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 77/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 78/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 79/80 | best MAE=14.65 logloss=0.622 score=15.271
+  sample 80/80 | best MAE=14.65 logloss=0.622 score=15.271
+
+--- Baseline (default weights) ---
+MAE=14.78 | log-loss=0.622 | score=15.399
+
+--- Tuned ---
+MAE=14.22 | log-loss=0.595 | score=14.818
+
+--- Improvement ---
+MAE +0.55 pts | log-loss +0.028 | score +0.582
+
+Saved tuned params to /Users/sethbergstein/Documents/Projects/College Football Rankings/config/tuned_params.json
+=== BCPI tune finished Wed Jun 17 19:55:07 PDT 2026 ===

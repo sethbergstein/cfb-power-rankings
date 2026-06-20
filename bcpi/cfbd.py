@@ -107,6 +107,16 @@ class CFBDClient:
     def get_team_talent(self, year: int) -> List[Dict[str, Any]]:
         return self.get("/talent", {"year": year})
 
+    def get_advanced_game_stats(
+        self,
+        year: int,
+        season_type: str = "regular",
+    ) -> List[Dict[str, Any]]:
+        return self.get(
+            "/stats/game/advanced",
+            {"year": year, "seasonType": season_type},
+        )
+
     def get_advanced_season_stats(self, year: int) -> List[Dict[str, Any]]:
         return self.get(
             "/stats/season/advanced",

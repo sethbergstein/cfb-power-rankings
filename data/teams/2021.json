@@ -1,0 +1,782 @@
+[
+  {
+    "school": "Air Force",
+    "conference": "Mountain West",
+    "abbreviation": "AF",
+    "classification": "fbs"
+  },
+  {
+    "school": "Akron",
+    "conference": "Mid-American",
+    "abbreviation": "AKR",
+    "classification": "fbs"
+  },
+  {
+    "school": "Alabama",
+    "conference": "SEC",
+    "abbreviation": "ALA",
+    "classification": "fbs"
+  },
+  {
+    "school": "App State",
+    "conference": "Sun Belt",
+    "abbreviation": "APP",
+    "classification": "fbs"
+  },
+  {
+    "school": "Arizona",
+    "conference": "Pac-12",
+    "abbreviation": "ARIZ",
+    "classification": "fbs"
+  },
+  {
+    "school": "Arizona State",
+    "conference": "Pac-12",
+    "abbreviation": "ASU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Arkansas",
+    "conference": "SEC",
+    "abbreviation": "ARK",
+    "classification": "fbs"
+  },
+  {
+    "school": "Arkansas State",
+    "conference": "Sun Belt",
+    "abbreviation": "ARST",
+    "classification": "fbs"
+  },
+  {
+    "school": "Army",
+    "conference": "FBS Independents",
+    "abbreviation": "ARMY",
+    "classification": "fbs"
+  },
+  {
+    "school": "Auburn",
+    "conference": "SEC",
+    "abbreviation": "AUB",
+    "classification": "fbs"
+  },
+  {
+    "school": "Ball State",
+    "conference": "Mid-American",
+    "abbreviation": "BALL",
+    "classification": "fbs"
+  },
+  {
+    "school": "Baylor",
+    "conference": "Big 12",
+    "abbreviation": "BAY",
+    "classification": "fbs"
+  },
+  {
+    "school": "Boise State",
+    "conference": "Mountain West",
+    "abbreviation": "BOIS",
+    "classification": "fbs"
+  },
+  {
+    "school": "Boston College",
+    "conference": "ACC",
+    "abbreviation": "BC",
+    "classification": "fbs"
+  },
+  {
+    "school": "Bowling Green",
+    "conference": "Mid-American",
+    "abbreviation": "BGSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Buffalo",
+    "conference": "Mid-American",
+    "abbreviation": "BUF",
+    "classification": "fbs"
+  },
+  {
+    "school": "BYU",
+    "conference": "FBS Independents",
+    "abbreviation": "BYU",
+    "classification": "fbs"
+  },
+  {
+    "school": "California",
+    "conference": "Pac-12",
+    "abbreviation": "CAL",
+    "classification": "fbs"
+  },
+  {
+    "school": "Central Michigan",
+    "conference": "Mid-American",
+    "abbreviation": "CMU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Charlotte",
+    "conference": "Conference USA",
+    "abbreviation": "CLT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Cincinnati",
+    "conference": "American Athletic",
+    "abbreviation": "CIN",
+    "classification": "fbs"
+  },
+  {
+    "school": "Clemson",
+    "conference": "ACC",
+    "abbreviation": "CLEM",
+    "classification": "fbs"
+  },
+  {
+    "school": "Coastal Carolina",
+    "conference": "Sun Belt",
+    "abbreviation": "CCU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Colorado",
+    "conference": "Pac-12",
+    "abbreviation": "COLO",
+    "classification": "fbs"
+  },
+  {
+    "school": "Colorado State",
+    "conference": "Mountain West",
+    "abbreviation": "CSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Duke",
+    "conference": "ACC",
+    "abbreviation": "DUKE",
+    "classification": "fbs"
+  },
+  {
+    "school": "East Carolina",
+    "conference": "American Athletic",
+    "abbreviation": "ECU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Eastern Michigan",
+    "conference": "Mid-American",
+    "abbreviation": "EMU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Florida",
+    "conference": "SEC",
+    "abbreviation": "FLA",
+    "classification": "fbs"
+  },
+  {
+    "school": "Florida Atlantic",
+    "conference": "Conference USA",
+    "abbreviation": "FAU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Florida International",
+    "conference": "Conference USA",
+    "abbreviation": "FIU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Florida State",
+    "conference": "ACC",
+    "abbreviation": "FSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Fresno State",
+    "conference": "Mountain West",
+    "abbreviation": "FRES",
+    "classification": "fbs"
+  },
+  {
+    "school": "Georgia",
+    "conference": "SEC",
+    "abbreviation": "UGA",
+    "classification": "fbs"
+  },
+  {
+    "school": "Georgia Southern",
+    "conference": "Sun Belt",
+    "abbreviation": "GASO",
+    "classification": "fbs"
+  },
+  {
+    "school": "Georgia State",
+    "conference": "Sun Belt",
+    "abbreviation": "GAST",
+    "classification": "fbs"
+  },
+  {
+    "school": "Georgia Tech",
+    "conference": "ACC",
+    "abbreviation": "GT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Hawai'i",
+    "conference": "Mountain West",
+    "abbreviation": "HAW",
+    "classification": "fbs"
+  },
+  {
+    "school": "Houston",
+    "conference": "American Athletic",
+    "abbreviation": "HOU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Illinois",
+    "conference": "Big Ten",
+    "abbreviation": "ILL",
+    "classification": "fbs"
+  },
+  {
+    "school": "Indiana",
+    "conference": "Big Ten",
+    "abbreviation": "IU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Iowa",
+    "conference": "Big Ten",
+    "abbreviation": "IOWA",
+    "classification": "fbs"
+  },
+  {
+    "school": "Iowa State",
+    "conference": "Big 12",
+    "abbreviation": "ISU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Kansas",
+    "conference": "Big 12",
+    "abbreviation": "KU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Kansas State",
+    "conference": "Big 12",
+    "abbreviation": "KSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Kent State",
+    "conference": "Mid-American",
+    "abbreviation": "KENT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Kentucky",
+    "conference": "SEC",
+    "abbreviation": "UK",
+    "classification": "fbs"
+  },
+  {
+    "school": "Liberty",
+    "conference": "FBS Independents",
+    "abbreviation": "LIB",
+    "classification": "fbs"
+  },
+  {
+    "school": "Louisiana",
+    "conference": "Sun Belt",
+    "abbreviation": "UL",
+    "classification": "fbs"
+  },
+  {
+    "school": "Louisiana Tech",
+    "conference": "Conference USA",
+    "abbreviation": "LT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Louisville",
+    "conference": "ACC",
+    "abbreviation": "LOU",
+    "classification": "fbs"
+  },
+  {
+    "school": "LSU",
+    "conference": "SEC",
+    "abbreviation": "LSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Marshall",
+    "conference": "Conference USA",
+    "abbreviation": "MRSH",
+    "classification": "fbs"
+  },
+  {
+    "school": "Maryland",
+    "conference": "Big Ten",
+    "abbreviation": "MD",
+    "classification": "fbs"
+  },
+  {
+    "school": "Massachusetts",
+    "conference": "FBS Independents",
+    "abbreviation": "MASS",
+    "classification": "fbs"
+  },
+  {
+    "school": "Memphis",
+    "conference": "American Athletic",
+    "abbreviation": "MEM",
+    "classification": "fbs"
+  },
+  {
+    "school": "Miami",
+    "conference": "ACC",
+    "abbreviation": "MIA",
+    "classification": "fbs"
+  },
+  {
+    "school": "Miami (OH)",
+    "conference": "Mid-American",
+    "abbreviation": "M-OH",
+    "classification": "fbs"
+  },
+  {
+    "school": "Michigan",
+    "conference": "Big Ten",
+    "abbreviation": "MICH",
+    "classification": "fbs"
+  },
+  {
+    "school": "Michigan State",
+    "conference": "Big Ten",
+    "abbreviation": "MSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Middle Tennessee",
+    "conference": "Conference USA",
+    "abbreviation": "MTSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Minnesota",
+    "conference": "Big Ten",
+    "abbreviation": "MINN",
+    "classification": "fbs"
+  },
+  {
+    "school": "Mississippi State",
+    "conference": "SEC",
+    "abbreviation": "MSST",
+    "classification": "fbs"
+  },
+  {
+    "school": "Missouri",
+    "conference": "SEC",
+    "abbreviation": "MIZ",
+    "classification": "fbs"
+  },
+  {
+    "school": "Navy",
+    "conference": "American Athletic",
+    "abbreviation": "NAVY",
+    "classification": "fbs"
+  },
+  {
+    "school": "NC State",
+    "conference": "ACC",
+    "abbreviation": "NCSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Nebraska",
+    "conference": "Big Ten",
+    "abbreviation": "NEB",
+    "classification": "fbs"
+  },
+  {
+    "school": "Nevada",
+    "conference": "Mountain West",
+    "abbreviation": "NEV",
+    "classification": "fbs"
+  },
+  {
+    "school": "New Mexico",
+    "conference": "Mountain West",
+    "abbreviation": "UNM",
+    "classification": "fbs"
+  },
+  {
+    "school": "New Mexico State",
+    "conference": "FBS Independents",
+    "abbreviation": "NMSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "North Carolina",
+    "conference": "ACC",
+    "abbreviation": "UNC",
+    "classification": "fbs"
+  },
+  {
+    "school": "Northern Illinois",
+    "conference": "Mid-American",
+    "abbreviation": "NIU",
+    "classification": "fbs"
+  },
+  {
+    "school": "North Texas",
+    "conference": "Conference USA",
+    "abbreviation": "UNT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Northwestern",
+    "conference": "Big Ten",
+    "abbreviation": "NU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Notre Dame",
+    "conference": "FBS Independents",
+    "abbreviation": "ND",
+    "classification": "fbs"
+  },
+  {
+    "school": "Ohio",
+    "conference": "Mid-American",
+    "abbreviation": "OHIO",
+    "classification": "fbs"
+  },
+  {
+    "school": "Ohio State",
+    "conference": "Big Ten",
+    "abbreviation": "OSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Oklahoma",
+    "conference": "Big 12",
+    "abbreviation": "OU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Oklahoma State",
+    "conference": "Big 12",
+    "abbreviation": "OKST",
+    "classification": "fbs"
+  },
+  {
+    "school": "Old Dominion",
+    "conference": "Conference USA",
+    "abbreviation": "ODU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Ole Miss",
+    "conference": "SEC",
+    "abbreviation": "MISS",
+    "classification": "fbs"
+  },
+  {
+    "school": "Oregon",
+    "conference": "Pac-12",
+    "abbreviation": "ORE",
+    "classification": "fbs"
+  },
+  {
+    "school": "Oregon State",
+    "conference": "Pac-12",
+    "abbreviation": "ORST",
+    "classification": "fbs"
+  },
+  {
+    "school": "Penn State",
+    "conference": "Big Ten",
+    "abbreviation": "PSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Pittsburgh",
+    "conference": "ACC",
+    "abbreviation": "PITT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Purdue",
+    "conference": "Big Ten",
+    "abbreviation": "PUR",
+    "classification": "fbs"
+  },
+  {
+    "school": "Rice",
+    "conference": "Conference USA",
+    "abbreviation": "RICE",
+    "classification": "fbs"
+  },
+  {
+    "school": "Rutgers",
+    "conference": "Big Ten",
+    "abbreviation": "RUTG",
+    "classification": "fbs"
+  },
+  {
+    "school": "San Diego State",
+    "conference": "Mountain West",
+    "abbreviation": "SDSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "San Jos\u00e9 State",
+    "conference": "Mountain West",
+    "abbreviation": "SJSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "SMU",
+    "conference": "American Athletic",
+    "abbreviation": "SMU",
+    "classification": "fbs"
+  },
+  {
+    "school": "South Alabama",
+    "conference": "Sun Belt",
+    "abbreviation": "USA",
+    "classification": "fbs"
+  },
+  {
+    "school": "South Carolina",
+    "conference": "SEC",
+    "abbreviation": "SC",
+    "classification": "fbs"
+  },
+  {
+    "school": "Southern Miss",
+    "conference": "Conference USA",
+    "abbreviation": "USM",
+    "classification": "fbs"
+  },
+  {
+    "school": "South Florida",
+    "conference": "American Athletic",
+    "abbreviation": "USF",
+    "classification": "fbs"
+  },
+  {
+    "school": "Stanford",
+    "conference": "Pac-12",
+    "abbreviation": "STAN",
+    "classification": "fbs"
+  },
+  {
+    "school": "Syracuse",
+    "conference": "ACC",
+    "abbreviation": "SYR",
+    "classification": "fbs"
+  },
+  {
+    "school": "TCU",
+    "conference": "Big 12",
+    "abbreviation": "TCU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Temple",
+    "conference": "American Athletic",
+    "abbreviation": "TEM",
+    "classification": "fbs"
+  },
+  {
+    "school": "Tennessee",
+    "conference": "SEC",
+    "abbreviation": "TENN",
+    "classification": "fbs"
+  },
+  {
+    "school": "Texas",
+    "conference": "Big 12",
+    "abbreviation": "TEX",
+    "classification": "fbs"
+  },
+  {
+    "school": "Texas A&M",
+    "conference": "SEC",
+    "abbreviation": "TA&M",
+    "classification": "fbs"
+  },
+  {
+    "school": "Texas State",
+    "conference": "Sun Belt",
+    "abbreviation": "TXST",
+    "classification": "fbs"
+  },
+  {
+    "school": "Texas Tech",
+    "conference": "Big 12",
+    "abbreviation": "TTU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Toledo",
+    "conference": "Mid-American",
+    "abbreviation": "TOL",
+    "classification": "fbs"
+  },
+  {
+    "school": "Troy",
+    "conference": "Sun Belt",
+    "abbreviation": "TROY",
+    "classification": "fbs"
+  },
+  {
+    "school": "Tulane",
+    "conference": "American Athletic",
+    "abbreviation": "TULN",
+    "classification": "fbs"
+  },
+  {
+    "school": "Tulsa",
+    "conference": "American Athletic",
+    "abbreviation": "TLSA",
+    "classification": "fbs"
+  },
+  {
+    "school": "UAB",
+    "conference": "Conference USA",
+    "abbreviation": "UAB",
+    "classification": "fbs"
+  },
+  {
+    "school": "UCF",
+    "conference": "American Athletic",
+    "abbreviation": "UCF",
+    "classification": "fbs"
+  },
+  {
+    "school": "UCLA",
+    "conference": "Pac-12",
+    "abbreviation": "UCLA",
+    "classification": "fbs"
+  },
+  {
+    "school": "UConn",
+    "conference": "FBS Independents",
+    "abbreviation": "CONN",
+    "classification": "fbs"
+  },
+  {
+    "school": "UL Monroe",
+    "conference": "Sun Belt",
+    "abbreviation": "ULM",
+    "classification": "fbs"
+  },
+  {
+    "school": "UNLV",
+    "conference": "Mountain West",
+    "abbreviation": "UNLV",
+    "classification": "fbs"
+  },
+  {
+    "school": "USC",
+    "conference": "Pac-12",
+    "abbreviation": "USC",
+    "classification": "fbs"
+  },
+  {
+    "school": "Utah",
+    "conference": "Pac-12",
+    "abbreviation": "UTAH",
+    "classification": "fbs"
+  },
+  {
+    "school": "Utah State",
+    "conference": "Mountain West",
+    "abbreviation": "USU",
+    "classification": "fbs"
+  },
+  {
+    "school": "UTEP",
+    "conference": "Conference USA",
+    "abbreviation": "UTEP",
+    "classification": "fbs"
+  },
+  {
+    "school": "UTSA",
+    "conference": "Conference USA",
+    "abbreviation": "UTSA",
+    "classification": "fbs"
+  },
+  {
+    "school": "Vanderbilt",
+    "conference": "SEC",
+    "abbreviation": "VAN",
+    "classification": "fbs"
+  },
+  {
+    "school": "Virginia",
+    "conference": "ACC",
+    "abbreviation": "UVA",
+    "classification": "fbs"
+  },
+  {
+    "school": "Virginia Tech",
+    "conference": "ACC",
+    "abbreviation": "VT",
+    "classification": "fbs"
+  },
+  {
+    "school": "Wake Forest",
+    "conference": "ACC",
+    "abbreviation": "WAKE",
+    "classification": "fbs"
+  },
+  {
+    "school": "Washington",
+    "conference": "Pac-12",
+    "abbreviation": "WASH",
+    "classification": "fbs"
+  },
+  {
+    "school": "Washington State",
+    "conference": "Pac-12",
+    "abbreviation": "WSU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Western Kentucky",
+    "conference": "Conference USA",
+    "abbreviation": "WKU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Western Michigan",
+    "conference": "Mid-American",
+    "abbreviation": "WMU",
+    "classification": "fbs"
+  },
+  {
+    "school": "West Virginia",
+    "conference": "Big 12",
+    "abbreviation": "WVU",
+    "classification": "fbs"
+  },
+  {
+    "school": "Wisconsin",
+    "conference": "Big Ten",
+    "abbreviation": "WIS",
+    "classification": "fbs"
+  },
+  {
+    "school": "Wyoming",
+    "conference": "Mountain West",
+    "abbreviation": "WYO",
+    "classification": "fbs"
+  }
+]

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#141210" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>BCPI · Poll Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./static/press-box.css" />
+    <script>window.BCPI_CONFIG={mode:"static",dataUrl:"./data"};</script>
+    <script src="./static/theme.js" defer></script>
+    <script src="./static/nav.js" defer></script>
+  </head>
+  <body data-rankings-kind="poll">
+    <header class="site-chrome">
+      <a class="wordmark" href="./index.html">BC<span>PI</span></a>
+      <nav class="site-nav">
+        <a href="./power.html">Power</a>
+        <a href="./poll.html">Poll</a>
+        <a href="./index.html">Matchup</a>
+      </nav>
+      <div class="chrome-actions">
+        <span class="season-badge" id="season-badge">2025 season</span>
+        <button type="button" class="btn-ghost" id="theme-toggle" data-theme-label>
+          Dark mode
+        </button>
+      </div>
+    </header>
+
+    <main class="page">
+      <header class="page-header">
+        <h1 class="page-title">Poll index</h1>
+        <p class="page-sub">
+          Resume-weighted rankings — who deserves to be ranked based on results and schedule.
+        </p>
+      </header>
+
+      <div class="rankings-controls">
+        <input class="field" id="season" type="number" value="2025" min="2018" max="2026" />
+        <label class="checkbox-row" id="postseason-wrap">
+          <input id="postseason" type="checkbox" checked />
+          Postseason
+        </label>
+        <button type="button" class="btn-ghost" id="refresh-btn">Recalculate</button>
+      </div>
+
+      <div class="rankings-meta" id="rankings-meta"></div>
+
+      <div class="ledger-table-wrap" id="rankings-table">
+        <div class="loading-row">Loading poll rankings…</div>
+      </div>
+    </main>
+
+    <script src="./static/shared.js"></script>
+    <script src="./static/rankings.js"></script>
+  </body>
+</html>

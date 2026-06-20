@@ -1,0 +1,43 @@
+{
+  "recency_lambda": 0.13,
+  "form_weight": 0.35,
+  "form_margin_cap": 28.0,
+  "opp_quality_scale": 0.45,
+  "opp_quality_min": 0.40,
+  "opp_quality_max": 1.60,
+  "h2h_penalty": 0.14,
+  "h2h_winner_boost": 0.30,
+  "h2h_max_total": 0.28,
+  "h2h_use_recency": false,
+  "elite_quality_weight": 0.70,
+  "elite_opponent_top_n": 30,
+  "playoff_appearance_bonus": 0.05,
+  "playoff_win_bonus": 0.035,
+  "k_factor": 8.0,
+  "margin_scale": 19.030666969930408,
+  "hfa": 3.639030772307273,
+  "fcs_margin_cap": 22.736304752909266,
+  "prior_fade_start": 1,
+  "prior_fade_end": 12,
+  "win_prob_scale": 12.852794776115358,
+  "power_weights": {
+    "quality": 0.50,
+    "game_value": 0.35,
+    "market": 0.023413179322901448,
+    "talent_prior": 0.12765337874669064
+  },
+  "quality_weights": {
+    "epa_diff": 0.31459831623711587,
+    "success_diff": 0.3510404461838936,
+    "explosiveness_diff": 0.010090606672968107,
+    "passing_diff": 0.26604643732634176,
+    "havoc_diff": 0.05822419357968074
+  },
+  "prior_weights": {
+    "previous_season": 0.08003926856895166,
+    "talent": 0.09185451598984577,
+    "returning": 0.22694014980729033,
+    "consensus": 0.6011660656339123
+  },
+  "tuning_method": "bundle_v3_elite_playoff"
+}

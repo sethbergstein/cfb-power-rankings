@@ -1,0 +1,30 @@
+{
+  "recency_lambda": 0.13398287878834075,
+  "form_weight": 0.6647665484677768,
+  "k_factor": 11.829796846205564,
+  "margin_scale": 18.0,
+  "hfa": 2.823115596869026,
+  "fcs_margin_cap": 25.660590394058794,
+  "prior_fade_start": 1,
+  "prior_fade_end": 11,
+  "win_prob_scale": 13.537624980503086,
+  "power_weights": {
+    "quality": 0.33623226291799835,
+    "game_value": 0.0844151654866637,
+    "market": 0.019384156060887794,
+    "talent_prior": 0.5599684155344501
+  },
+  "quality_weights": {
+    "epa_diff": 0.3539531960161774,
+    "success_diff": 0.19428624401637662,
+    "explosiveness_diff": 0.2564277743652324,
+    "passing_diff": 0.14785305216149122,
+    "havoc_diff": 0.04747973344072234
+  },
+  "prior_weights": {
+    "previous_season": 0.5241480870096175,
+    "talent": 0.04978522668779456,
+    "returning": 0.17712578332522114,
+    "consensus": 0.2489409029773667
+  }
+}

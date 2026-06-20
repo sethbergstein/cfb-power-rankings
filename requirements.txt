@@ -4,3 +4,5 @@ pandas>=2.0.0,<2.3
 numpy>=1.24.0,<2
 pyarrow>=14.0.0,<18
 click>=8.1.0,<9
+flask>=3.0.0,<4
+gunicorn>=22.0.0,<24
