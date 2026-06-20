@@ -144,7 +144,7 @@
       : "";
     const rankLine =
       rank != null && rating != null
-        ? `#${rank} · power ${BCPI.formatNum(rating, 1)}`
+        ? `#${rank} · power ${BCPI.formatNum(rating, 0)}`
         : "Unranked in power index";
     return `
       <div class="board-team${isHome ? " home" : ""}" id="board-${side}">

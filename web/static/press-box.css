@@ -436,8 +436,10 @@ a {
 }
 
 .team-rank {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--board-muted);
   margin: 0.35rem 0 0;
 }
