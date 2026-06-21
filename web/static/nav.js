@@ -10,10 +10,6 @@
     { href: staticSite ? "./index.html" : "/", label: "Matchup", match: "/" },
   ];
 
-  const spacer = document.createElement("div");
-  spacer.className = "mobile-tab-bar-spacer";
-  spacer.setAttribute("aria-hidden", "true");
-
   const nav = document.createElement("nav");
   nav.className = "mobile-tab-bar";
   nav.setAttribute("aria-label", "Primary");
@@ -28,51 +24,28 @@
     })
     .join("");
 
-  document.body.appendChild(spacer);
   document.body.appendChild(nav);
 
   const mobileQuery = window.matchMedia("(max-width: 720px)");
 
-  function updateMobileChromeInset() {
-    if (!mobileQuery.matches || !window.visualViewport) {
-      document.documentElement.style.setProperty("--mobile-chrome-bottom", "0px");
-      return;
-    }
-    const vv = window.visualViewport;
-    const inset = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop));
-    document.documentElement.style.setProperty("--mobile-chrome-bottom", `${inset}px`);
-  }
-
-  function syncMobileTabStack() {
+  function syncMobileShell() {
     if (!mobileQuery.matches) {
-      document.documentElement.style.setProperty("--mobile-tab-stack-height", "0px");
-      spacer.style.height = "0px";
+      document.documentElement.style.removeProperty("--app-height");
+      document.documentElement.style.removeProperty("--app-offset-top");
       return;
     }
 
-    updateMobileChromeInset();
+    const vv = window.visualViewport;
+    if (!vv) return;
 
-    requestAnimationFrame(() => {
-      const navHeight = Math.ceil(nav.getBoundingClientRect().height);
-      const chrome =
-        parseFloat(
-          getComputedStyle(document.documentElement).getPropertyValue("--mobile-chrome-bottom")
-        ) || 0;
-      const stackHeight = navHeight + chrome;
-      document.documentElement.style.setProperty("--mobile-tab-stack-height", `${stackHeight}px`);
-      spacer.style.height = `${stackHeight}px`;
-    });
+    document.documentElement.style.setProperty("--app-height", `${Math.round(vv.height)}px`);
+    document.documentElement.style.setProperty("--app-offset-top", `${Math.round(vv.offsetTop)}px`);
   }
 
-  syncMobileTabStack();
-  window.visualViewport?.addEventListener("resize", syncMobileTabStack);
-  window.visualViewport?.addEventListener("scroll", syncMobileTabStack);
-  mobileQuery.addEventListener("change", syncMobileTabStack);
-  window.addEventListener("orientationchange", syncMobileTabStack);
-  window.addEventListener("resize", syncMobileTabStack);
-
-  if (typeof ResizeObserver !== "undefined") {
-    const observer = new ResizeObserver(syncMobileTabStack);
-    observer.observe(nav);
-  }
+  syncMobileShell();
+  window.visualViewport?.addEventListener("resize", syncMobileShell);
+  window.visualViewport?.addEventListener("scroll", syncMobileShell);
+  mobileQuery.addEventListener("change", syncMobileShell);
+  window.addEventListener("orientationchange", syncMobileShell);
+  window.addEventListener("resize", syncMobileShell);
 })();
