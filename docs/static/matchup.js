@@ -4,7 +4,6 @@
   const venueCards = document.querySelectorAll(".venue-card");
   const board = document.getElementById("scoreboard");
   const seasonBadge = document.getElementById("season-badge");
-  const snapshotHint = document.getElementById("snapshot-hint");
   const pickerAEl = document.getElementById("team-a-picker");
   const pickerBEl = document.getElementById("team-b-picker");
 
@@ -109,12 +108,6 @@
       teamsBySchool = bySchool;
       initPickers(rows);
       if (seasonBadge) seasonBadge.textContent = snap.label;
-      if (snapshotHint) {
-        snapshotHint.hidden = false;
-        snapshotHint.textContent = BCPI.isStatic()
-          ? "Published snapshots load instantly."
-          : "Cached seasons load fast. A new season can take up to a minute.";
-      }
       return true;
     } catch (err) {
       console.error(err);

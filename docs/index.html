@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
     <meta name="theme-color" content="#141210" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="description" content="Power ratings on a neutral field, adjusted for venue. Who wins, and by how much?" />
@@ -62,8 +62,9 @@
         <aside class="control-rail">
           <div class="rail-section">
             <p class="rail-label">Season</p>
-            <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
-            <p class="rail-hint" id="snapshot-hint" hidden></p>
+            <div class="select-wrap">
+              <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
+            </div>
           </div>
 
           <div class="rail-section rail-section-teams">

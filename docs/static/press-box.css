@@ -284,6 +284,31 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.select-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.select-wrap .field {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.25rem;
+  margin-bottom: 0;
+}
+
+.select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--ink-muted);
+  pointer-events: none;
+}
+
 .rail-hint {
   margin: 0.35rem 0 0;
   font-size: 0.75rem;
@@ -581,6 +606,14 @@ a {
   border: 1px solid var(--rule);
   background: var(--paper-raised);
   overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ledger-table-wrap.has-horizontal-scroll {
+  background:
+    linear-gradient(to left, var(--paper-raised), rgba(0, 0, 0, 0)) right center / 1.25rem 100% no-repeat local,
+    var(--paper-raised);
 }
 
 .ledger-table {
@@ -943,29 +976,18 @@ a {
 @media (max-width: 720px) {
   html {
     font-size: 15px;
-    height: 100%;
   }
 
   body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    height: 100dvh;
-    overflow: hidden;
-    padding-bottom: 0;
+    --mobile-tab-height: 52px;
+    padding-bottom: calc(
+      var(--mobile-tab-height) + env(safe-area-inset-bottom, 0px) + var(--mobile-chrome-bottom, 0px)
+    );
   }
 
   .site-chrome {
-    flex-shrink: 0;
     padding: 0.75rem 1rem;
     gap: 0.5rem;
-  }
-
-  main.page {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .site-nav {
@@ -1062,11 +1084,12 @@ a {
 
   .rankings-controls {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
   }
 
-  .rankings-controls .field {
+  .rankings-controls .select-wrap {
     width: 100%;
+    max-width: 16rem;
   }
 
   .rankings-meta {
@@ -1076,10 +1099,10 @@ a {
   }
 
   .ledger-table-wrap {
-    -webkit-overflow-scrolling: touch;
     margin: 0 -0.85rem;
     border-left: none;
     border-right: none;
+    touch-action: pan-x pan-y;
   }
 
   .ledger-table {
@@ -1088,12 +1111,15 @@ a {
 
   .mobile-tab-bar {
     display: flex;
-    position: relative;
-    flex-shrink: 0;
-    z-index: 10;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--mobile-chrome-bottom, 0px);
+    z-index: 200;
     background: var(--paper);
     border-top: 1px solid var(--rule-strong);
     padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
   }
 
   .mobile-tab {

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
     <meta name="theme-color" content="#141210" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="description" content="Rankings based on results, schedule, and resume." />
@@ -59,10 +59,11 @@
       </header>
 
       <div class="rankings-controls">
-        <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
+        <div class="select-wrap">
+          <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
+        </div>
         <button type="button" class="btn-ghost" id="refresh-btn">Recalculate</button>
       </div>
-      <p class="rail-hint rankings-hint" id="snapshot-hint" hidden></p>
 
       <div class="rankings-meta" id="rankings-meta"></div>
 

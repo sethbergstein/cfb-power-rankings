@@ -25,4 +25,22 @@
     .join("");
 
   document.body.appendChild(nav);
+
+  const mobileQuery = window.matchMedia("(max-width: 720px)");
+
+  function updateMobileChromeInset() {
+    if (!mobileQuery.matches || !window.visualViewport) {
+      document.documentElement.style.setProperty("--mobile-chrome-bottom", "0px");
+      return;
+    }
+    const vv = window.visualViewport;
+    const inset = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop));
+    document.documentElement.style.setProperty("--mobile-chrome-bottom", `${inset}px`);
+  }
+
+  updateMobileChromeInset();
+  window.visualViewport?.addEventListener("resize", updateMobileChromeInset);
+  window.visualViewport?.addEventListener("scroll", updateMobileChromeInset);
+  mobileQuery.addEventListener("change", updateMobileChromeInset);
+  window.addEventListener("orientationchange", updateMobileChromeInset);
 })();

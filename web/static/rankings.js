@@ -5,7 +5,6 @@
   const tableWrap = document.getElementById("rankings-table");
   const metaEl = document.getElementById("rankings-meta");
   const seasonBadge = document.getElementById("season-badge");
-  const snapshotHint = document.getElementById("snapshot-hint");
 
   let teamsBySchool = {};
 
@@ -104,6 +103,18 @@
         </div>`;
     }
     tableWrap.innerHTML = html;
+    updateTableScrollState();
+  }
+
+  function updateTableScrollState() {
+    if (!window.matchMedia("(max-width: 720px)").matches) {
+      tableWrap.classList.remove("has-horizontal-scroll");
+      return;
+    }
+    tableWrap.classList.toggle(
+      "has-horizontal-scroll",
+      tableWrap.scrollWidth > tableWrap.clientWidth + 2
+    );
   }
 
   async function loadRankings(refresh) {
@@ -119,12 +130,6 @@
     BCPI.showLoader(loaderMessage);
     tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(loaderMessage)}</div>`;
     if (refreshBtn) refreshBtn.hidden = BCPI.isStatic();
-    if (snapshotHint) {
-      snapshotHint.hidden = false;
-      snapshotHint.textContent = BCPI.isStatic()
-        ? "Published snapshots load instantly."
-        : "Cached seasons load fast. A new season can take up to a minute.";
-    }
 
     try {
       const { bySchool } = await BCPI.fetchTeams(snapshot);
@@ -159,4 +164,5 @@
   BCPI.initSnapshotSelect(snapshotSelect, () => loadRankings(false)).then(() =>
     loadRankings(false)
   );
+  window.addEventListener("resize", updateTableScrollState);
 })();
