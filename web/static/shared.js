@@ -10,6 +10,23 @@ const BCPI = {
   _loaderCount: 0,
   _loaderTimer: null,
   _loaderVisible: false,
+  SNAPSHOT_STORAGE_KEY: "bcpi-snapshot-id",
+
+  getSavedSnapshotId() {
+    try {
+      return localStorage.getItem(BCPI.SNAPSHOT_STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  },
+
+  saveSnapshotId(id) {
+    try {
+      if (id) localStorage.setItem(BCPI.SNAPSHOT_STORAGE_KEY, id);
+    } catch {
+      /* ignore private mode */
+    }
+  },
 
   isStatic() {
     return window.BCPI_CONFIG?.mode === "static";
@@ -48,8 +65,13 @@ const BCPI = {
       .join("");
     if (catalog.default) selectEl.value = catalog.default;
     else if (catalog.snapshots?.length) selectEl.value = catalog.snapshots[0].id;
+    const saved = BCPI.getSavedSnapshotId();
+    if (saved && catalog.snapshots.some((snap) => snap.id === saved)) {
+      selectEl.value = saved;
+    }
     selectEl.disabled = !catalog.snapshots?.length;
     selectEl.addEventListener("change", () => {
+      BCPI.saveSnapshotId(selectEl.value);
       if (onChange) onChange();
     });
     return catalog;
