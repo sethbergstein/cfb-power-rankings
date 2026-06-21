@@ -37,6 +37,8 @@ class ModelParams:
     form_weight: float = 0.55
     k_factor: float = 18.0
     margin_scale: float = 25.0
+    matchup_margin_scale: float = 11.0
+    matchup_rank_pt: float = 0.14
     hfa: float = HOME_FIELD_ADVANTAGE
     fcs_margin_cap: float = FCS_MARGIN_CAP
     form_margin_cap: float = 28.0
@@ -74,6 +76,8 @@ class ModelParams:
             "form_weight": self.form_weight,
             "k_factor": self.k_factor,
             "margin_scale": self.margin_scale,
+            "matchup_margin_scale": self.matchup_margin_scale,
+            "matchup_rank_pt": self.matchup_rank_pt,
             "hfa": self.hfa,
             "fcs_margin_cap": self.fcs_margin_cap,
             "form_margin_cap": self.form_margin_cap,

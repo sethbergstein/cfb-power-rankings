@@ -310,6 +310,8 @@ def export_data_bundle(
             DATA_DIR / "params.json",
             {
                 "margin_scale": params.margin_scale,
+                "matchup_margin_scale": params.matchup_margin_scale,
+                "matchup_rank_pt": params.matchup_rank_pt,
                 "hfa": params.hfa,
                 "hfa_team_max_delta": params.hfa_team_max_delta,
                 "win_prob_scale": params.win_prob_scale,

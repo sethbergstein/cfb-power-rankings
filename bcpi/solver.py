@@ -59,6 +59,32 @@ def predict_home_margin(
     return margin
 
 
+def predict_matchup_margin(
+    home_rating: float,
+    away_rating: float,
+    home_rank: int,
+    away_rank: int,
+    neutral_site: bool,
+    params: ModelParams,
+    home_team: Optional[str] = None,
+    team_hfa: Optional[Dict[str, float]] = None,
+) -> float:
+    """Spread-oriented margin for the public matchup view."""
+    scale = getattr(params, "matchup_margin_scale", params.margin_scale)
+    rank_pt = getattr(params, "matchup_rank_pt", 0.0)
+    rating_margin = (home_rating - away_rating) / scale
+    rank_margin = (away_rank - home_rank) * rank_pt
+    if rank_margin >= 0:
+        margin = max(rating_margin, rank_margin)
+    else:
+        margin = min(rating_margin, rank_margin)
+    if not neutral_site:
+        from bcpi.home_field import home_field_for_team
+
+        margin += home_field_for_team(home_team or "", team_hfa, params)
+    return margin
+
+
 def margin_to_win_probability(margin: float, scale: float) -> float:
     """Logistic win probability from expected margin (home perspective)."""
     return 1.0 / (1.0 + math.exp(-margin / scale))

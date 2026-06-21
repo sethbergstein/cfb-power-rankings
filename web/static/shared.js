@@ -310,8 +310,13 @@ const BCPI = {
 
     const homeRow = bySchool[home];
     const awayRow = bySchool[away];
+    const scale = params.matchup_margin_scale ?? params.margin_scale;
+    const rankPt = params.matchup_rank_pt ?? 0;
+    const ratingMargin =
+      (Number(homeRow.power_rating) - Number(awayRow.power_rating)) / scale;
+    const rankMargin = (Number(awayRow.rank) - Number(homeRow.rank)) * rankPt;
     let marginHome =
-      (Number(homeRow.power_rating) - Number(awayRow.power_rating)) / params.margin_scale;
+      rankMargin >= 0 ? Math.max(ratingMargin, rankMargin) : Math.min(ratingMargin, rankMargin);
     if (!neutral) {
       const teamHfa = params.team_hfa?.[home];
       marginHome += teamHfa != null ? Number(teamHfa) : params.hfa;
