@@ -543,31 +543,68 @@ const BCPI = {
       }
     }
 
+    function positionMenu() {
+      const rect = trigger.getBoundingClientRect();
+      const maxHeight = Math.max(160, window.innerHeight - rect.bottom - 12);
+      menu.style.position = "fixed";
+      menu.style.left = `${Math.max(8, rect.left)}px`;
+      menu.style.top = `${rect.bottom + 4}px`;
+      menu.style.width = `${rect.width}px`;
+      menu.style.right = "auto";
+      menu.style.zIndex = "10001";
+      menu.style.maxHeight = `${Math.min(320, maxHeight)}px`;
+    }
+
+    function resetMenuStyle() {
+      menu.style.position = "";
+      menu.style.left = "";
+      menu.style.top = "";
+      menu.style.width = "";
+      menu.style.right = "";
+      menu.style.zIndex = "";
+      menu.style.maxHeight = "";
+    }
+
     function openMenu() {
       document.dispatchEvent(new CustomEvent("bcpi-picker-open", { detail: root }));
       root.classList.add("is-open");
       menu.hidden = false;
       search.value = "";
       renderList();
-      search.focus();
+      positionMenu();
+      search.focus({ preventScroll: true });
     }
 
     function closeMenu() {
       menu.hidden = true;
       root.classList.remove("is-open");
+      resetMenuStyle();
     }
 
     document.addEventListener("bcpi-picker-open", (event) => {
       if (event.detail !== root) closeMenu();
     });
 
-    window.addEventListener(
+    const scrollRoot = document.querySelector("main.page");
+    scrollRoot?.addEventListener(
       "scroll",
-      () => {
-        if (!menu.hidden) closeMenu();
+      (event) => {
+        if (menu.hidden) return;
+        if (menu.contains(event.target) || root.contains(event.target)) return;
+        closeMenu();
       },
-      true
+      { passive: true }
     );
+
+    window.addEventListener("resize", () => {
+      if (!menu.hidden) positionMenu();
+    });
+    window.visualViewport?.addEventListener("resize", () => {
+      if (!menu.hidden) positionMenu();
+    });
+    window.visualViewport?.addEventListener("scroll", () => {
+      if (!menu.hidden) positionMenu();
+    });
 
     function setValue(school, fireChange = true) {
       selected = school || "";
@@ -596,7 +633,10 @@ const BCPI = {
 
     document.addEventListener("bcpi-theme-change", () => {
       renderTrigger(allTeams.find((t) => t.school === selected));
-      if (!menu.hidden) renderList(search.value);
+      if (!menu.hidden) {
+        renderList(search.value);
+        positionMenu();
+      }
     });
 
     return {
