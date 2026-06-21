@@ -54,6 +54,7 @@ class ModelParams:
     prior_fade_start: int = 1
     prior_fade_end: int = 8
     win_prob_scale: float = 13.5
+    defending_champion_prior_z: float = 0.10
     power_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(POWER_WEIGHTS))
     quality_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(QUALITY_WEIGHTS))
     prior_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(PRIOR_WEIGHTS))
@@ -86,6 +87,7 @@ class ModelParams:
             "prior_fade_start": self.prior_fade_start,
             "prior_fade_end": self.prior_fade_end,
             "win_prob_scale": self.win_prob_scale,
+            "defending_champion_prior_z": self.defending_champion_prior_z,
             "power_weights": self.power_weights,
             "quality_weights": self.quality_weights,
             "prior_weights": self.prior_weights,

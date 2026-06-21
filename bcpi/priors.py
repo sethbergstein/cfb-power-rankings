@@ -8,6 +8,7 @@ from typing import Dict, List, Optional
 import pandas as pd
 
 from bcpi.cfbd import CFBDClient
+from bcpi.champions import load_defending_champion
 from bcpi.constants import (
     FCS_INITIAL_RATING_OFFSET,
     FCS_OPPONENT_KEY,
@@ -199,6 +200,11 @@ def build_preseason_priors(
 
     if used_weight > 0:
         composite_z = composite_z / used_weight
+
+    if params.defending_champion_prior_z > 0:
+        champ = load_defending_champion(client, season)
+        if champ in composite_z.index:
+            composite_z.loc[champ] += params.defending_champion_prior_z
 
     ratings = {
         school: _rating_from_z(float(composite_z.loc[school]))

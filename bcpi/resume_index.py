@@ -20,7 +20,8 @@ from typing import Dict, List, Optional
 import pandas as pd
 
 from bcpi.constants import RATING_MEAN, RATING_SPREAD
-from bcpi.games import GameResult, filter_games_through_week, opponent_key
+from bcpi.champions import load_defending_champion
+from bcpi.games import GameResult, filter_games_through_week, load_season_games, opponent_key
 from bcpi.game_stats import elite_opponent_set
 from bcpi.params import ModelParams
 from bcpi.resume_params import ResumeParams
@@ -268,6 +269,117 @@ def build_poll_index(
         if w + l >= 6 and w <= l:
             components.loc[school, "poll_score"] = float(components.loc[school, "poll_score"]) - penalty
 
+    components["poll_rating"] = components["poll_score"].map(lambda z: _rating_from_z(float(z)))
+    components["rank"] = components["poll_rating"].rank(ascending=False, method="min").astype(int)
+    components["solver_rating"] = [opponent_ratings[s] for s in schools]
+    return components.sort_values("rank")
+
+
+def _season_has_fbs_results(games: List[GameResult], current_week: int) -> bool:
+    return any(
+        g.is_fbs_game and g.completed
+        for g in filter_games_through_week(games, current_week)
+    )
+
+
+def build_preseason_poll_index(
+    client,
+    schools: List[str],
+    season: int,
+    solver_states: Dict[str, TeamRatingState],
+    params: ModelParams,
+    resume: Optional[ResumeParams] = None,
+) -> pd.DataFrame:
+    """
+    Preseason poll proxy before any current-season games.
+
+    Backward-looking resume from last year's final poll composite, optional AP
+    preseason consensus, and a defending-champion bump — distinct from the
+    forward-looking power priors.
+    """
+    if resume is None:
+        from bcpi.resume_params import get_resume_params
+
+        resume = get_resume_params()
+
+    from bcpi.priors import build_preseason_priors, load_prior_components
+    from bcpi.solver import solve_ratings
+    from bcpi.teams import get_fbs_teams
+
+    prior_resume = pd.Series(0.0, index=schools)
+    prev = season - 1
+    prev_teams = get_fbs_teams(client, prev)
+    prev_schools = [team.school for team in prev_teams]
+    prev_games = load_season_games(client, prev, include_postseason=True)
+
+    if prev_games:
+        prev_priors = build_preseason_priors(client, prev_teams, prev, params)
+        prev_week = max(game.week for game in prev_games)
+        prev_solver = solve_ratings(
+            teams=prev_schools,
+            games=prev_games,
+            prior_ratings=prev_priors,
+            current_week=prev_week,
+            params=params,
+        )
+        prev_poll = build_poll_index(
+            schools=prev_schools,
+            solver_states=prev_solver,
+            games=prev_games,
+            current_week=prev_week,
+            params=params,
+            resume=resume,
+        )
+        for school in schools:
+            if school in prev_poll.index:
+                prior_resume[school] = float(prev_poll.loc[school, "poll_score"])
+
+    current_teams = get_fbs_teams(client, season)
+    prior_components = load_prior_components(client, current_teams, season)
+    consensus = pd.Series(0.0, index=schools)
+    for school in schools:
+        if school in prior_components.consensus_z.index:
+            value = prior_components.consensus_z.loc[school]
+            if pd.notna(value):
+                consensus[school] = float(value)
+
+    prior_resume_z = _zscore(prior_resume.astype(float))
+    consensus_z = _zscore(consensus.astype(float))
+
+    composite = pd.Series(0.0, index=schools)
+    used_weight = 0.0
+    if prior_resume_z.std(ddof=0) not in (0, None) and not pd.isna(prior_resume_z.std(ddof=0)):
+        composite += resume.preseason_resume_weight * prior_resume_z
+        used_weight += resume.preseason_resume_weight
+    if consensus_z.std(ddof=0) not in (0, None) and not pd.isna(consensus_z.std(ddof=0)):
+        composite += resume.preseason_consensus_weight * consensus_z
+        used_weight += resume.preseason_consensus_weight
+    if used_weight > 0:
+        composite = composite / used_weight
+
+    champ = load_defending_champion(client, season)
+    if champ and champ in composite.index and resume.defending_champion_poll_z > 0:
+        composite.loc[champ] += resume.defending_champion_poll_z
+
+    opponent_ratings = {
+        school: solver_states[school].rating if school in solver_states else RATING_MEAN
+        for school in schools
+    }
+
+    components = pd.DataFrame(index=schools)
+    components["record"] = 0.0
+    components["schedule"] = RATING_MEAN
+    components["results"] = 0.0
+    components["elite_wins"] = 0.0
+    components["playoff_raw"] = 0.0
+    components["record_z"] = 0.0
+    components["schedule_z"] = 0.0
+    components["results_z"] = 0.0
+    components["elite_wins_z"] = 0.0
+    components["playoff_z"] = 0.0
+    components["wins"] = 0
+    components["losses"] = 0
+    components["poll_score"] = composite
     components["poll_rating"] = components["poll_score"].map(lambda z: _rating_from_z(float(z)))
     components["rank"] = components["poll_rating"].rank(ascending=False, method="min").astype(int)
     components["solver_rating"] = [opponent_ratings[s] for s in schools]

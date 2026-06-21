@@ -17,5 +17,8 @@
   "playoff_champion_bonus": 0.06,
   "elite_win_top_n": 30,
   "loss_penalty_factor": 0.65,
-  "sub500_poll_penalty": 0.85
+  "sub500_poll_penalty": 0.85,
+  "preseason_resume_weight": 0.60,
+  "preseason_consensus_weight": 0.25,
+  "defending_champion_poll_z": 0.45
 }

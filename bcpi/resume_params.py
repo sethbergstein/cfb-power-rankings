@@ -49,6 +49,9 @@ class ResumeParams:
     elite_win_top_n: int = 30
     loss_penalty_factor: float = 0.65
     sub500_poll_penalty: float = 0.85
+    preseason_resume_weight: float = 0.60
+    preseason_consensus_weight: float = 0.25
+    defending_champion_poll_z: float = 0.45
 
     def normalize(self) -> None:
         self.resume_weights = _normalize(self.resume_weights)
@@ -63,6 +66,9 @@ class ResumeParams:
             "elite_win_top_n": self.elite_win_top_n,
             "loss_penalty_factor": self.loss_penalty_factor,
             "sub500_poll_penalty": self.sub500_poll_penalty,
+            "preseason_resume_weight": self.preseason_resume_weight,
+            "preseason_consensus_weight": self.preseason_consensus_weight,
+            "defending_champion_poll_z": self.defending_champion_poll_z,
         }
 
     @classmethod

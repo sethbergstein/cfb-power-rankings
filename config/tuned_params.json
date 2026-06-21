@@ -20,6 +20,7 @@
   "prior_fade_start": 1,
   "prior_fade_end": 12,
   "win_prob_scale": 12.852794776115358,
+  "defending_champion_prior_z": 0.10,
   "power_weights": {
     "quality": 0.50,
     "game_value": 0.35,
