@@ -7,6 +7,8 @@
   const seasonBadge = document.getElementById("season-badge");
 
   let teamsBySchool = {};
+  let lastTop25 = [];
+  let lastAlsoRan = [];
 
   const powerColumns = [
     { key: "rank", label: "Rank", cls: "col-rank" },
@@ -93,6 +95,8 @@
   }
 
   function renderRankings(top25, alsoRan) {
+    lastTop25 = top25;
+    lastAlsoRan = alsoRan;
     let html = renderTableSection(top25);
     if (alsoRan.length) {
       html += `
@@ -117,6 +121,27 @@
     );
   }
 
+  function renderMeta(data, snapshot) {
+    if (!metaEl) return;
+    const label = data.label || snapshot.label;
+    const indexName =
+      kind === "poll" ? "Bergstein Poll Index" : "Bergstein Power Index";
+    const updated = BCPI.formatAsOf(data.as_of);
+    metaEl.innerHTML = `
+      <span>${indexName}</span>
+      <span>${BCPI.esc(label)}</span>
+      ${updated ? `<span>Updated ${updated}</span>` : ""}`;
+  }
+
+  function rankingsCacheReady(snapshot) {
+    if (!BCPI.isStatic() || !snapshot?.id) return false;
+    const rankFile = kind === "poll" ? "poll.json" : "power.json";
+    return (
+      BCPI.hasSessionCache(`snapshots/${snapshot.id}/teams.json`) &&
+      BCPI.hasSessionCache(`snapshots/${snapshot.id}/${rankFile}`)
+    );
+  }
+
   async function loadRankings(refresh) {
     const snapshot = BCPI.getSnapshot(snapshotSelect);
     if (!snapshot) {
@@ -127,28 +152,22 @@
     const loaderMessage = refresh
       ? "Recalculating from CFBD data…"
       : `Loading ${kind} rankings…`;
-    BCPI.showLoader(loaderMessage);
-    tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(loaderMessage)}</div>`;
+    const cacheReady = !refresh && rankingsCacheReady(snapshot);
+    if (!cacheReady) {
+      BCPI.showLoader(loaderMessage, { immediate: refresh });
+      tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(loaderMessage)}</div>`;
+    }
     if (refreshBtn) refreshBtn.hidden = BCPI.isStatic();
 
     try {
-      const { bySchool } = await BCPI.fetchTeams(snapshot);
+      const [{ bySchool }, data] = await Promise.all([
+        BCPI.fetchTeams(snapshot),
+        BCPI.fetchRankings(kind, { snapshot, refresh }),
+      ]);
       teamsBySchool = bySchool;
       if (seasonBadge) seasonBadge.textContent = snapshot.label;
-
-      const data = await BCPI.fetchRankings(kind, { snapshot, refresh });
       renderRankings(data.rows || [], data.also_ran || []);
-
-      if (metaEl) {
-        const label = data.label || snapshot.label;
-        const indexName =
-          kind === "poll" ? "Bergstein Poll Index" : "Bergstein Power Index";
-        const updated = BCPI.formatAsOf(data.as_of);
-        metaEl.innerHTML = `
-          <span>${indexName}</span>
-          <span>${BCPI.esc(label)}</span>
-          ${updated ? `<span>Updated ${updated}</span>` : ""}`;
-      }
+      renderMeta(data, snapshot);
     } catch (err) {
       tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(err.message)}</div>`;
     } finally {
@@ -158,7 +177,7 @@
 
   refreshBtn?.addEventListener("click", () => loadRankings(true));
   document.addEventListener("bcpi-theme-change", () => {
-    if (tableWrap.querySelector(".ledger-table")) loadRankings(false);
+    if (lastTop25.length) renderRankings(lastTop25, lastAlsoRan);
   });
 
   BCPI.initSnapshotSelect(snapshotSelect, () => loadRankings(false)).then(() =>

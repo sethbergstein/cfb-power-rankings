@@ -7,9 +7,12 @@ const BCPI = {
   _params: null,
   _powerRows: null,
   _catalog: null,
+  _memCache: {},
   _loaderCount: 0,
   _loaderTimer: null,
   _loaderVisible: false,
+  _loaderDelayMs: 480,
+  CACHE_PREFIX: "bcpi-cache:",
   SNAPSHOT_STORAGE_KEY: "bcpi-snapshot-id",
 
   getSavedSnapshotId() {
@@ -37,12 +40,75 @@ const BCPI = {
     return `${base}/${path}`;
   },
 
+  _sessionGet(key) {
+    try {
+      const raw = sessionStorage.getItem(BCPI.CACHE_PREFIX + key);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  },
+
+  _sessionSet(key, data) {
+    try {
+      sessionStorage.setItem(BCPI.CACHE_PREFIX + key, JSON.stringify(data));
+    } catch {
+      /* quota or private mode */
+    }
+  },
+
+  hasSessionCache(path) {
+    return BCPI._memCache[path] != null || BCPI._sessionGet(path) != null;
+  },
+
+  async fetchJsonCached(path, { force = false } = {}) {
+    if (!force && BCPI._memCache[path] != null) {
+      return BCPI._memCache[path];
+    }
+
+    if (!force && BCPI.isStatic()) {
+      const cached = BCPI._sessionGet(path);
+      if (cached != null) {
+        BCPI._memCache[path] = cached;
+        BCPI._fetchJsonFresh(path).catch(() => {});
+        return cached;
+      }
+    }
+
+    return BCPI._fetchJsonFresh(path);
+  },
+
+  async _fetchJsonFresh(path) {
+    const res = await fetch(BCPI.dataUrl(path));
+    if (!res.ok) throw new Error(`Failed to load ${path}`);
+    const data = await res.json();
+    BCPI._memCache[path] = data;
+    if (BCPI.isStatic()) BCPI._sessionSet(path, data);
+    return data;
+  },
+
+  prefetchSnapshotData(snapshot) {
+    if (!BCPI.isStatic() || !snapshot?.id) return;
+    const snapId = snapshot.id;
+    [
+      `snapshots/${snapId}/teams.json`,
+      `snapshots/${snapId}/power.json`,
+      `snapshots/${snapId}/poll.json`,
+    ].forEach((path) => {
+      if (BCPI.hasSessionCache(path)) return;
+      BCPI._fetchJsonFresh(path).catch(() => {});
+    });
+  },
+
   async loadCatalog() {
     if (BCPI._catalog) return BCPI._catalog;
-    const url = BCPI.isStatic()
-      ? BCPI.dataUrl("catalog.json")
-      : "/api/catalog";
-    const res = await fetch(url);
+    const path = BCPI.isStatic() ? "catalog.json" : null;
+    if (path) {
+      BCPI._catalog = await BCPI.fetchJsonCached(path);
+      return BCPI._catalog;
+    }
+    const res = await fetch("/api/catalog");
     if (!res.ok) throw new Error("Failed to load season catalog");
     BCPI._catalog = await res.json();
     return BCPI._catalog;
@@ -72,14 +138,17 @@ const BCPI = {
     selectEl.disabled = !catalog.snapshots?.length;
     selectEl.addEventListener("change", () => {
       BCPI.saveSnapshotId(selectEl.value);
+      BCPI.prefetchSnapshotData(BCPI.getSnapshot(selectEl));
       if (onChange) onChange();
     });
+    BCPI.prefetchSnapshotData(BCPI.getSnapshot(selectEl));
     return catalog;
   },
 
-  showLoader(message = "Loading…") {
+  showLoader(message = "Loading…", { immediate = false } = {}) {
     BCPI._loaderCount += 1;
     clearTimeout(BCPI._loaderTimer);
+    const delay = immediate ? 0 : BCPI._loaderDelayMs;
     BCPI._loaderTimer = setTimeout(() => {
       if (BCPI._loaderCount <= 0) return;
       let root = document.getElementById("bcpi-loader");
@@ -104,7 +173,7 @@ const BCPI = {
       if (text) text.textContent = message;
       root.hidden = false;
       BCPI._loaderVisible = true;
-    }, 220);
+    }, delay);
   },
 
   hideLoader() {
@@ -118,31 +187,23 @@ const BCPI = {
 
   async loadManifest() {
     if (BCPI._manifest) return BCPI._manifest;
-    const res = await fetch(BCPI.dataUrl("manifest.json"));
-    if (!res.ok) throw new Error("Failed to load site data");
-    BCPI._manifest = await res.json();
+    BCPI._manifest = await BCPI.fetchJsonCached("manifest.json");
     return BCPI._manifest;
   },
 
   async loadParams() {
     if (BCPI._params) return BCPI._params;
-    const res = await fetch(BCPI.dataUrl("params.json"));
-    if (!res.ok) throw new Error("Failed to load model params");
-    BCPI._params = await res.json();
+    BCPI._params = await BCPI.fetchJsonCached("params.json");
     return BCPI._params;
   },
 
   async loadPowerRows(snapshot) {
     if (BCPI.isStatic() && snapshot?.id) {
-      const res = await fetch(BCPI.dataUrl(`snapshots/${snapshot.id}/power.json`));
-      if (!res.ok) throw new Error("Failed to load power ratings");
-      const data = await res.json();
+      const data = await BCPI.fetchJsonCached(`snapshots/${snapshot.id}/power.json`);
       return data.rows || [];
     }
     if (BCPI._powerRows) return BCPI._powerRows;
-    const res = await fetch(BCPI.dataUrl("power.json"));
-    if (!res.ok) throw new Error("Failed to load power ratings");
-    const data = await res.json();
+    const data = await BCPI.fetchJsonCached("power.json");
     BCPI._powerRows = data.rows || [];
     return BCPI._powerRows;
   },
@@ -152,9 +213,7 @@ const BCPI = {
       const path = snapshot?.id
         ? `snapshots/${snapshot.id}/teams.json`
         : "teams.json";
-      const res = await fetch(BCPI.dataUrl(path));
-      if (!res.ok) throw new Error("Failed to load teams");
-      const rows = await res.json();
+      const rows = await BCPI.fetchJsonCached(path);
       const bySchool = {};
       rows.forEach((t) => {
         bySchool[t.school] = t;
@@ -181,9 +240,7 @@ const BCPI = {
       const snapId = snapshot?.id;
       const file = kind === "poll" ? "poll.json" : "power.json";
       const path = snapId ? `snapshots/${snapId}/${file}` : file;
-      const res = await fetch(BCPI.dataUrl(path));
-      if (!res.ok) throw new Error(`Failed to load ${kind} rankings`);
-      const data = await res.json();
+      const data = await BCPI.fetchJsonCached(path, { force: refresh });
       const rows = data.rows || [];
       return {
         kind,

@@ -102,7 +102,13 @@
     const snap = snapshot();
     if (!snap) return false;
 
-    BCPI.showLoader("Loading teams…");
+    const cacheReady =
+      BCPI.isStatic() &&
+      snap.id &&
+      BCPI.hasSessionCache(`snapshots/${snap.id}/teams.json`);
+    if (!cacheReady) {
+      BCPI.showLoader("Loading teams…");
+    }
     try {
       const { rows, bySchool } = await BCPI.fetchTeams(snap);
       teamsBySchool = bySchool;
