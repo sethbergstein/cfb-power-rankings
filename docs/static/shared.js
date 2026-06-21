@@ -483,6 +483,10 @@ const BCPI = {
           <span class="team-picker-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="team-picker-menu" hidden>
+          <div class="team-picker-sheet-head">
+            <p class="team-picker-sheet-title">Select team</p>
+            <button type="button" class="team-picker-sheet-close" aria-label="Close">Done</button>
+          </div>
           <input type="search" class="team-picker-search" placeholder="Search teams…" autocomplete="off" />
           <ul class="team-picker-list" role="listbox"></ul>
         </div>
@@ -493,6 +497,7 @@ const BCPI = {
     const menu = root.querySelector(".team-picker-menu");
     const search = root.querySelector(".team-picker-search");
     const list = root.querySelector(".team-picker-list");
+    const sheetClose = root.querySelector(".team-picker-sheet-close");
     const logoWrap = root.querySelector(".team-picker-logo-wrap");
     const nameEl = root.querySelector(".team-picker-name");
     const abbrEl = root.querySelector(".team-picker-abbr");
@@ -548,7 +553,12 @@ const BCPI = {
       }
     }
 
+    function isMobilePicker() {
+      return window.matchMedia("(max-width: 720px)").matches;
+    }
+
     function positionMenu() {
+      if (isMobilePicker()) return;
       const rect = trigger.getBoundingClientRect();
       const maxHeight = Math.max(160, window.innerHeight - rect.bottom - 12);
       menu.style.position = "fixed";
@@ -561,6 +571,7 @@ const BCPI = {
     }
 
     function resetMenuStyle() {
+      menu.classList.remove("team-picker-sheet");
       menu.style.position = "";
       menu.style.left = "";
       menu.style.top = "";
@@ -568,6 +579,9 @@ const BCPI = {
       menu.style.right = "";
       menu.style.zIndex = "";
       menu.style.maxHeight = "";
+      if (menu.parentElement !== root) {
+        root.appendChild(menu);
+      }
     }
 
     function openMenu() {
@@ -576,13 +590,22 @@ const BCPI = {
       menu.hidden = false;
       search.value = "";
       renderList();
-      positionMenu();
+
+      if (isMobilePicker()) {
+        document.body.classList.add("team-picker-open");
+        document.body.appendChild(menu);
+        menu.classList.add("team-picker-sheet");
+      } else {
+        positionMenu();
+      }
+
       search.focus({ preventScroll: true });
     }
 
     function closeMenu() {
       menu.hidden = true;
       root.classList.remove("is-open");
+      document.body.classList.remove("team-picker-open");
       resetMenuStyle();
     }
 
@@ -593,22 +616,18 @@ const BCPI = {
     const scrollRoot = document.querySelector("main.page");
     scrollRoot?.addEventListener(
       "scroll",
-      (event) => {
-        if (menu.hidden) return;
-        if (menu.contains(event.target) || root.contains(event.target)) return;
+      () => {
+        if (menu.hidden || isMobilePicker()) return;
         closeMenu();
       },
       { passive: true }
     );
 
     window.addEventListener("resize", () => {
-      if (!menu.hidden) positionMenu();
-    });
-    window.visualViewport?.addEventListener("resize", () => {
-      if (!menu.hidden) positionMenu();
-    });
-    window.visualViewport?.addEventListener("scroll", () => {
-      if (!menu.hidden) positionMenu();
+      if (!menu.hidden && !isMobilePicker()) positionMenu();
+      if (!menu.hidden && isMobilePicker() && !menu.classList.contains("team-picker-sheet")) {
+        closeMenu();
+      }
     });
 
     function setValue(school, fireChange = true) {
@@ -623,6 +642,8 @@ const BCPI = {
       else closeMenu();
     });
 
+    sheetClose?.addEventListener("click", closeMenu);
+
     search.addEventListener("input", () => renderList(search.value));
 
     list.addEventListener("click", (event) => {
@@ -633,6 +654,12 @@ const BCPI = {
     });
 
     document.addEventListener("click", (event) => {
+      if (menu.hidden) return;
+      if (isMobilePicker()) {
+        if (event.target.closest(".team-picker-sheet")) return;
+        closeMenu();
+        return;
+      }
       if (!root.contains(event.target)) closeMenu();
     });
 

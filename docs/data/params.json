@@ -1,7 +1,7 @@
 {
   "margin_scale": 19.030666969930408,
-  "matchup_margin_scale": 11.0,
-  "matchup_rank_pt": 0.14,
+  "matchup_margin_scale": 9.0,
+  "matchup_rank_pt": 0.2,
   "hfa": 3.639030772307273,
   "hfa_team_max_delta": 1.75,
   "win_prob_scale": 12.852794776115358,

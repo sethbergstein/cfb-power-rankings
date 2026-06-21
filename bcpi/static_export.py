@@ -370,6 +370,10 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
 
     shutil.copytree(WEB_DIR / "static", DOCS_DIR / "static")
 
+    manifest_src = WEB_DIR / "manifest.webmanifest"
+    if manifest_src.exists():
+        shutil.copy2(manifest_src, DOCS_DIR / "manifest.webmanifest")
+
     for name in ("index.html", "power.html", "poll.html"):
         src = WEB_DIR / name
         dst = DOCS_DIR / name
