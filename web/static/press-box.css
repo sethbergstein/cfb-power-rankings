@@ -967,6 +967,10 @@ a {
 
 /* ── Mobile tab bar (hidden on desktop) ── */
 
+.mobile-tab-bar-spacer {
+  display: none;
+}
+
 .mobile-tab-bar {
   display: none;
 }
@@ -979,10 +983,14 @@ a {
   }
 
   body {
-    --mobile-tab-height: 52px;
-    padding-bottom: calc(
-      var(--mobile-tab-height) + env(safe-area-inset-bottom, 0px) + var(--mobile-chrome-bottom, 0px)
-    );
+    scroll-padding-bottom: var(--mobile-tab-stack-height, 3.25rem);
+  }
+
+  .mobile-tab-bar-spacer {
+    display: block;
+    height: var(--mobile-tab-stack-height, 3.25rem);
+    flex-shrink: 0;
+    pointer-events: none;
   }
 
   .site-chrome {
@@ -1116,10 +1124,20 @@ a {
     right: 0;
     bottom: var(--mobile-chrome-bottom, 0px);
     z-index: 200;
-    background: var(--paper);
+    background-color: var(--paper);
     border-top: 1px solid var(--rule-strong);
     padding-bottom: env(safe-area-inset-bottom, 0px);
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.18);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  .mobile-tab-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--paper);
+    z-index: -1;
   }
 
   .mobile-tab {
@@ -1136,13 +1154,13 @@ a {
     color: var(--ink-muted);
     border-top: 2px solid transparent;
     margin-top: -1px;
-    background: var(--paper);
+    background-color: var(--paper);
   }
 
   .mobile-tab.active {
     color: var(--ink);
     border-top-color: var(--accent);
-    background: var(--paper-raised);
+    background-color: var(--paper-raised);
   }
 }
 

@@ -10,6 +10,10 @@
     { href: staticSite ? "./index.html" : "/", label: "Matchup", match: "/" },
   ];
 
+  const spacer = document.createElement("div");
+  spacer.className = "mobile-tab-bar-spacer";
+  spacer.setAttribute("aria-hidden", "true");
+
   const nav = document.createElement("nav");
   nav.className = "mobile-tab-bar";
   nav.setAttribute("aria-label", "Primary");
@@ -24,6 +28,7 @@
     })
     .join("");
 
+  document.body.appendChild(spacer);
   document.body.appendChild(nav);
 
   const mobileQuery = window.matchMedia("(max-width: 720px)");
@@ -38,9 +43,36 @@
     document.documentElement.style.setProperty("--mobile-chrome-bottom", `${inset}px`);
   }
 
-  updateMobileChromeInset();
-  window.visualViewport?.addEventListener("resize", updateMobileChromeInset);
-  window.visualViewport?.addEventListener("scroll", updateMobileChromeInset);
-  mobileQuery.addEventListener("change", updateMobileChromeInset);
-  window.addEventListener("orientationchange", updateMobileChromeInset);
+  function syncMobileTabStack() {
+    if (!mobileQuery.matches) {
+      document.documentElement.style.setProperty("--mobile-tab-stack-height", "0px");
+      spacer.style.height = "0px";
+      return;
+    }
+
+    updateMobileChromeInset();
+
+    requestAnimationFrame(() => {
+      const navHeight = Math.ceil(nav.getBoundingClientRect().height);
+      const chrome =
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue("--mobile-chrome-bottom")
+        ) || 0;
+      const stackHeight = navHeight + chrome;
+      document.documentElement.style.setProperty("--mobile-tab-stack-height", `${stackHeight}px`);
+      spacer.style.height = `${stackHeight}px`;
+    });
+  }
+
+  syncMobileTabStack();
+  window.visualViewport?.addEventListener("resize", syncMobileTabStack);
+  window.visualViewport?.addEventListener("scroll", syncMobileTabStack);
+  mobileQuery.addEventListener("change", syncMobileTabStack);
+  window.addEventListener("orientationchange", syncMobileTabStack);
+  window.addEventListener("resize", syncMobileTabStack);
+
+  if (typeof ResizeObserver !== "undefined") {
+    const observer = new ResizeObserver(syncMobileTabStack);
+    observer.observe(nav);
+  }
 })();
