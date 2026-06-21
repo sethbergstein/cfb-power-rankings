@@ -59,13 +59,10 @@
       </header>
 
       <div class="rankings-controls">
-        <input class="field" id="season" type="number" value="2025" min="2018" max="2026" />
-        <label class="checkbox-row" id="postseason-wrap">
-          <input id="postseason" type="checkbox" checked />
-          Postseason
-        </label>
+        <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
         <button type="button" class="btn-ghost" id="refresh-btn">Recalculate</button>
       </div>
+      <p class="rail-hint rankings-hint" id="snapshot-hint" hidden></p>
 
       <div class="rankings-meta" id="rankings-meta"></div>
 

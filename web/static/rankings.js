@@ -1,22 +1,13 @@
 (function () {
   const kind = document.body.dataset.rankingsKind;
-  const seasonInput = document.getElementById("season");
-  const postseasonInput = document.getElementById("postseason");
-  const postseasonWrap = document.getElementById("postseason-wrap");
+  const snapshotSelect = document.getElementById("snapshot-select");
   const refreshBtn = document.getElementById("refresh-btn");
   const tableWrap = document.getElementById("rankings-table");
   const metaEl = document.getElementById("rankings-meta");
   const seasonBadge = document.getElementById("season-badge");
+  const snapshotHint = document.getElementById("snapshot-hint");
 
   let teamsBySchool = {};
-
-  function season() {
-    return Number(seasonInput?.value) || BCPI.defaultSeason;
-  }
-
-  function postseason() {
-    return postseasonInput?.checked ? 1 : 0;
-  }
 
   const powerColumns = [
     { key: "rank", label: "Rank", cls: "col-rank" },
@@ -116,47 +107,56 @@
   }
 
   async function loadRankings(refresh) {
-    tableWrap.innerHTML = `<div class="loading-row">Loading ${kind} rankings…</div>`;
-    BCPI.syncPostseasonControl(seasonInput, postseasonInput, postseasonWrap);
+    const snapshot = BCPI.getSnapshot(snapshotSelect);
+    if (!snapshot) {
+      tableWrap.innerHTML = `<div class="loading-row">No season snapshots published yet.</div>`;
+      return;
+    }
+
+    const loaderMessage = refresh
+      ? "Recalculating from CFBD data…"
+      : `Loading ${kind} rankings…`;
+    BCPI.showLoader(loaderMessage);
+    tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(loaderMessage)}</div>`;
     if (refreshBtn) refreshBtn.hidden = BCPI.isStatic();
+    if (snapshotHint) {
+      snapshotHint.hidden = false;
+      snapshotHint.textContent = BCPI.isStatic()
+        ? "Published snapshots load instantly. Run locally with python run_bcpi.py serve to recalculate other seasons."
+        : "Older seasons load from cache when available; first-time recalculations can take up to a minute.";
+    }
+
     try {
-      const { bySchool } = await BCPI.fetchTeams(season());
+      const { bySchool } = await BCPI.fetchTeams(snapshot);
       teamsBySchool = bySchool;
-      const manifest = BCPI.isStatic() ? await BCPI.loadManifest() : null;
-      if (seasonBadge) {
-        seasonBadge.textContent = manifest ? manifest.label : `${season()} season`;
-      }
+      if (seasonBadge) seasonBadge.textContent = snapshot.label;
 
-      const data = await BCPI.fetchRankings(kind, {
-        season: season(),
-        postseason: postseason(),
-        refresh,
-      });
-
+      const data = await BCPI.fetchRankings(kind, { snapshot, refresh });
       renderRankings(data.rows || [], data.also_ran || []);
 
       if (metaEl) {
-        const label = data.postseason ? "postseason" : `week ${data.week}`;
+        const label = data.label || snapshot.label;
         const indexName =
           kind === "poll" ? "Bergstein Poll Index" : "Bergstein Power Index";
         const updated = BCPI.formatAsOf(data.as_of);
         metaEl.innerHTML = `
           <span>${indexName} · proprietary composite model</span>
-          <span>${manifest?.label || `${season()} · ${label}`}</span>
+          <span>${BCPI.esc(label)}</span>
           ${updated ? `<span>Updated ${updated}</span>` : ""}`;
       }
     } catch (err) {
       tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(err.message)}</div>`;
+    } finally {
+      BCPI.hideLoader();
     }
   }
 
-  seasonInput?.addEventListener("change", () => loadRankings(false));
-  postseasonInput?.addEventListener("change", () => loadRankings(false));
   refreshBtn?.addEventListener("click", () => loadRankings(true));
   document.addEventListener("bcpi-theme-change", () => {
     if (tableWrap.querySelector(".ledger-table")) loadRankings(false);
   });
 
-  BCPI.syncPostseasonControl(seasonInput, postseasonInput, postseasonWrap);
-  loadRankings(false);
+  BCPI.initSnapshotSelect(snapshotSelect, () => loadRankings(false)).then(() =>
+    loadRankings(false)
+  );
 })();

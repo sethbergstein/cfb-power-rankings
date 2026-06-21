@@ -1,10 +1,10 @@
 (function () {
-  const seasonInput = document.getElementById("season");
-  const postseasonInput = document.getElementById("postseason");
+  const snapshotSelect = document.getElementById("snapshot-select");
   const predictBtn = document.getElementById("predict-btn");
   const venueCards = document.querySelectorAll(".venue-card");
   const board = document.getElementById("scoreboard");
   const seasonBadge = document.getElementById("season-badge");
+  const snapshotHint = document.getElementById("snapshot-hint");
   const pickerAEl = document.getElementById("team-a-picker");
   const pickerBEl = document.getElementById("team-b-picker");
 
@@ -12,20 +12,8 @@
   let pickerA = null;
   let pickerB = null;
 
-  function season() {
-    return Number(seasonInput?.value) || BCPI.defaultSeason;
-  }
-
-  function postseason() {
-    return postseasonInput?.checked ? 1 : 0;
-  }
-
-  function syncPostseason() {
-    BCPI.syncPostseasonControl(
-      seasonInput,
-      postseasonInput,
-      document.getElementById("postseason-wrap")
-    );
+  function snapshot() {
+    return BCPI.getSnapshot(snapshotSelect);
   }
 
   function selectedSiteValue() {
@@ -112,20 +100,28 @@
   }
 
   async function loadTeams() {
+    const snap = snapshot();
+    if (!snap) return false;
+
+    BCPI.showLoader("Loading teams…");
     try {
-      const { rows, bySchool } = await BCPI.fetchTeams(season());
+      const { rows, bySchool } = await BCPI.fetchTeams(snap);
       teamsBySchool = bySchool;
       initPickers(rows);
-      syncPostseason();
-      const manifest = BCPI.isStatic() ? await BCPI.loadManifest() : null;
-      if (seasonBadge) {
-        seasonBadge.textContent = manifest ? manifest.label : `${season()} season`;
+      if (seasonBadge) seasonBadge.textContent = snap.label;
+      if (snapshotHint) {
+        snapshotHint.hidden = false;
+        snapshotHint.textContent = BCPI.isStatic()
+          ? "Switch snapshots instantly on mobile. Local server can recalculate any cached season."
+          : "First load for a new season may take up to a minute while CFBD data is fetched.";
       }
       return true;
     } catch (err) {
       console.error(err);
       board.innerHTML = `<div class="board-placeholder"><div class="board-error">${BCPI.esc(err.message)}</div></div>`;
       return false;
+    } finally {
+      BCPI.hideLoader();
     }
   }
 
@@ -154,7 +150,7 @@
       </div>`;
   }
 
-  function renderResult(data) {
+  function renderResult(data, snap) {
     const pctA = Math.round((data.win_prob_a || 0) * 100);
     const pctB = Math.round((data.win_prob_b || 0) * 100);
     const site = selectedSiteValue();
@@ -193,10 +189,13 @@
         </div>
       </div>`;
 
+    const weekLabel =
+      snap?.postseason ? "postseason" : snap?.week > 0 ? `week ${snap.week}` : "preseason";
+
     board.innerHTML = `
       <div class="board-meta">
         <span>BCPI matchup · power ratings</span>
-        <span>${season()} · week ${data.week ?? "—"}</span>
+        <span>${BCPI.esc(snap?.label || weekLabel)}</span>
       </div>
       <div class="board-teams">${teamsHtml}</div>
       ${venueHtml}
@@ -204,14 +203,20 @@
   }
 
   async function predict() {
+    const snap = snapshot();
     const teamA = pickerA?.getValue();
     const teamB = pickerB?.getValue();
+    if (!snap) {
+      board.innerHTML = `<div class="board-placeholder">Select a season snapshot.</div>`;
+      return;
+    }
     if (!teamA || !teamB) {
       board.innerHTML = `<div class="board-placeholder">Select both teams.<div class="board-error">Team A and Team B are required.</div></div>`;
       return;
     }
 
     predictBtn.disabled = true;
+    BCPI.showLoader("Running BCPI matchup model…");
     board.innerHTML = `<div class="board-placeholder">Running BCPI matchup model…</div>`;
 
     const site = selectedSiteValue();
@@ -222,8 +227,7 @@
         teamB,
         site,
         teamsBySchool,
-        season: season(),
-        postseason: postseason(),
+        snapshot: snap,
       });
 
       if (site === "home_a") {
@@ -239,11 +243,12 @@
         data.venue_location = "No home field advantage";
       }
 
-      renderResult(data);
+      renderResult(data, snap);
     } catch (err) {
       board.innerHTML = `<div class="board-placeholder"><div class="board-error">${BCPI.esc(err.message)}</div></div>`;
     } finally {
       predictBtn.disabled = false;
+      BCPI.hideLoader();
     }
   }
 
@@ -265,11 +270,6 @@
     });
   });
 
-  seasonInput?.addEventListener("change", async () => {
-    syncPostseason();
-    const ok = await loadTeams();
-    if (ok) predict();
-  });
   predictBtn?.addEventListener("click", predict);
   document.addEventListener("bcpi-theme-change", () => {
     updateVenueCards();
@@ -277,8 +277,11 @@
   });
 
   renderPlaceholder();
-  syncPostseason();
-  loadTeams().then((ok) => {
+  BCPI.initSnapshotSelect(snapshotSelect, async () => {
+    const ok = await loadTeams();
+    if (ok) predict();
+  }).then(async () => {
+    const ok = await loadTeams();
     if (ok) predict();
   });
 })();

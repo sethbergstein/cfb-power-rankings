@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Optional
 
 from flask import Flask, jsonify, request, send_from_directory
 
@@ -11,6 +12,7 @@ from bcpi.constants import TARGET_SEASON
 from bcpi.matchup import predict_matchup, resolve_team_name
 from bcpi.params import get_active_params
 from bcpi.rankings_io import load_rankings_df
+from bcpi.snapshots import discover_snapshots
 from bcpi.team_profiles import get_team_profiles
 from bcpi.teams import get_fbs_teams
 
@@ -57,6 +59,32 @@ def create_app() -> Flask:
 
     def _postseason() -> bool:
         return request.args.get("postseason", "0") in ("1", "true", "yes")
+
+    def _week() -> Optional[int]:
+        raw = request.args.get("week", type=int)
+        return raw
+
+    @app.get("/api/catalog")
+    def api_catalog() -> object:
+        snaps = discover_snapshots()
+        payload = [
+            {
+                "id": snap.id,
+                "season": snap.season,
+                "week": snap.week,
+                "postseason": snap.postseason,
+                "label": snap.label,
+            }
+            for snap in snaps
+        ]
+        return jsonify(
+            {
+                "default": payload[0]["id"] if payload else None,
+                "snapshots": payload,
+                "min_season": 2018,
+                "max_season": TARGET_SEASON + 1,
+            }
+        )
 
     @app.get("/")
     def index() -> object:
@@ -108,12 +136,14 @@ def create_app() -> Flask:
             return jsonify({"error": "kind must be power or poll"}), 400
         season = _season()
         postseason = _postseason()
+        week = _week()
         refresh = request.args.get("refresh", "0") in ("1", "true", "yes")
         try:
             df, as_of_week, path = load_rankings_df(
                 kind,
                 season,
                 postseason=postseason,
+                week=week,
                 refresh=refresh,
             )
             rows = _enrich_rankings(kind, df, season, postseason)

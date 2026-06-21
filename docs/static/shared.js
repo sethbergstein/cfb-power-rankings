@@ -6,6 +6,10 @@ const BCPI = {
   _manifest: null,
   _params: null,
   _powerRows: null,
+  _catalog: null,
+  _loaderCount: 0,
+  _loaderTimer: null,
+  _loaderVisible: false,
 
   isStatic() {
     return window.BCPI_CONFIG?.mode === "static";
@@ -14,6 +18,80 @@ const BCPI = {
   dataUrl(path) {
     const base = window.BCPI_CONFIG?.dataUrl || "./data";
     return `${base}/${path}`;
+  },
+
+  async loadCatalog() {
+    if (BCPI._catalog) return BCPI._catalog;
+    const url = BCPI.isStatic()
+      ? BCPI.dataUrl("catalog.json")
+      : "/api/catalog";
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Failed to load season catalog");
+    BCPI._catalog = await res.json();
+    return BCPI._catalog;
+  },
+
+  getSnapshot(selectEl) {
+    const id = selectEl?.value;
+    if (!id || !BCPI._catalog?.snapshots) return null;
+    return BCPI._catalog.snapshots.find((snap) => snap.id === id) || null;
+  },
+
+  async initSnapshotSelect(selectEl, onChange) {
+    if (!selectEl) return null;
+    const catalog = await BCPI.loadCatalog();
+    selectEl.innerHTML = (catalog.snapshots || [])
+      .map(
+        (snap) =>
+          `<option value="${BCPI.esc(snap.id)}">${BCPI.esc(snap.label)}</option>`
+      )
+      .join("");
+    if (catalog.default) selectEl.value = catalog.default;
+    else if (catalog.snapshots?.length) selectEl.value = catalog.snapshots[0].id;
+    selectEl.disabled = !catalog.snapshots?.length;
+    selectEl.addEventListener("change", () => {
+      if (onChange) onChange();
+    });
+    return catalog;
+  },
+
+  showLoader(message = "Loading…") {
+    BCPI._loaderCount += 1;
+    clearTimeout(BCPI._loaderTimer);
+    BCPI._loaderTimer = setTimeout(() => {
+      if (BCPI._loaderCount <= 0) return;
+      let root = document.getElementById("bcpi-loader");
+      if (!root) {
+        root = document.createElement("div");
+        root.id = "bcpi-loader";
+        root.className = "bcpi-loader";
+        root.innerHTML = `
+          <div class="bcpi-loader-stage" aria-hidden="true">
+            <svg class="bcpi-loader-trophy" viewBox="0 0 64 96" role="img" aria-label="">
+              <path d="M18 8h28v10c0 8-4 14-10 17 6 3 10 9 10 17v6H18v-6c0-8 4-14 10-17-6-3-10-9-10-17V8z" fill="currentColor"/>
+              <rect x="24" y="58" width="16" height="8" rx="1" fill="currentColor"/>
+              <rect x="20" y="66" width="24" height="6" rx="1" fill="currentColor"/>
+              <rect x="16" y="72" width="32" height="8" rx="1" fill="currentColor"/>
+              <path d="M8 12h8c2 8 2 16 0 22h-8V12zm48 0h8v22h-8c-2-6-2-14 0-22z" fill="currentColor" opacity="0.85"/>
+            </svg>
+          </div>
+          <p class="bcpi-loader-text"></p>`;
+        document.body.appendChild(root);
+      }
+      const text = root.querySelector(".bcpi-loader-text");
+      if (text) text.textContent = message;
+      root.hidden = false;
+      BCPI._loaderVisible = true;
+    }, 220);
+  },
+
+  hideLoader() {
+    BCPI._loaderCount = Math.max(0, BCPI._loaderCount - 1);
+    if (BCPI._loaderCount > 0) return;
+    clearTimeout(BCPI._loaderTimer);
+    const root = document.getElementById("bcpi-loader");
+    if (root) root.hidden = true;
+    BCPI._loaderVisible = false;
   },
 
   async loadManifest() {
@@ -32,7 +110,13 @@ const BCPI = {
     return BCPI._params;
   },
 
-  async loadPowerRows() {
+  async loadPowerRows(snapshot) {
+    if (BCPI.isStatic() && snapshot?.id) {
+      const res = await fetch(BCPI.dataUrl(`snapshots/${snapshot.id}/power.json`));
+      if (!res.ok) throw new Error("Failed to load power ratings");
+      const data = await res.json();
+      return data.rows || [];
+    }
     if (BCPI._powerRows) return BCPI._powerRows;
     const res = await fetch(BCPI.dataUrl("power.json"));
     if (!res.ok) throw new Error("Failed to load power ratings");
@@ -41,9 +125,12 @@ const BCPI = {
     return BCPI._powerRows;
   },
 
-  async fetchTeams(season) {
+  async fetchTeams(snapshot) {
     if (BCPI.isStatic()) {
-      const res = await fetch(BCPI.dataUrl("teams.json"));
+      const path = snapshot?.id
+        ? `snapshots/${snapshot.id}/teams.json`
+        : "teams.json";
+      const res = await fetch(BCPI.dataUrl(path));
       if (!res.ok) throw new Error("Failed to load teams");
       const rows = await res.json();
       const bySchool = {};
@@ -52,6 +139,7 @@ const BCPI = {
       });
       return { rows, bySchool };
     }
+    const season = snapshot?.season || BCPI.defaultSeason;
     const res = await fetch(`/api/teams?season=${season}`);
     if (!res.ok) {
       throw new Error(
@@ -66,10 +154,12 @@ const BCPI = {
     return { rows, bySchool };
   },
 
-  async fetchRankings(kind, { season, postseason, refresh } = {}) {
+  async fetchRankings(kind, { snapshot, refresh } = {}) {
     if (BCPI.isStatic()) {
+      const snapId = snapshot?.id;
       const file = kind === "poll" ? "poll.json" : "power.json";
-      const res = await fetch(BCPI.dataUrl(file));
+      const path = snapId ? `snapshots/${snapId}/${file}` : file;
+      const res = await fetch(BCPI.dataUrl(path));
       if (!res.ok) throw new Error(`Failed to load ${kind} rankings`);
       const data = await res.json();
       const rows = data.rows || [];
@@ -78,15 +168,20 @@ const BCPI = {
         season: data.season,
         postseason: data.postseason,
         week: data.week,
+        label: data.label,
         as_of: data.as_of,
         rows: rows.slice(0, 25),
         also_ran: rows.slice(25, 35),
       };
     }
+    if (!snapshot) throw new Error("Select a season snapshot");
     const params = new URLSearchParams({
-      season: String(season),
-      postseason: postseason ? "1" : "0",
+      season: String(snapshot.season),
+      postseason: snapshot.postseason ? "1" : "0",
     });
+    if (snapshot.week > 0 && !snapshot.postseason) {
+      params.set("week", String(snapshot.week));
+    }
     if (refresh) params.set("refresh", "1");
     const res = await fetch(`/api/rankings/${kind}?${params}`);
     const data = await res.json();
@@ -94,15 +189,18 @@ const BCPI = {
     return data;
   },
 
-  async predictMatchupClient({ teamA, teamB, site, teamsBySchool, season, postseason }) {
+  async predictMatchupClient({ teamA, teamB, site, teamsBySchool, snapshot }) {
     if (!BCPI.isStatic()) {
       const params = new URLSearchParams({
         team_a: teamA,
         team_b: teamB,
         site,
-        season: String(season),
-        postseason: String(postseason),
+        season: String(snapshot?.season || BCPI.defaultSeason),
+        postseason: snapshot?.postseason ? "1" : "0",
       });
+      if (snapshot?.week > 0 && !snapshot?.postseason) {
+        params.set("week", String(snapshot.week));
+      }
       const res = await fetch(`/api/matchup?${params}`);
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Prediction failed");
@@ -111,7 +209,7 @@ const BCPI = {
 
     const [params, powerRows] = await Promise.all([
       BCPI.loadParams(),
-      BCPI.loadPowerRows(),
+      BCPI.loadPowerRows(snapshot),
     ]);
     const bySchool = {};
     powerRows.forEach((r) => {
@@ -138,7 +236,9 @@ const BCPI = {
     if (!neutral) marginHome += params.hfa;
 
     const winHome = 1 / (1 + Math.exp(-marginHome / params.win_prob_scale));
-    const manifest = await BCPI.loadManifest();
+    const manifest = snapshot?.label
+      ? { week: snapshot.week, label: snapshot.label }
+      : await BCPI.loadManifest();
     const payload = {
       team_a: teamA,
       team_b: teamB,
@@ -276,31 +376,6 @@ const BCPI = {
 
   isPostseasonAvailable(season) {
     return Number(season) < BCPI.futureSeason;
-  },
-
-  syncPostseasonControl(seasonInput, postseasonInput, postseasonWrap) {
-    if (BCPI.isStatic()) {
-      if (postseasonWrap) postseasonWrap.hidden = true;
-      if (postseasonInput) postseasonInput.checked = false;
-      if (seasonInput) {
-        seasonInput.disabled = true;
-        BCPI.loadManifest().then((m) => {
-          seasonInput.value = m.season;
-        });
-      }
-      return;
-    }
-    if (!postseasonInput) return;
-    const available = BCPI.isPostseasonAvailable(
-      Number(seasonInput?.value) || BCPI.defaultSeason
-    );
-    postseasonInput.disabled = !available;
-    if (postseasonWrap) {
-      postseasonWrap.hidden = !available;
-    }
-    if (!available) {
-      postseasonInput.checked = false;
-    }
   },
 
   esc(text) {

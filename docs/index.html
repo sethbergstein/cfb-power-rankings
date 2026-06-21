@@ -62,13 +62,8 @@
         <aside class="control-rail">
           <div class="rail-section">
             <p class="rail-label">Season</p>
-            <div class="field-row">
-              <input class="field" id="season" type="number" value="2025" min="2018" max="2026" />
-              <label class="checkbox-row" id="postseason-wrap">
-                <input id="postseason" type="checkbox" checked />
-                Postseason
-              </label>
-            </div>
+            <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
+            <p class="rail-hint" id="snapshot-hint" hidden></p>
           </div>
 
           <div class="rail-section rail-section-teams">

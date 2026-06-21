@@ -17,6 +17,7 @@ from bcpi.constants import TARGET_SEASON
 from bcpi.params import get_active_params
 from bcpi.pipeline import run_poll_rankings, run_rankings
 from bcpi.rankings_io import find_rankings_path
+from bcpi.snapshots import Snapshot, discover_snapshots
 from bcpi.team_profiles import get_team_profiles
 from bcpi.teams import get_fbs_teams
 
@@ -94,6 +95,115 @@ def _write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2)
+
+
+def export_snapshot_bundle(
+    snap: Snapshot,
+    client: Optional[CFBDClient] = None,
+) -> Dict[str, Any]:
+    """Write one snapshot's JSON bundle under docs/data/snapshots/{id}/."""
+    owns_client = client is None
+    if owns_client:
+        client = CFBDClient(use_cache=True)
+
+    try:
+        power_path = find_rankings_path("power", snap.season, postseason=snap.postseason, week=snap.week or None)
+        poll_path = find_rankings_path("poll", snap.season, postseason=snap.postseason, week=snap.week or None)
+        if power_path is None or poll_path is None:
+            raise FileNotFoundError(f"Missing rankings files for snapshot {snap.id}")
+
+        power_df = pd.read_csv(power_path)
+        poll_df = pd.read_csv(poll_path)
+        power_rows = _enrich_rows("power", power_df, snap.season, snap.postseason)
+        poll_rows = _enrich_rows("poll", poll_df, snap.season, snap.postseason)
+
+        teams = get_fbs_teams(client, snap.season)
+        profiles = get_team_profiles(client, snap.season)
+        team_payload = []
+        for team in teams:
+            profile = profiles.get(team.school, {})
+            team_payload.append(
+                {
+                    "school": team.school,
+                    "abbreviation": team.abbreviation,
+                    "conference": profile.get("conference") or team.conference,
+                    "color": profile.get("color"),
+                    "alternate_color": profile.get("alternate_color"),
+                    "logo": profile.get("logo"),
+                    "logo_dark": profile.get("logo_dark"),
+                    "venue_name": profile.get("venue_name"),
+                    "venue_city": profile.get("venue_city"),
+                    "venue_state": profile.get("venue_state"),
+                    "venue_location": profile.get("venue_location"),
+                    "venue_capacity": profile.get("venue_capacity"),
+                }
+            )
+
+        as_of = power_rows[0].get("as_of") if power_rows else None
+        snap_dir = DATA_DIR / "snapshots" / snap.id
+        snap_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(snap_dir / "teams.json", team_payload)
+        _write_json(
+            snap_dir / "power.json",
+            {
+                "id": snap.id,
+                "season": snap.season,
+                "week": snap.week,
+                "postseason": snap.postseason,
+                "label": snap.label,
+                "as_of": as_of,
+                "rows": power_rows,
+            },
+        )
+        _write_json(
+            snap_dir / "poll.json",
+            {
+                "id": snap.id,
+                "season": snap.season,
+                "week": snap.week,
+                "postseason": snap.postseason,
+                "label": snap.label,
+                "as_of": as_of,
+                "rows": poll_rows,
+            },
+        )
+        return {"id": snap.id, "label": snap.label, "as_of": as_of}
+    finally:
+        if owns_client and client is not None:
+            client.close()
+
+
+def export_all_snapshots(client: Optional[CFBDClient] = None) -> List[Dict[str, Any]]:
+    """Export every on-disk snapshot for the static site catalog."""
+    snaps = discover_snapshots()
+    exported = []
+    owns_client = client is None
+    if owns_client:
+        client = CFBDClient(use_cache=True)
+    try:
+        for snap in snaps:
+            exported.append(export_snapshot_bundle(snap, client=client))
+    finally:
+        if owns_client and client is not None:
+            client.close()
+
+    catalog = {
+        "default": snaps[0].id if snaps else None,
+        "snapshots": [
+            {
+                "id": snap.id,
+                "season": snap.season,
+                "week": snap.week,
+                "postseason": snap.postseason,
+                "label": snap.label,
+            }
+            for snap in snaps
+        ],
+        "min_season": 2018,
+        "max_season": TARGET_SEASON + 1,
+    }
+    _write_json(DATA_DIR / "catalog.json", catalog)
+    return exported
 
 
 def export_data_bundle(
@@ -263,6 +373,7 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
         dst.write_text(html, encoding="utf-8")
 
     meta = export_data_bundle(season=season, postseason=postseason, refresh=refresh)
+    export_all_snapshots()
     _write_json(DOCS_DIR / "data" / "build.json", {"exported": meta})
     (DOCS_DIR / ".nojekyll").touch()
     return DOCS_DIR
