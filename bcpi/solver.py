@@ -5,7 +5,7 @@ from __future__ import annotations
 import math
 
 from dataclasses import dataclass
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from bcpi.constants import (
     FCS_INITIAL_RATING_OFFSET,
@@ -48,10 +48,14 @@ def predict_home_margin(
     away_rating: float,
     neutral_site: bool,
     params: ModelParams,
+    home_team: Optional[str] = None,
+    team_hfa: Optional[Dict[str, float]] = None,
 ) -> float:
     margin = expected_margin(home_rating, away_rating, params)
     if not neutral_site:
-        margin += params.hfa
+        from bcpi.home_field import home_field_for_team
+
+        margin += home_field_for_team(home_team or "", team_hfa, params)
     return margin
 
 

@@ -233,7 +233,10 @@ const BCPI = {
     const awayRow = bySchool[away];
     let marginHome =
       (Number(homeRow.power_rating) - Number(awayRow.power_rating)) / params.margin_scale;
-    if (!neutral) marginHome += params.hfa;
+    if (!neutral) {
+      const teamHfa = params.team_hfa?.[home];
+      marginHome += teamHfa != null ? Number(teamHfa) : params.hfa;
+    }
 
     const winHome = 1 / (1 + Math.exp(-marginHome / params.win_prob_scale));
     const manifest = snapshot?.label

@@ -14,6 +14,55 @@
       "week": 17,
       "postseason": true,
       "label": "2025 postseason"
+    },
+    {
+      "id": "2024-postseason",
+      "season": 2024,
+      "week": 17,
+      "postseason": true,
+      "label": "2024 postseason"
+    },
+    {
+      "id": "2023-postseason",
+      "season": 2023,
+      "week": 17,
+      "postseason": true,
+      "label": "2023 postseason"
+    },
+    {
+      "id": "2022-postseason",
+      "season": 2022,
+      "week": 17,
+      "postseason": true,
+      "label": "2022 postseason"
+    },
+    {
+      "id": "2021-postseason",
+      "season": 2021,
+      "week": 17,
+      "postseason": true,
+      "label": "2021 postseason"
+    },
+    {
+      "id": "2020-postseason",
+      "season": 2020,
+      "week": 17,
+      "postseason": true,
+      "label": "2020 postseason"
+    },
+    {
+      "id": "2019-postseason",
+      "season": 2019,
+      "week": 17,
+      "postseason": true,
+      "label": "2019 postseason"
+    },
+    {
+      "id": "2018-postseason",
+      "season": 2018,
+      "week": 17,
+      "postseason": true,
+      "label": "2018 postseason"
     }
   ],
   "min_season": 2018,

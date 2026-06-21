@@ -99,6 +99,31 @@ def matchup(
     click.echo(format_matchup(prediction))
 
 
+@cli.command("backfill-snapshots")
+@click.option("--start", default=BACKTEST_START_SEASON, show_default=True, type=int)
+@click.option("--end", default=BACKTEST_END_SEASON, show_default=True, type=int)
+@click.option("--refresh", is_flag=True, help="Bypass local API cache.")
+@click.option("--use-defaults", is_flag=True, help="Ignore tuned params file.")
+def backfill_snapshots(start: int, end: int, refresh: bool, use_defaults: bool) -> None:
+    """Generate postseason power + poll CSVs for a season range (static site catalog)."""
+    params = ModelParams() if use_defaults else get_active_params()
+    for season in range(start, end + 1):
+        click.echo(f"Building {season} postseason rankings…")
+        run_rankings(
+            season=season,
+            refresh_data=refresh,
+            params=params,
+            include_postseason=True,
+        )
+        run_poll_rankings(
+            season=season,
+            refresh_data=refresh,
+            params=params,
+            include_postseason=True,
+        )
+    click.echo(f"Backfill complete for {start}–{end}.")
+
+
 @cli.command("export-site")
 @click.option("--season", default=None, type=int, help="Season to publish (default: inferred).")
 @click.option("--refresh", is_flag=True, help="Refresh CFBD cache when building rankings.")

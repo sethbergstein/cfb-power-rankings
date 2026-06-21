@@ -9,6 +9,7 @@ import pandas as pd
 
 from bcpi.cfbd import CFBDClient
 from bcpi.games import load_season_games
+from bcpi.home_field import load_team_hfa
 from bcpi.params import ModelParams, get_active_params
 from bcpi.power_index import build_power_index_from_client
 from bcpi.priors import build_preseason_priors
@@ -219,11 +220,15 @@ def predict_matchup(
 
         home_row = rankings.loc[home_team]
         away_row = rankings.loc[away_team]
+        schools = [team.school for team in teams]
+        team_hfa = load_team_hfa(client, schools, season, params, refresh=refresh_data)
         margin = predict_home_margin(
             float(home_row["power_rating"]),
             float(away_row["power_rating"]),
             neutral,
             params,
+            home_team=home_team,
+            team_hfa=team_hfa,
         )
         home_win = margin_to_win_probability(margin, params.win_prob_scale)
 
@@ -282,11 +287,15 @@ def predict_matchup_from_rankings(
 
         home_row = rankings.loc[home_team]
         away_row = rankings.loc[away_team]
+        schools = [team.school for team in teams]
+        team_hfa = load_team_hfa(client, schools, season, params, refresh=refresh)
         margin = predict_home_margin(
             float(home_row["power_rating"]),
             float(away_row["power_rating"]),
             neutral,
             params,
+            home_team=home_team,
+            team_hfa=team_hfa,
         )
         home_win = margin_to_win_probability(margin, params.win_prob_scale)
 

@@ -21,6 +21,10 @@
   "prior_fade_end": 12,
   "win_prob_scale": 12.852794776115358,
   "defending_champion_prior_z": 0.10,
+  "hfa_team_max_delta": 1.75,
+  "hfa_lookback_seasons": 5,
+  "hfa_min_games": 6,
+  "hfa_shrink_games": 12.0,
   "power_weights": {
     "quality": 0.50,
     "game_value": 0.35,

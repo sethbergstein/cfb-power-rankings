@@ -55,6 +55,10 @@ class ModelParams:
     prior_fade_end: int = 8
     win_prob_scale: float = 13.5
     defending_champion_prior_z: float = 0.10
+    hfa_team_max_delta: float = 1.75
+    hfa_lookback_seasons: int = 5
+    hfa_min_games: int = 6
+    hfa_shrink_games: float = 12.0
     power_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(POWER_WEIGHTS))
     quality_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(QUALITY_WEIGHTS))
     prior_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(PRIOR_WEIGHTS))
@@ -88,6 +92,10 @@ class ModelParams:
             "prior_fade_end": self.prior_fade_end,
             "win_prob_scale": self.win_prob_scale,
             "defending_champion_prior_z": self.defending_champion_prior_z,
+            "hfa_team_max_delta": self.hfa_team_max_delta,
+            "hfa_lookback_seasons": self.hfa_lookback_seasons,
+            "hfa_min_games": self.hfa_min_games,
+            "hfa_shrink_games": self.hfa_shrink_games,
             "power_weights": self.power_weights,
             "quality_weights": self.quality_weights,
             "prior_weights": self.prior_weights,

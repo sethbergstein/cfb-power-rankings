@@ -14,6 +14,7 @@ import pandas as pd
 from bcpi.cfbd import CFBDClient
 from bcpi.config import OUTPUT_DIR, PROJECT_ROOT
 from bcpi.constants import TARGET_SEASON
+from bcpi.home_field import load_team_hfa
 from bcpi.params import get_active_params
 from bcpi.pipeline import run_poll_rankings, run_rankings
 from bcpi.rankings_io import find_rankings_path
@@ -244,6 +245,7 @@ def export_data_bundle(
 
         teams = get_fbs_teams(client, season)
         profiles = get_team_profiles(client, season)
+        schools = [team.school for team in teams]
         team_payload = []
         for team in teams:
             profile = profiles.get(team.school, {})
@@ -266,6 +268,7 @@ def export_data_bundle(
 
         as_of = power_rows[0].get("as_of") if power_rows else None
         label = _snapshot_label(season, week, postseason)
+        team_hfa = load_team_hfa(client, schools, season, params, refresh=refresh)
 
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         _write_json(
@@ -308,7 +311,9 @@ def export_data_bundle(
             {
                 "margin_scale": params.margin_scale,
                 "hfa": params.hfa,
+                "hfa_team_max_delta": params.hfa_team_max_delta,
                 "win_prob_scale": params.win_prob_scale,
+                "team_hfa": team_hfa,
             },
         )
 
