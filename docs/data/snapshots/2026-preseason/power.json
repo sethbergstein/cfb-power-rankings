@@ -4,7 +4,7 @@
   "week": 0,
   "postseason": false,
   "label": "2026 preseason",
-  "as_of": "2026-06-21T03:28:59Z",
+  "as_of": "2026-06-21T03:33:27Z",
   "rows": [
     {
       "school": "Ohio State",
@@ -20,11 +20,11 @@
       "abbreviation": "OSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 5,
-      "poll_score": 1.906855843206119
+      "poll_score": 1.9969496544016467
     },
     {
       "school": "Georgia",
@@ -40,11 +40,11 @@
       "abbreviation": "UGA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 8,
-      "poll_score": 1.666762383083602
+      "poll_rank": 6,
+      "poll_score": 1.9461673360814196
     },
     {
       "school": "Notre Dame",
@@ -60,11 +60,11 @@
       "abbreviation": "ND",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 17,
-      "poll_score": 1.103702001479688
+      "poll_rank": 11,
+      "poll_score": 1.3680038130478325
     },
     {
       "school": "Indiana",
@@ -80,11 +80,11 @@
       "abbreviation": "IU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 1,
-      "poll_score": 4.18876818733781
+      "poll_rank": 3,
+      "poll_score": 2.182704630252294
     },
     {
       "school": "Oregon",
@@ -100,11 +100,11 @@
       "abbreviation": "ORE",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 3,
-      "poll_score": 2.8965168675967807
+      "poll_rank": 1,
+      "poll_score": 2.4602145502742654
     },
     {
       "school": "Texas",
@@ -120,11 +120,11 @@
       "abbreviation": "TEX",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 20,
-      "poll_score": 1.0583939789922734
+      "poll_rank": 9,
+      "poll_score": 1.5192582908120926
     },
     {
       "school": "Alabama",
@@ -140,11 +140,11 @@
       "abbreviation": "ALA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 6,
-      "poll_score": 1.8159374989183168
+      "poll_rank": 4,
+      "poll_score": 2.002947287670586
     },
     {
       "school": "Penn State",
@@ -160,11 +160,11 @@
       "abbreviation": "PSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 58,
-      "poll_score": 0.1134032163368868
+      "poll_rank": 20,
+      "poll_score": 0.8060984477512751
     },
     {
       "school": "Miami",
@@ -180,11 +180,11 @@
       "abbreviation": "MIA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 2,
-      "poll_score": 3.099668768459268
+      "poll_score": 2.3827287931655237
     },
     {
       "school": "Texas A&M",
@@ -200,11 +200,11 @@
       "abbreviation": "TA&M",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 7,
-      "poll_score": 1.7100228341905923
+      "poll_score": 1.723962658386371
     },
     {
       "school": "Ole Miss",
@@ -220,11 +220,11 @@
       "abbreviation": "MISS",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 4,
-      "poll_score": 2.0032527779438767
+      "poll_rank": 8,
+      "poll_score": 1.589168245093331
     },
     {
       "school": "Michigan",
@@ -240,11 +240,11 @@
       "abbreviation": "MICH",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 22,
-      "poll_score": 1.043159182553741
+      "poll_rank": 12,
+      "poll_score": 1.3198794594039132
     },
     {
       "school": "Clemson",
@@ -260,11 +260,11 @@
       "abbreviation": "CLEM",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 75,
-      "poll_score": -0.2125195277530668
+      "poll_rank": 30,
+      "poll_score": 0.6458124735594842
     },
     {
       "school": "Oklahoma",
@@ -280,11 +280,11 @@
       "abbreviation": "OU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 10,
-      "poll_score": 1.304763439337457
+      "poll_score": 1.3961688858912642
     },
     {
       "school": "USC",
@@ -300,11 +300,11 @@
       "abbreviation": "USC",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 18,
-      "poll_score": 1.0925827248263462
+      "poll_rank": 13,
+      "poll_score": 1.175946115162308
     },
     {
       "school": "Texas Tech",
@@ -320,11 +320,11 @@
       "abbreviation": "TTU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 9,
-      "poll_score": 1.503876390972194
+      "poll_rank": 14,
+      "poll_score": 1.1482447368179007
     },
     {
       "school": "LSU",
@@ -340,11 +340,11 @@
       "abbreviation": "LSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 64,
-      "poll_score": -0.0136882666279571
+      "poll_rank": 22,
+      "poll_score": 0.7623159596104321
     },
     {
       "school": "Tennessee",
@@ -360,11 +360,11 @@
       "abbreviation": "TENN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 40,
-      "poll_score": 0.6457320967931358
+      "poll_rank": 15,
+      "poll_score": 0.9793726169924674
     },
     {
       "school": "Auburn",
@@ -380,11 +380,11 @@
       "abbreviation": "AUB",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 80,
-      "poll_score": -0.2794981591358652
+      "poll_rank": 36,
+      "poll_score": 0.5316349098547616
     },
     {
       "school": "Florida",
@@ -400,11 +400,11 @@
       "abbreviation": "FLA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 60,
-      "poll_score": 0.0792089287751352
+      "poll_rank": 23,
+      "poll_score": 0.7527992994237216
     },
     {
       "school": "SMU",
@@ -420,11 +420,11 @@
       "abbreviation": "SMU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 16,
-      "poll_score": 1.1288412673415849
+      "poll_score": 0.9636992558947666
     },
     {
       "school": "Utah",
@@ -440,11 +440,11 @@
       "abbreviation": "UTAH",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 31,
-      "poll_score": 0.7711851250122066
+      "poll_rank": 35,
+      "poll_score": 0.5933154368842406
     },
     {
       "school": "South Carolina",
@@ -460,11 +460,11 @@
       "abbreviation": "SC",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 82,
-      "poll_score": -0.2922090569747407
+      "poll_rank": 46,
+      "poll_score": 0.3559445238230178
     },
     {
       "school": "Missouri",
@@ -480,11 +480,11 @@
       "abbreviation": "MIZ",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 38,
-      "poll_score": 0.7030038382744437
+      "poll_rank": 19,
+      "poll_score": 0.8337832042380817
     },
     {
       "school": "Iowa",
@@ -500,11 +500,11 @@
       "abbreviation": "IOWA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 13,
-      "poll_score": 1.2333112433199944
+      "poll_rank": 18,
+      "poll_score": 0.8594183719939005
     },
     {
       "school": "Washington",
@@ -520,11 +520,11 @@
       "abbreviation": "WASH",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 21,
-      "poll_score": 1.0521955338062774
+      "poll_score": 0.7879229592287659
     },
     {
       "school": "Vanderbilt",
@@ -540,11 +540,11 @@
       "abbreviation": "VAN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 24,
-      "poll_score": 1.0131687573203192
+      "poll_rank": 29,
+      "poll_score": 0.6648691106553496
     },
     {
       "school": "Florida State",
@@ -560,11 +560,11 @@
       "abbreviation": "FSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 69,
-      "poll_score": -0.1423695631290764
+      "poll_rank": 40,
+      "poll_score": 0.426390389096739
     },
     {
       "school": "Nebraska",
@@ -580,11 +580,11 @@
       "abbreviation": "NEB",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 70,
-      "poll_score": -0.1720460739743838
+      "poll_rank": 44,
+      "poll_score": 0.3893850271927969
     },
     {
       "school": "TCU",
@@ -600,11 +600,11 @@
       "abbreviation": "TCU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 27,
-      "poll_score": 0.7997682701819491
+      "poll_rank": 24,
+      "poll_score": 0.716277713430451
     },
     {
       "school": "Louisville",
@@ -620,11 +620,11 @@
       "abbreviation": "LOU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 11,
-      "poll_score": 1.2869545671506573
+      "poll_rank": 17,
+      "poll_score": 0.8630371105398094
     },
     {
       "school": "Arkansas",
@@ -640,11 +640,11 @@
       "abbreviation": "ARK",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 85,
-      "poll_score": -0.410010129534265
+      "poll_rank": 59,
+      "poll_score": 0.1152716309288907
     },
     {
       "school": "South Florida",
@@ -660,11 +660,11 @@
       "abbreviation": "USF",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 34,
-      "poll_score": 0.7454549646459753
+      "poll_rank": 39,
+      "poll_score": 0.4609674430726959
     },
     {
       "school": "Arizona State",
@@ -680,11 +680,11 @@
       "abbreviation": "ASU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 32,
-      "poll_score": 0.7641213499393019
+      "poll_rank": 28,
+      "poll_score": 0.6775539431237165
     },
     {
       "school": "Kansas State",
@@ -700,11 +700,11 @@
       "abbreviation": "KSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 84,
-      "poll_score": -0.3531426264643406
+      "poll_rank": 72,
+      "poll_score": -0.0449018939094825
     },
     {
       "school": "BYU",
@@ -720,11 +720,11 @@
       "abbreviation": "BYU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 12,
-      "poll_score": 1.2407157372355877
+      "poll_rank": 27,
+      "poll_score": 0.6891160682461248
     },
     {
       "school": "Wisconsin",
@@ -740,11 +740,11 @@
       "abbreviation": "WIS",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 54,
-      "poll_score": 0.1904887200107526
+      "poll_rank": 41,
+      "poll_score": 0.4258060987382984
     },
     {
       "school": "Georgia Tech",
@@ -760,11 +760,11 @@
       "abbreviation": "GT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 35,
-      "poll_score": 0.742466299010504
+      "poll_rank": 33,
+      "poll_score": 0.5993147656806077
     },
     {
       "school": "UNLV",
@@ -780,11 +780,11 @@
       "abbreviation": "UNLV",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 51,
-      "poll_score": 0.2609627954331104
+      "poll_rank": 50,
+      "poll_score": 0.2852550059958146
     },
     {
       "school": "NC State",
@@ -800,11 +800,11 @@
       "abbreviation": "NCSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 25,
-      "poll_score": 0.9620791572821692
+      "poll_score": 0.699686345107807
     },
     {
       "school": "Mississippi State",
@@ -820,11 +820,11 @@
       "abbreviation": "MSST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 78,
-      "poll_score": -0.2273524114036595
+      "poll_rank": 57,
+      "poll_score": 0.2118020618199251
     },
     {
       "school": "Kentucky",
@@ -840,11 +840,11 @@
       "abbreviation": "UK",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 63,
-      "poll_score": 0.0222300878490447
+      "poll_rank": 48,
+      "poll_score": 0.3311893891452888
     },
     {
       "school": "UTSA",
@@ -860,11 +860,11 @@
       "abbreviation": "UTSA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 91,
-      "poll_score": -0.5312532640576336
+      "poll_rank": 85,
+      "poll_score": -0.2709910145895982
     },
     {
       "school": "Arizona",
@@ -880,11 +880,11 @@
       "abbreviation": "ARIZ",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 42,
-      "poll_score": 0.565217116670526
+      "poll_rank": 49,
+      "poll_score": 0.3156503397152198
     },
     {
       "school": "Pittsburgh",
@@ -900,11 +900,11 @@
       "abbreviation": "PITT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 33,
-      "poll_score": 0.7491332710776446
+      "poll_rank": 37,
+      "poll_score": 0.5042365595064443
     },
     {
       "school": "Virginia",
@@ -920,11 +920,11 @@
       "abbreviation": "UVA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 23,
-      "poll_score": 1.025032766782885
+      "poll_rank": 31,
+      "poll_score": 0.6177983918054415
     },
     {
       "school": "Baylor",
@@ -940,11 +940,11 @@
       "abbreviation": "BAY",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 87,
-      "poll_score": -0.4258335370410354
+      "poll_rank": 70,
+      "poll_score": -0.0269538402989324
     },
     {
       "school": "Duke",
@@ -960,11 +960,11 @@
       "abbreviation": "DUKE",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 29,
-      "poll_score": 0.7781190433058561
+      "poll_rank": 38,
+      "poll_score": 0.4859295458496742
     },
     {
       "school": "Minnesota",
@@ -980,11 +980,11 @@
       "abbreviation": "MINN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 30,
-      "poll_score": 0.7763566821547422
+      "poll_rank": 32,
+      "poll_score": 0.6053736151253575
     },
     {
       "school": "Northwestern",
@@ -1000,11 +1000,11 @@
       "abbreviation": "NU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 73,
-      "poll_score": -0.2015642899805677
+      "poll_rank": 71,
+      "poll_score": -0.0398526219249472
     },
     {
       "school": "Kansas",
@@ -1020,11 +1020,11 @@
       "abbreviation": "KU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 86,
-      "poll_score": -0.4200871207023612
+      "poll_rank": 74,
+      "poll_score": -0.0840830348097757
     },
     {
       "school": "Iowa State",
@@ -1040,11 +1040,11 @@
       "abbreviation": "ISU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 37,
-      "poll_score": 0.7185819803124895
+      "poll_rank": 43,
+      "poll_score": 0.3941786770649859
     },
     {
       "school": "Illinois",
@@ -1060,11 +1060,11 @@
       "abbreviation": "ILL",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 14,
-      "poll_score": 1.1911509177435915
+      "poll_rank": 26,
+      "poll_score": 0.6979764216653952
     },
     {
       "school": "Tulane",
@@ -1080,11 +1080,11 @@
       "abbreviation": "TULN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 19,
-      "poll_score": 1.065350310561333
+      "poll_rank": 34,
+      "poll_score": 0.5948174364324683
     },
     {
       "school": "Toledo",
@@ -1100,11 +1100,11 @@
       "abbreviation": "TOL",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 55,
-      "poll_score": 0.1851366753005552
+      "poll_rank": 66,
+      "poll_score": 0.0112552188966874
     },
     {
       "school": "Navy",
@@ -1120,11 +1120,11 @@
       "abbreviation": "NAVY",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 36,
-      "poll_score": 0.7423246338008394
+      "poll_rank": 42,
+      "poll_score": 0.4175576065129719
     },
     {
       "school": "Memphis",
@@ -1140,11 +1140,11 @@
       "abbreviation": "MEM",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 47,
-      "poll_score": 0.3826418767696796
+      "poll_rank": 53,
+      "poll_score": 0.2618912347857661
     },
     {
       "school": "UCF",
@@ -1160,11 +1160,11 @@
       "abbreviation": "UCF",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 94,
-      "poll_score": -0.6514965729389426
+      "poll_rank": 80,
+      "poll_score": -0.2008147956497026
     },
     {
       "school": "UCLA",
@@ -1180,11 +1180,11 @@
       "abbreviation": "UCLA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 62,
-      "poll_score": 0.0373919256992801
+      "poll_rank": 47,
+      "poll_score": 0.349615146231215
     },
     {
       "school": "Colorado",
@@ -1200,11 +1200,11 @@
       "abbreviation": "COLO",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 95,
-      "poll_score": -0.6563307167201566
+      "poll_rank": 73,
+      "poll_score": -0.0734603197898416
     },
     {
       "school": "Rutgers",
@@ -1220,11 +1220,11 @@
       "abbreviation": "RUTG",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 67,
-      "poll_score": -0.0706445850502992
+      "poll_rank": 62,
+      "poll_score": 0.066157084793284
     },
     {
       "school": "Michigan State",
@@ -1240,11 +1240,11 @@
       "abbreviation": "MSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 81,
-      "poll_score": -0.2813653238228975
+      "poll_rank": 64,
+      "poll_score": 0.0287608834557186
     },
     {
       "school": "North Carolina",
@@ -1260,11 +1260,11 @@
       "abbreviation": "UNC",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 97,
-      "poll_score": -0.6968718266357649
+      "poll_rank": 76,
+      "poll_score": -0.1020188937075855
     },
     {
       "school": "North Texas",
@@ -1280,11 +1280,11 @@
       "abbreviation": "UNT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 26,
-      "poll_score": 0.9093280046451292
+      "poll_rank": 52,
+      "poll_score": 0.2719382940984483
     },
     {
       "school": "Houston",
@@ -1300,11 +1300,11 @@
       "abbreviation": "HOU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 43,
-      "poll_score": 0.4802226575170811
+      "poll_rank": 51,
+      "poll_score": 0.2825717073923556
     },
     {
       "school": "Texas State",
@@ -1320,11 +1320,11 @@
       "abbreviation": "TXST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 102,
-      "poll_score": -0.7986632946125574
+      "poll_rank": 97,
+      "poll_score": -0.5650627495464424
     },
     {
       "school": "California",
@@ -1340,11 +1340,11 @@
       "abbreviation": "CAL",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 74,
-      "poll_score": -0.2031914588439149
+      "poll_rank": 60,
+      "poll_score": 0.0980233897053883
     },
     {
       "school": "Virginia Tech",
@@ -1360,11 +1360,11 @@
       "abbreviation": "VT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 77,
-      "poll_score": -0.224793579310687
+      "poll_rank": 63,
+      "poll_score": 0.0455352578154269
     },
     {
       "school": "East Carolina",
@@ -1380,11 +1380,11 @@
       "abbreviation": "ECU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 44,
-      "poll_score": 0.4600021901590287
+      "poll_rank": 58,
+      "poll_score": 0.1411815547625594
     },
     {
       "school": "Boise State",
@@ -1400,11 +1400,11 @@
       "abbreviation": "BOIS",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 39,
-      "poll_score": 0.6649331131789347
+      "poll_rank": 54,
+      "poll_score": 0.2538658091456601
     },
     {
       "school": "Sacramento State",
@@ -1420,11 +1420,11 @@
       "abbreviation": "SAC",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 45,
-      "poll_score": 0.446696438887317
+      "poll_rank": 55,
+      "poll_score": 0.2512667468741156
     },
     {
       "school": "North Dakota State",
@@ -1440,11 +1440,11 @@
       "abbreviation": "NDSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 45,
-      "poll_score": 0.446696438887317
+      "poll_rank": 55,
+      "poll_score": 0.2512667468741156
     },
     {
       "school": "James Madison",
@@ -1460,11 +1460,11 @@
       "abbreviation": "JMU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 15,
-      "poll_score": 1.1535953250750364
+      "poll_rank": 61,
+      "poll_score": 0.0939509823006264
     },
     {
       "school": "Maryland",
@@ -1480,11 +1480,11 @@
       "abbreviation": "MD",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 89,
-      "poll_score": -0.4637498230359271
+      "poll_rank": 77,
+      "poll_score": -0.1259346746410008
     },
     {
       "school": "Wake Forest",
@@ -1500,11 +1500,11 @@
       "abbreviation": "WAKE",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 28,
-      "poll_score": 0.7832103189344658
+      "poll_rank": 45,
+      "poll_score": 0.3678976550003652
     },
     {
       "school": "Cincinnati",
@@ -1520,11 +1520,11 @@
       "abbreviation": "CIN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 88,
-      "poll_score": -0.4288723328871721
+      "poll_rank": 83,
+      "poll_score": -0.265160766120191
     },
     {
       "school": "Stanford",
@@ -1540,11 +1540,11 @@
       "abbreviation": "STAN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 79,
-      "poll_score": -0.2611191430884534
+      "poll_rank": 67,
+      "poll_score": 0.010946797198506
     },
     {
       "school": "Fresno State",
@@ -1560,11 +1560,11 @@
       "abbreviation": "FRES",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 57,
-      "poll_score": 0.1550287304611689
+      "poll_rank": 75,
+      "poll_score": -0.1014591522545839
     },
     {
       "school": "San Diego State",
@@ -1580,11 +1580,11 @@
       "abbreviation": "SDSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 50,
-      "poll_score": 0.2960927587018437
+      "poll_rank": 69,
+      "poll_score": -0.0007337848915585
     },
     {
       "school": "Air Force",
@@ -1600,11 +1600,11 @@
       "abbreviation": "AF",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 112,
-      "poll_score": -0.982236927012884
+      "poll_rank": 94,
+      "poll_score": -0.5525082714447473
     },
     {
       "school": "Washington State",
@@ -1620,11 +1620,11 @@
       "abbreviation": "WSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 68,
-      "poll_score": -0.1137516675152617
+      "poll_rank": 87,
+      "poll_score": -0.3026521205552882
     },
     {
       "school": "Boston College",
@@ -1640,11 +1640,11 @@
       "abbreviation": "BC",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 96,
-      "poll_score": -0.6960316152124209
+      "poll_rank": 90,
+      "poll_score": -0.3981177216615986
     },
     {
       "school": "Syracuse",
@@ -1660,11 +1660,11 @@
       "abbreviation": "SYR",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 83,
-      "poll_score": -0.3467572560631722
+      "poll_rank": 65,
+      "poll_score": 0.0219285304376296
     },
     {
       "school": "Marshall",
@@ -1680,11 +1680,11 @@
       "abbreviation": "MRSH",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 101,
-      "poll_score": -0.7904760016917197
+      "poll_rank": 100,
+      "poll_score": -0.6223725848691767
     },
     {
       "school": "Liberty",
@@ -1700,11 +1700,11 @@
       "abbreviation": "LIB",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 128,
-      "poll_score": -1.2000600524265508
+      "poll_rank": 114,
+      "poll_score": -0.8283658071450107
     },
     {
       "school": "West Virginia",
@@ -1720,11 +1720,11 @@
       "abbreviation": "WVU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 90,
-      "poll_score": -0.4924475254238633
+      "poll_rank": 82,
+      "poll_score": -0.2484722826572766
     },
     {
       "school": "Purdue",
@@ -1740,11 +1740,11 @@
       "abbreviation": "PUR",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 71,
-      "poll_score": -0.1733619729226456
+      "poll_rank": 68,
+      "poll_score": 0.0041204464183305
     },
     {
       "school": "Old Dominion",
@@ -1760,11 +1760,11 @@
       "abbreviation": "ODU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 41,
-      "poll_score": 0.6311065514646996
+      "poll_rank": 78,
+      "poll_score": -0.148391324526868
     },
     {
       "school": "UConn",
@@ -1780,11 +1780,11 @@
       "abbreviation": "CONN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 66,
-      "poll_score": -0.0475772576226981
+      "poll_rank": 84,
+      "poll_score": -0.2692843287161648
     },
     {
       "school": "Western Michigan",
@@ -1800,11 +1800,11 @@
       "abbreviation": "WMU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 52,
-      "poll_score": 0.2523933213974132
+      "poll_rank": 79,
+      "poll_score": -0.1977105380981202
     },
     {
       "school": "Miami (OH)",
@@ -1820,11 +1820,11 @@
       "abbreviation": "M-OH",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 98,
-      "poll_score": -0.7590322095756771
+      "poll_score": -0.6004848861030462
     },
     {
       "school": "Oklahoma State",
@@ -1840,11 +1840,11 @@
       "abbreviation": "OKST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 106,
-      "poll_score": -0.8774647783360309
+      "poll_rank": 88,
+      "poll_score": -0.3487808847000915
     },
     {
       "school": "Western Kentucky",
@@ -1860,11 +1860,11 @@
       "abbreviation": "WKU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 65,
-      "poll_score": -0.042387500842588
+      "poll_rank": 86,
+      "poll_score": -0.2858142851422771
     },
     {
       "school": "Jacksonville State",
@@ -1880,11 +1880,11 @@
       "abbreviation": "JXST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 76,
-      "poll_score": -0.2126385548080797
+      "poll_rank": 93,
+      "poll_score": -0.5007787475091552
     },
     {
       "school": "Ohio",
@@ -1900,11 +1900,11 @@
       "abbreviation": "OHIO",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 61,
-      "poll_score": 0.0487740782742832
+      "poll_rank": 92,
+      "poll_score": -0.4974165051679763
     },
     {
       "school": "Louisiana",
@@ -1920,11 +1920,11 @@
       "abbreviation": "UL",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 118,
-      "poll_score": -1.061332499841921
+      "poll_rank": 110,
+      "poll_score": -0.7885969860910813
     },
     {
       "school": "Troy",
@@ -1940,11 +1940,11 @@
       "abbreviation": "TROY",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 59,
-      "poll_score": 0.1016119325627707
+      "poll_rank": 81,
+      "poll_score": -0.2033472829562582
     },
     {
       "school": "Arkansas State",
@@ -1960,11 +1960,11 @@
       "abbreviation": "ARST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 115,
-      "poll_score": -1.000322002638114
+      "poll_rank": 108,
+      "poll_score": -0.738598387530606
     },
     {
       "school": "Oregon State",
@@ -1980,11 +1980,11 @@
       "abbreviation": "ORST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 103,
-      "poll_score": -0.828981035248771
+      "poll_rank": 91,
+      "poll_score": -0.4214879970934809
     },
     {
       "school": "Southern Miss",
@@ -2000,11 +2000,11 @@
       "abbreviation": "USM",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 110,
-      "poll_score": -0.9610497054273024
+      "poll_rank": 103,
+      "poll_score": -0.6841115766566183
     },
     {
       "school": "Georgia Southern",
@@ -2020,11 +2020,11 @@
       "abbreviation": "GASO",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 100,
-      "poll_score": -0.7734660398334442
+      "poll_rank": 101,
+      "poll_score": -0.6592984140128281
     },
     {
       "school": "Florida International",
@@ -2040,11 +2040,11 @@
       "abbreviation": "FIU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 114,
-      "poll_score": -0.987607712531592
+      "poll_rank": 113,
+      "poll_score": -0.813904279473458
     },
     {
       "school": "Utah State",
@@ -2060,11 +2060,11 @@
       "abbreviation": "USU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 92,
-      "poll_score": -0.5504328274734027
+      "poll_rank": 107,
+      "poll_score": -0.7377998365354499
     },
     {
       "school": "App State",
@@ -2080,11 +2080,11 @@
       "abbreviation": "APP",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 117,
-      "poll_score": -1.051501766200049
+      "poll_rank": 105,
+      "poll_score": -0.7097299246402475
     },
     {
       "school": "South Alabama",
@@ -2100,11 +2100,11 @@
       "abbreviation": "USA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 125,
-      "poll_score": -1.1359770587142166
+      "poll_rank": 119,
+      "poll_score": -0.9484017870663848
     },
     {
       "school": "Hawai'i",
@@ -2120,11 +2120,11 @@
       "abbreviation": "HAW",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 53,
-      "poll_score": 0.1951212489361582
+      "poll_rank": 89,
+      "poll_score": -0.3828439329675207
     },
     {
       "school": "Louisiana Tech",
@@ -2140,11 +2140,11 @@
       "abbreviation": "LT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 72,
-      "poll_score": -0.1811829930842182
+      "poll_rank": 96,
+      "poll_score": -0.5591267416241646
     },
     {
       "school": "Florida Atlantic",
@@ -2160,11 +2160,11 @@
       "abbreviation": "FAU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 113,
-      "poll_score": -0.9849558372424088
+      "poll_rank": 104,
+      "poll_score": -0.6898193773537772
     },
     {
       "school": "Coastal Carolina",
@@ -2180,11 +2180,11 @@
       "abbreviation": "CCU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 99,
-      "poll_score": -0.7733040801266821
+      "poll_rank": 95,
+      "poll_score": -0.5544808791358746
     },
     {
       "school": "Eastern Michigan",
@@ -2200,11 +2200,11 @@
       "abbreviation": "EMU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 121,
-      "poll_score": -1.0813176081935094
+      "poll_rank": 115,
+      "poll_score": -0.837010738891634
     },
     {
       "school": "Georgia State",
@@ -2220,11 +2220,11 @@
       "abbreviation": "GAST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 120,
-      "poll_score": -1.0773186191141622
+      "poll_rank": 106,
+      "poll_score": -0.7223530185396654
     },
     {
       "school": "Colorado State",
@@ -2240,11 +2240,11 @@
       "abbreviation": "CSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 104,
-      "poll_score": -0.8518070827484407
+      "poll_rank": 102,
+      "poll_score": -0.6768096195436747
     },
     {
       "school": "Buffalo",
@@ -2260,11 +2260,11 @@
       "abbreviation": "BUF",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 131,
-      "poll_score": -1.3559265659391848
+      "poll_rank": 126,
+      "poll_score": -1.1628671124181085
     },
     {
       "school": "Bowling Green",
@@ -2280,11 +2280,11 @@
       "abbreviation": "BGSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 132,
-      "poll_score": -1.3650637081584138
+      "poll_rank": 125,
+      "poll_score": -1.1277848997808275
     },
     {
       "school": "Tulsa",
@@ -2300,11 +2300,11 @@
       "abbreviation": "TLSA",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 124,
-      "poll_score": -1.1215144467270777
+      "poll_rank": 111,
+      "poll_score": -0.7966705170498221
     },
     {
       "school": "Wyoming",
@@ -2320,11 +2320,11 @@
       "abbreviation": "WYO",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 122,
-      "poll_score": -1.090583222786786
+      "poll_rank": 124,
+      "poll_score": -1.082661876977456
     },
     {
       "school": "UAB",
@@ -2340,11 +2340,11 @@
       "abbreviation": "UAB",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 111,
-      "poll_score": -0.9702839407913316
+      "poll_rank": 117,
+      "poll_score": -0.8665351814274843
     },
     {
       "school": "Nevada",
@@ -2360,11 +2360,11 @@
       "abbreviation": "NEV",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 116,
-      "poll_score": -1.025113571203618
+      "poll_rank": 122,
+      "poll_score": -1.0476765418307925
     },
     {
       "school": "UTEP",
@@ -2380,11 +2380,11 @@
       "abbreviation": "UTEP",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 137,
-      "poll_score": -1.6081035616096704
+      "poll_rank": 130,
+      "poll_score": -1.1938044753813766
     },
     {
       "school": "New Mexico",
@@ -2400,11 +2400,11 @@
       "abbreviation": "UNM",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 49,
-      "poll_score": 0.2977568334554136
+      "poll_rank": 99,
+      "poll_score": -0.6197264356944104
     },
     {
       "school": "Temple",
@@ -2420,11 +2420,11 @@
       "abbreviation": "TEM",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 93,
-      "poll_score": -0.6231768574965072
+      "poll_rank": 109,
+      "poll_score": -0.7662892823085832
     },
     {
       "school": "Middle Tennessee",
@@ -2440,11 +2440,11 @@
       "abbreviation": "MTSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 134,
-      "poll_score": -1.474807379429852
+      "poll_rank": 131,
+      "poll_score": -1.2089649094859356
     },
     {
       "school": "San Jos\u00e9 State",
@@ -2460,11 +2460,11 @@
       "abbreviation": "SJSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 119,
-      "poll_score": -1.0661793742219867
+      "poll_rank": 120,
+      "poll_score": -0.9723217010400588
     },
     {
       "school": "Central Michigan",
@@ -2480,11 +2480,11 @@
       "abbreviation": "CMU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 108,
-      "poll_score": -0.945629107371708
+      "poll_rank": 121,
+      "poll_score": -1.0246310923824993
     },
     {
       "school": "Akron",
@@ -2500,11 +2500,11 @@
       "abbreviation": "AKR",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 136,
-      "poll_score": -1.5219080497308983
+      "poll_rank": 128,
+      "poll_score": -1.187526553943789
     },
     {
       "school": "Northern Illinois",
@@ -2520,11 +2520,11 @@
       "abbreviation": "NIU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 130,
-      "poll_score": -1.3144692863371257
+      "poll_rank": 133,
+      "poll_score": -1.2613062559708843
     },
     {
       "school": "Missouri State",
@@ -2540,11 +2540,11 @@
       "abbreviation": "MOST",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 109,
-      "poll_score": -0.9514783793576196
+      "poll_rank": 127,
+      "poll_score": -1.1863344225931738
     },
     {
       "school": "Rice",
@@ -2560,11 +2560,11 @@
       "abbreviation": "RICE",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 105,
-      "poll_score": -0.8676278239195051
+      "poll_rank": 116,
+      "poll_score": -0.8400651904598967
     },
     {
       "school": "Charlotte",
@@ -2580,11 +2580,11 @@
       "abbreviation": "CLT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 107,
-      "poll_score": -0.910432027623793
+      "poll_rank": 118,
+      "poll_score": -0.8749604502731614
     },
     {
       "school": "Ball State",
@@ -2600,11 +2600,11 @@
       "abbreviation": "BALL",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 123,
-      "poll_score": -1.100549649516137
+      "poll_score": -1.0709478512461708
     },
     {
       "school": "Kennesaw State",
@@ -2620,11 +2620,11 @@
       "abbreviation": "KENN",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 56,
-      "poll_score": 0.1826100906477064
+      "poll_rank": 112,
+      "poll_score": -0.7993790733423737
     },
     {
       "school": "New Mexico State",
@@ -2640,11 +2640,11 @@
       "abbreviation": "NMSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 133,
-      "poll_score": -1.3679190547943867
+      "poll_rank": 136,
+      "poll_score": -1.4873310177728412
     },
     {
       "school": "UL Monroe",
@@ -2660,11 +2660,11 @@
       "abbreviation": "ULM",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
       "poll_rank": 129,
-      "poll_score": -1.2022843625460031
+      "poll_score": -1.191498593815779
     },
     {
       "school": "Sam Houston",
@@ -2680,11 +2680,11 @@
       "abbreviation": "SHSU",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 135,
-      "poll_score": -1.5001334672583846
+      "poll_rank": 134,
+      "poll_score": -1.3475015450381134
     },
     {
       "school": "Kent State",
@@ -2700,11 +2700,11 @@
       "abbreviation": "KENT",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 126,
-      "poll_score": -1.151255541321436
+      "poll_rank": 132,
+      "poll_score": -1.2119932883732916
     },
     {
       "school": "Delaware",
@@ -2720,11 +2720,11 @@
       "abbreviation": "DEL",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 127,
-      "poll_score": -1.1921521856229906
+      "poll_rank": 138,
+      "poll_score": -1.8489419760708283
     },
     {
       "school": "Massachusetts",
@@ -2740,11 +2740,11 @@
       "abbreviation": "MASS",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 138,
-      "poll_score": -1.620582599063414
+      "poll_rank": 135,
+      "poll_score": -1.3825127860101232
     },
     {
       "school": "Army",
@@ -2760,11 +2760,11 @@
       "abbreviation": "ARMY",
       "season": 2026,
       "week": 0,
-      "as_of": "2026-06-21T03:28:59Z",
+      "as_of": "2026-06-21T03:33:27Z",
       "wins": 0,
       "losses": 0,
-      "poll_rank": 48,
-      "poll_score": 0.3794549664430823
+      "poll_rank": 137,
+      "poll_score": -1.5955444571231965
     }
   ]
 }

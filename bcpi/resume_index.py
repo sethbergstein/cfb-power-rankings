@@ -337,20 +337,36 @@ def build_preseason_poll_index(
     current_teams = get_fbs_teams(client, season)
     prior_components = load_prior_components(client, current_teams, season)
     consensus = pd.Series(0.0, index=schools)
+    forward = pd.Series(0.0, index=schools)
     for school in schools:
         if school in prior_components.consensus_z.index:
             value = prior_components.consensus_z.loc[school]
             if pd.notna(value):
                 consensus[school] = float(value)
+        parts = []
+        if school in prior_components.talent_z.index:
+            talent = prior_components.talent_z.loc[school]
+            if pd.notna(talent):
+                parts.append(float(talent))
+        if school in prior_components.returning_z.index:
+            returning = prior_components.returning_z.loc[school]
+            if pd.notna(returning):
+                parts.append(float(returning))
+        if parts:
+            forward[school] = sum(parts) / len(parts)
 
     prior_resume_z = _zscore(prior_resume.astype(float))
     consensus_z = _zscore(consensus.astype(float))
+    forward_z = _zscore(forward.astype(float))
 
     composite = pd.Series(0.0, index=schools)
     used_weight = 0.0
     if prior_resume_z.std(ddof=0) not in (0, None) and not pd.isna(prior_resume_z.std(ddof=0)):
         composite += resume.preseason_resume_weight * prior_resume_z
         used_weight += resume.preseason_resume_weight
+    if forward_z.std(ddof=0) not in (0, None) and not pd.isna(forward_z.std(ddof=0)):
+        composite += resume.preseason_forward_weight * forward_z
+        used_weight += resume.preseason_forward_weight
     if consensus_z.std(ddof=0) not in (0, None) and not pd.isna(consensus_z.std(ddof=0)):
         composite += resume.preseason_consensus_weight * consensus_z
         used_weight += resume.preseason_consensus_weight
@@ -358,8 +374,8 @@ def build_preseason_poll_index(
         composite = composite / used_weight
 
     champ = load_defending_champion(client, season)
-    if champ and champ in composite.index and resume.defending_champion_poll_z > 0:
-        composite.loc[champ] += resume.defending_champion_poll_z
+    if champ and champ in composite.index and params.defending_champion_prior_z > 0:
+        composite.loc[champ] += params.defending_champion_prior_z
 
     opponent_ratings = {
         school: solver_states[school].rating if school in solver_states else RATING_MEAN
