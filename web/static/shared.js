@@ -584,6 +584,8 @@ const BCPI = {
       }
     }
 
+    let ignoreOutsideClick = false;
+
     function openMenu() {
       document.dispatchEvent(new CustomEvent("bcpi-picker-open", { detail: root }));
       root.classList.add("is-open");
@@ -598,6 +600,11 @@ const BCPI = {
       } else {
         positionMenu();
       }
+
+      ignoreOutsideClick = true;
+      setTimeout(() => {
+        ignoreOutsideClick = false;
+      }, 300);
 
       search.focus({ preventScroll: true });
     }
@@ -637,16 +644,25 @@ const BCPI = {
       if (fireChange && onChange) onChange(selected, team);
     }
 
-    trigger.addEventListener("click", () => {
+    trigger.addEventListener("click", (event) => {
+      event.stopPropagation();
       if (menu.hidden) openMenu();
       else closeMenu();
     });
 
-    sheetClose?.addEventListener("click", closeMenu);
+    sheetClose?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeMenu();
+    });
+
+    menu.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
 
     search.addEventListener("input", () => renderList(search.value));
 
     list.addEventListener("click", (event) => {
+      event.stopPropagation();
       const option = event.target.closest(".team-picker-option");
       if (!option) return;
       setValue(option.dataset.school);
@@ -654,20 +670,17 @@ const BCPI = {
     });
 
     document.addEventListener("click", (event) => {
-      if (menu.hidden) return;
-      if (isMobilePicker()) {
-        if (event.target.closest(".team-picker-sheet")) return;
-        closeMenu();
-        return;
-      }
-      if (!root.contains(event.target)) closeMenu();
+      if (menu.hidden || ignoreOutsideClick) return;
+      if (root.contains(event.target)) return;
+      if (event.target.closest(".team-picker-sheet")) return;
+      closeMenu();
     });
 
     document.addEventListener("bcpi-theme-change", () => {
       renderTrigger(allTeams.find((t) => t.school === selected));
       if (!menu.hidden) {
         renderList(search.value);
-        positionMenu();
+        if (!isMobilePicker()) positionMenu();
       }
     });
 
