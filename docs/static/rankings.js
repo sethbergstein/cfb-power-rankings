@@ -33,8 +33,8 @@
 
   function cellValue(row, col) {
     if (col.key === "record") {
-      const w = row.wins != null ? row.wins : "—";
-      const l = row.losses != null ? row.losses : "—";
+      const w = row.wins != null ? row.wins : "-";
+      const l = row.losses != null ? row.losses : "-";
       return `${w}-${l}`;
     }
     if (col.fmt != null) return BCPI.formatNum(row[col.key], col.fmt);
@@ -98,8 +98,8 @@
     if (alsoRan.length) {
       html += `
         <div class="also-ran-section">
-          <h3 class="also-ran-title">Others in consideration</h3>
-          <p class="also-ran-sub">Next ${alsoRan.length} out — not ranked, but closest to the top 25.</p>
+          <h3 class="also-ran-title">Just outside the top 25</h3>
+          <p class="also-ran-sub">Ranks 26 through ${25 + alsoRan.length}.</p>
           ${renderTableSection(alsoRan, { compact: true })}
         </div>`;
     }
@@ -122,8 +122,8 @@
     if (snapshotHint) {
       snapshotHint.hidden = false;
       snapshotHint.textContent = BCPI.isStatic()
-        ? "Published snapshots load instantly. Run locally with python run_bcpi.py serve to recalculate other seasons."
-        : "Older seasons load from cache when available; first-time recalculations can take up to a minute.";
+        ? "Published snapshots load instantly."
+        : "Cached seasons load fast. A new season can take up to a minute.";
     }
 
     try {
@@ -140,7 +140,7 @@
           kind === "poll" ? "Bergstein Poll Index" : "Bergstein Power Index";
         const updated = BCPI.formatAsOf(data.as_of);
         metaEl.innerHTML = `
-          <span>${indexName} · proprietary composite model</span>
+          <span>${indexName}</span>
           <span>${BCPI.esc(label)}</span>
           ${updated ? `<span>Updated ${updated}</span>` : ""}`;
       }

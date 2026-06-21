@@ -112,8 +112,8 @@
       if (snapshotHint) {
         snapshotHint.hidden = false;
         snapshotHint.textContent = BCPI.isStatic()
-          ? "Switch snapshots instantly on mobile. Local server can recalculate any cached season."
-          : "First load for a new season may take up to a minute while CFBD data is fetched.";
+          ? "Published snapshots load instantly."
+          : "Cached seasons load fast. A new season can take up to a minute.";
       }
       return true;
     } catch (err) {
@@ -126,7 +126,7 @@
   }
 
   function renderPlaceholder() {
-    board.innerHTML = `<div class="board-placeholder">Pick two teams and run the predictor.</div>`;
+    board.innerHTML = `<div class="board-placeholder">Choose two teams, then run the predictor.</div>`;
   }
 
   function teamBlock(side, school, profile, rank, rating, isHome) {
