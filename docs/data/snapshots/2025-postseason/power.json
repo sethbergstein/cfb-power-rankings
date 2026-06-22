@@ -32,7 +32,7 @@
       "game_value_z": 2.102900886141238,
       "market_z": 0.0,
       "talent_prior_z": 1.4204006068135226,
-      "solver_rating": 1964.6073209054991,
+      "solver_rating": 1964.6073209054996,
       "power_score": 1.3892090576037388,
       "power_rating": 1722.2734492165982,
       "rank": 2,
@@ -44,7 +44,7 @@
       "wins": 12,
       "losses": 2,
       "poll_rank": 3,
-      "poll_score": 2.5672915607829014
+      "poll_score": 2.567291560782901
     },
     {
       "school": "Miami",
@@ -91,7 +91,7 @@
       "quality_z": 1.2352686034103075,
       "game_value_z": 1.647494586316102,
       "market_z": 0.0,
-      "talent_prior_z": 3.105234187917538,
+      "talent_prior_z": 3.1052341879175374,
       "solver_rating": 1966.0205933098696,
       "power_score": 1.1029850191167478,
       "power_rating": 1676.4776030586795,
@@ -131,7 +131,7 @@
       "quality_z": 1.5203220076251058,
       "game_value_z": 0.9084422578743266,
       "market_z": 0.0,
-      "talent_prior_z": 2.1254318551531877,
+      "talent_prior_z": 2.125431855153188,
       "solver_rating": 2037.0586908900725,
       "power_score": 0.9369671460682426,
       "power_rating": 1649.9147433709188,
@@ -172,7 +172,7 @@
       "game_value_z": 1.167961927249011,
       "market_z": 0.0,
       "talent_prior_z": -1.8560777341074035,
-      "solver_rating": 1945.4050872733917,
+      "solver_rating": 1945.405087273392,
       "power_score": 0.8868951004615574,
       "power_rating": 1641.9032160738493,
       "rank": 9,
@@ -2389,7 +2389,7 @@
     {
       "school": "Bowling Green",
       "quality_z": 0.0382170143548975,
-      "game_value_z": -1.8336707942953097,
+      "game_value_z": -1.8336707942953092,
       "market_z": 0.0,
       "talent_prior_z": -1.2439371026794503,
       "solver_rating": 1301.1392050470904,
@@ -2608,7 +2608,7 @@
     },
     {
       "school": "Rice",
-      "quality_z": -1.8861093396095312,
+      "quality_z": -1.8861093396095316,
       "game_value_z": -0.8355688546997149,
       "market_z": 0.0,
       "talent_prior_z": 0.1801701144659927,
@@ -2709,7 +2709,7 @@
     {
       "school": "Sam Houston",
       "quality_z": -2.5239649117507112,
-      "game_value_z": -1.9942721412862856,
+      "game_value_z": -1.9942721412862852,
       "market_z": 0.0,
       "talent_prior_z": 0.5966185318820114,
       "solver_rating": 1073.1890459157405,

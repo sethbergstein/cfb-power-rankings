@@ -4,7 +4,7 @@
     "week": 0,
     "postseason": false,
     "label": "2026 preseason",
-    "power_path": "/Users/sethbergstein/Documents/Projects/College Football Rankings/output/bcpi_power_2026_preseason.csv",
-    "poll_path": "/Users/sethbergstein/Documents/Projects/College Football Rankings/output/bcpi_poll_2026_preseason.csv"
+    "power_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_power_2026_preseason.csv",
+    "poll_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_poll_2026_preseason.csv"
   }
 }

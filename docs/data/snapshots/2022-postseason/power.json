@@ -24,14 +24,14 @@
       "wins": 14,
       "losses": 0,
       "poll_rank": 1,
-      "poll_score": 2.5874490130226415
+      "poll_score": 2.587449013022641
     },
     {
       "school": "Alabama",
       "quality_z": 2.103292681903924,
       "game_value_z": 2.0741639954687976,
       "market_z": 0.0,
-      "talent_prior_z": 3.4397746457548837,
+      "talent_prior_z": 3.439774645754884,
       "solver_rating": 1969.2306034269004,
       "power_score": 1.495709841705116,
       "power_rating": 1739.3135746728185,
@@ -609,7 +609,7 @@
     {
       "school": "Florida",
       "quality_z": -0.3186723917532938,
-      "game_value_z": 1.8358959349901491,
+      "game_value_z": 1.8358959349901487,
       "market_z": 0.0,
       "talent_prior_z": -0.1403535044409852,
       "solver_rating": 1594.511887883152,
@@ -2588,7 +2588,7 @@
     },
     {
       "school": "Hawai'i",
-      "quality_z": -1.8724583204082812,
+      "quality_z": -1.8724583204082808,
       "game_value_z": -1.4610440482362037,
       "market_z": 0.0,
       "talent_prior_z": -1.0323335833058824,

@@ -132,7 +132,7 @@
       "game_value_z": 1.10947147029682,
       "market_z": 0.0,
       "talent_prior_z": 2.6949985362561453,
-      "solver_rating": 1908.7766132622671,
+      "solver_rating": 1908.7766132622676,
       "power_score": 0.915912938163558,
       "power_rating": 1646.5460701061693,
       "rank": 7,
@@ -2484,7 +2484,7 @@
       "wins": 4,
       "losses": 8,
       "poll_rank": 125,
-      "poll_score": -1.8446520355378095
+      "poll_score": -1.844652035537809
     },
     {
       "school": "Kennesaw State",
@@ -2504,7 +2504,7 @@
       "wins": 2,
       "losses": 9,
       "poll_rank": 134,
-      "poll_score": -2.0938100377493836
+      "poll_score": -2.093810037749384
     },
     {
       "school": "Florida International",
@@ -2608,7 +2608,7 @@
     },
     {
       "school": "Kent State",
-      "quality_z": -1.9105636416452596,
+      "quality_z": -1.91056364164526,
       "game_value_z": -0.9490615459230084,
       "market_z": 0.0,
       "talent_prior_z": -0.0231730694019778,

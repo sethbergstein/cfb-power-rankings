@@ -8,7 +8,7 @@
   "rows": [
     {
       "school": "Georgia",
-      "quality_z": 1.8092245115881511,
+      "quality_z": 1.8092245115881516,
       "game_value_z": 2.240458109990286,
       "market_z": 0.0,
       "talent_prior_z": 2.936690689744553,
@@ -29,7 +29,7 @@
     {
       "school": "Alabama",
       "quality_z": 1.496313539217352,
-      "game_value_z": 2.3408004413217975,
+      "game_value_z": 2.340800441321797,
       "market_z": 0.0,
       "talent_prior_z": 3.27964854502157,
       "solver_rating": 1974.0267755598145,
@@ -332,7 +332,7 @@
       "game_value_z": 0.9380956506315346,
       "market_z": 0.0,
       "talent_prior_z": 1.6810040268718427,
-      "solver_rating": 1847.3187787827972,
+      "solver_rating": 1847.3187787827967,
       "power_score": 0.6566407094979207,
       "power_rating": 1605.0625135196674,
       "rank": 17,
@@ -1071,7 +1071,7 @@
       "quality_z": 0.8694626503142131,
       "game_value_z": -0.8946176876466067,
       "market_z": 0.0,
-      "talent_prior_z": -1.9026990154321275,
+      "talent_prior_z": -1.902699015432128,
       "solver_rating": 1614.0254176896049,
       "power_score": -0.0185144369268403,
       "power_rating": 1497.0376900917056,
@@ -2424,7 +2424,7 @@
       "wins": 3,
       "losses": 8,
       "poll_rank": 126,
-      "poll_score": -1.8809777201383673
+      "poll_score": -1.8809777201383675
     },
     {
       "school": "New Mexico",
@@ -2504,7 +2504,7 @@
       "wins": 2,
       "losses": 9,
       "poll_rank": 123,
-      "poll_score": -1.8363436480459612
+      "poll_score": -1.8363436480459607
     },
     {
       "school": "Duke",
@@ -2524,7 +2524,7 @@
       "wins": 2,
       "losses": 9,
       "poll_rank": 128,
-      "poll_score": -1.9528896743044115
+      "poll_score": -1.952889674304412
     },
     {
       "school": "New Mexico State",
@@ -2584,7 +2584,7 @@
       "wins": 0,
       "losses": 11,
       "poll_rank": 130,
-      "poll_score": -2.0546280902332175
+      "poll_score": -2.054628090233217
     },
     {
       "school": "Akron",
