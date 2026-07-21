@@ -431,7 +431,7 @@
     "venue_city": "Miami",
     "venue_state": "FL",
     "venue_location": "Miami, FL",
-    "venue_capacity": null
+    "venue_capacity": 20000
   },
   {
     "school": "Florida State",
@@ -529,7 +529,7 @@
     "venue_city": "Honolulu",
     "venue_state": "HI",
     "venue_location": "Honolulu, HI",
-    "venue_capacity": 9000
+    "venue_capacity": 15194
   },
   {
     "school": "Houston",
@@ -669,7 +669,7 @@
     "venue_city": "Kennesaw",
     "venue_state": "GA",
     "venue_location": "Kennesaw, GA",
-    "venue_capacity": 8318
+    "venue_capacity": 11040
   },
   {
     "school": "Kent State",
@@ -1075,7 +1075,7 @@
     "venue_city": "Evanston",
     "venue_state": "IL",
     "venue_location": "Evanston, IL",
-    "venue_capacity": null
+    "venue_capacity": 12023
   },
   {
     "school": "Notre Dame",
@@ -1579,7 +1579,7 @@
     "venue_city": "Birmingham",
     "venue_state": "AL",
     "venue_location": "Birmingham, AL",
-    "venue_capacity": 0
+    "venue_capacity": 45000
   },
   {
     "school": "UCF",
