@@ -1,10 +1,10 @@
 {
   "exported": {
     "season": 2026,
-    "week": 0,
+    "week": 1,
     "postseason": false,
-    "label": "2026 preseason",
-    "power_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_power_2026_preseason.csv",
-    "poll_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_poll_2026_preseason.csv"
+    "label": "2026 \u00b7 week 1",
+    "power_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_power_2026_week01.csv",
+    "poll_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_poll_2026_week01.csv"
   }
 }

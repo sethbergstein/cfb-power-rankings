@@ -1,6 +1,13 @@
 {
-  "default": "2026-preseason",
+  "default": "2026-week01",
   "snapshots": [
+    {
+      "id": "2026-week01",
+      "season": 2026,
+      "week": 1,
+      "postseason": false,
+      "label": "2026 \u00b7 week 1"
+    },
     {
       "id": "2026-preseason",
       "season": 2026,
