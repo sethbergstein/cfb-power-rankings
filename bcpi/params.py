@@ -61,6 +61,7 @@ class ModelParams:
     hfa_lookback_seasons: int = 5
     hfa_min_games: int = 6
     hfa_shrink_games: float = 12.0
+    power_sample_games: float = 4.0
     power_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(POWER_WEIGHTS))
     quality_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(QUALITY_WEIGHTS))
     prior_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(PRIOR_WEIGHTS))
@@ -100,6 +101,7 @@ class ModelParams:
             "hfa_lookback_seasons": self.hfa_lookback_seasons,
             "hfa_min_games": self.hfa_min_games,
             "hfa_shrink_games": self.hfa_shrink_games,
+            "power_sample_games": self.power_sample_games,
             "power_weights": self.power_weights,
             "quality_weights": self.quality_weights,
             "prior_weights": self.prior_weights,

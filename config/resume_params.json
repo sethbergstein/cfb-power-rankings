@@ -18,6 +18,7 @@
   "elite_win_top_n": 30,
   "loss_penalty_factor": 0.65,
   "sub500_poll_penalty": 0.85,
+  "resume_min_week": 3,
   "preseason_resume_weight": 0.45,
   "preseason_forward_weight": 0.35,
   "preseason_consensus_weight": 0.20

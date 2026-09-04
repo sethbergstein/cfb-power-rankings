@@ -213,3 +213,47 @@ def filter_games_through_week(
     if through_week is None:
         return games
     return [g for g in games if g.week <= through_week]
+
+
+def team_records(
+    games: List[GameResult],
+    schools: List[str],
+    current_week: int,
+    fbs_only: bool = False,
+) -> Dict[str, Tuple[int, int]]:
+    """Win-loss records. Display uses all games; resume scoring can pass fbs_only."""
+    records = {school: [0, 0] for school in schools}
+    for game in filter_games_through_week(games, current_week):
+        if not game.completed:
+            continue
+        if fbs_only and not game.is_fbs_game:
+            continue
+        if not game.involves_fbs:
+            continue
+        if game.margin_home > 0:
+            winner, loser = game.home_team, game.away_team
+        elif game.margin_home < 0:
+            winner, loser = game.away_team, game.home_team
+        else:
+            continue
+        if winner in records:
+            records[winner][0] += 1
+        if loser in records:
+            records[loser][1] += 1
+    return {school: (wins, losses) for school, (wins, losses) in records.items()}
+
+
+def games_played(
+    games: List[GameResult],
+    schools: List[str],
+    current_week: int,
+) -> Dict[str, int]:
+    """Completed games involving each FBS school (including FCS opponents)."""
+    counts = {school: 0 for school in schools}
+    for game in filter_games_through_week(games, current_week):
+        if not game.completed or not game.involves_fbs:
+            continue
+        for team in (game.home_team, game.away_team):
+            if team in counts:
+                counts[team] += 1
+    return counts

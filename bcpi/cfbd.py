@@ -71,9 +71,9 @@ class CFBDClient:
             )
 
         data = response.json()
-        if self.use_cache:
-            with cache_path.open("w", encoding="utf-8") as handle:
-                json.dump(data, handle)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        with cache_path.open("w", encoding="utf-8") as handle:
+            json.dump(data, handle)
         return data
 
     def get_fbs_teams(self) -> List[Dict[str, Any]]:

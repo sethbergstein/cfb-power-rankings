@@ -9,9 +9,9 @@ from typing import Optional
 from bcpi.cfbd import CFBDClient
 from bcpi.config import OUTPUT_DIR
 from bcpi.constants import TARGET_SEASON
-from bcpi.games import load_season_games, POSTSEASON_AS_WEEK
+from bcpi.games import load_season_games, POSTSEASON_AS_WEEK, team_records
 from bcpi.params import get_active_params, ModelParams
-from bcpi.resume_index import build_poll_index, build_preseason_poll_index, _season_has_fbs_results
+from bcpi.resume_index import build_poll_index, build_preseason_poll_index, resume_is_ready
 from bcpi.resume_params import get_resume_params
 from bcpi.power_index import build_power_index_from_client
 from bcpi.priors import build_preseason_priors
@@ -148,7 +148,7 @@ def run_poll_rankings(
                 params=params,
                 resume=resume,
             )
-            if current_week <= 0 and not _season_has_fbs_results(games, current_week)
+            if not resume_is_ready(games, current_week, resume)
             else build_poll_index(
                 schools=schools,
                 solver_states=solver_states,
@@ -158,6 +158,10 @@ def run_poll_rankings(
                 resume=resume,
             )
         )
+
+        records = team_records(games, schools, current_week, fbs_only=False)
+        rankings["wins"] = [records[s][0] for s in rankings.index]
+        rankings["losses"] = [records[s][1] for s in rankings.index]
 
         rankings.insert(0, "school", rankings.index)
         rankings["conference"] = rankings["school"].map(

@@ -19,10 +19,10 @@ from bcpi.recency import blend_form_season, recency_weight
 
 
 def _zscore(series: pd.Series) -> pd.Series:
-    std = series.std(ddof=0)
+    std = series.std(ddof=0, skipna=True)
     if std == 0 or pd.isna(std):
         return pd.Series(0.0, index=series.index)
-    return (series - series.mean()) / std
+    return (series - series.mean(skipna=True)) / std
 
 
 def _cap_form_margin(margin: float, params: ModelParams) -> float:
@@ -70,7 +70,7 @@ def compute_form_margins(
     for school in schools:
         values = margins.get(school, [])
         if not values:
-            form_values[school] = 0.0
+            form_values[school] = float("nan")
             continue
         recent = sorted(values, key=lambda x: x[1], reverse=True)[:form_games]
         weight_sum = sum(weight for _, weight in recent)
@@ -116,8 +116,8 @@ def build_walkforward_quality_z(
         g for g in filter_games_through_week(games, current_week) if g.is_fbs_game
     ]
     for school in schools:
-        all_val = float(form_all.get(school, 0.0))
-        elite_val = float(form_elite.get(school, 0.0))
+        all_val = float(form_all.get(school, float("nan")))
+        elite_val = float(form_elite.get(school, float("nan")))
         has_elite = any(
             (g.home_team == school and g.away_team in elite_set)
             or (g.away_team == school and g.home_team in elite_set)
@@ -133,20 +133,24 @@ def build_walkforward_quality_z(
     form_z = _zscore(form_margin.astype(float))
 
     if season_quality is None or season_quality.empty:
-        return form_z.reindex(schools).fillna(0.0)
+        return form_z.reindex(schools)
 
-    season_quality_score = pd.Series(0.0, index=schools)
+    season_quality_score = pd.Series(float("nan"), index=schools)
+    metric_parts = []
     for metric, weight in params.quality_weights.items():
         if metric in season_quality.columns:
-            season_quality_score += weight * _zscore(
-                season_quality[metric].astype(float)
-            ).reindex(schools).fillna(0.0)
+            metric_parts.append(
+                weight
+                * _zscore(season_quality[metric].astype(float)).reindex(schools)
+            )
+    if metric_parts:
+        season_quality_score = sum(metric_parts)
 
     blended = pd.Series(
         {
             school: blend_form_season(
-                float(form_z.get(school, 0.0)),
-                float(season_quality_score.get(school, 0.0)),
+                float(form_z.get(school, float("nan"))),
+                float(season_quality_score.get(school, float("nan"))),
                 form_weight=params.form_weight,
             )
             for school in schools

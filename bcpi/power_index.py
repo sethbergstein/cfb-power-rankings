@@ -7,7 +7,7 @@ from typing import Dict, List, Optional
 import pandas as pd
 
 from bcpi.constants import RATING_MEAN, RATING_SPREAD
-from bcpi.games import GameResult, filter_games_through_week
+from bcpi.games import GameResult, filter_games_through_week, games_played, team_records
 from bcpi.params import ModelParams
 from bcpi.priors import decay_prior_weight
 from bcpi.game_stats import (
@@ -21,10 +21,10 @@ from bcpi.solver import TeamRatingState
 
 
 def _zscore(series: pd.Series) -> pd.Series:
-    std = series.std(ddof=0)
+    std = series.std(ddof=0, skipna=True)
     if std == 0 or pd.isna(std):
         return pd.Series(0.0, index=series.index)
-    return (series - series.mean()) / std
+    return (series - series.mean(skipna=True)) / std
 
 
 def _rating_from_z(z: float) -> float:
@@ -33,6 +33,13 @@ def _rating_from_z(z: float) -> float:
 
 def _solver_ratings(states: Dict[str, TeamRatingState]) -> Dict[str, float]:
     return {school: state.rating for school, state in states.items()}
+
+
+def _sample_credibility(n_games: pd.Series, full_sample: float) -> pd.Series:
+    """Share of in-season power weight to trust. Unplayed teams stay on the prior."""
+    if full_sample <= 0:
+        return pd.Series(1.0, index=n_games.index)
+    return (n_games.astype(float) / full_sample).clip(upper=1.0)
 
 
 def _apply_head_to_head_nudge(
@@ -137,38 +144,65 @@ def build_power_components(
     )
 
     game_value = pd.Series(
-        {s: solver_states[s].game_value if s in solver_states else 0.0 for s in schools}
+        {
+            s: (
+                solver_states[s].game_value
+                if s in solver_states and solver_states[s].game_weight > 0
+                else float("nan")
+            )
+            for s in schools
+        }
     )
     market_value = pd.Series(
-        {s: solver_states[s].market_value if s in solver_states else 0.0 for s in schools}
+        {
+            s: (
+                solver_states[s].market_value
+                if s in solver_states and solver_states[s].market_weight > 0
+                else float("nan")
+            )
+            for s in schools
+        }
     )
     talent_prior = pd.Series({s: prior_ratings.get(s, RATING_MEAN) for s in schools})
-    talent_weight = params.power_weights["talent_prior"] * decay_prior_weight(
+    prior_fade = decay_prior_weight(
         current_week,
         fade_start=params.prior_fade_start,
         fade_end=params.prior_fade_end,
     )
+    cred = _sample_credibility(
+        pd.Series(games_played(games, schools, current_week)),
+        params.power_sample_games,
+    ).reindex(schools).fillna(0.0)
+
+    q_w = params.power_weights["quality"]
+    g_w = params.power_weights["game_value"]
+    m_w = params.power_weights["market"]
+    p_w = params.power_weights["talent_prior"] * prior_fade
+    in_season_w = q_w + g_w + m_w
 
     components = pd.DataFrame(index=schools)
-    components["quality_z"] = quality_z
-    components["game_value_z"] = _zscore(game_value.astype(float))
-    components["market_z"] = _zscore(market_value.astype(float))
-    components["talent_prior_z"] = _zscore(talent_prior.astype(float))
+    components["quality_z"] = quality_z.reindex(schools).fillna(0.0)
+    components["game_value_z"] = _zscore(game_value.astype(float)).fillna(0.0)
+    components["market_z"] = _zscore(market_value.astype(float)).fillna(0.0)
+    components["talent_prior_z"] = _zscore(talent_prior.astype(float)).fillna(0.0)
 
     composite_z = (
-        params.power_weights["quality"] * components["quality_z"]
-        + params.power_weights["game_value"] * components["game_value_z"]
-        + params.power_weights["market"] * components["market_z"]
-        + talent_weight * components["talent_prior_z"]
+        (q_w * cred) * components["quality_z"]
+        + (g_w * cred) * components["game_value_z"]
+        + (m_w * cred) * components["market_z"]
+        + (p_w + in_season_w * (1.0 - cred)) * components["talent_prior_z"]
     )
     composite_z = _apply_head_to_head_nudge(composite_z, games, current_week, params)
     composite_z = _apply_playoff_path_bonus(composite_z, games, current_week, params)
 
+    records = team_records(games, schools, current_week, fbs_only=False)
     components["solver_rating"] = [
         solver_states[s].rating if s in solver_states else RATING_MEAN for s in schools
     ]
     components["power_score"] = composite_z
     components["power_rating"] = composite_z.map(lambda z: _rating_from_z(float(z)))
+    components["wins"] = [records[s][0] for s in schools]
+    components["losses"] = [records[s][1] for s in schools]
     components["rank"] = components["power_rating"].rank(ascending=False, method="min").astype(int)
     return components.sort_values("rank")
 

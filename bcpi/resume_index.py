@@ -21,7 +21,7 @@ import pandas as pd
 
 from bcpi.constants import RATING_MEAN, RATING_SPREAD
 from bcpi.champions import load_defending_champion
-from bcpi.games import GameResult, filter_games_through_week, load_season_games, opponent_key
+from bcpi.games import GameResult, filter_games_through_week, load_season_games, opponent_key, team_records
 from bcpi.game_stats import elite_opponent_set
 from bcpi.params import ModelParams
 from bcpi.resume_params import ResumeParams
@@ -29,10 +29,10 @@ from bcpi.solver import TeamRatingState
 
 
 def _zscore(series: pd.Series) -> pd.Series:
-    std = series.std(ddof=0)
+    std = series.std(ddof=0, skipna=True)
     if std == 0 or pd.isna(std):
         return pd.Series(0.0, index=series.index)
-    return (series - series.mean()) / std
+    return (series - series.mean(skipna=True)) / std
 
 
 def _rating_from_z(z: float) -> float:
@@ -240,23 +240,10 @@ def build_poll_index(
         weight = resume.resume_weights.get(key, 0.0)
         composite += weight * components[col]
 
-    # Record wins/losses for display
-    components["wins"] = 0
-    components["losses"] = 0
-    for school in schools:
-        w, l = 0, 0
-        for game in filter_games_through_week(games, current_week):
-            if not game.is_fbs_game:
-                continue
-            margin = _team_margin(game, school)
-            if margin is None:
-                continue
-            if margin > 0:
-                w += 1
-            elif margin < 0:
-                l += 1
-        components.loc[school, "wins"] = w
-        components.loc[school, "losses"] = l
+    # Record wins/losses for display (include FCS games)
+    records = team_records(games, schools, current_week, fbs_only=False)
+    components["wins"] = [records[s][0] for s in schools]
+    components["losses"] = [records[s][1] for s in schools]
 
     components["poll_score"] = composite
 
@@ -280,6 +267,21 @@ def _season_has_fbs_results(games: List[GameResult], current_week: int) -> bool:
         g.is_fbs_game and g.completed
         for g in filter_games_through_week(games, current_week)
     )
+
+
+def resume_is_ready(
+    games: List[GameResult],
+    current_week: int,
+    resume: Optional[ResumeParams] = None,
+) -> bool:
+    """Resume poll needs a real body of work — one Week 0 game is not enough."""
+    if resume is None:
+        from bcpi.resume_params import get_resume_params
+
+        resume = get_resume_params()
+    if current_week < resume.resume_min_week:
+        return False
+    return _season_has_fbs_results(games, current_week)
 
 
 def build_preseason_poll_index(

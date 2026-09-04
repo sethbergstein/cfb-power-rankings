@@ -34,20 +34,22 @@ def find_rankings_path(
         path = _postseason_path(kind, season)
         if path.exists():
             return path
+        return None
+    if week == 0:
+        path = _preseason_path(kind, season)
+        return path if path.exists() else None
     if week is not None:
         path = _week_path(kind, season, week)
-        if path.exists():
-            return path
+        return path if path.exists() else None
+    week_files = sorted(OUTPUT_DIR.glob(f"bcpi_{kind}_{season}_week*.csv"))
+    if week_files:
+        return week_files[-1]
+    postseason_path = _postseason_path(kind, season)
+    if postseason_path.exists():
+        return postseason_path
     preseason = _preseason_path(kind, season)
     if preseason.exists():
         return preseason
-    # Latest week file
-    prefix = f"bcpi_{kind}_{season}_week"
-    week_files = sorted(OUTPUT_DIR.glob(f"{prefix}*.csv"))
-    if week_files:
-        return week_files[-1]
-    if postseason:
-        return _postseason_path(kind, season)
     return None
 
 

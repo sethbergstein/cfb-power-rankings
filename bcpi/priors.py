@@ -22,14 +22,29 @@ from bcpi.teams import Team
 def _zscore(series: pd.Series) -> pd.Series:
     if series.empty:
         return series
-    std = series.std(ddof=0)
+    std = series.std(ddof=0, skipna=True)
     if std == 0 or pd.isna(std):
         return pd.Series(0.0, index=series.index)
-    return (series - series.mean()) / std
+    return (series - series.mean(skipna=True)) / std
 
 
 def _rating_from_z(z: float) -> float:
     return RATING_MEAN + z * (RATING_SPREAD / 2.5)
+
+
+def _returning_value(row: dict) -> Optional[float]:
+    value = row.get("percentPPA")
+    if value is None:
+        value = row.get("usage")
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+RETURNING_Z_CLIP = 1.25
 
 
 @dataclass
@@ -54,15 +69,17 @@ def load_prior_components(
     elo_map = {row["team"]: float(row["elo"]) for row in client.get_elo(prev_year)}
     frame["prev_elo"] = frame.index.map(lambda s: elo_map.get(s))
 
-    talent_map = {row["team"]: float(row["talent"]) for row in client.get_team_talent(prev_year)}
+    talent_rows = client.get_team_talent(season) or client.get_team_talent(prev_year)
+    talent_map = {row["team"]: float(row["talent"]) for row in talent_rows}
     frame["talent"] = frame.index.map(lambda s: talent_map.get(s))
 
     try:
         returning = client.get("/player/returning", {"year": season})
-        returning_map = {
-            row["team"]: float(row.get("percentPPA", row.get("usage", 0)))
-            for row in returning
-        }
+        returning_map = {}
+        for row in returning:
+            value = _returning_value(row)
+            if value is not None:
+                returning_map[row["team"]] = value
         frame["returning"] = frame.index.map(lambda s: returning_map.get(s))
     except Exception:
         frame["returning"] = None
@@ -80,14 +97,19 @@ def load_prior_components(
         pass
     frame["consensus_rank"] = frame.index.map(lambda s: consensus_map.get(s))
 
+    returning_z = _zscore(frame["returning"].astype(float)).clip(
+        -RETURNING_Z_CLIP, RETURNING_Z_CLIP
+    )
+    consensus_z = _zscore(
+        frame["consensus_rank"].astype(float).map(lambda r: -r if pd.notna(r) else None)
+    ).fillna(0.0)
+
     return PriorComponents(
         schools=schools,
         prev_elo_z=_zscore(frame["prev_elo"].astype(float)),
         talent_z=_zscore(frame["talent"].astype(float)),
-        returning_z=_zscore(frame["returning"].astype(float)),
-        consensus_z=_zscore(
-            frame["consensus_rank"].astype(float).map(lambda r: -r if pd.notna(r) else None)
-        ),
+        returning_z=returning_z,
+        consensus_z=consensus_z,
     )
 
 
@@ -99,15 +121,14 @@ def blend_prior_components(components: PriorComponents, params: ModelParams) -> 
         "consensus": components.consensus_z,
     }
     composite_z = pd.Series(0.0, index=components.schools)
-    used_weight = 0.0
+    weight_sum = pd.Series(0.0, index=components.schools)
     for key, weight in params.prior_weights.items():
         series = key_to_series[key]
         valid = series.notna()
-        if valid.any():
-            composite_z.loc[valid] += weight * series.loc[valid]
-            used_weight += weight
-    if used_weight > 0:
-        composite_z = composite_z / used_weight
+        composite_z.loc[valid] += weight * series.loc[valid]
+        weight_sum.loc[valid] += weight
+    nonzero = weight_sum > 0
+    composite_z.loc[nonzero] = composite_z.loc[nonzero] / weight_sum.loc[nonzero]
 
     ratings = {
         school: _rating_from_z(float(composite_z.loc[school]))
@@ -127,90 +148,14 @@ def build_preseason_priors(
     """Blend previous-season performance, talent, returning production, and consensus."""
     if params is None:
         params = ModelParams()
-    if components is not None:
-        return blend_prior_components(components, params)
+    if components is None:
+        components = load_prior_components(client, teams, season)
 
-    schools = [team.school for team in teams]
-    frame = pd.DataFrame({"school": schools}).set_index("school")
-
-    prev_year = season - 1
-    elo_rows = client.get_elo(prev_year)
-    elo_map = {row["team"]: float(row["elo"]) for row in elo_rows}
-    frame["prev_elo"] = frame.index.map(lambda s: elo_map.get(s))
-
-    talent_rows = client.get_team_talent(prev_year)
-    talent_map = {row["team"]: float(row["talent"]) for row in talent_rows}
-    frame["talent"] = frame.index.map(lambda s: talent_map.get(s))
-
-    # Returning production (optional; CFBD endpoint may be sparse).
-    try:
-        returning = client.get("/player/returning", {"year": season})
-        returning_map = {
-            row["team"]: float(row.get("percentPPA", row.get("usage", 0)))
-            for row in returning
-        }
-        frame["returning"] = frame.index.map(lambda s: returning_map.get(s))
-    except Exception:
-        frame["returning"] = None
-
-    # Consensus preseason AP poll when available (week 1).
-    consensus_map: Dict[str, float] = {}
-    try:
-        poll = client.get_rankings(season, week=1, season_type="regular")
-        if poll:
-            ranks = poll[0].get("polls", [])
-            ap = next((p for p in ranks if p.get("poll") == "AP Top 25"), None)
-            if ap:
-                for rank_row in ap.get("ranks", []):
-                    consensus_map[rank_row["school"]] = float(rank_row["rank"])
-    except Exception:
-        pass
-    frame["consensus_rank"] = frame.index.map(lambda s: consensus_map.get(s))
-
-    components = {
-        "prev_elo": _zscore(frame["prev_elo"].astype(float)),
-        "talent": _zscore(frame["talent"].astype(float)),
-        "returning": _zscore(frame["returning"].astype(float)),
-        "consensus": _zscore(
-            frame["consensus_rank"].astype(float).map(lambda r: -r if pd.notna(r) else None)
-        ),
-    }
-
-    weights = {
-        "previous_season": params.prior_weights["previous_season"],
-        "talent": params.prior_weights["talent"],
-        "returning": params.prior_weights["returning"],
-        "consensus": params.prior_weights["consensus"],
-    }
-    key_to_component = {
-        "previous_season": "prev_elo",
-        "talent": "talent",
-        "returning": "returning",
-        "consensus": "consensus",
-    }
-
-    composite_z = pd.Series(0.0, index=frame.index)
-    used_weight = 0.0
-    for key, weight in weights.items():
-        col = components[key_to_component[key]]
-        valid = col.notna()
-        if valid.any():
-            composite_z.loc[valid] += weight * col.loc[valid]
-            used_weight += weight
-
-    if used_weight > 0:
-        composite_z = composite_z / used_weight
-
+    ratings = blend_prior_components(components, params)
     if params.defending_champion_prior_z > 0:
         champ = load_defending_champion(client, season)
-        if champ in composite_z.index:
-            composite_z.loc[champ] += params.defending_champion_prior_z
-
-    ratings = {
-        school: _rating_from_z(float(composite_z.loc[school]))
-        for school in frame.index
-    }
-    ratings[FCS_OPPONENT_KEY] = RATING_MEAN + FCS_INITIAL_RATING_OFFSET
+        if champ in ratings:
+            ratings[champ] += params.defending_champion_prior_z * (RATING_SPREAD / 2.5)
     return ratings
 
 

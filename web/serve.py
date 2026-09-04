@@ -28,9 +28,12 @@ def _enrich_rankings(
 ) -> list:
     rows = df.sort_values("rank").to_dict(orient="records")
     other_kind = "poll" if kind == "power" else "power"
+    week = None
+    if "week" in df.columns and len(df):
+        week = int(df["week"].iloc[0])
     try:
         other_df, _, _ = load_rankings_df(
-            other_kind, season, postseason=postseason, refresh=False
+            other_kind, season, postseason=postseason, week=week, refresh=False
         )
         other_by = other_df.set_index("school")
         for row in rows:

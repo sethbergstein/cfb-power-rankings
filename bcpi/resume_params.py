@@ -49,6 +49,7 @@ class ResumeParams:
     elite_win_top_n: int = 30
     loss_penalty_factor: float = 0.65
     sub500_poll_penalty: float = 0.85
+    resume_min_week: int = 3
     preseason_resume_weight: float = 0.45
     preseason_forward_weight: float = 0.35
     preseason_consensus_weight: float = 0.20
@@ -66,6 +67,7 @@ class ResumeParams:
             "elite_win_top_n": self.elite_win_top_n,
             "loss_penalty_factor": self.loss_penalty_factor,
             "sub500_poll_penalty": self.sub500_poll_penalty,
+            "resume_min_week": self.resume_min_week,
             "preseason_resume_weight": self.preseason_resume_weight,
             "preseason_forward_weight": self.preseason_forward_weight,
             "preseason_consensus_weight": self.preseason_consensus_weight,

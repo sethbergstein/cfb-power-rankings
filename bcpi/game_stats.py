@@ -245,11 +245,11 @@ def _accumulate_contrib(
 def _metrics_from_totals(totals: Dict[str, float]) -> Dict[str, float]:
     if totals["off_w"] <= 0 or totals["def_w"] <= 0:
         return {
-            "epa_diff": 0.0,
-            "success_diff": 0.0,
-            "explosiveness_diff": 0.0,
-            "passing_diff": 0.0,
-            "havoc_diff": 0.0,
+            "epa_diff": float("nan"),
+            "success_diff": float("nan"),
+            "explosiveness_diff": float("nan"),
+            "passing_diff": float("nan"),
+            "havoc_diff": float("nan"),
         }
     off_ppa = totals["off_ppa"] / totals["off_w"]
     def_ppa = totals["def_ppa"] / totals["def_w"]

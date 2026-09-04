@@ -73,7 +73,10 @@ def _parse_snapshot_from_path(path: Path) -> Tuple[int, bool, int]:
 def _enrich_rows(kind: str, df: pd.DataFrame, season: int, postseason: bool) -> List[Dict[str, Any]]:
     rows = df.sort_values("rank").to_dict(orient="records")
     other_kind = "poll" if kind == "power" else "power"
-    other_path = find_rankings_path(other_kind, season, postseason=postseason)
+    week = None
+    if "week" in df.columns and len(df):
+        week = int(df["week"].iloc[0])
+    other_path = find_rankings_path(other_kind, season, postseason=postseason, week=week)
     if other_path and other_path.exists():
         other_df = pd.read_csv(other_path).set_index("school")
         for row in rows:
@@ -108,8 +111,8 @@ def export_snapshot_bundle(
         client = CFBDClient(use_cache=True)
 
     try:
-        power_path = find_rankings_path("power", snap.season, postseason=snap.postseason, week=snap.week or None)
-        poll_path = find_rankings_path("poll", snap.season, postseason=snap.postseason, week=snap.week or None)
+        power_path = find_rankings_path("power", snap.season, postseason=snap.postseason, week=snap.week)
+        poll_path = find_rankings_path("poll", snap.season, postseason=snap.postseason, week=snap.week)
         if power_path is None or poll_path is None:
             raise FileNotFoundError(f"Missing rankings files for snapshot {snap.id}")
 
