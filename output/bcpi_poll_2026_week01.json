@@ -11,17 +11,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":2.9008283517,
     "poll_rating":1964.1325362698,
     "rank":1,
-    "solver_rating":1807.2563378848,
+    "solver_rating":1741.7019519404,
     "conference":"Big Ten",
     "abbreviation":"ORE",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Ohio State",
@@ -35,17 +35,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":2.410311973,
     "poll_rating":1885.649915687,
     "rank":2,
-    "solver_rating":1814.3871505599,
+    "solver_rating":1950.1836973138,
     "conference":"Big Ten",
     "abbreviation":"OSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Georgia",
@@ -59,17 +59,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":2.2051705639,
     "poll_rating":1852.8272902222,
     "rank":3,
-    "solver_rating":1803.344805284,
+    "solver_rating":1807.2720406711,
     "conference":"SEC",
     "abbreviation":"UGA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Indiana",
@@ -83,17 +83,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":2.1330530296,
     "poll_rating":1841.28848474,
     "rank":4,
-    "solver_rating":1736.2261361358,
+    "solver_rating":1847.8358801169,
     "conference":"Big Ten",
     "abbreviation":"IU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Miami",
@@ -107,17 +107,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":2.1052882125,
     "poll_rating":1836.8461140005,
     "rank":5,
-    "solver_rating":1713.5846158623,
+    "solver_rating":1920.2885715414,
     "conference":"ACC",
     "abbreviation":"MIA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Texas",
@@ -131,17 +131,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.8314259427,
     "poll_rating":1793.0281508367,
     "rank":6,
-    "solver_rating":1761.4580190636,
+    "solver_rating":1963.4904135801,
     "conference":"SEC",
     "abbreviation":"TEX",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Texas A&M",
@@ -155,17 +155,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.7926091232,
     "poll_rating":1786.8174597062,
     "rank":7,
-    "solver_rating":1717.2760095058,
+    "solver_rating":1887.5689471566,
     "conference":"SEC",
     "abbreviation":"TA&M",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Notre Dame",
@@ -179,17 +179,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.6701707761,
     "poll_rating":1767.2273241805,
     "rank":8,
-    "solver_rating":1809.3852002837,
+    "solver_rating":1884.3175311679,
     "conference":"FBS Independents",
     "abbreviation":"ND",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Ole Miss",
@@ -203,17 +203,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.5790471854,
     "poll_rating":1752.647549657,
     "rank":9,
-    "solver_rating":1711.2539276981,
+    "solver_rating":1673.052023249,
     "conference":"SEC",
     "abbreviation":"MISS",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Oklahoma",
@@ -227,17 +227,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.2318896337,
     "poll_rating":1697.1023413959,
     "rank":10,
-    "solver_rating":1658.6778025134,
+    "solver_rating":1839.6389994303,
     "conference":"SEC",
     "abbreviation":"OU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Alabama",
@@ -251,17 +251,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.1972807271,
     "poll_rating":1691.5649163417,
     "rank":11,
-    "solver_rating":1680.5081557917,
+    "solver_rating":1816.091099495,
     "conference":"SEC",
     "abbreviation":"ALA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Texas Tech",
@@ -275,17 +275,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":1.0233902222,
     "poll_rating":1663.7424355487,
     "rank":12,
-    "solver_rating":1665.175746868,
+    "solver_rating":1700.1829952638,
     "conference":"Big 12",
     "abbreviation":"TTU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"USC",
@@ -299,17 +299,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":1,
+    "wins":2,
     "losses":0,
     "poll_score":0.9814236285,
     "poll_rating":1657.0277805638,
     "rank":13,
-    "solver_rating":1649.1330808531,
+    "solver_rating":1737.5863458196,
     "conference":"Big Ten",
     "abbreviation":"USC",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Michigan",
@@ -323,17 +323,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.8870171704,
     "poll_rating":1641.9227472613,
     "rank":14,
-    "solver_rating":1645.0532955313,
+    "solver_rating":1584.7126175477,
     "conference":"Big Ten",
     "abbreviation":"MICH",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"BYU",
@@ -347,17 +347,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.8296788366,
     "poll_rating":1632.7486138569,
     "rank":15,
-    "solver_rating":1574.6475770339,
+    "solver_rating":1674.7132099291,
     "conference":"Big 12",
     "abbreviation":"BYU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"NC State",
@@ -381,7 +381,7 @@
     "abbreviation":"NCSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"LSU",
@@ -395,17 +395,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.7019225812,
     "poll_rating":1612.3076129887,
     "rank":17,
-    "solver_rating":1631.7616172646,
+    "solver_rating":1840.3908988085,
     "conference":"SEC",
     "abbreviation":"LSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Minnesota",
@@ -429,7 +429,7 @@
     "abbreviation":"MINN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Northwestern",
@@ -443,17 +443,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.6208343751,
     "poll_rating":1599.3335000142,
     "rank":19,
-    "solver_rating":1541.2881470018,
+    "solver_rating":1572.3745369482,
     "conference":"Big Ten",
     "abbreviation":"NU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Florida",
@@ -467,17 +467,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.5943934474,
     "poll_rating":1595.1029515789,
     "rank":20,
-    "solver_rating":1617.7067647063,
+    "solver_rating":1791.0082717281,
     "conference":"SEC",
     "abbreviation":"FLA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Clemson",
@@ -492,16 +492,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.5763299447,
     "poll_rating":1592.2127911484,
     "rank":21,
-    "solver_rating":1625.6817032927,
+    "solver_rating":1417.0517513733,
     "conference":"ACC",
     "abbreviation":"CLEM",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"California",
@@ -516,16 +516,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.558039234,
     "poll_rating":1589.2862774341,
     "rank":22,
-    "solver_rating":1509.1401398984,
+    "solver_rating":1370.265205586,
     "conference":"ACC",
     "abbreviation":"CAL",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Nebraska",
@@ -539,17 +539,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.5239017397,
     "poll_rating":1583.8242783586,
     "rank":23,
-    "solver_rating":1557.9368452393,
+    "solver_rating":1669.9265897721,
     "conference":"Big Ten",
     "abbreviation":"NEB",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Washington State",
@@ -564,16 +564,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.5222316828,
     "poll_rating":1583.5570692523,
     "rank":24,
-    "solver_rating":1514.0052627323,
+    "solver_rating":1483.0736365481,
     "conference":"Pac-12",
     "abbreviation":"WSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Arizona",
@@ -587,17 +587,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.5009840478,
     "poll_rating":1580.1574476488,
     "rank":25,
-    "solver_rating":1563.1494126739,
+    "solver_rating":1668.0485763658,
     "conference":"Big 12",
     "abbreviation":"ARIZ",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Vanderbilt",
@@ -611,17 +611,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.4753091729,
     "poll_rating":1576.049467661,
     "rank":26,
-    "solver_rating":1597.6791684517,
+    "solver_rating":1629.0602320261,
     "conference":"SEC",
     "abbreviation":"VAN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Washington",
@@ -635,17 +635,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.4699289286,
     "poll_rating":1575.1886285795,
     "rank":27,
-    "solver_rating":1606.6685074217,
+    "solver_rating":1637.6002329966,
     "conference":"Big Ten",
     "abbreviation":"WASH",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Boise State",
@@ -660,16 +660,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.4087080586,
     "poll_rating":1565.3932893799,
     "rank":28,
-    "solver_rating":1521.7972943146,
+    "solver_rating":1587.3518909007,
     "conference":"Pac-12",
     "abbreviation":"BOIS",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"SMU",
@@ -693,7 +693,7 @@
     "abbreviation":"SMU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"South Carolina",
@@ -707,17 +707,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.3947145154,
     "poll_rating":1563.1543224644,
     "rank":30,
-    "solver_rating":1629.1808084796,
+    "solver_rating":1846.8666779935,
     "conference":"SEC",
     "abbreviation":"SC",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Illinois",
@@ -741,7 +741,7 @@
     "abbreviation":"ILL",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"San Diego State",
@@ -755,17 +755,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.3381940528,
     "poll_rating":1554.111048441,
     "rank":32,
-    "solver_rating":1501.5544742277,
+    "solver_rating":1632.3465563522,
     "conference":"Pac-12",
     "abbreviation":"SDSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Pittsburgh",
@@ -779,17 +779,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.3144797269,
     "poll_rating":1550.3167563087,
     "rank":33,
-    "solver_rating":1523.5725420711,
+    "solver_rating":1732.6168114594,
     "conference":"ACC",
     "abbreviation":"PITT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UTSA",
@@ -803,17 +803,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.3122221667,
     "poll_rating":1549.9555466737,
     "rank":34,
-    "solver_rating":1543.4768956768,
+    "solver_rating":1656.6458765131,
     "conference":"American Athletic",
     "abbreviation":"UTSA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UCLA",
@@ -827,17 +827,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.2986059976,
     "poll_rating":1547.7769596221,
     "rank":35,
-    "solver_rating":1508.803128027,
+    "solver_rating":1647.6776161027,
     "conference":"Big Ten",
     "abbreviation":"UCLA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"TCU",
@@ -861,7 +861,7 @@
     "abbreviation":"TCU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Tulane",
@@ -876,16 +876,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.2445246379,
     "poll_rating":1539.1239420702,
     "rank":37,
-    "solver_rating":1502.4553025177,
+    "solver_rating":1446.2749737444,
     "conference":"American Athletic",
     "abbreviation":"TULN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Western Michigan",
@@ -900,16 +900,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.2408399422,
     "poll_rating":1538.5343907581,
     "rank":38,
-    "solver_rating":1491.3951760961,
+    "solver_rating":1551.7356601914,
     "conference":"Mid-American",
     "abbreviation":"WMU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Georgia Tech",
@@ -933,7 +933,7 @@
     "abbreviation":"GT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Virginia",
@@ -957,7 +957,7 @@
     "abbreviation":"UVA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Texas State",
@@ -972,16 +972,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.1722615146,
     "poll_rating":1527.5618423386,
     "rank":41,
-    "solver_rating":1523.7487717311,
+    "solver_rating":1321.7170263905,
     "conference":"Pac-12",
     "abbreviation":"TXST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Kansas State",
@@ -995,17 +995,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.1525034504,
     "poll_rating":1524.4005520687,
     "rank":42,
-    "solver_rating":1571.1151122937,
+    "solver_rating":1672.6657019677,
     "conference":"Big 12",
     "abbreviation":"KSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Arizona State",
@@ -1019,17 +1019,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.1512921109,
     "poll_rating":1524.2067377417,
     "rank":43,
-    "solver_rating":1526.3578555778,
+    "solver_rating":1646.7232379384,
     "conference":"Big 12",
     "abbreviation":"ASU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Florida State",
@@ -1048,12 +1048,12 @@
     "poll_score":0.1375100289,
     "poll_rating":1522.0016046174,
     "rank":44,
-    "solver_rating":1569.0550916891,
+    "solver_rating":1617.311975004,
     "conference":"ACC",
     "abbreviation":"FSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Western Kentucky",
@@ -1068,16 +1068,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.1346079597,
     "poll_rating":1521.5372735473,
     "rank":45,
-    "solver_rating":1476.8125778409,
+    "solver_rating":1278.0197950468,
     "conference":"Conference USA",
     "abbreviation":"WKU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Wisconsin",
@@ -1092,16 +1092,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.1311697755,
     "poll_rating":1520.9871640853,
     "rank":46,
-    "solver_rating":1529.7098125394,
+    "solver_rating":1454.7777224298,
     "conference":"Big Ten",
     "abbreviation":"WIS",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"South Florida",
@@ -1115,17 +1115,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.1211061523,
     "poll_rating":1519.3769843742,
     "rank":47,
-    "solver_rating":1553.0269638158,
+    "solver_rating":1552.8886785688,
     "conference":"American Athletic",
     "abbreviation":"USF",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Tennessee",
@@ -1139,17 +1139,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.1162024498,
     "poll_rating":1518.5923919699,
     "rank":48,
-    "solver_rating":1606.4441474197,
+    "solver_rating":1693.1433248203,
     "conference":"SEC",
     "abbreviation":"TENN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Wake Forest",
@@ -1173,7 +1173,7 @@
     "abbreviation":"WAKE",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Duke",
@@ -1187,17 +1187,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.1064516539,
     "poll_rating":1517.0322646175,
     "rank":50,
-    "solver_rating":1509.8073071882,
+    "solver_rating":1565.9878164823,
     "conference":"ACC",
     "abbreviation":"DUKE",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Utah",
@@ -1221,7 +1221,7 @@
     "abbreviation":"UTAH",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"New Mexico",
@@ -1235,17 +1235,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.0883649879,
     "poll_rating":1514.1383980696,
     "rank":52,
-    "solver_rating":1468.1952644437,
+    "solver_rating":1601.8820027906,
     "conference":"Mountain West",
     "abbreviation":"UNM",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Toledo",
@@ -1260,16 +1260,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.0741160852,
     "poll_rating":1511.8585736276,
     "rank":53,
-    "solver_rating":1500.7825367945,
+    "solver_rating":1456.671121456,
     "conference":"Mid-American",
     "abbreviation":"TOL",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Hawai'i",
@@ -1284,16 +1284,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":1,
+    "losses":2,
     "poll_score":0.064095332,
     "poll_rating":1510.2552531124,
     "rank":54,
-    "solver_rating":1425.7127918085,
+    "solver_rating":1361.3499528235,
     "conference":"Mountain West",
     "abbreviation":"HAW",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Southern Miss",
@@ -1307,17 +1307,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.0639400557,
     "poll_rating":1510.2304089193,
     "rank":55,
-    "solver_rating":1445.0639860732,
+    "solver_rating":1599.6032077987,
     "conference":"Sun Belt",
     "abbreviation":"USM",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Baylor",
@@ -1332,16 +1332,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":0.0346906627,
     "poll_rating":1505.5505060263,
     "rank":56,
-    "solver_rating":1531.2022259975,
+    "solver_rating":1539.6883107073,
     "conference":"Big 12",
     "abbreviation":"BAY",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Rutgers",
@@ -1365,7 +1365,7 @@
     "abbreviation":"RUTG",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Mississippi State",
@@ -1379,17 +1379,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":0.0041633755,
     "poll_rating":1500.666140074,
     "rank":58,
-    "solver_rating":1538.057473358,
+    "solver_rating":1732.3382540924,
     "conference":"SEC",
     "abbreviation":"MSST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Purdue",
@@ -1403,17 +1403,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0014478634,
     "poll_rating":1499.7683418502,
     "rank":59,
-    "solver_rating":1454.2756701824,
+    "solver_rating":1593.9398540472,
     "conference":"Big Ten",
     "abbreviation":"PUR",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"James Madison",
@@ -1427,17 +1427,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0034222841,
     "poll_rating":1499.4524345457,
     "rank":60,
-    "solver_rating":1534.6589706018,
+    "solver_rating":1534.4774578328,
     "conference":"Sun Belt",
     "abbreviation":"JMU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Iowa",
@@ -1451,17 +1451,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0084298793,
     "poll_rating":1498.6512193126,
     "rank":61,
-    "solver_rating":1567.2294015274,
+    "solver_rating":1720.2236773744,
     "conference":"Big Ten",
     "abbreviation":"IOWA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Virginia Tech",
@@ -1475,17 +1475,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0096495288,
     "poll_rating":1498.4560753966,
     "rank":62,
-    "solver_rating":1507.92027745,
+    "solver_rating":1636.0363406068,
     "conference":"ACC",
     "abbreviation":"VT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Iowa State",
@@ -1499,17 +1499,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0420725688,
     "poll_rating":1493.2683889964,
     "rank":63,
-    "solver_rating":1505.9280075385,
+    "solver_rating":1634.8815694186,
     "conference":"Big 12",
     "abbreviation":"ISU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Maryland",
@@ -1523,17 +1523,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0444260805,
     "poll_rating":1492.8918271143,
     "rank":64,
-    "solver_rating":1500.2218173713,
+    "solver_rating":1631.5741139574,
     "conference":"Big Ten",
     "abbreviation":"MD",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Kentucky",
@@ -1547,17 +1547,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0616742646,
     "poll_rating":1490.1321176696,
     "rank":65,
-    "solver_rating":1522.2596196559,
+    "solver_rating":1644.3477943615,
     "conference":"SEC",
     "abbreviation":"UK",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Penn State",
@@ -1571,17 +1571,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.0708587801,
     "poll_rating":1488.6625951799,
     "rank":66,
-    "solver_rating":1592.7389707526,
+    "solver_rating":1793.295794261,
     "conference":"Big Ten",
     "abbreviation":"PSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"North Texas",
@@ -1596,16 +1596,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.0831578167,
     "poll_rating":1486.6947493347,
     "rank":67,
-    "solver_rating":1497.4851823434,
+    "solver_rating":1385.8757969898,
     "conference":"American Athletic",
     "abbreviation":"UNT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Fresno State",
@@ -1620,16 +1620,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.1012639412,
     "poll_rating":1483.7977694004,
     "rank":68,
-    "solver_rating":1483.9957566237,
+    "solver_rating":1307.7108667856,
     "conference":"Pac-12",
     "abbreviation":"FRES",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Houston",
@@ -1643,17 +1643,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.1012750896,
     "poll_rating":1483.7959856682,
     "rank":69,
-    "solver_rating":1486.3278206404,
+    "solver_rating":1519.4714476472,
     "conference":"Big 12",
     "abbreviation":"HOU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Ohio",
@@ -1668,16 +1668,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.1108537472,
     "poll_rating":1482.2634004517,
     "rank":70,
-    "solver_rating":1472.725182847,
+    "solver_rating":1360.7357981627,
     "conference":"Mid-American",
     "abbreviation":"OHIO",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Louisville",
@@ -1692,16 +1692,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.1199063028,
     "poll_rating":1480.8149915535,
     "rank":71,
-    "solver_rating":1525.0839344389,
+    "solver_rating":1563.2859616398,
     "conference":"ACC",
     "abbreviation":"LOU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UNLV",
@@ -1715,17 +1715,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":1,
     "poll_score":-0.1213225873,
     "poll_rating":1480.5883860381,
     "rank":72,
-    "solver_rating":1455.4825164023,
+    "solver_rating":1532.4415196504,
     "conference":"Mountain West",
     "abbreviation":"UNLV",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"East Carolina",
@@ -1740,16 +1740,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.1368001319,
     "poll_rating":1478.1119788962,
     "rank":73,
-    "solver_rating":1484.7071320515,
+    "solver_rating":1349.124624007,
     "conference":"American Athletic",
     "abbreviation":"ECU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Auburn",
@@ -1763,17 +1763,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.1535562687,
     "poll_rating":1475.4309970108,
     "rank":74,
-    "solver_rating":1578.9059864439,
+    "solver_rating":1570.4198744663,
     "conference":"SEC",
     "abbreviation":"AUB",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Louisiana Tech",
@@ -1787,17 +1787,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.1537299592,
     "poll_rating":1475.40320653,
     "rank":75,
-    "solver_rating":1448.5073437377,
+    "solver_rating":1601.5990669935,
     "conference":"Sun Belt",
     "abbreviation":"LT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Syracuse",
@@ -1811,17 +1811,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.1548093187,
     "poll_rating":1475.2305090047,
     "rank":76,
-    "solver_rating":1455.3649275735,
+    "solver_rating":1605.573900016,
     "conference":"ACC",
     "abbreviation":"SYR",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Memphis",
@@ -1835,17 +1835,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":1,
+    "wins":2,
     "losses":0,
     "poll_score":-0.1757330706,
     "poll_rating":1471.8827086966,
     "rank":77,
-    "solver_rating":1550.9907775929,
+    "solver_rating":1568.6265208395,
     "conference":"American Athletic",
     "abbreviation":"MEM",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Army",
@@ -1859,17 +1859,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.1994721967,
     "poll_rating":1468.0844485261,
     "rank":78,
-    "solver_rating":1399.0744762134,
+    "solver_rating":1572.9464979642,
     "conference":"American Athletic",
     "abbreviation":"ARMY",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Jacksonville State",
@@ -1883,17 +1883,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":1,
     "poll_score":-0.2013679122,
     "poll_rating":1467.781134041,
     "rank":79,
-    "solver_rating":1323.2462771612,
+    "solver_rating":1480.0398267501,
     "conference":"Conference USA",
     "abbreviation":"JXST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Central Michigan",
@@ -1908,16 +1908,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.2030837211,
     "poll_rating":1467.5066046239,
     "rank":80,
-    "solver_rating":1399.2034134832,
+    "solver_rating":1265.516245569,
     "conference":"Mid-American",
     "abbreviation":"CMU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Troy",
@@ -1931,17 +1931,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.214770794,
     "poll_rating":1465.6366729549,
     "rank":81,
-    "solver_rating":1442.139525614,
+    "solver_rating":1413.0473904119,
     "conference":"Sun Belt",
     "abbreviation":"TROY",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Cincinnati",
@@ -1955,17 +1955,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.225972602,
     "poll_rating":1463.8443836752,
     "rank":82,
-    "solver_rating":1459.5882452747,
+    "solver_rating":1543.1525702857,
     "conference":"Big 12",
     "abbreviation":"CIN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Delaware",
@@ -1989,7 +1989,7 @@
     "abbreviation":"DEL",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Sacramento State",
@@ -2003,17 +2003,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":1,
     "poll_score":-0.2497229841,
     "poll_rating":1460.0443225485,
     "rank":84,
-    "solver_rating":1380.1558605128,
+    "solver_rating":1475.331335083,
     "conference":"Mid-American",
     "abbreviation":"SAC",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Marshall",
@@ -2028,16 +2028,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.2512828552,
     "poll_rating":1459.7947431653,
     "rank":85,
-    "solver_rating":1483.2608723641,
+    "solver_rating":1282.7034044189,
     "conference":"Sun Belt",
     "abbreviation":"MRSH",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Missouri",
@@ -2061,7 +2061,7 @@
     "abbreviation":"MIZ",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UAB",
@@ -2085,7 +2085,7 @@
     "abbreviation":"UAB",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Stanford",
@@ -2100,16 +2100,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":1,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.272518637,
     "poll_rating":1456.3970180787,
     "rank":88,
-    "solver_rating":1499.424409463,
+    "solver_rating":1393.8496040035,
     "conference":"ACC",
     "abbreviation":"STAN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Old Dominion",
@@ -2123,17 +2123,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.273953799,
     "poll_rating":1456.1673921663,
     "rank":89,
-    "solver_rating":1468.5290174521,
+    "solver_rating":1570.2014629119,
     "conference":"Sun Belt",
     "abbreviation":"ODU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"North Carolina",
@@ -2157,7 +2157,7 @@
     "abbreviation":"UNC",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Utah State",
@@ -2172,16 +2172,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.2971024081,
     "poll_rating":1452.4636146986,
     "rank":91,
-    "solver_rating":1452.8194149672,
+    "solver_rating":1297.0957708457,
     "conference":"Pac-12",
     "abbreviation":"USU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Michigan State",
@@ -2195,17 +2195,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.3225611959,
     "poll_rating":1448.3902086569,
     "rank":92,
-    "solver_rating":1472.7907598339,
+    "solver_rating":1516.9023169128,
     "conference":"Big Ten",
     "abbreviation":"MSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Florida International",
@@ -2220,16 +2220,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.346521364,
     "poll_rating":1444.5565817629,
     "rank":93,
-    "solver_rating":1431.5062335859,
+    "solver_rating":1431.6445192772,
     "conference":"Conference USA",
     "abbreviation":"FIU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Oregon State",
@@ -2244,16 +2244,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.366655244,
     "poll_rating":1441.3351609675,
     "rank":94,
-    "solver_rating":1420.1688723858,
+    "solver_rating":1387.0253518771,
     "conference":"Pac-12",
     "abbreviation":"ORST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Louisiana",
@@ -2267,17 +2267,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.3750159163,
     "poll_rating":1439.9974533912,
     "rank":95,
-    "solver_rating":1453.2352468662,
+    "solver_rating":1604.3394819752,
     "conference":"Sun Belt",
     "abbreviation":"UL",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Arkansas State",
@@ -2292,16 +2292,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.3758674171,
     "poll_rating":1439.8612132696,
     "rank":96,
-    "solver_rating":1428.5853900955,
+    "solver_rating":1372.5673613692,
     "conference":"Sun Belt",
     "abbreviation":"ARST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Florida Atlantic",
@@ -2316,16 +2316,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.3809220584,
     "poll_rating":1439.0524706619,
     "rank":97,
-    "solver_rating":1416.135524322,
+    "solver_rating":1242.8345741573,
     "conference":"American Athletic",
     "abbreviation":"FAU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UConn",
@@ -2339,17 +2339,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.388465527,
     "poll_rating":1437.8455156856,
     "rank":98,
-    "solver_rating":1467.060778487,
+    "solver_rating":1612.3531178206,
     "conference":"FBS Independents",
     "abbreviation":"CONN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Temple",
@@ -2363,17 +2363,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.3953236646,
     "poll_rating":1436.7482136705,
     "rank":99,
-    "solver_rating":1421.0925954531,
+    "solver_rating":1566.7060853645,
     "conference":"American Athletic",
     "abbreviation":"TEM",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Arkansas",
@@ -2387,17 +2387,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.4022352755,
     "poll_rating":1435.6423559147,
     "rank":100,
-    "solver_rating":1526.5526423178,
+    "solver_rating":1571.833457171,
     "conference":"SEC",
     "abbreviation":"ARK",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"North Dakota State",
@@ -2411,17 +2411,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":1,
+    "wins":2,
     "losses":0,
     "poll_score":-0.421349349,
     "poll_rating":1432.584104159,
     "rank":101,
-    "solver_rating":1538.6473126129,
+    "solver_rating":1585.0335287468,
     "conference":"Mountain West",
     "abbreviation":"NDSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Eastern Michigan",
@@ -2436,16 +2436,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":1,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.4242464886,
     "poll_rating":1432.1205618276,
     "rank":102,
-    "solver_rating":1465.8895316735,
+    "solver_rating":1431.8210555818,
     "conference":"Mid-American",
     "abbreviation":"EMU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Kansas",
@@ -2459,17 +2459,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.426212208,
     "poll_rating":1431.8060467159,
     "rank":103,
-    "solver_rating":1493.8249745999,
+    "solver_rating":1627.866338377,
     "conference":"Big 12",
     "abbreviation":"KU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Georgia Southern",
@@ -2483,17 +2483,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.4319105374,
     "poll_rating":1430.8943140085,
     "rank":104,
-    "solver_rating":1425.323884867,
+    "solver_rating":1588.1613343897,
     "conference":"Sun Belt",
     "abbreviation":"GASO",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Missouri State",
@@ -2508,16 +2508,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.4333920046,
     "poll_rating":1430.6572792641,
     "rank":105,
-    "solver_rating":1410.3878515432,
+    "solver_rating":1240.0943667008,
     "conference":"Conference USA",
     "abbreviation":"MOST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"South Alabama",
@@ -2531,17 +2531,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.4525752445,
     "poll_rating":1427.587960875,
     "rank":106,
-    "solver_rating":1447.0208708487,
+    "solver_rating":1589.7347846447,
     "conference":"Sun Belt",
     "abbreviation":"USA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"West Virginia",
@@ -2555,17 +2555,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.4611388493,
     "poll_rating":1426.2177841104,
     "rank":107,
-    "solver_rating":1452.1780361995,
+    "solver_rating":1448.3022339337,
     "conference":"Big 12",
     "abbreviation":"WVU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UCF",
@@ -2589,7 +2589,7 @@
     "abbreviation":"UCF",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Colorado",
@@ -2613,7 +2613,7 @@
     "abbreviation":"COLO",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Colorado State",
@@ -2627,17 +2627,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.530163461,
     "poll_rating":1415.1738462363,
     "rank":110,
-    "solver_rating":1412.4226340931,
+    "solver_rating":1509.3173270769,
     "conference":"Pac-12",
     "abbreviation":"CSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Kennesaw State",
@@ -2661,7 +2661,7 @@
     "abbreviation":"KENN",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Rice",
@@ -2675,17 +2675,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.5980553633,
     "poll_rating":1404.3111418755,
     "rank":112,
-    "solver_rating":1369.5477715543,
+    "solver_rating":1555.8320559781,
     "conference":"American Athletic",
     "abbreviation":"RICE",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Tulsa",
@@ -2699,17 +2699,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.6001790697,
     "poll_rating":1403.9713488459,
     "rank":113,
-    "solver_rating":1397.1885571394,
+    "solver_rating":1455.2950336916,
     "conference":"American Athletic",
     "abbreviation":"TLSA",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Kent State",
@@ -2724,16 +2724,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.6258599802,
     "poll_rating":1399.8624031672,
     "rank":114,
-    "solver_rating":1349.2109537523,
+    "solver_rating":1131.524384762,
     "conference":"Mid-American",
     "abbreviation":"KENT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Boston College",
@@ -2748,16 +2748,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.6332380578,
     "poll_rating":1398.6819107549,
     "rank":115,
-    "solver_rating":1449.6089540716,
+    "solver_rating":1366.0443605486,
     "conference":"ACC",
     "abbreviation":"BC",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Charlotte",
@@ -2772,16 +2772,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.6335690244,
     "poll_rating":1398.6289560913,
     "rank":116,
-    "solver_rating":1360.9662246214,
+    "solver_rating":1323.8552851375,
     "conference":"American Athletic",
     "abbreviation":"CLT",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Akron",
@@ -2805,7 +2805,7 @@
     "abbreviation":"AKR",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"App State",
@@ -2819,17 +2819,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.6735188557,
     "poll_rating":1392.2369830887,
     "rank":118,
-    "solver_rating":1417.3920224684,
+    "solver_rating":1583.5638217167,
     "conference":"Sun Belt",
     "abbreviation":"APP",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Georgia State",
@@ -2843,17 +2843,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.6948657834,
     "poll_rating":1388.8214746532,
     "rank":119,
-    "solver_rating":1382.0698128823,
+    "solver_rating":1563.0901551236,
     "conference":"Sun Belt",
     "abbreviation":"GAST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Liberty",
@@ -2868,16 +2868,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.6953880221,
     "poll_rating":1388.7379164641,
     "rank":120,
-    "solver_rating":1470.0841845197,
+    "solver_rating":1470.2656967054,
     "conference":"Conference USA",
     "abbreviation":"LIB",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Miami (OH)",
@@ -2892,16 +2892,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.7269979207,
     "poll_rating":1383.6803326844,
     "rank":121,
-    "solver_rating":1442.7721363301,
+    "solver_rating":1233.7271952329,
     "conference":"Mid-American",
     "abbreviation":"M-OH",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Oklahoma State",
@@ -2916,16 +2916,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.761734169,
     "poll_rating":1378.1225329608,
     "rank":122,
-    "solver_rating":1396.344691051,
+    "solver_rating":1338.238027789,
     "conference":"Big 12",
     "abbreviation":"OKST",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Nevada",
@@ -2939,17 +2939,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.791860486,
     "poll_rating":1373.3023222426,
     "rank":123,
-    "solver_rating":1401.9444118325,
+    "solver_rating":1600.7378333949,
     "conference":"Mountain West",
     "abbreviation":"NEV",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Sam Houston",
@@ -2964,16 +2964,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.82647637,
     "poll_rating":1367.7637808043,
     "rank":124,
-    "solver_rating":1356.0031366841,
+    "solver_rating":1385.0953653661,
     "conference":"Conference USA",
     "abbreviation":"SHSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Navy",
@@ -2987,17 +2987,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.8285386612,
     "poll_rating":1367.4338142076,
     "rank":125,
-    "solver_rating":1319.0680305594,
+    "solver_rating":1526.5726919988,
     "conference":"American Athletic",
     "abbreviation":"NAVY",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Coastal Carolina",
@@ -3012,16 +3012,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.8326765554,
     "poll_rating":1366.7717511382,
     "rank":126,
-    "solver_rating":1375.1208476413,
+    "solver_rating":1378.9966623609,
     "conference":"Sun Belt",
     "abbreviation":"CCU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Northern Illinois",
@@ -3036,16 +3036,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.8508658497,
     "poll_rating":1363.8614640458,
     "rank":127,
-    "solver_rating":1392.1969008448,
+    "solver_rating":1239.2031166032,
     "conference":"Mountain West",
     "abbreviation":"NIU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UL Monroe",
@@ -3060,16 +3060,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.9487288798,
     "poll_rating":1348.2033792321,
     "rank":128,
-    "solver_rating":1331.2488748585,
+    "solver_rating":1136.9687183924,
     "conference":"Sun Belt",
     "abbreviation":"ULM",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Wyoming",
@@ -3084,16 +3084,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-0.9676612494,
     "poll_rating":1345.174200094,
     "rank":129,
-    "solver_rating":1390.3914249886,
+    "solver_rating":1293.4970433494,
     "conference":"Mountain West",
     "abbreviation":"WYO",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Middle Tennessee",
@@ -3107,17 +3107,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-0.9924145368,
     "poll_rating":1341.2136741186,
     "rank":130,
-    "solver_rating":1384.236747207,
+    "solver_rating":1545.3434821232,
     "conference":"Conference USA",
     "abbreviation":"MTSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"San Jos\u00e9 State",
@@ -3131,17 +3131,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":1,
     "poll_score":-1.030179036,
     "poll_rating":1335.1713542352,
     "rank":131,
-    "solver_rating":1385.5005381643,
+    "solver_rating":1446.4160262297,
     "conference":"Mountain West",
     "abbreviation":"SJSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Ball State",
@@ -3156,16 +3156,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-1.050879299,
     "poll_rating":1331.8593121547,
     "rank":132,
-    "solver_rating":1333.8493240925,
+    "solver_rating":1198.0523409921,
     "conference":"Mid-American",
     "abbreviation":"BALL",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Air Force",
@@ -3179,17 +3179,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":0,
     "poll_score":-1.1009701858,
     "poll_rating":1323.8447702684,
     "rank":133,
-    "solver_rating":1332.7971867547,
+    "solver_rating":1534.5304661539,
     "conference":"Mountain West",
     "abbreviation":"AF",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Bowling Green",
@@ -3204,16 +3204,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-1.1966966185,
     "poll_rating":1308.5285410385,
     "rank":134,
-    "solver_rating":1388.8901644899,
+    "solver_rating":1300.0407231815,
     "conference":"Mid-American",
     "abbreviation":"BGSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Buffalo",
@@ -3237,7 +3237,7 @@
     "abbreviation":"BUF",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"New Mexico State",
@@ -3251,17 +3251,17 @@
     "results_z":0.0,
     "elite_wins_z":0.0,
     "playoff_z":0.0,
-    "wins":0,
+    "wins":1,
     "losses":1,
     "poll_score":-1.2285287075,
     "poll_rating":1303.4354067931,
     "rank":136,
-    "solver_rating":1328.9725362065,
+    "solver_rating":1443.7676702154,
     "conference":"Conference USA",
     "abbreviation":"NMSU",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"UTEP",
@@ -3276,16 +3276,16 @@
     "elite_wins_z":0.0,
     "playoff_z":0.0,
     "wins":0,
-    "losses":0,
+    "losses":1,
     "poll_score":-1.253893546,
     "poll_rating":1299.3770326359,
     "rank":137,
-    "solver_rating":1368.8033175918,
+    "solver_rating":1187.8427021443,
     "conference":"Mountain West",
     "abbreviation":"UTEP",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   },
   {
     "school":"Massachusetts",
@@ -3309,6 +3309,6 @@
     "abbreviation":"MASS",
     "season":2026,
     "week":1,
-    "as_of":"2026-09-04T21:58:33Z"
+    "as_of":"2026-09-07T17:20:39Z"
   }
 ]
