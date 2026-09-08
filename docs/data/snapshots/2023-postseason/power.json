@@ -8,8 +8,8 @@
   "rows": [
     {
       "school": "Georgia",
-      "quality_z": 2.668315046049982,
-      "game_value_z": 1.8458178747798155,
+      "quality_z": 2.6683150460499814,
+      "game_value_z": 1.845817874779816,
       "market_z": 0.0,
       "talent_prior_z": 3.4650560692896093,
       "solver_rating": 2131.8048710988483,
@@ -91,7 +91,7 @@
       "quality_z": 0.8362301147924088,
       "game_value_z": 1.7485503184101523,
       "market_z": 0.0,
-      "talent_prior_z": 2.4819367689023317,
+      "talent_prior_z": 2.481936768902332,
       "solver_rating": 1895.3868060271225,
       "power_score": 0.9310101697395295,
       "power_rating": 1648.9616271583247,
@@ -172,7 +172,7 @@
       "game_value_z": 1.2924762615761225,
       "market_z": 0.0,
       "talent_prior_z": 0.8248053797138097,
-      "solver_rating": 1999.2739031286835,
+      "solver_rating": 1999.273903128684,
       "power_score": 0.8858399199442842,
       "power_rating": 1641.7343871910855,
       "rank": 9,
@@ -2384,7 +2384,7 @@
       "wins": 3,
       "losses": 8,
       "poll_rank": 130,
-      "poll_score": -1.9009003756018732
+      "poll_score": -1.9009003756018727
     },
     {
       "school": "Central Michigan",
