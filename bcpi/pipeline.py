@@ -11,7 +11,7 @@ from bcpi.config import OUTPUT_DIR
 from bcpi.constants import TARGET_SEASON
 from bcpi.games import load_season_games, POSTSEASON_AS_WEEK, team_records
 from bcpi.params import get_active_params, ModelParams
-from bcpi.resume_index import build_poll_index, build_preseason_poll_index, resume_is_ready
+from bcpi.resume_index import build_current_poll_index
 from bcpi.resume_params import get_resume_params
 from bcpi.power_index import build_power_index_from_client
 from bcpi.priors import build_preseason_priors
@@ -139,24 +139,15 @@ def run_poll_rankings(
             params=params,
         )
 
-        rankings = (
-            build_preseason_poll_index(
-                client=client,
-                schools=schools,
-                season=season,
-                solver_states=solver_states,
-                params=params,
-                resume=resume,
-            )
-            if not resume_is_ready(games, current_week, resume)
-            else build_poll_index(
-                schools=schools,
-                solver_states=solver_states,
-                games=games,
-                current_week=current_week,
-                params=params,
-                resume=resume,
-            )
+        rankings = build_current_poll_index(
+            client=client,
+            schools=schools,
+            season=season,
+            solver_states=solver_states,
+            games=games,
+            current_week=current_week,
+            params=params,
+            resume=resume,
         )
 
         records = team_records(games, schools, current_week, fbs_only=False)

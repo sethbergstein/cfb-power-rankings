@@ -145,7 +145,7 @@ def build_preseason_priors(
     params: Optional[ModelParams] = None,
     components: Optional[PriorComponents] = None,
 ) -> Dict[str, float]:
-    """Blend previous-season performance, talent, returning production, and consensus."""
+    """Blend previous-season performance, talent, and consensus."""
     if params is None:
         params = ModelParams()
     if components is None:

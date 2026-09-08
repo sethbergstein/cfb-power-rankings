@@ -26,8 +26,8 @@ SOLVER_ITERATIONS = 8
 PRIOR_WEIGHTS = {
     "previous_season": 0.45,
     "talent": 0.35,
-    "returning": 0.15,
-    "consensus": 0.05,
+    "returning": 0.0,
+    "consensus": 0.20,
 }
 
 # Power composite weights (predictive / neutral-field).

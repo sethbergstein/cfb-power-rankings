@@ -3,8 +3,26 @@
 from __future__ import annotations
 
 import math
+from typing import Union
+
+import pandas as pd
 
 from bcpi.constants import RECENCY_DECAY_LAMBDA
+
+
+def sample_credibility(
+    n_games: Union[pd.Series, float, int],
+    full_sample: float,
+) -> Union[pd.Series, float]:
+    """Share of in-season weight to trust. Unplayed teams stay on the prior."""
+    if full_sample <= 0:
+        if isinstance(n_games, pd.Series):
+            return pd.Series(1.0, index=n_games.index)
+        return 1.0
+    cred = n_games / full_sample
+    if isinstance(cred, pd.Series):
+        return cred.astype(float).clip(upper=1.0)
+    return float(min(1.0, cred))
 
 
 def recency_weight(current_week: int, game_week: int, lambda_: float = RECENCY_DECAY_LAMBDA) -> float:

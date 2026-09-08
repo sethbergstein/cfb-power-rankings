@@ -24,6 +24,7 @@ from bcpi.champions import load_defending_champion
 from bcpi.games import GameResult, filter_games_through_week, load_season_games, opponent_key, team_records
 from bcpi.game_stats import elite_opponent_set
 from bcpi.params import ModelParams
+from bcpi.recency import sample_credibility
 from bcpi.resume_params import ResumeParams
 from bcpi.solver import TeamRatingState
 
@@ -137,6 +138,21 @@ def _cfp_round_key(notes: Optional[str]) -> Optional[str]:
     return None
 
 
+def _fbs_games_played(
+    games: List[GameResult],
+    schools: List[str],
+    current_week: int,
+) -> pd.Series:
+    counts = {school: 0 for school in schools}
+    for game in filter_games_through_week(games, current_week):
+        if not game.is_fbs_game or not game.completed:
+            continue
+        for team in (game.home_team, game.away_team):
+            if team in counts:
+                counts[team] += 1
+    return pd.Series(counts)
+
+
 def _compute_playoff_score(
     games: List[GameResult],
     schools: List[str],
@@ -202,17 +218,22 @@ def build_poll_index(
     }
     elite_set = elite_opponent_set(opponent_ratings, schools, resume.elite_win_top_n)
 
-    record = _compute_record(games, schools, current_week, resume)
-    schedule = _compute_schedule_strength(games, schools, opponent_ratings, current_week)
+    played = _fbs_games_played(games, schools, current_week) > 0
+    record = _compute_record(games, schools, current_week, resume).where(played)
+    schedule = _compute_schedule_strength(games, schools, opponent_ratings, current_week).where(played)
     results = pd.Series(
         {
-            s: solver_states[s].game_value if s in solver_states else 0.0
+            s: (
+                solver_states[s].game_value
+                if s in solver_states and solver_states[s].game_weight > 0
+                else float("nan")
+            )
             for s in schools
         }
     )
     elite_wins = _compute_elite_wins(
         games, schools, opponent_ratings, current_week, elite_set
-    )
+    ).where(played)
     playoff = _compute_playoff_score(games, schools, current_week, resume)
 
     components = pd.DataFrame(index=schools)
@@ -222,11 +243,16 @@ def build_poll_index(
     components["elite_wins"] = elite_wins
     components["playoff_raw"] = playoff
 
-    components["record_z"] = _zscore(record.astype(float))
-    components["schedule_z"] = _zscore(schedule.astype(float))
-    components["results_z"] = _zscore(results.astype(float))
-    components["elite_wins_z"] = _zscore(elite_wins.astype(float))
-    components["playoff_z"] = _zscore(playoff.astype(float))
+    # Unplayed teams are NaN, so z-scores compare only teams with FBS results.
+    components["record_z"] = _zscore(record.astype(float)).fillna(0.0)
+    components["schedule_z"] = _zscore(schedule.astype(float)).fillna(0.0)
+    components["results_z"] = _zscore(results.astype(float)).fillna(0.0)
+    components["elite_wins_z"] = _zscore(elite_wins.astype(float)).fillna(0.0)
+    components["playoff_z"] = _zscore(playoff.astype(float)).fillna(0.0)
+    components["record"] = record.fillna(0.0)
+    components["schedule"] = schedule.fillna(RATING_MEAN)
+    components["results"] = results.fillna(0.0)
+    components["elite_wins"] = elite_wins.fillna(0.0)
 
     composite = pd.Series(0.0, index=schools)
     weight_map = {
@@ -274,7 +300,7 @@ def resume_is_ready(
     current_week: int,
     resume: Optional[ResumeParams] = None,
 ) -> bool:
-    """Resume poll needs a real body of work — one Week 0 game is not enough."""
+    """True once the current week can mix in-season resume (not preseason-only)."""
     if resume is None:
         from bcpi.resume_params import get_resume_params
 
@@ -350,10 +376,6 @@ def build_preseason_poll_index(
             talent = prior_components.talent_z.loc[school]
             if pd.notna(talent):
                 parts.append(float(talent))
-        if school in prior_components.returning_z.index:
-            returning = prior_components.returning_z.loc[school]
-            if pd.notna(returning):
-                parts.append(float(returning))
         if parts:
             forward[school] = sum(parts) / len(parts)
 
@@ -402,3 +424,58 @@ def build_preseason_poll_index(
     components["rank"] = components["poll_rating"].rank(ascending=False, method="min").astype(int)
     components["solver_rating"] = [opponent_ratings[s] for s in schools]
     return components.sort_values("rank")
+
+
+def build_current_poll_index(
+    client,
+    schools: List[str],
+    season: int,
+    solver_states: Dict[str, TeamRatingState],
+    games: List[GameResult],
+    current_week: int,
+    params: ModelParams,
+    resume: Optional[ResumeParams] = None,
+) -> pd.DataFrame:
+    """Preseason poll, blended toward in-season resume as FBS games accumulate."""
+    if resume is None:
+        from bcpi.resume_params import get_resume_params
+
+        resume = get_resume_params()
+
+    preseason = build_preseason_poll_index(
+        client=client,
+        schools=schools,
+        season=season,
+        solver_states=solver_states,
+        params=params,
+        resume=resume,
+    )
+    if current_week < resume.resume_min_week or not _season_has_fbs_results(games, current_week):
+        return preseason
+
+    inseason = build_poll_index(
+        schools=schools,
+        solver_states=solver_states,
+        games=games,
+        current_week=current_week,
+        params=params,
+        resume=resume,
+    )
+    n_played = _fbs_games_played(games, schools, current_week).reindex(schools).fillna(0)
+    cred = sample_credibility(n_played, resume.poll_sample_games)
+    if not isinstance(cred, pd.Series):
+        cred = pd.Series(float(cred), index=schools)
+    if resume.poll_sample_games_bad > 0:
+        cred_bad = sample_credibility(n_played, resume.poll_sample_games_bad)
+        if not isinstance(cred_bad, pd.Series):
+            cred_bad = pd.Series(float(cred_bad), index=schools)
+        cred = cred.where(inseason["results_z"].reindex(schools).fillna(0.0) >= 0, cred_bad)
+
+    out = inseason.copy()
+    cred = cred.reindex(out.index).fillna(0.0)
+    pre_score = preseason["poll_score"].reindex(out.index)
+    in_score = inseason["poll_score"].reindex(out.index)
+    out["poll_score"] = (1.0 - cred) * pre_score + cred * in_score
+    out["poll_rating"] = out["poll_score"].map(lambda z: _rating_from_z(float(z)))
+    out["rank"] = out["poll_rating"].rank(ascending=False, method="min").astype(int)
+    return out.sort_values("rank")

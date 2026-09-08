@@ -16,7 +16,7 @@ from bcpi.game_stats import (
     load_season_game_advanced,
 )
 from bcpi.quality import build_walkforward_quality_z, load_season_quality_table
-from bcpi.recency import recency_weight
+from bcpi.recency import recency_weight, sample_credibility
 from bcpi.solver import TeamRatingState
 
 
@@ -33,13 +33,6 @@ def _rating_from_z(z: float) -> float:
 
 def _solver_ratings(states: Dict[str, TeamRatingState]) -> Dict[str, float]:
     return {school: state.rating for school, state in states.items()}
-
-
-def _sample_credibility(n_games: pd.Series, full_sample: float) -> pd.Series:
-    """Share of in-season power weight to trust. Unplayed teams stay on the prior."""
-    if full_sample <= 0:
-        return pd.Series(1.0, index=n_games.index)
-    return (n_games.astype(float) / full_sample).clip(upper=1.0)
 
 
 def _apply_head_to_head_nudge(
@@ -169,10 +162,10 @@ def build_power_components(
         fade_start=params.prior_fade_start,
         fade_end=params.prior_fade_end,
     )
-    cred = _sample_credibility(
-        pd.Series(games_played(games, schools, current_week)),
-        params.power_sample_games,
-    ).reindex(schools).fillna(0.0)
+    n_played = pd.Series(games_played(games, schools, current_week)).reindex(schools).fillna(0)
+    cred = sample_credibility(n_played, params.power_sample_games)
+    if not isinstance(cred, pd.Series):
+        cred = pd.Series(float(cred), index=schools)
 
     q_w = params.power_weights["quality"]
     g_w = params.power_weights["game_value"]
@@ -185,6 +178,14 @@ def build_power_components(
     components["game_value_z"] = _zscore(game_value.astype(float)).fillna(0.0)
     components["market_z"] = _zscore(market_value.astype(float)).fillna(0.0)
     components["talent_prior_z"] = _zscore(talent_prior.astype(float)).fillna(0.0)
+
+    # Ugly results (underperforming the prior) fade in faster than G5 blowouts.
+    bad_n = getattr(params, "power_sample_games_bad", 0.0) or 0.0
+    if bad_n > 0:
+        cred_bad = sample_credibility(n_played, bad_n)
+        if not isinstance(cred_bad, pd.Series):
+            cred_bad = pd.Series(float(cred_bad), index=schools)
+        cred = cred.where(components["game_value_z"] >= 0, cred_bad)
 
     composite_z = (
         (q_w * cred) * components["quality_z"]

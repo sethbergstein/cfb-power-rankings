@@ -28,6 +28,7 @@
   "hfa_min_games": 6,
   "hfa_shrink_games": 12.0,
   "power_sample_games": 4.0,
+  "power_sample_games_bad": 2.0,
   "power_weights": {
     "quality": 0.50,
     "game_value": 0.35,
@@ -42,9 +43,9 @@
     "havoc_diff": 0.05822419357968074
   },
   "prior_weights": {
-    "previous_season": 0.38,
-    "talent": 0.32,
-    "returning": 0.10,
+    "previous_season": 0.45,
+    "talent": 0.35,
+    "returning": 0.0,
     "consensus": 0.20
   },
   "tuning_method": "bundle_v3_elite_playoff"
