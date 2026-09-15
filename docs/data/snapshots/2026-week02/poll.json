@@ -4,7 +4,7 @@
   "week": 2,
   "postseason": false,
   "label": "2026 \u00b7 week 2",
-  "as_of": "2026-09-14T17:48:14Z",
+  "as_of": "2026-09-15T15:49:32Z",
   "rows": [
     {
       "school": "Texas",
@@ -28,9 +28,9 @@
       "abbreviation": "TEX",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 8,
-      "power_score": 1.5514497849501008
+      "power_score": 1.5478658560203231
     },
     {
       "school": "Indiana",
@@ -54,9 +54,9 @@
       "abbreviation": "IU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 3,
-      "power_score": 1.8768858454198003
+      "power_score": 1.877742625493611
     },
     {
       "school": "Michigan",
@@ -80,9 +80,9 @@
       "abbreviation": "MICH",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 45,
-      "power_score": 0.1757835770814762
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 43,
+      "power_score": 0.237212591255183
     },
     {
       "school": "Miami",
@@ -106,9 +106,9 @@
       "abbreviation": "MIA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 4,
-      "power_score": 1.6831191901450366
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 5,
+      "power_score": 1.66478676032097
     },
     {
       "school": "Georgia",
@@ -132,9 +132,9 @@
       "abbreviation": "UGA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 2,
-      "power_score": 2.00378781956727
+      "power_score": 1.9793588270873703
     },
     {
       "school": "Oklahoma State",
@@ -158,9 +158,9 @@
       "abbreviation": "OKST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 78,
-      "power_score": -0.3567590784530888
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 87,
+      "power_score": -0.4571641743461222
     },
     {
       "school": "LSU",
@@ -184,9 +184,9 @@
       "abbreviation": "LSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 9,
-      "power_score": 1.491302632234413
+      "power_score": 1.5013202786606952
     },
     {
       "school": "Texas A&M",
@@ -210,9 +210,9 @@
       "abbreviation": "TA&M",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 5,
-      "power_score": 1.671762899881423
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 4,
+      "power_score": 1.6835844040629746
     },
     {
       "school": "Virginia",
@@ -236,9 +236,9 @@
       "abbreviation": "UVA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 19,
-      "power_score": 0.7921986297790454
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 18,
+      "power_score": 0.8074309501748321
     },
     {
       "school": "Pittsburgh",
@@ -262,9 +262,9 @@
       "abbreviation": "PITT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 26,
-      "power_score": 0.5575418511192365
+      "power_score": 0.5751048168244328
     },
     {
       "school": "Alabama",
@@ -288,9 +288,9 @@
       "abbreviation": "ALA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 7,
-      "power_score": 1.5850251625241218
+      "power_score": 1.5895918708888297
     },
     {
       "school": "Mississippi State",
@@ -314,9 +314,9 @@
       "abbreviation": "MSST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 14,
-      "power_score": 0.9965354940622267
+      "power_score": 0.9801625556624124
     },
     {
       "school": "Notre Dame",
@@ -340,9 +340,9 @@
       "abbreviation": "ND",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 1,
-      "power_score": 2.1909402942966927
+      "power_score": 2.179165442369465
     },
     {
       "school": "BYU",
@@ -366,9 +366,9 @@
       "abbreviation": "BYU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 25,
-      "power_score": 0.5614230855543416
+      "power_score": 0.5780453931383176
     },
     {
       "school": "UCLA",
@@ -392,9 +392,9 @@
       "abbreviation": "UCLA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 28,
-      "power_score": 0.4204040313475994
+      "power_score": 0.4583503649578209
     },
     {
       "school": "North Dakota State",
@@ -418,9 +418,9 @@
       "abbreviation": "NDSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 41,
-      "power_score": 0.2664567138038731
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 37,
+      "power_score": 0.2779717001256607
     },
     {
       "school": "Penn State",
@@ -444,9 +444,9 @@
       "abbreviation": "PSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 11,
-      "power_score": 1.1570620482196772
+      "power_score": 1.1725109808948129
     },
     {
       "school": "Auburn",
@@ -470,9 +470,9 @@
       "abbreviation": "AUB",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 20,
-      "power_score": 0.7525459665395162
+      "power_score": 0.7564153030605634
     },
     {
       "school": "SMU",
@@ -496,9 +496,9 @@
       "abbreviation": "SMU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 22,
-      "power_score": 0.710378385624576
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 23,
+      "power_score": 0.7069065850270555
     },
     {
       "school": "Florida",
@@ -522,9 +522,9 @@
       "abbreviation": "FLA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 12,
-      "power_score": 1.11734309336482
+      "power_score": 1.1199426529685113
     },
     {
       "school": "USC",
@@ -548,9 +548,9 @@
       "abbreviation": "USC",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 13,
-      "power_score": 1.1055263842418188
+      "power_score": 1.0650752112148527
     },
     {
       "school": "Ohio State",
@@ -574,9 +574,9 @@
       "abbreviation": "OSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 6,
-      "power_score": 1.657465120572776
+      "power_score": 1.66249362978282
     },
     {
       "school": "Wisconsin",
@@ -600,9 +600,9 @@
       "abbreviation": "WIS",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 57,
-      "power_score": -0.0380894703052037
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 58,
+      "power_score": -0.0240953807944184
     },
     {
       "school": "Rice",
@@ -626,9 +626,9 @@
       "abbreviation": "RICE",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 120,
-      "power_score": -0.9599972312333522
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 119,
+      "power_score": -0.9452311307121448
     },
     {
       "school": "Nebraska",
@@ -652,9 +652,9 @@
       "abbreviation": "NEB",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 17,
-      "power_score": 0.9256278722632956
+      "power_score": 0.9255329098159324
     },
     {
       "school": "Tennessee",
@@ -678,9 +678,9 @@
       "abbreviation": "TENN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 16,
-      "power_score": 0.9598724453127644
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 15,
+      "power_score": 0.972424799959578
     },
     {
       "school": "Michigan State",
@@ -704,9 +704,9 @@
       "abbreviation": "MSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 44,
-      "power_score": 0.1795083907839045
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 45,
+      "power_score": 0.2123444553760737
     },
     {
       "school": "Northwestern",
@@ -730,7 +730,7 @@
       "abbreviation": "NU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 49,
       "power_score": 0.1001292046549244
     },
@@ -756,9 +756,9 @@
       "abbreviation": "BALL",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 132,
-      "power_score": -1.1716634056618147
+      "power_score": -1.137929454050756
     },
     {
       "school": "South Carolina",
@@ -782,9 +782,9 @@
       "abbreviation": "SC",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 10,
-      "power_score": 1.4078029763005708
+      "power_score": 1.386584327281401
     },
     {
       "school": "Duke",
@@ -808,9 +808,9 @@
       "abbreviation": "DUKE",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 42,
-      "power_score": 0.2474806224117368
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 40,
+      "power_score": 0.2715791368547804
     },
     {
       "school": "Virginia Tech",
@@ -834,9 +834,9 @@
       "abbreviation": "VT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 29,
-      "power_score": 0.4200989443000807
+      "power_score": 0.4283822240979942
     },
     {
       "school": "Wake Forest",
@@ -860,9 +860,9 @@
       "abbreviation": "WAKE",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 39,
-      "power_score": 0.2711947117330615
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 41,
+      "power_score": 0.2659361478539436
     },
     {
       "school": "North Texas",
@@ -886,9 +886,9 @@
       "abbreviation": "UNT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 63,
-      "power_score": -0.1044322801710157
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 61,
+      "power_score": -0.1044799758851224
     },
     {
       "school": "North Carolina",
@@ -912,9 +912,9 @@
       "abbreviation": "UNC",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 38,
-      "power_score": 0.2721873823271008
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 42,
+      "power_score": 0.2573088290578381
     },
     {
       "school": "Maryland",
@@ -938,9 +938,9 @@
       "abbreviation": "MD",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 27,
-      "power_score": 0.5017501540981374
+      "power_score": 0.5443092116208623
     },
     {
       "school": "Iowa",
@@ -964,9 +964,9 @@
       "abbreviation": "IOWA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 24,
-      "power_score": 0.5882661782426624
+      "power_score": 0.5861765021183165
     },
     {
       "school": "Arizona State",
@@ -990,9 +990,9 @@
       "abbreviation": "ASU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 79,
-      "power_score": -0.3665417821862111
+      "power_score": -0.3886352879188382
     },
     {
       "school": "Boise State",
@@ -1016,9 +1016,9 @@
       "abbreviation": "BOIS",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 54,
-      "power_score": 0.0234685924654959
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 51,
+      "power_score": 0.0372676968433381
     },
     {
       "school": "Cincinnati",
@@ -1042,9 +1042,9 @@
       "abbreviation": "CIN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 43,
-      "power_score": 0.1852043877754188
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 44,
+      "power_score": 0.2144339650650998
     },
     {
       "school": "Tulsa",
@@ -1068,9 +1068,9 @@
       "abbreviation": "TLSA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 75,
-      "power_score": -0.3432416403485911
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 71,
+      "power_score": -0.2831583532514453
     },
     {
       "school": "Missouri State",
@@ -1094,9 +1094,9 @@
       "abbreviation": "MOST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 125,
-      "power_score": -1.033349187384328
+      "power_score": -1.0401575683584268
     },
     {
       "school": "Utah",
@@ -1120,9 +1120,9 @@
       "abbreviation": "UTAH",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 15,
-      "power_score": 0.9602752782485416
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 16,
+      "power_score": 0.9633847096409156
     },
     {
       "school": "Missouri",
@@ -1146,9 +1146,9 @@
       "abbreviation": "MIZ",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 23,
-      "power_score": 0.6977177152758475
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 21,
+      "power_score": 0.7421323695513053
     },
     {
       "school": "Iowa State",
@@ -1172,9 +1172,9 @@
       "abbreviation": "ISU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 36,
-      "power_score": 0.277437491984744
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 35,
+      "power_score": 0.2824487068931765
     },
     {
       "school": "James Madison",
@@ -1198,9 +1198,9 @@
       "abbreviation": "JMU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 35,
-      "power_score": 0.284927702836529
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 33,
+      "power_score": 0.3047437523191905
     },
     {
       "school": "Oklahoma",
@@ -1224,9 +1224,9 @@
       "abbreviation": "OU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 18,
-      "power_score": 0.8384933200294667
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 19,
+      "power_score": 0.806059483827593
     },
     {
       "school": "Vanderbilt",
@@ -1250,9 +1250,9 @@
       "abbreviation": "VAN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 46,
-      "power_score": 0.1743021848204029
+      "power_score": 0.2075065656513809
     },
     {
       "school": "West Virginia",
@@ -1276,9 +1276,9 @@
       "abbreviation": "WVU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 56,
-      "power_score": -0.019628110185385
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 55,
+      "power_score": -0.0109875362744234
     },
     {
       "school": "Kansas State",
@@ -1302,9 +1302,9 @@
       "abbreviation": "KSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 21,
-      "power_score": 0.7443238640477559
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 22,
+      "power_score": 0.7373502623244524
     },
     {
       "school": "Fresno State",
@@ -1328,9 +1328,9 @@
       "abbreviation": "FRES",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 83,
-      "power_score": -0.3882173274146111
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 73,
+      "power_score": -0.3481055595229145
     },
     {
       "school": "UTSA",
@@ -1354,9 +1354,9 @@
       "abbreviation": "UTSA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 40,
-      "power_score": 0.2668644979027428
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 38,
+      "power_score": 0.2722836751116253
     },
     {
       "school": "Ole Miss",
@@ -1380,9 +1380,9 @@
       "abbreviation": "MISS",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 30,
-      "power_score": 0.3631128148374929
+      "power_score": 0.3663072259975594
     },
     {
       "school": "San Jos\u00e9 State",
@@ -1406,9 +1406,9 @@
       "abbreviation": "SJSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 92,
-      "power_score": -0.488124385660395
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 88,
+      "power_score": -0.4574553078278895
     },
     {
       "school": "South Florida",
@@ -1432,9 +1432,9 @@
       "abbreviation": "USF",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 48,
-      "power_score": 0.1012186713300307
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 47,
+      "power_score": 0.1708596715707828
     },
     {
       "school": "Kentucky",
@@ -1458,9 +1458,9 @@
       "abbreviation": "UK",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 99,
-      "power_score": -0.6266016304563572
+      "power_score": -0.6567581453491065
     },
     {
       "school": "New Mexico",
@@ -1484,9 +1484,9 @@
       "abbreviation": "UNM",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 32,
-      "power_score": 0.3352342040852312
+      "power_score": 0.3457448641153016
     },
     {
       "school": "Louisville",
@@ -1510,9 +1510,9 @@
       "abbreviation": "LOU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 33,
-      "power_score": 0.3024308016011691
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 34,
+      "power_score": 0.3019720438856242
     },
     {
       "school": "Colorado",
@@ -1536,9 +1536,9 @@
       "abbreviation": "COLO",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 51,
-      "power_score": 0.0437813483208081
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 50,
+      "power_score": 0.0487291768995709
     },
     {
       "school": "Baylor",
@@ -1562,9 +1562,9 @@
       "abbreviation": "BAY",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 37,
-      "power_score": 0.2735523513593034
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 39,
+      "power_score": 0.2718911473386423
     },
     {
       "school": "Western Michigan",
@@ -1588,9 +1588,9 @@
       "abbreviation": "WMU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 58,
-      "power_score": -0.0528840339545024
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 57,
+      "power_score": -0.0160965621617442
     },
     {
       "school": "Texas Tech",
@@ -1614,9 +1614,9 @@
       "abbreviation": "TTU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 34,
-      "power_score": 0.2899843067852654
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 31,
+      "power_score": 0.3542412961406687
     },
     {
       "school": "Memphis",
@@ -1640,9 +1640,9 @@
       "abbreviation": "MEM",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 61,
-      "power_score": -0.0918443874601067
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 63,
+      "power_score": -0.1159576759195995
     },
     {
       "school": "Kent State",
@@ -1666,9 +1666,9 @@
       "abbreviation": "KENT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 135,
-      "power_score": -1.3518150137381992
+      "power_score": -1.307910811630468
     },
     {
       "school": "Troy",
@@ -1692,9 +1692,9 @@
       "abbreviation": "TROY",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 65,
-      "power_score": -0.1492770710562518
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 62,
+      "power_score": -0.1047792346034118
     },
     {
       "school": "Purdue",
@@ -1718,9 +1718,9 @@
       "abbreviation": "PUR",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 67,
-      "power_score": -0.221010649230644
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 68,
+      "power_score": -0.2181407308625227
     },
     {
       "school": "UTEP",
@@ -1744,9 +1744,9 @@
       "abbreviation": "UTEP",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 126,
-      "power_score": -1.036514209854245
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 130,
+      "power_score": -1.1179296853042828
     },
     {
       "school": "Houston",
@@ -1770,9 +1770,9 @@
       "abbreviation": "HOU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 47,
-      "power_score": 0.1155467239095496
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 48,
+      "power_score": 0.1322004625766552
     },
     {
       "school": "Colorado State",
@@ -1796,9 +1796,9 @@
       "abbreviation": "CSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 55,
-      "power_score": 0.0076970292106546
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 52,
+      "power_score": 0.0233536020145954
     },
     {
       "school": "Minnesota",
@@ -1822,9 +1822,9 @@
       "abbreviation": "MINN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 116,
-      "power_score": -0.8609144271346238
+      "power_score": -0.8198288874955719
     },
     {
       "school": "Louisiana Tech",
@@ -1848,9 +1848,9 @@
       "abbreviation": "LT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 97,
-      "power_score": -0.6036813372145049
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 100,
+      "power_score": -0.657998811614986
     },
     {
       "school": "Temple",
@@ -1874,9 +1874,9 @@
       "abbreviation": "TEM",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 95,
-      "power_score": -0.5166070290696574
+      "power_score": -0.5389139275558148
     },
     {
       "school": "UCF",
@@ -1900,9 +1900,9 @@
       "abbreviation": "UCF",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 53,
-      "power_score": 0.0345984640394112
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 54,
+      "power_score": 0.0032076367237001
     },
     {
       "school": "Florida International",
@@ -1926,9 +1926,9 @@
       "abbreviation": "FIU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 50,
-      "power_score": 0.0560874108516749
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 56,
+      "power_score": -0.0114461965714504
     },
     {
       "school": "Florida State",
@@ -1952,9 +1952,9 @@
       "abbreviation": "FSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 71,
-      "power_score": -0.273638557350791
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 70,
+      "power_score": -0.2641198093984224
     },
     {
       "school": "San Diego State",
@@ -1978,9 +1978,9 @@
       "abbreviation": "SDSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 72,
-      "power_score": -0.2953172176916422
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 74,
+      "power_score": -0.3651142604791388
     },
     {
       "school": "Arizona",
@@ -2004,9 +2004,9 @@
       "abbreviation": "ARIZ",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 66,
-      "power_score": -0.15130320340205
+      "power_score": -0.1830809145006105
     },
     {
       "school": "Southern Miss",
@@ -2030,9 +2030,9 @@
       "abbreviation": "USM",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 111,
-      "power_score": -0.7513074521475362
+      "power_score": -0.7586229530801699
     },
     {
       "school": "Georgia State",
@@ -2056,9 +2056,9 @@
       "abbreviation": "GAST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 64,
-      "power_score": -0.1451246833516619
+      "power_score": -0.132670662219877
     },
     {
       "school": "Ohio",
@@ -2082,9 +2082,9 @@
       "abbreviation": "OHIO",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 114,
-      "power_score": -0.8103111914637131
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 115,
+      "power_score": -0.794282606106079
     },
     {
       "school": "Kansas",
@@ -2108,9 +2108,9 @@
       "abbreviation": "KU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 87,
-      "power_score": -0.4167057493856904
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 93,
+      "power_score": -0.5040681538672147
     },
     {
       "school": "Clemson",
@@ -2134,9 +2134,9 @@
       "abbreviation": "CLEM",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 127,
-      "power_score": -1.0383024061891009
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 120,
+      "power_score": -0.9679304269137544
     },
     {
       "school": "Toledo",
@@ -2160,9 +2160,9 @@
       "abbreviation": "TOL",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 52,
-      "power_score": 0.037026164162439
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 59,
+      "power_score": -0.0244032269011535
     },
     {
       "school": "California",
@@ -2186,9 +2186,9 @@
       "abbreviation": "CAL",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 80,
-      "power_score": -0.3716968036527986
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 82,
+      "power_score": -0.4200201377021245
     },
     {
       "school": "App State",
@@ -2212,9 +2212,9 @@
       "abbreviation": "APP",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 70,
-      "power_score": -0.2622408046087735
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 69,
+      "power_score": -0.25930881990101
     },
     {
       "school": "Tulane",
@@ -2238,9 +2238,9 @@
       "abbreviation": "TULN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 68,
-      "power_score": -0.234820207859499
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 67,
+      "power_score": -0.2106518705863579
     },
     {
       "school": "TCU",
@@ -2264,9 +2264,9 @@
       "abbreviation": "TCU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 62,
-      "power_score": -0.1043353015191433
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 60,
+      "power_score": -0.0731112909112264
     },
     {
       "school": "Georgia Southern",
@@ -2290,9 +2290,9 @@
       "abbreviation": "GASO",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 90,
-      "power_score": -0.4582398754214957
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 91,
+      "power_score": -0.4732326248668089
     },
     {
       "school": "NC State",
@@ -2316,9 +2316,9 @@
       "abbreviation": "NCSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 109,
-      "power_score": -0.7196558760935458
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 110,
+      "power_score": -0.7486536128157276
     },
     {
       "school": "Syracuse",
@@ -2342,9 +2342,9 @@
       "abbreviation": "SYR",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 81,
-      "power_score": -0.377891292739679
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 77,
+      "power_score": -0.3797542790898932
     },
     {
       "school": "Washington",
@@ -2368,9 +2368,9 @@
       "abbreviation": "WASH",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 59,
-      "power_score": -0.0655964802363704
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 53,
+      "power_score": 0.0041321063800783
     },
     {
       "school": "Florida Atlantic",
@@ -2394,9 +2394,9 @@
       "abbreviation": "FAU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 128,
-      "power_score": -1.043287728303116
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 124,
+      "power_score": -1.0379695728176
     },
     {
       "school": "Charlotte",
@@ -2420,9 +2420,9 @@
       "abbreviation": "CLT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 130,
-      "power_score": -1.0994651589416955
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 129,
+      "power_score": -1.1036984753951462
     },
     {
       "school": "Illinois",
@@ -2446,9 +2446,9 @@
       "abbreviation": "ILL",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 60,
-      "power_score": -0.0833665457253216
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 65,
+      "power_score": -0.1411576236456453
     },
     {
       "school": "UConn",
@@ -2472,9 +2472,9 @@
       "abbreviation": "CONN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 101,
-      "power_score": -0.6398138521725026
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 107,
+      "power_score": -0.7234650631485611
     },
     {
       "school": "Old Dominion",
@@ -2498,9 +2498,9 @@
       "abbreviation": "ODU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 89,
-      "power_score": -0.4278188275728803
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 86,
+      "power_score": -0.4429184830993158
     },
     {
       "school": "Stanford",
@@ -2524,9 +2524,9 @@
       "abbreviation": "STAN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 131,
-      "power_score": -1.1294161005338856
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 128,
+      "power_score": -1.0979721063110628
     },
     {
       "school": "Oregon State",
@@ -2550,9 +2550,9 @@
       "abbreviation": "ORST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 82,
-      "power_score": -0.3808820838004444
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 85,
+      "power_score": -0.4399697430255148
     },
     {
       "school": "Marshall",
@@ -2576,9 +2576,9 @@
       "abbreviation": "MRSH",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 133,
-      "power_score": -1.2073968592421036
+      "power_score": -1.2154821275154408
     },
     {
       "school": "Miami (OH)",
@@ -2602,9 +2602,9 @@
       "abbreviation": "M-OH",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 117,
-      "power_score": -0.9009597894171906
+      "power_score": -0.8854912129435906
     },
     {
       "school": "Louisiana",
@@ -2628,9 +2628,9 @@
       "abbreviation": "UL",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 76,
-      "power_score": -0.347350164295969
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 72,
+      "power_score": -0.3267678901102483
     },
     {
       "school": "Boston College",
@@ -2654,9 +2654,9 @@
       "abbreviation": "BC",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 85,
-      "power_score": -0.3953083919504753
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 84,
+      "power_score": -0.439409414255441
     },
     {
       "school": "Massachusetts",
@@ -2680,9 +2680,9 @@
       "abbreviation": "MASS",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 96,
-      "power_score": -0.5976275266391335
+      "power_score": -0.5520123888843411
     },
     {
       "school": "Arkansas State",
@@ -2706,9 +2706,9 @@
       "abbreviation": "ARST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 94,
-      "power_score": -0.5078414189826678
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 90,
+      "power_score": -0.4713142973097672
     },
     {
       "school": "Arkansas",
@@ -2732,9 +2732,9 @@
       "abbreviation": "ARK",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 118,
-      "power_score": -0.9025768782749888
+      "power_score": -0.9073288369903454
     },
     {
       "school": "Nevada",
@@ -2758,9 +2758,9 @@
       "abbreviation": "NEV",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 31,
-      "power_score": 0.3526424574000477
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 36,
+      "power_score": 0.2810456396173609
     },
     {
       "school": "Kennesaw State",
@@ -2784,9 +2784,9 @@
       "abbreviation": "KENN",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 104,
-      "power_score": -0.6948729964644397
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 105,
+      "power_score": -0.7065935655615289
     },
     {
       "school": "Delaware",
@@ -2810,9 +2810,9 @@
       "abbreviation": "DEL",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 88,
-      "power_score": -0.4204967190812408
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 83,
+      "power_score": -0.4363654574620341
     },
     {
       "school": "Coastal Carolina",
@@ -2836,9 +2836,9 @@
       "abbreviation": "CCU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 86,
-      "power_score": -0.3971386927444883
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 81,
+      "power_score": -0.4050458146207542
     },
     {
       "school": "Liberty",
@@ -2862,9 +2862,9 @@
       "abbreviation": "LIB",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 77,
-      "power_score": -0.3544044377731095
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 76,
+      "power_score": -0.3727535831863794
     },
     {
       "school": "New Mexico State",
@@ -2888,9 +2888,9 @@
       "abbreviation": "NMSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 103,
-      "power_score": -0.6764081801968573
+      "power_score": -0.7006930394477535
     },
     {
       "school": "Army",
@@ -2914,9 +2914,9 @@
       "abbreviation": "ARMY",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 91,
-      "power_score": -0.476160466825445
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 92,
+      "power_score": -0.48528313809434
     },
     {
       "school": "East Carolina",
@@ -2940,9 +2940,9 @@
       "abbreviation": "ECU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 122,
-      "power_score": -1.0259217242942238
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 123,
+      "power_score": -0.9889588288112108
     },
     {
       "school": "Wyoming",
@@ -2966,9 +2966,9 @@
       "abbreviation": "WYO",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 108,
-      "power_score": -0.717917565037508
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 109,
+      "power_score": -0.7477638065759982
     },
     {
       "school": "Texas State",
@@ -2992,9 +2992,9 @@
       "abbreviation": "TXST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 129,
-      "power_score": -1.0799862072450168
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 131,
+      "power_score": -1.122632287796927
     },
     {
       "school": "Sam Houston",
@@ -3018,9 +3018,9 @@
       "abbreviation": "SHSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 73,
-      "power_score": -0.3334537146581957
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 75,
+      "power_score": -0.3711411375370109
     },
     {
       "school": "Georgia Tech",
@@ -3044,9 +3044,9 @@
       "abbreviation": "GT",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 107,
-      "power_score": -0.7163438317726315
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 108,
+      "power_score": -0.7390826947139152
     },
     {
       "school": "Central Michigan",
@@ -3070,9 +3070,9 @@
       "abbreviation": "CMU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 123,
-      "power_score": -1.0281707683996124
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 126,
+      "power_score": -1.0477251843903617
     },
     {
       "school": "Eastern Michigan",
@@ -3096,9 +3096,9 @@
       "abbreviation": "EMU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 105,
-      "power_score": -0.6962753358844915
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 102,
+      "power_score": -0.6909624511497124
     },
     {
       "school": "Utah State",
@@ -3122,9 +3122,9 @@
       "abbreviation": "USU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 84,
-      "power_score": -0.3911825779122372
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 89,
+      "power_score": -0.4669978316431287
     },
     {
       "school": "Jacksonville State",
@@ -3148,9 +3148,9 @@
       "abbreviation": "JXST",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 93,
-      "power_score": -0.5047188872654446
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 94,
+      "power_score": -0.5088025104588183
     },
     {
       "school": "Oregon",
@@ -3174,9 +3174,9 @@
       "abbreviation": "ORE",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 74,
-      "power_score": -0.3419378404765473
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 80,
+      "power_score": -0.3957639774281672
     },
     {
       "school": "South Alabama",
@@ -3200,9 +3200,9 @@
       "abbreviation": "USA",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 69,
-      "power_score": -0.242052532078031
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 78,
+      "power_score": -0.3848450664074783
     },
     {
       "school": "UAB",
@@ -3226,9 +3226,9 @@
       "abbreviation": "UAB",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 110,
-      "power_score": -0.7361986838713406
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 104,
+      "power_score": -0.704924425307911
     },
     {
       "school": "UNLV",
@@ -3252,9 +3252,9 @@
       "abbreviation": "UNLV",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 106,
-      "power_score": -0.6975231564330243
+      "power_score": -0.7190870415977147
     },
     {
       "school": "Northern Illinois",
@@ -3278,9 +3278,9 @@
       "abbreviation": "NIU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 134,
-      "power_score": -1.298191658973994
+      "power_score": -1.305172057845208
     },
     {
       "school": "Washington State",
@@ -3304,9 +3304,9 @@
       "abbreviation": "WSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 121,
-      "power_score": -0.9886181433745204
+      "power_score": -0.9827479586937088
     },
     {
       "school": "Bowling Green",
@@ -3330,9 +3330,9 @@
       "abbreviation": "BGSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 137,
-      "power_score": -1.6003654400573852
+      "power_score": -1.626960691807689
     },
     {
       "school": "Akron",
@@ -3356,9 +3356,9 @@
       "abbreviation": "AKR",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 113,
-      "power_score": -0.7900000160366095
+      "power_score": -0.778998252352707
     },
     {
       "school": "Hawai'i",
@@ -3382,9 +3382,9 @@
       "abbreviation": "HAW",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 115,
-      "power_score": -0.8273819520821545
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 112,
+      "power_score": -0.7738379048669657
     },
     {
       "school": "Buffalo",
@@ -3408,9 +3408,9 @@
       "abbreviation": "BUF",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 100,
-      "power_score": -0.6343301231635202
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 98,
+      "power_score": -0.6229915005698412
     },
     {
       "school": "UL Monroe",
@@ -3434,9 +3434,9 @@
       "abbreviation": "ULM",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 136,
-      "power_score": -1.4136573788797298
+      "power_score": -1.4058703225753515
     },
     {
       "school": "Navy",
@@ -3460,9 +3460,9 @@
       "abbreviation": "NAVY",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 119,
-      "power_score": -0.9368504669537974
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 122,
+      "power_score": -0.9844989316420248
     },
     {
       "school": "Middle Tennessee",
@@ -3486,9 +3486,9 @@
       "abbreviation": "MTSU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 98,
-      "power_score": -0.6184310825406413
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 97,
+      "power_score": -0.617372652982745
     },
     {
       "school": "Sacramento State",
@@ -3512,9 +3512,9 @@
       "abbreviation": "SAC",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 124,
-      "power_score": -1.0311636412187095
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 127,
+      "power_score": -1.06489492776749
     },
     {
       "school": "Air Force",
@@ -3538,9 +3538,9 @@
       "abbreviation": "AF",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 102,
-      "power_score": -0.6480172527975974
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 101,
+      "power_score": -0.6811890063315338
     },
     {
       "school": "Rutgers",
@@ -3564,9 +3564,9 @@
       "abbreviation": "RUTG",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
-      "power_rank": 112,
-      "power_score": -0.7568529852893012
+      "as_of": "2026-09-15T15:49:51Z",
+      "power_rank": 114,
+      "power_score": -0.7903281986370001
     },
     {
       "school": "Western Kentucky",
@@ -3590,9 +3590,9 @@
       "abbreviation": "WKU",
       "season": 2026,
       "week": 2,
-      "as_of": "2026-09-14T17:48:32Z",
+      "as_of": "2026-09-15T15:49:51Z",
       "power_rank": 138,
-      "power_score": -1.9612048978513168
+      "power_score": -1.9096288118821576
     }
   ]
 }
