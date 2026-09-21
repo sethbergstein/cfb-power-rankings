@@ -1,6 +1,13 @@
 {
-  "default": "2026-week02",
+  "default": "2026-week03",
   "snapshots": [
+    {
+      "id": "2026-week03",
+      "season": 2026,
+      "week": 3,
+      "postseason": false,
+      "label": "2026 \u00b7 week 3"
+    },
     {
       "id": "2026-week02",
       "season": 2026,
