@@ -1,0 +1,19 @@
+{
+  "violations": [
+    {
+      "check": "5",
+      "name": "head-to-head",
+      "kind": "invariant",
+      "severity": "warning",
+      "teams": [
+        "Ohio State over Clemson"
+      ],
+      "message": "Winner with no more losses than the loser is ranked 1-3 spots behind that loser in the poll top 25."
+    }
+  ],
+  "health_errors": 0,
+  "invariant_warnings": 1,
+  "kind": "poll",
+  "season": 2019,
+  "week": 17
+}

@@ -1,0 +1,22 @@
+{
+  "violations": [
+    {
+      "check": "5",
+      "name": "head-to-head",
+      "kind": "invariant",
+      "severity": "warning",
+      "teams": [
+        "Florida over Texas A&M",
+        "South Carolina over Ole Miss",
+        "South Carolina over Alabama",
+        "Ohio State over Oregon"
+      ],
+      "message": "Winner with no more losses than the loser is ranked 1-3 spots behind that loser in the poll top 25."
+    }
+  ],
+  "health_errors": 0,
+  "invariant_warnings": 1,
+  "kind": "poll",
+  "season": 2024,
+  "week": 17
+}
