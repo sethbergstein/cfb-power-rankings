@@ -54,10 +54,11 @@ def compute_team_hfa(
     Estimate each team's home-field edge in expected margin points.
 
     Observed HFA = actual home margin minus neutral-strength expectation from
-    BCPI solver ratings. Values shrink toward the global base and are capped so
-    no venue runs away (typical spread ~±1.5 pts from league average).
+    BCPI solver ratings. Each team's deviation from the league-wide observed
+    average is shrunk and capped, then added to ``matchup_hfa`` so the table's
+    level matches the calibrated matchup mapping.
     """
-    base = params.hfa
+    base = params.matchup_hfa
     max_delta = max_delta if max_delta is not None else params.hfa_team_max_delta
     start = max(BACKTEST_START_SEASON, through_season - lookback_seasons)
     weighted_sum = {school: 0.0 for school in schools}
@@ -84,16 +85,17 @@ def compute_team_hfa(
             weighted_sum[home] += season_weight * observed
             weighted_count[home] += season_weight
 
+    total_count = sum(weighted_count.values())
+    league_mean = sum(weighted_sum.values()) / total_count if total_count > 0 else 0.0
     result: Dict[str, float] = {}
     for school in schools:
         n = weighted_count[school]
         if n < min_games:
             result[school] = base
             continue
-        raw = weighted_sum[school] / n
-        shrink = n / (n + shrink_games)
-        shrunk = shrink * raw + (1.0 - shrink) * base
-        result[school] = max(base - max_delta, min(base + max_delta, shrunk))
+        deviation = weighted_sum[school] / n - league_mean
+        shrunk = deviation * n / (n + shrink_games)
+        result[school] = base + max(-max_delta, min(max_delta, shrunk))
     return result
 
 
@@ -110,7 +112,7 @@ def load_team_hfa(
     if cache_path.exists() and not refresh:
         with cache_path.open("r", encoding="utf-8") as handle:
             cached = json.load(handle)
-        base = params.hfa
+        base = params.matchup_hfa
         return {school: float(cached.get(school, base)) for school in schools}
 
     table = compute_team_hfa(client, schools, through_season, params)
@@ -122,8 +124,8 @@ def load_team_hfa(
 def home_field_for_team(
     team: str,
     team_hfa: Optional[Dict[str, float]],
-    params: ModelParams,
+    default: float,
 ) -> float:
     if team_hfa and team in team_hfa:
         return float(team_hfa[team])
-    return params.hfa
+    return default

@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
-from bcpi.constants import FCS_OPPONENT_KEY
+from bcpi.constants import FCS_OPPONENT_KEY, HOME_FIELD_ADVANTAGE
 from bcpi.cfbd import CFBDClient
 from bcpi.params import ModelParams
+
+SPREAD_PROVIDER_PREFERENCE = ("consensus", "Bovada")
 
 
 @dataclass(frozen=True)
@@ -54,16 +57,38 @@ class GameResult:
         return self.home_is_fbs or self.away_is_fbs
 
 
-def _pick_closing_spread(lines: List[Dict]) -> Optional[float]:
+def _to_float(value) -> Optional[float]:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _provider_lines(rows: List[Dict]) -> List[Dict]:
+    """CFBD /lines returns one row per game with a nested ``lines`` list (one per provider)."""
+    flat: List[Dict] = []
+    for row in rows:
+        nested = row.get("lines")
+        if isinstance(nested, list):
+            flat.extend(line for line in nested if isinstance(line, dict))
+        elif "spread" in row:
+            flat.append(row)
+    return flat
+
+
+def _pick_closing_spread(rows: List[Dict]) -> Optional[float]:
+    lines = [
+        (line.get("provider"), _to_float(line.get("spread")))
+        for line in _provider_lines(rows)
+    ]
+    lines = [(provider, spread) for provider, spread in lines if spread is not None]
     if not lines:
         return None
-    preferred = [line for line in lines if line.get("provider") in ("consensus", "Bovada")]
-    candidates = preferred or lines
-    for line in reversed(candidates):
-        spread = line.get("spread")
-        if spread is not None:
-            return float(spread)
-    return None
+    for preferred in SPREAD_PROVIDER_PREFERENCE:
+        for provider, spread in lines:
+            if provider == preferred:
+                return spread
+    return lines[0][1]
 
 
 def parse_games(
@@ -106,36 +131,53 @@ def parse_games(
     return games
 
 
+def compress_margin(margin: float, scale: float) -> float:
+    """Shrink blowouts smoothly: close to linear inside two scores, saturating near ±scale.
+
+    Applied the same way to actual and expected margins so a team is never
+    penalized for failing to beat a cap it was expected to clear.
+    """
+    if scale <= 0:
+        return margin
+    return scale * math.tanh(margin / scale)
+
+
+def site_advantage(
+    game: GameResult,
+    perspective_team: str,
+    params: Optional[ModelParams] = None,
+) -> float:
+    """Home field in points from one team's perspective (0 at neutral sites)."""
+    if game.neutral_site:
+        return 0.0
+    hfa = params.hfa if params else HOME_FIELD_ADVANTAGE
+    if perspective_team == game.home_team:
+        return hfa
+    if perspective_team == game.away_team:
+        return -hfa
+    return 0.0
+
+
 def effective_margin_for_rating(
     game: GameResult,
     perspective_team: str,
     params: Optional[ModelParams] = None,
 ) -> Optional[float]:
-    """Margin from one team's perspective, with FCS caps and HFA removed for power rating."""
-    from bcpi.constants import FCS_MARGIN_CAP, HOME_FIELD_ADVANTAGE
-
-    hfa = params.hfa if params else HOME_FIELD_ADVANTAGE
-    fcs_cap = params.fcs_margin_cap if params else FCS_MARGIN_CAP
-
+    """Margin from one team's perspective with home field removed (neutral-field margin)."""
     if perspective_team == game.home_team:
         margin = float(game.margin_home)
-        if not game.neutral_site:
-            margin -= hfa
-        opponent_class = game.away_classification
     elif perspective_team == game.away_team:
         margin = float(-game.margin_home)
-        if not game.neutral_site:
-            margin += hfa
-        opponent_class = game.home_classification
     else:
         return None
+    return margin - site_advantage(game, perspective_team, params)
 
-    if opponent_class == "fcs":
-        if margin > 0:
-            margin = min(margin, fcs_cap)
-        else:
-            margin = max(margin, -fcs_cap)
-    return margin
+
+def team_won(game: GameResult, team: str) -> Optional[bool]:
+    """True/False for a decided game involving ``team``; None for ties or other teams."""
+    if team not in (game.home_team, game.away_team) or game.margin_home == 0:
+        return None
+    return (game.margin_home > 0) == (team == game.home_team)
 
 
 def opponent_key(game: GameResult, perspective_team: str) -> Optional[str]:

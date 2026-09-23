@@ -1,0 +1,19 @@
+{
+  "violations": [
+    {
+      "check": "4",
+      "name": "record floor",
+      "kind": "invariant",
+      "severity": "warning",
+      "teams": [
+        "Ohio State"
+      ],
+      "message": "Poll top-10 team is at or below .500 against FBS and has no win over a power top-10 team."
+    }
+  ],
+  "health_errors": 0,
+  "invariant_warnings": 1,
+  "kind": "poll",
+  "season": 2026,
+  "week": 2
+}

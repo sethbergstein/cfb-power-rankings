@@ -4,18 +4,22 @@ from __future__ import annotations
 
 import json
 from copy import deepcopy
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Dict, Optional
 
 from bcpi.config import PROJECT_ROOT
 from bcpi.constants import (
-    FCS_MARGIN_CAP,
+    FCS_RATING,
     HOME_FIELD_ADVANTAGE,
+    MARGIN_COMPRESSION,
     POWER_WEIGHTS,
     PRIOR_WEIGHTS,
+    QUALITY_OPPONENT_SLOPES,
     QUALITY_WEIGHTS,
     RECENCY_DECAY_LAMBDA,
+    SOLVER_MAX_ITERATIONS,
+    SOLVER_TOLERANCE,
 )
 
 TUNED_PARAMS_PATH = PROJECT_ROOT / "config" / "tuned_params.json"
@@ -31,38 +35,51 @@ def _normalize(weights: Dict[str, float]) -> Dict[str, float]:
 
 @dataclass
 class ModelParams:
-    """All weights and scalars used by the BCPI model."""
+    """All weights and scalars used by the BCPI power model."""
 
+    # Solver: opponent-adjusted margin ratings.
     recency_lambda: float = RECENCY_DECAY_LAMBDA
-    form_weight: float = 0.55
-    k_factor: float = 18.0
-    margin_scale: float = 25.0
-    matchup_margin_scale: float = 9.0
-    matchup_rank_pt: float = 0.20
+    k_factor: float = 8.0
+    margin_scale: float = 19.0
     hfa: float = HOME_FIELD_ADVANTAGE
-    fcs_margin_cap: float = FCS_MARGIN_CAP
-    form_margin_cap: float = 28.0
-    opp_quality_scale: float = 0.45
-    opp_quality_min: float = 0.40
-    opp_quality_max: float = 1.60
-    h2h_penalty: float = 0.14
-    h2h_winner_boost: float = 0.30
-    h2h_max_total: float = 0.28
-    h2h_use_recency: bool = False
-    elite_quality_weight: float = 0.70
-    elite_opponent_top_n: int = 30
-    playoff_appearance_bonus: float = 0.05
-    playoff_win_bonus: float = 0.035
+    fcs_rating: float = FCS_RATING
+    margin_compression: float = MARGIN_COMPRESSION
+    solver_max_iterations: int = SOLVER_MAX_ITERATIONS
+    solver_tolerance: float = SOLVER_TOLERANCE
     prior_fade_start: int = 1
-    prior_fade_end: int = 8
+    prior_fade_end: int = 12
+    defending_champion_prior_z: float = 0.0
+
+    # Quality: opponent-adjusted efficiency blended with scoring form.
+    form_weight: float = 0.35
+    exclude_garbage_time: bool = False
+    quality_opponent_slopes: Dict[str, float] = field(
+        default_factory=lambda: deepcopy(QUALITY_OPPONENT_SLOPES)
+    )
+
+    # Composite: games needed before quality fully replaces the prior, and the
+    # head-to-head window (power-score units) inside which a winner closes the gap.
+    power_sample_games: float = 6.0
+    h2h_window: float = 0.15
+    h2h_max_total: float = 0.15
+    h2h_site_adjusted: bool = True
+    playoff_appearance_bonus: float = 0.0
+    playoff_win_bonus: float = 0.0
+
+    # Matchup predictions from published power ratings. ``matchup_hfa`` is the
+    # league-wide home edge for those predictions; ``hfa`` above only neutralizes
+    # game sites inside the solver.
+    matchup_margin_scale: float = 9.0
+    matchup_hfa: float = HOME_FIELD_ADVANTAGE
+    matchup_rank_pt: float = 0.20
     win_prob_scale: float = 13.5
-    defending_champion_prior_z: float = 0.10
+    # Logistic scale turning solver-rating margins into win probabilities (poll SOR).
+    solver_win_prob_scale: float = 8.5
     hfa_team_max_delta: float = 1.75
     hfa_lookback_seasons: int = 5
     hfa_min_games: int = 6
     hfa_shrink_games: float = 12.0
-    power_sample_games: float = 4.0
-    power_sample_games_bad: float = 2.0
+
     power_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(POWER_WEIGHTS))
     quality_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(QUALITY_WEIGHTS))
     prior_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(PRIOR_WEIGHTS))
@@ -73,41 +90,7 @@ class ModelParams:
         self.prior_weights = _normalize(self.prior_weights)
 
     def to_dict(self) -> Dict:
-        return {
-            "recency_lambda": self.recency_lambda,
-            "form_weight": self.form_weight,
-            "k_factor": self.k_factor,
-            "margin_scale": self.margin_scale,
-            "matchup_margin_scale": self.matchup_margin_scale,
-            "matchup_rank_pt": self.matchup_rank_pt,
-            "hfa": self.hfa,
-            "fcs_margin_cap": self.fcs_margin_cap,
-            "form_margin_cap": self.form_margin_cap,
-            "opp_quality_scale": self.opp_quality_scale,
-            "opp_quality_min": self.opp_quality_min,
-            "opp_quality_max": self.opp_quality_max,
-            "h2h_penalty": self.h2h_penalty,
-            "h2h_winner_boost": self.h2h_winner_boost,
-            "h2h_max_total": self.h2h_max_total,
-            "h2h_use_recency": self.h2h_use_recency,
-            "elite_quality_weight": self.elite_quality_weight,
-            "elite_opponent_top_n": self.elite_opponent_top_n,
-            "playoff_appearance_bonus": self.playoff_appearance_bonus,
-            "playoff_win_bonus": self.playoff_win_bonus,
-            "prior_fade_start": self.prior_fade_start,
-            "prior_fade_end": self.prior_fade_end,
-            "win_prob_scale": self.win_prob_scale,
-            "defending_champion_prior_z": self.defending_champion_prior_z,
-            "hfa_team_max_delta": self.hfa_team_max_delta,
-            "hfa_lookback_seasons": self.hfa_lookback_seasons,
-            "hfa_min_games": self.hfa_min_games,
-            "hfa_shrink_games": self.hfa_shrink_games,
-            "power_sample_games": self.power_sample_games,
-            "power_sample_games_bad": self.power_sample_games_bad,
-            "power_weights": self.power_weights,
-            "quality_weights": self.quality_weights,
-            "prior_weights": self.prior_weights,
-        }
+        return asdict(self)
 
     @classmethod
     def from_dict(cls, payload: Dict) -> "ModelParams":

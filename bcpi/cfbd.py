@@ -111,11 +111,12 @@ class CFBDClient:
         self,
         year: int,
         season_type: str = "regular",
+        exclude_garbage_time: bool = False,
     ) -> List[Dict[str, Any]]:
-        return self.get(
-            "/stats/game/advanced",
-            {"year": year, "seasonType": season_type},
-        )
+        params: Dict[str, Any] = {"year": year, "seasonType": season_type}
+        if exclude_garbage_time:
+            params["excludeGarbageTime"] = "true"
+        return self.get("/stats/game/advanced", params)
 
     def get_advanced_season_stats(self, year: int) -> List[Dict[str, Any]]:
         return self.get(

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """CLI entrypoint for Bergstein CFB Power Index."""
 
-from typing import Optional
+from typing import Optional, Tuple
 
 import click
 
-from bcpi.backtest import run_backtest
+from bcpi.backtest import BacktestMetrics, run_backtest
+from bcpi.checks import format_annotations
 from bcpi.constants import BACKTEST_END_SEASON, BACKTEST_START_SEASON, TARGET_SEASON
 from bcpi.params import ModelParams, TUNED_PARAMS_PATH, get_active_params
 from bcpi.matchup import format_matchup, predict_matchup
@@ -164,54 +165,104 @@ def backtest(start: int, end: int, use_defaults: bool) -> None:
         return
 
     click.echo(summary.to_string(index=False))
-    click.echo(
-        f"\nOverall ({overall.games} games): "
-        f"MAE={overall.margin_mae:.2f} pts | "
-        f"RMSE={overall.margin_rmse:.2f} | "
-        f"log-loss={overall.win_log_loss:.3f} | "
-        f"accuracy={overall.win_accuracy:.1%} | "
-        f"solver MAE={overall.solver_margin_mae:.2f}"
+    click.echo(f"\nOverall ({overall.games} games)")
+    click.echo(_format_metrics(overall))
+
+
+def _format_metrics(metrics: BacktestMetrics) -> str:
+    return (
+        f"  matchup page: MAE={metrics.margin_mae:.2f} pts | RMSE={metrics.margin_rmse:.2f} | "
+        f"log-loss={metrics.win_log_loss:.3f} | accuracy={metrics.win_accuracy:.1%}\n"
+        f"  fitted:       MAE={metrics.fitted_mae:.2f} (weeks 2-4 {metrics.fitted_mae_early:.2f}, "
+        f"5-8 {metrics.fitted_mae_mid:.2f}, 9+ {metrics.fitted_mae_late:.2f}) | "
+        f"log-loss={metrics.fitted_log_loss:.3f} | accuracy={metrics.fitted_accuracy:.1%}\n"
+        f"  implied matchup scale={metrics.implied_matchup_margin_scale:.2f} | "
+        f"home field={metrics.fitted_hfa:.2f} | win-prob scale={metrics.fitted_win_prob_scale:.2f} | "
+        f"solver-only MAE={metrics.solver_margin_mae:.2f} | score={metrics.score():.3f}"
     )
 
 
 @cli.command("tune")
 @click.option("--start", default=BACKTEST_START_SEASON, show_default=True, type=int)
 @click.option("--end", default=BACKTEST_END_SEASON, show_default=True, type=int)
-@click.option("--samples", default=80, show_default=True, type=int, help="Random search samples.")
-@click.option("--refine", default=50, show_default=True, type=int, help="Local refine steps.")
-def tune(start: int, end: int, samples: int, refine: int) -> None:
-    """Search for better weights via walk-forward backtest (2018-2025)."""
+@click.option("--rounds", default=4, show_default=True, type=int, help="Coordinate-search rounds.")
+@click.option(
+    "--holdout",
+    multiple=True,
+    type=int,
+    help="Season to leave out of the search and report separately (repeatable).",
+)
+@click.option("--no-save", is_flag=True, help="Report only; keep the current tuned params.")
+def tune(start: int, end: int, rounds: int, holdout: Tuple[int, ...], no_save: bool) -> None:
+    """Search model parameters via walk-forward backtest, starting from the active params."""
     click.echo(f"Tuning BCPI on seasons {start}-{end}...")
-    click.echo("Loading season data (cached API responses when available)...")
+
+    def progress(round_index: int, name: str, metrics: BacktestMetrics) -> None:
+        click.echo(f"  round {round_index} {name:<36} score={metrics.score():.4f}")
 
     result = run_tuning(
         start_season=start,
         end_season=end,
-        random_samples=samples,
-        refine_iterations=refine,
+        rounds=rounds,
+        holdout=holdout,
+        save=not no_save,
+        progress=progress,
     )
 
-    baseline = result["baseline"]["metrics"]
-    tuned = result["tuned"]["metrics"]
-    improvement = result["improvement"]
+    click.echo(f"\n{result['evaluations']} backtest evaluations")
+    click.echo("--- Baseline (active params) ---")
+    click.echo(_format_metrics(result["baseline"]["metrics"]))
+    click.echo("--- Tuned ---")
+    click.echo(_format_metrics(result["tuned"]["metrics"]))
+    if "holdout" in result:
+        seasons = ", ".join(str(season) for season in result["holdout"]["seasons"])
+        click.echo(f"--- Holdout seasons ({seasons}): baseline, then tuned ---")
+        click.echo(_format_metrics(result["holdout"]["baseline"]))
+        click.echo(_format_metrics(result["holdout"]["tuned"]))
+    if not no_save:
+        click.echo(f"\nSaved tuned params to {TUNED_PARAMS_PATH}")
 
-    click.echo("\n--- Baseline (default weights) ---")
-    click.echo(
-        f"MAE={baseline.margin_mae:.2f} | log-loss={baseline.win_log_loss:.3f} | "
-        f"score={baseline.score():.3f}"
-    )
-    click.echo("\n--- Tuned ---")
-    click.echo(
-        f"MAE={tuned.margin_mae:.2f} | log-loss={tuned.win_log_loss:.3f} | "
-        f"score={tuned.score():.3f}"
-    )
-    click.echo("\n--- Improvement ---")
-    click.echo(
-        f"MAE {improvement['margin_mae']:+.2f} pts | "
-        f"log-loss {improvement['win_log_loss']:+.3f} | "
-        f"score {improvement['score']:+.3f}"
-    )
-    click.echo(f"\nSaved tuned params to {TUNED_PARAMS_PATH}")
+
+@cli.command("check")
+@click.option("--season", default=TARGET_SEASON, show_default=True, type=int)
+@click.option("--week", default=None, type=int, help="As-of week (default: latest on disk).")
+@click.option("--postseason", is_flag=True, help="Check the postseason snapshot.")
+def check_rankings(season: int, week: Optional[int], postseason: bool) -> None:
+    """Print health/invariant annotations for a snapshot; exit 1 on a health error."""
+    import json
+    from pathlib import Path
+
+    from bcpi.config import OUTPUT_DIR
+    from bcpi.rankings_io import find_rankings_path
+
+    paths = []
+    for kind in ("power", "poll"):
+        csv_path = find_rankings_path(kind, season, postseason=postseason, week=week)
+        if csv_path is None:
+            continue
+        sidecar = Path(str(csv_path).replace(".csv", "_checks.json"))
+        if sidecar.exists():
+            paths.append(sidecar)
+
+    if not paths:
+        # Fall back to every sidecar in output/ for this season.
+        paths = sorted(OUTPUT_DIR.glob(f"bcpi_*_{season}*_checks.json"))
+    if not paths:
+        raise click.ClickException(f"No check files found for {season}. Run rank and poll first.")
+
+    health_errors = 0
+    for path in paths:
+        payload = json.loads(path.read_text())
+        results = payload.get("violations", [])
+        from bcpi.checks import CheckResult
+
+        parsed = [CheckResult(**row) for row in results]
+        health_errors += payload.get("health_errors", 0)
+        click.echo(f"{path.name}: {len(parsed)} violation(s)")
+        for line in format_annotations(parsed):
+            click.echo(line)
+    if health_errors:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

@@ -29,6 +29,11 @@ jobs:
           BCPI_SITE_URL: ${{ vars.BCPI_SITE_URL }}
         run: python run_bcpi.py export-site --refresh
 
+      - name: Check rankings
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: python run_bcpi.py check
+
       - name: Commit site and rankings
         run: |
           git config user.name "github-actions[bot]"

@@ -1,12 +1,24 @@
 # Bergstein CFB Power Index (BCPI)
 
-Data-driven, neutral-field **power rankings** for FBS college football. BCPI estimates who the best teams are right now — not a poll-style resume ranking.
+Two rankings for FBS college football, built from the same games:
 
-## What BCPI measures
+- **Power** estimates who would win a game on a neutral field.
+- **Poll** estimates who has earned the highest ranking so far.
 
-- **Primary output:** Power ranking (predictive, neutral-field strength)
-- **Inputs:** Game margins (opponent-adjusted, recency-weighted), advanced efficiency stats (EPA/success/explosiveness via CFBD), closing spreads, and 247 talent composite priors
-- **FCS opponents:** Handled as a single background opponent class (not ranked in output)
+They share a solver (opponent-adjusted, recency-weighted ratings) and then answer different questions.
+
+## Methodology
+
+Ratings live on a 1500-centered scale. Expected margin is the rating gap divided by a points-per-rating scale, plus home field. Blowouts are compressed with `C · tanh(margin / C)` so a 60-point win is not twice as informative as a 30-point win. The solver finds the rating vector that is a fixed point of that update (Newton's method). Isolated conference islands (the 2020 Pac-12) keep the level their prior assigned; only relative ratings inside the island are determined.
+
+**Power.** Score = solver weight × z(solver) + quality weight × [c × quality + (1 − c) × prior], with those weights retuned on 2018–2025. Quality is opponent-adjusted EPA, success rate, explosiveness and passing, blended with scoring form. Credibility `c` reaches 1 after six FBS games. A site-adjusted head-to-head step closes small gaps when the winner still wins after home field is removed. FCS opponents are one background team rated 1050. Walk-forward, after refitting the published scale and home field: about 12.6 points of error (12.9 in weeks 2–4), 73% straight-up.
+
+**Poll.** Every game is scored against a benchmark team, the average of the top 25 by solver rating, playing the same opponent at the same site. Strength of record is wins minus the wins that benchmark would expect; performance is the compressed margin beyond the benchmark's expected margin. Resume = z(0.8 × z(SOR) + 0.2 × z(performance)). The published poll is `K / (K + games)` of the preseason (K = 2; FCS games count half) plus the rest resume, then a wider head-to-head pass. Preseason is last season's final poll, roster talent, and the AP preseason (unranked = 26th), plus a bump for the defending champion. After the title game, the preseason weight is 0. A capped playoff-round bonus in wins units is added to SOR, and the national champion is forced to #1 in the final poll.
+
+**Matchups.** The site converts a power-rating gap to a spread with a separately fitted scale and league-wide home field, then a logistic win probability. Team-level home-field deviations are shrunk toward that league average.
+
+**Checks.** Every snapshot runs seven ranking invariants (warnings) and five health checks (errors that fail the publish). See `bcpi/checks.py`.
+
 - **Target season:** 2026 (trained/backtested on 2018–2025)
 
 ## Quick start
@@ -34,9 +46,11 @@ cp .env.example .env
 
 ```bash
 python run_bcpi.py rank --season 2026
+python run_bcpi.py poll --season 2026
+python run_bcpi.py check --season 2026
 ```
 
-Output is written to `output/bcpi_power_2026_preseason.csv` (preseason) or `output/bcpi_power_2026_weekXX.csv` during the season.
+Output is written to `output/bcpi_power_2026_weekXX.csv` and `output/bcpi_poll_2026_weekXX.csv`. `check` prints health and invariant annotations and exits 1 on a health error.
 
 ### 4. Backtest
 
@@ -44,15 +58,16 @@ Output is written to `output/bcpi_power_2026_preseason.csv` (preseason) or `outp
 python run_bcpi.py backtest --start 2018 --end 2025
 ```
 
-Walk-forward evaluation: train through week *t*, predict week *t+1* FBS games.
+Walk-forward evaluation: train through week *t*, predict week *t+1* FBS games. Reports both the published matchup-page error and a fitted error that ignores the published scale.
 
 ### 5. Tune weights
 
 ```bash
 python run_bcpi.py tune --start 2018 --end 2025
+python run_bcpi.py tune --holdout 2024 --holdout 2025 --no-save
 ```
 
-Searches for better weights via random search + local refinement. Saves results to `config/tuned_params.json` (used automatically by `rank` unless `--use-defaults`).
+Coordinate search from the active params, then refits the matchup scale, home field, and win-probability curve. Saves `config/tuned_params.json` unless `--no-save`.
 
 
 ## GitHub Actions (weekly cron)
@@ -60,7 +75,7 @@ Searches for better weights via random search + local refinement. Saves results 
 1. Push this repo to GitHub.
 2. In the repo: **Settings → Secrets and variables → Actions → New repository secret**
 3. Name: `CFBD_API_KEY`, value: your CollegeFootballData API key
-4. The workflow runs every **Tuesday 06:00 UTC** and commits updated `output/` files.
+4. The workflow runs **Monday and Tuesday at noon UTC** and commits updated `output/` and `docs/` files.
 
 You can also trigger manually from the **Actions** tab (`workflow_dispatch`).
 

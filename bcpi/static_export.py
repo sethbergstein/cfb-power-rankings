@@ -70,8 +70,18 @@ def _parse_snapshot_from_path(path: Path) -> Tuple[int, bool, int]:
     return season, False, 0
 
 
+def _json_safe(value: Any) -> Any:
+    """NaN is not valid JSON; browsers reject the whole file."""
+    if isinstance(value, float) and value != value:
+        return None
+    return value
+
+
 def _enrich_rows(kind: str, df: pd.DataFrame, season: int, postseason: bool) -> List[Dict[str, Any]]:
-    rows = df.sort_values("rank").to_dict(orient="records")
+    rows = [
+        {key: _json_safe(value) for key, value in row.items()}
+        for row in df.sort_values("rank").to_dict(orient="records")
+    ]
     other_kind = "poll" if kind == "power" else "power"
     week = None
     if "week" in df.columns and len(df):
@@ -309,13 +319,27 @@ def export_data_bundle(
                 "rows": poll_rows,
             },
         )
+        check_payload = {"snapshots": []}
+        for kind, path in (("power", power_path), ("poll", poll_path)):
+            sidecar = Path(str(path).replace(".csv", "_checks.json"))
+            if sidecar.exists():
+                with sidecar.open("r", encoding="utf-8") as handle:
+                    check_payload["snapshots"].append(json.load(handle))
+        check_payload["health_errors"] = sum(
+            snap.get("health_errors", 0) for snap in check_payload["snapshots"]
+        )
+        check_payload["invariant_warnings"] = sum(
+            snap.get("invariant_warnings", 0) for snap in check_payload["snapshots"]
+        )
+        _write_json(DATA_DIR / "checks.json", check_payload)
+
         _write_json(
             DATA_DIR / "params.json",
             {
                 "margin_scale": params.margin_scale,
                 "matchup_margin_scale": params.matchup_margin_scale,
                 "matchup_rank_pt": params.matchup_rank_pt,
-                "hfa": params.hfa,
+                "hfa": params.matchup_hfa,
                 "hfa_team_max_delta": params.hfa_team_max_delta,
                 "win_prob_scale": params.win_prob_scale,
                 "team_hfa": team_hfa,

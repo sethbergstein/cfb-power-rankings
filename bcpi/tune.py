@@ -1,216 +1,274 @@
-"""Hyperparameter search for BCPI model weights."""
+"""Walk-forward parameter search for the BCPI power model."""
 
 from __future__ import annotations
 
 import copy
-import random
-from typing import Callable, Dict, List, Optional, Tuple
+import json
+from dataclasses import dataclass
+from typing import Callable, Dict, List, Optional, Sequence, Tuple
+
+import numpy as np
 
 from bcpi.backtest import (
     BacktestMetrics,
     SeasonBundle,
     evaluate_params,
+    fit_win_prob_scale,
     load_season_bundles,
+    season_priors,
+    site_margins,
 )
 from bcpi.cfbd import CFBDClient
-from bcpi.params import DEFAULT_PARAMS_PATH, ModelParams, TUNED_PARAMS_PATH
+from bcpi.game_stats import QUALITY_METRICS, game_metric_diffs
+from bcpi.params import ModelParams, TUNED_PARAMS_PATH, get_active_params
+from bcpi.solver import solve_ratings
 
 
-def _sample_weight_dict(keys: List[str], rng: random.Random) -> Dict[str, float]:
-    raw = {key: rng.random() for key in keys}
-    total = sum(raw.values())
-    return {key: value / total for key, value in raw.items()}
+@dataclass(frozen=True)
+class Coordinate:
+    """One searchable parameter; ``group.key`` addresses a weight inside a dict."""
+
+    name: str
+    low: float
+    high: float
+    step: float
+    integer: bool = False
 
 
-def _mutate_weights(
-    weights: Dict[str, float],
-    keys: List[str],
-    rng: random.Random,
-    sigma: float = 0.08,
-) -> Dict[str, float]:
-    mutated = {}
-    for key in keys:
-        mutated[key] = max(0.01, weights[key] + rng.uniform(-sigma, sigma))
-    total = sum(mutated.values())
-    return {key: value / total for key, value in mutated.items()}
+COORDINATES: Tuple[Coordinate, ...] = (
+    Coordinate("recency_lambda", 0.0, 0.40, 0.04),
+    Coordinate("k_factor", 2.0, 30.0, 2.0),
+    Coordinate("margin_scale", 10.0, 40.0, 2.0),
+    Coordinate("hfa", 1.0, 5.0, 0.4),
+    Coordinate("fcs_rating", 850.0, 1300.0, 50.0),
+    Coordinate("margin_compression", 10.0, 80.0, 6.0),
+    Coordinate("prior_fade_end", 4, 20, 2, integer=True),
+    Coordinate("form_weight", 0.0, 1.0, 0.1),
+    Coordinate("power_sample_games", 1.0, 14.0, 1.5),
+    Coordinate("h2h_window", 0.0, 0.4, 0.05),
+    Coordinate("power_weights.solver", 0.3, 0.95, 0.05),
+    Coordinate("quality_weights.epa_diff", 0.0, 0.9, 0.08),
+    Coordinate("quality_weights.success_diff", 0.0, 0.9, 0.08),
+    Coordinate("quality_weights.explosiveness_diff", 0.0, 0.9, 0.08),
+    Coordinate("quality_weights.passing_diff", 0.0, 0.9, 0.08),
+    Coordinate("prior_weights.previous_season", 0.0, 0.9, 0.08),
+    Coordinate("prior_weights.talent", 0.0, 0.9, 0.08),
+    Coordinate("prior_weights.consensus", 0.0, 0.9, 0.08),
+)
 
 
-def random_params(rng: random.Random, base: Optional[ModelParams] = None) -> ModelParams:
-    params = copy.deepcopy(base) if base else ModelParams()
-    params.recency_lambda = rng.uniform(0.18, 0.50)
-    params.form_weight = rng.uniform(0.40, 0.70)
-    params.k_factor = rng.uniform(12.0, 24.0)
-    params.margin_scale = rng.uniform(22.0, 30.0)
-    params.hfa = rng.uniform(2.0, 3.5)
-    params.fcs_margin_cap = rng.uniform(17.0, 24.0)
-    params.prior_fade_end = rng.randint(6, 10)
-    params.win_prob_scale = rng.uniform(11.0, 16.0)
-    params.power_weights = _sample_weight_dict(list(params.power_weights.keys()), rng)
-    params.quality_weights = _sample_weight_dict(list(params.quality_weights.keys()), rng)
-    params.prior_weights = _sample_weight_dict(list(params.prior_weights.keys()), rng)
-    params.normalize()
-    return params
+def get_value(params: ModelParams, name: str) -> float:
+    if "." in name:
+        group, key = name.split(".", 1)
+        return float(getattr(params, group).get(key, 0.0))
+    return float(getattr(params, name))
 
 
-def _local_refine(
-    bundles: List[SeasonBundle],
-    client: CFBDClient,
+def with_value(params: ModelParams, coord: Coordinate, value: float) -> Optional[ModelParams]:
+    """Copy of ``params`` with one coordinate moved; None if clamping leaves it unchanged."""
+    value = min(coord.high, max(coord.low, value))
+    if coord.integer:
+        value = int(round(value))
+    if abs(value - get_value(params, coord.name)) < 1e-9:
+        return None
+    candidate = copy.deepcopy(params)
+    if "." not in coord.name:
+        setattr(candidate, coord.name, value)
+        return candidate
+
+    group, key = coord.name.split(".", 1)
+    weights = dict(getattr(candidate, group))
+    if group == "power_weights":
+        # Market stays where it is; quality takes whatever the solver gives up.
+        weights[key] = value
+        weights["quality"] = max(0.0, 1.0 - weights.get("solver", 0.0) - weights.get("market", 0.0))
+    else:
+        others = sum(weight for name, weight in weights.items() if name != key)
+        weights[key] = value
+        if others > 0:
+            for name in weights:
+                if name != key:
+                    weights[name] *= (1.0 - value) / others
+    setattr(candidate, group, weights)
+    return candidate
+
+
+def estimate_quality_slopes(bundles: Sequence[SeasonBundle], params: ModelParams) -> Dict[str, float]:
+    """
+    Efficiency differential per point of expected margin, for each quality metric.
+
+    Pools every FBS game log and regresses the offense-minus-defense differential
+    (through the origin) on the end-of-season rating gap in points. The quality
+    step credits each game ``slope * opponent strength`` using these values.
+    """
+    sxx = 0.0
+    sxy = {metric: 0.0 for metric in QUALITY_METRICS}
+    for bundle in bundles:
+        if not bundle.games:
+            continue
+        final_week = max(game.week for game in bundle.games)
+        states = solve_ratings(
+            teams=bundle.schools,
+            games=bundle.games,
+            prior_ratings=season_priors(bundle, params),
+            current_week=final_week,
+            params=params,
+        )
+        ratings = {school: states[school].rating for school in bundle.schools}
+        for team, log in bundle.team_game_logs.items():
+            if team not in ratings:
+                continue
+            for contrib in log:
+                if contrib.opponent not in ratings:
+                    continue
+                gap = (ratings[team] - ratings[contrib.opponent]) / params.margin_scale
+                sxx += gap * gap
+                for metric, value in game_metric_diffs(contrib).items():
+                    sxy[metric] += gap * value
+    return {metric: (sxy[metric] / sxx if sxx > 0 else 0.0) for metric in QUALITY_METRICS}
+
+
+def coordinate_search(
+    bundles: Sequence[SeasonBundle],
     start: ModelParams,
-    rng: random.Random,
-    iterations: int = 40,
-) -> Tuple[ModelParams, BacktestMetrics]:
+    rounds: int = 4,
+    min_improvement: float = 1e-3,
+    progress: Optional[Callable[[int, str, BacktestMetrics], None]] = None,
+) -> Tuple[ModelParams, BacktestMetrics, int]:
+    """
+    Greedy coordinate descent on ``BacktestMetrics.score``.
+
+    Each coordinate walks in whichever direction improves the score until it
+    stops improving. Step sizes halve after a round with no improvement.
+    """
     best = copy.deepcopy(start)
-    best_metrics, _ = evaluate_params(bundles, best, client)
-    best_score = best_metrics.score()
+    best_metrics, _ = evaluate_params(list(bundles), best)
+    evaluations = 1
+    steps = {coord.name: coord.step for coord in COORDINATES}
 
-    for _ in range(iterations):
-        candidate = copy.deepcopy(best)
-        candidate.recency_lambda += rng.uniform(-0.04, 0.04)
-        candidate.form_weight += rng.uniform(-0.06, 0.06)
-        candidate.k_factor += rng.uniform(-2.0, 2.0)
-        candidate.margin_scale += rng.uniform(-1.5, 1.5)
-        candidate.hfa += rng.uniform(-0.25, 0.25)
-        candidate.fcs_margin_cap += rng.uniform(-2.0, 2.0)
-        candidate.prior_fade_end = int(
-            max(5, min(12, candidate.prior_fade_end + rng.randint(-1, 1)))
-        )
-        candidate.win_prob_scale += rng.uniform(-1.0, 1.0)
-        candidate.power_weights = _mutate_weights(
-            candidate.power_weights,
-            list(candidate.power_weights.keys()),
-            rng,
-            sigma=0.05,
-        )
-        candidate.quality_weights = _mutate_weights(
-            candidate.quality_weights,
-            list(candidate.quality_weights.keys()),
-            rng,
-            sigma=0.05,
-        )
-        candidate.prior_weights = _mutate_weights(
-            candidate.prior_weights,
-            list(candidate.prior_weights.keys()),
-            rng,
-            sigma=0.05,
-        )
-        candidate.recency_lambda = max(0.10, min(0.60, candidate.recency_lambda))
-        candidate.form_weight = max(0.30, min(0.80, candidate.form_weight))
-        candidate.k_factor = max(8.0, min(30.0, candidate.k_factor))
-        candidate.margin_scale = max(18.0, min(35.0, candidate.margin_scale))
-        candidate.hfa = max(1.5, min(4.5, candidate.hfa))
-        candidate.fcs_margin_cap = max(14.0, min(28.0, candidate.fcs_margin_cap))
-        candidate.win_prob_scale = max(9.0, min(18.0, candidate.win_prob_scale))
-        candidate.normalize()
-
-        metrics, _ = evaluate_params(bundles, candidate, client)
-        score = metrics.score()
-        if score < best_score:
-            best = candidate
-            best_metrics = metrics
-            best_score = score
-
-    return best, best_metrics
+    for round_index in range(rounds):
+        improved = False
+        for coord in COORDINATES:
+            for direction in (1.0, -1.0):
+                moved = False
+                while True:
+                    target = get_value(best, coord.name) + direction * steps[coord.name]
+                    candidate = with_value(best, coord, target)
+                    if candidate is None:
+                        break
+                    metrics, _ = evaluate_params(list(bundles), candidate)
+                    evaluations += 1
+                    if metrics.score() < best_metrics.score() - min_improvement:
+                        best, best_metrics, moved = candidate, metrics, True
+                        continue
+                    break
+                if moved:
+                    improved = True
+                    break
+            if progress:
+                progress(round_index + 1, coord.name, best_metrics)
+        if not improved:
+            steps = {
+                coord.name: max(1.0, steps[coord.name] / 2.0) if coord.integer else steps[coord.name] / 2.0
+                for coord in COORDINATES
+            }
+    return best, best_metrics, evaluations
 
 
-def tune_params(
-    bundles: List[SeasonBundle],
-    client: CFBDClient,
-    rng_seed: int = 42,
-    random_samples: int = 80,
-    refine_iterations: int = 50,
-    progress_callback: Optional[
-        Callable[[int, int, ModelParams, BacktestMetrics], None]
-    ] = None,
-) -> Tuple[ModelParams, BacktestMetrics, ModelParams, BacktestMetrics]:
-    rng = random.Random(rng_seed)
-    baseline = ModelParams()
-    baseline_metrics, _ = evaluate_params(bundles, baseline, client)
-    baseline_score = baseline_metrics.score()
+def calibrate_matchups(bundles: Sequence[SeasonBundle], params: ModelParams) -> Dict[str, float]:
+    """
+    Fit the matchup page's scale, home field and win-probability curve, and the
+    win-probability curve for solver-rating margins used by the poll's SOR.
 
-    best = copy.deepcopy(baseline)
-    best_metrics = baseline_metrics
-    best_score = baseline_score
+    The rank floor is kept only if it lowers the page's error at the fitted scale.
+    """
+    metrics, detail = evaluate_params(list(bundles), params)
+    params.matchup_margin_scale = metrics.implied_matchup_margin_scale
+    params.matchup_hfa = metrics.fitted_hfa
+    params.win_prob_scale = metrics.fitted_win_prob_scale
 
-    for index in range(random_samples):
-        candidate = random_params(rng, base=best)
-        metrics, _ = evaluate_params(bundles, candidate, client)
-        score = metrics.score()
-        if score < best_score:
-            best = candidate
-            best_metrics = metrics
-            best_score = score
-        if progress_callback:
-            progress_callback(index + 1, random_samples, best, best_metrics)
-
-    refined, refined_metrics = _local_refine(
-        bundles,
-        client,
-        best,
-        rng,
-        iterations=refine_iterations,
+    actual = detail["actual_margin"].to_numpy(dtype=float)
+    params.solver_win_prob_scale = fit_win_prob_scale(
+        detail["solver_margin"].to_numpy(dtype=float), actual
     )
-    if refined_metrics.score() < best_score:
-        best = refined
-        best_metrics = refined_metrics
-        best_score = refined_metrics.score()
-
-    return best, best_metrics, baseline, baseline_metrics
+    rank_floor_mae = {}
+    for rank_pt in (0.0, 0.1, 0.2):
+        margins = site_margins(detail, params, rank_pt=rank_pt)
+        rank_floor_mae[rank_pt] = float(np.mean(np.abs(actual - margins)))
+    params.matchup_rank_pt = min(rank_floor_mae, key=rank_floor_mae.get)
+    return {f"rank_pt_{key:.1f}_mae": value for key, value in rank_floor_mae.items()}
 
 
 def run_tuning(
     start_season: int = 2018,
     end_season: int = 2025,
-    random_samples: int = 80,
-    refine_iterations: int = 50,
+    rounds: int = 4,
+    holdout: Sequence[int] = (),
     save: bool = True,
     client: Optional[CFBDClient] = None,
+    progress: Optional[Callable[[int, str, BacktestMetrics], None]] = None,
 ) -> Dict:
+    """
+    Tune from the active params, then calibrate the matchup mapping.
+
+    Seasons in ``holdout`` are excluded from the search and reported separately
+    (baseline vs tuned) as an out-of-sample check.
+    """
+    import os
+
+    # Small Newton solves are faster on one BLAS thread; the walk-forward
+    # launches hundreds of them.
+    os.environ.setdefault("OMP_NUM_THREADS", "1")
+    os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+    os.environ.setdefault("VECLIB_MAXIMUM_THREADS", "1")
+    os.environ.setdefault("MKL_NUM_THREADS", "1")
+
     owns_client = client is None
     if owns_client:
         client = CFBDClient()
 
     try:
-        bundles = load_season_bundles(client, start_season, end_season, pause_seconds=0.0)
-
-        def progress(done: int, total: int, best: ModelParams, metrics: BacktestMetrics) -> None:
-            print(
-                f"  sample {done}/{total} | best MAE={metrics.margin_mae:.2f} "
-                f"logloss={metrics.win_log_loss:.3f} score={metrics.score():.3f}",
-                flush=True,
-            )
-
-        tuned, tuned_metrics, baseline, baseline_metrics = tune_params(
-            bundles=bundles,
-            client=client,
-            random_samples=random_samples,
-            refine_iterations=refine_iterations,
-            progress_callback=progress,
+        baseline = get_active_params()
+        bundles = load_season_bundles(
+            client,
+            start_season,
+            end_season,
+            pause_seconds=0.0,
+            exclude_garbage_time=baseline.exclude_garbage_time,
         )
+        train = [bundle for bundle in bundles if bundle.season not in set(holdout)]
+        test = [bundle for bundle in bundles if bundle.season in set(holdout)]
+
+        baseline_metrics, _ = evaluate_params(train, baseline)
+        start = copy.deepcopy(baseline)
+        start.quality_opponent_slopes = estimate_quality_slopes(train, start)
+        tuned, _, evaluations = coordinate_search(train, start, rounds=rounds, progress=progress)
+        tuned.h2h_max_total = tuned.h2h_window
+        tuned.quality_opponent_slopes = estimate_quality_slopes(train, tuned)
+        rank_floor = calibrate_matchups(train, tuned)
+        tuned.normalize()
+        tuned_metrics, _ = evaluate_params(train, tuned)
+
+        result: Dict = {
+            "evaluations": evaluations,
+            "baseline": {"metrics": baseline_metrics, "params": baseline.to_dict()},
+            "tuned": {"metrics": tuned_metrics, "params": tuned.to_dict()},
+            "rank_floor": rank_floor,
+        }
+        if test:
+            result["holdout"] = {
+                "seasons": sorted(bundle.season for bundle in test),
+                "baseline": evaluate_params(test, baseline)[0],
+                "tuned": evaluate_params(test, tuned)[0],
+            }
 
         if save:
             payload = tuned.to_dict()
-            payload["tuning_method"] = "game_epa"
+            payload["tuning_method"] = "coordinate_search_phase_split"
             TUNED_PARAMS_PATH.parent.mkdir(parents=True, exist_ok=True)
             with TUNED_PARAMS_PATH.open("w", encoding="utf-8") as handle:
-                import json
                 json.dump(payload, handle, indent=2)
-            baseline.save(DEFAULT_PARAMS_PATH)
-
-        return {
-            "baseline": {
-                "metrics": baseline_metrics,
-                "params": baseline.to_dict(),
-            },
-            "tuned": {
-                "metrics": tuned_metrics,
-                "params": tuned.to_dict(),
-            },
-            "improvement": {
-                "margin_mae": baseline_metrics.margin_mae - tuned_metrics.margin_mae,
-                "win_log_loss": baseline_metrics.win_log_loss - tuned_metrics.win_log_loss,
-                "score": baseline_metrics.score() - tuned_metrics.score(),
-            },
-        }
+        return result
     finally:
         if owns_client and client is not None:
             client.close()

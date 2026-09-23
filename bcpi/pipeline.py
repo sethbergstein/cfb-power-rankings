@@ -6,15 +6,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+import pandas as pd
+
 from bcpi.cfbd import CFBDClient
+from bcpi.checks import evaluate_checks, flag_teams, write_checks
 from bcpi.config import OUTPUT_DIR
 from bcpi.constants import TARGET_SEASON
 from bcpi.games import load_season_games, POSTSEASON_AS_WEEK, team_records
 from bcpi.params import get_active_params, ModelParams
-from bcpi.resume_index import build_current_poll_index
-from bcpi.resume_params import get_resume_params
 from bcpi.power_index import build_power_index_from_client
 from bcpi.priors import build_preseason_priors
+from bcpi.resume_index import build_current_poll_index
+from bcpi.resume_params import get_resume_params
 from bcpi.solver import solve_ratings
 from bcpi.teams import get_fbs_teams, team_lookup
 
@@ -94,6 +97,20 @@ def run_rankings(
         snapshot_path = OUTPUT_DIR / f"{label}.json"
         rankings.to_json(snapshot_path, orient="records", indent=2)
 
+        checks = evaluate_checks(
+            power=rankings,
+            poll=None,
+            games=games,
+            week=current_week,
+            schools=schools,
+            params=params,
+            final=include_postseason and current_week >= POSTSEASON_AS_WEEK,
+        )
+        write_checks(
+            OUTPUT_DIR / f"{label}_checks.json",
+            checks,
+            extra={"kind": "power", "season": season, "week": current_week},
+        )
         return output_path
     finally:
         if owns_client and client is not None:
@@ -173,12 +190,37 @@ def run_poll_rankings(
         else:
             label += "_preseason"
 
+        power = None
+        if include_postseason and current_week >= POSTSEASON_AS_WEEK:
+            power_path = OUTPUT_DIR / f"bcpi_power_{season}_postseason.csv"
+        elif current_week:
+            power_path = OUTPUT_DIR / f"bcpi_power_{season}_week{current_week:02d}.csv"
+        else:
+            power_path = OUTPUT_DIR / f"bcpi_power_{season}_preseason.csv"
+        if power_path.exists():
+            power = pd.read_csv(power_path)
+
+        checks = evaluate_checks(
+            power=power,
+            poll=rankings,
+            games=games,
+            week=current_week,
+            schools=schools,
+            params=params,
+            final=include_postseason and current_week >= POSTSEASON_AS_WEEK,
+        )
+        rankings["check_flags"] = pd.Series(flag_teams(checks, schools)).reindex(rankings.index).fillna("")
+
         output_path = OUTPUT_DIR / f"{label}.csv"
         rankings.to_csv(output_path, index=False)
 
         snapshot_path = OUTPUT_DIR / f"{label}.json"
         rankings.to_json(snapshot_path, orient="records", indent=2)
-
+        write_checks(
+            OUTPUT_DIR / f"{label}_checks.json",
+            checks,
+            extra={"kind": "poll", "season": season, "week": current_week},
+        )
         return output_path
     finally:
         if owns_client and client is not None:

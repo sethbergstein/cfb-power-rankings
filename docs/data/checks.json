@@ -1,0 +1,22 @@
+{
+  "snapshots": [
+    {
+      "violations": [],
+      "health_errors": 0,
+      "invariant_warnings": 0,
+      "kind": "power",
+      "season": 2026,
+      "week": 3
+    },
+    {
+      "violations": [],
+      "health_errors": 0,
+      "invariant_warnings": 0,
+      "kind": "poll",
+      "season": 2026,
+      "week": 3
+    }
+  ],
+  "health_errors": 0,
+  "invariant_warnings": 0
+}

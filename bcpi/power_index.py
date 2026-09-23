@@ -1,4 +1,4 @@
-"""Quality metrics and composite Bergstein CFB Power Index."""
+"""Composite Bergstein CFB Power Index."""
 
 from __future__ import annotations
 
@@ -7,23 +7,23 @@ from typing import Dict, List, Optional
 import pandas as pd
 
 from bcpi.constants import RATING_MEAN, RATING_SPREAD
-from bcpi.games import GameResult, filter_games_through_week, games_played, team_records
-from bcpi.params import ModelParams
-from bcpi.priors import decay_prior_weight
+from bcpi.games import GameResult, filter_games_through_week, team_records
 from bcpi.game_stats import (
     aggregate_game_quality,
     build_team_game_logs,
     load_season_game_advanced,
 )
-from bcpi.quality import build_walkforward_quality_z, load_season_quality_table
-from bcpi.recency import recency_weight, sample_credibility
+from bcpi.head_to_head import head_to_head_adjustments
+from bcpi.params import ModelParams
+from bcpi.quality import build_walkforward_quality_z
+from bcpi.recency import sample_credibility
 from bcpi.solver import TeamRatingState
 
 
 def _zscore(series: pd.Series) -> pd.Series:
     std = series.std(ddof=0, skipna=True)
     if std == 0 or pd.isna(std):
-        return pd.Series(0.0, index=series.index)
+        return pd.Series(0.0, index=series.index).where(series.notna())
     return (series - series.mean(skipna=True)) / std
 
 
@@ -35,76 +35,20 @@ def _solver_ratings(states: Dict[str, TeamRatingState]) -> Dict[str, float]:
     return {school: state.rating for school, state in states.items()}
 
 
-def _apply_head_to_head_nudge(
-    scores: pd.Series,
+def fbs_games_played(
     games: List[GameResult],
+    schools: List[str],
     current_week: int,
-    params: ModelParams,
 ) -> pd.Series:
-    """Penalize teams ranked above opponents that beat them head-to-head."""
-    if params.h2h_penalty <= 0:
-        return scores
-
-    adjusted = scores.copy()
-    loser_penalties: Dict[str, float] = {}
-
+    """Completed FBS-vs-FBS games per team (the games that feed quality)."""
+    counts = {school: 0 for school in schools}
     for game in filter_games_through_week(games, current_week):
-        if not game.is_fbs_game or not game.completed or game.margin_home == 0:
+        if not game.is_fbs_game or not game.completed:
             continue
-        if game.margin_home > 0:
-            winner, loser = game.home_team, game.away_team
-        else:
-            winner, loser = game.away_team, game.home_team
-        if winner not in adjusted.index or loser not in adjusted.index:
-            continue
-        if adjusted[loser] <= adjusted[winner]:
-            continue
-
-        weight = (
-            recency_weight(current_week, game.week, params.recency_lambda)
-            if params.h2h_use_recency
-            else 1.0
-        )
-        penalty = params.h2h_penalty * weight
-        remaining = params.h2h_max_total - loser_penalties.get(loser, 0.0)
-        if remaining <= 0:
-            continue
-        penalty = min(penalty, remaining)
-        loser_penalties[loser] = loser_penalties.get(loser, 0.0) + penalty
-        adjusted[loser] -= penalty
-        adjusted[winner] += penalty * params.h2h_winner_boost
-
-    return adjusted
-
-
-def _apply_playoff_path_bonus(
-    scores: pd.Series,
-    games: List[GameResult],
-    current_week: int,
-    params: ModelParams,
-) -> pd.Series:
-    """Modest bonus for CFP appearance and playoff wins."""
-    if params.playoff_appearance_bonus <= 0 and params.playoff_win_bonus <= 0:
-        return scores
-
-    adjusted = scores.copy()
-    for team in adjusted.index:
-        cfp_games = [
-            g
-            for g in filter_games_through_week(games, current_week)
-            if g.is_fbs_game and g.completed and g.is_cfp and team in (g.home_team, g.away_team)
-        ]
-        if not cfp_games:
-            continue
-        adjusted[team] += params.playoff_appearance_bonus
-        wins = sum(
-            1
-            for g in cfp_games
-            if (g.home_team == team and g.margin_home > 0)
-            or (g.away_team == team and g.margin_home < 0)
-        )
-        adjusted[team] += wins * params.playoff_win_bonus
-    return adjusted
+        for team in (game.home_team, game.away_team):
+            if team in counts:
+                counts[team] += 1
+    return pd.Series(counts, dtype=float)
 
 
 def build_power_components(
@@ -114,38 +58,32 @@ def build_power_components(
     games: List[GameResult],
     current_week: int,
     params: ModelParams,
-    season_quality: Optional[pd.DataFrame] = None,
     game_quality: Optional[pd.DataFrame] = None,
-    use_season_advanced: bool = True,
     opponent_ratings: Optional[Dict[str, float]] = None,
 ) -> pd.DataFrame:
-    ratings = opponent_ratings or _solver_ratings(solver_states)
+    """
+    power score = solver weight x z(solver rating)
+                + in-season weight x [c x quality + (1 - c) x z(prior)]
 
-    if game_quality is not None:
-        quality_input = game_quality
-    elif use_season_advanced and season_quality is not None:
-        quality_input = season_quality
-    else:
-        quality_input = None
+    c = min(FBS games / power_sample_games, 1): quality replaces the preseason
+    prior as a team's own sample grows. Teams without quality data use the prior.
+    A site-adjusted head-to-head step then closes small gaps between a winner
+    and the team it beat.
+    """
+    ratings = opponent_ratings or _solver_ratings(solver_states)
     quality_z = build_walkforward_quality_z(
         games=games,
         schools=schools,
         current_week=current_week,
         params=params,
-        season_quality=quality_input,
+        game_quality=game_quality,
         opponent_ratings=ratings,
-    )
+    ).reindex(schools)
 
-    game_value = pd.Series(
-        {
-            s: (
-                solver_states[s].game_value
-                if s in solver_states and solver_states[s].game_weight > 0
-                else float("nan")
-            )
-            for s in schools
-        }
+    solver_rating = pd.Series(
+        {s: solver_states[s].rating if s in solver_states else RATING_MEAN for s in schools}
     )
+    prior_rating = pd.Series({s: prior_ratings.get(s, RATING_MEAN) for s in schools})
     market_value = pd.Series(
         {
             s: (
@@ -156,52 +94,52 @@ def build_power_components(
             for s in schools
         }
     )
-    talent_prior = pd.Series({s: prior_ratings.get(s, RATING_MEAN) for s in schools})
-    prior_fade = decay_prior_weight(
-        current_week,
-        fade_start=params.prior_fade_start,
-        fade_end=params.prior_fade_end,
-    )
-    n_played = pd.Series(games_played(games, schools, current_week)).reindex(schools).fillna(0)
-    cred = sample_credibility(n_played, params.power_sample_games)
+
+    solver_z = _zscore(solver_rating.astype(float)).fillna(0.0)
+    prior_z = _zscore(prior_rating.astype(float)).fillna(0.0)
+    market_z = _zscore(market_value.astype(float))
+
+    n_fbs = fbs_games_played(games, schools, current_week).reindex(schools).fillna(0.0)
+    cred = sample_credibility(n_fbs, params.power_sample_games)
     if not isinstance(cred, pd.Series):
         cred = pd.Series(float(cred), index=schools)
 
-    q_w = params.power_weights["quality"]
-    g_w = params.power_weights["game_value"]
-    m_w = params.power_weights["market"]
-    p_w = params.power_weights["talent_prior"] * prior_fade
-    in_season_w = q_w + g_w + m_w
+    solver_w = params.power_weights.get("solver", 0.0)
+    quality_w = params.power_weights.get("quality", 0.0)
+    market_w = params.power_weights.get("market", 0.0)
+    in_season = quality_w * quality_z.fillna(prior_z) + market_w * market_z.fillna(prior_z)
+    base = solver_w * solver_z + cred * in_season + (1.0 - cred) * (quality_w + market_w) * prior_z
 
-    components = pd.DataFrame(index=schools)
-    components["quality_z"] = quality_z.reindex(schools).fillna(0.0)
-    components["game_value_z"] = _zscore(game_value.astype(float)).fillna(0.0)
-    components["market_z"] = _zscore(market_value.astype(float)).fillna(0.0)
-    components["talent_prior_z"] = _zscore(talent_prior.astype(float)).fillna(0.0)
-
-    # Ugly results (underperforming the prior) fade in faster than G5 blowouts.
-    bad_n = getattr(params, "power_sample_games_bad", 0.0) or 0.0
-    if bad_n > 0:
-        cred_bad = sample_credibility(n_played, bad_n)
-        if not isinstance(cred_bad, pd.Series):
-            cred_bad = pd.Series(float(cred_bad), index=schools)
-        cred = cred.where(components["game_value_z"] >= 0, cred_bad)
-
-    composite_z = (
-        (q_w * cred) * components["quality_z"]
-        + (g_w * cred) * components["game_value_z"]
-        + (m_w * cred) * components["market_z"]
-        + (p_w + in_season_w * (1.0 - cred)) * components["talent_prior_z"]
+    h2h = head_to_head_adjustments(
+        base,
+        games,
+        current_week,
+        window=params.h2h_window,
+        max_total=params.h2h_max_total,
+        site_adjusted=params.h2h_site_adjusted,
+        params=params,
     )
-    composite_z = _apply_head_to_head_nudge(composite_z, games, current_week, params)
-    composite_z = _apply_playoff_path_bonus(composite_z, games, current_week, params)
+    score = base + h2h
 
     records = team_records(games, schools, current_week, fbs_only=False)
-    components["solver_rating"] = [
-        solver_states[s].rating if s in solver_states else RATING_MEAN for s in schools
+    components = pd.DataFrame(index=schools)
+    components["solver_rating"] = solver_rating
+    components["solver_iterations"] = [
+        solver_states[s].solver_iterations if s in solver_states else 0 for s in schools
     ]
-    components["power_score"] = composite_z
-    components["power_rating"] = composite_z.map(lambda z: _rating_from_z(float(z)))
+    components["solver_max_change"] = [
+        solver_states[s].solver_max_change if s in solver_states else 0.0 for s in schools
+    ]
+    components["solver_z"] = solver_z
+    components["quality_z"] = quality_z
+    components["prior_rating"] = prior_rating
+    components["prior_z"] = prior_z
+    components["market_z"] = market_z
+    components["fbs_games"] = n_fbs.astype(int)
+    components["credibility"] = cred
+    components["h2h_adjustment"] = h2h
+    components["power_score"] = score
+    components["power_rating"] = score.map(lambda z: _rating_from_z(float(z)))
     components["wins"] = [records[s][0] for s in schools]
     components["losses"] = [records[s][1] for s in schools]
     components["rank"] = components["power_rating"].rank(ascending=False, method="min").astype(int)
@@ -217,30 +155,24 @@ def build_power_index_from_client(
     games: List[GameResult],
     current_week: int,
     params: ModelParams,
-    use_game_epa: bool = True,
     include_postseason: bool = False,
 ) -> pd.DataFrame:
-    season_quality = None
-    game_quality = None
     opponent_ratings = _solver_ratings(solver_states)
-
-    if use_game_epa:
-        game_stats = load_season_game_advanced(
-            client, season, include_postseason=include_postseason
-        )
-        team_logs = build_team_game_logs(game_stats, games, schools)
-        game_quality = aggregate_game_quality(
-            team_logs,
-            schools,
-            through_week=current_week,
-            current_week=current_week,
-            params=params,
-            opponent_ratings=opponent_ratings,
-        )
-    else:
-        advanced_rows = client.get_advanced_season_stats(season)
-        season_quality = load_season_quality_table(advanced_rows, schools)
-
+    game_stats = load_season_game_advanced(
+        client,
+        season,
+        include_postseason=include_postseason,
+        exclude_garbage_time=params.exclude_garbage_time,
+    )
+    team_logs = build_team_game_logs(game_stats, games, schools)
+    game_quality = aggregate_game_quality(
+        team_logs,
+        schools,
+        through_week=current_week,
+        current_week=current_week,
+        params=params,
+        opponent_ratings=opponent_ratings,
+    )
     return build_power_components(
         schools=schools,
         solver_states=solver_states,
@@ -248,8 +180,6 @@ def build_power_index_from_client(
         games=games,
         current_week=current_week,
         params=params,
-        season_quality=season_quality,
         game_quality=game_quality,
-        use_season_advanced=not use_game_epa,
         opponent_ratings=opponent_ratings,
     )

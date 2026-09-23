@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from copy import deepcopy
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Dict, Optional
 
@@ -12,19 +12,19 @@ from bcpi.config import PROJECT_ROOT
 
 RESUME_PARAMS_PATH = PROJECT_ROOT / "config" / "resume_params.json"
 
-DEFAULT_RESUME_WEIGHTS = {
-    "record": 0.26,
-    "schedule": 0.22,
-    "results": 0.24,
-    "elite_wins": 0.14,
-    "playoff": 0.14,
+# Bonus in wins for the deepest CFP round reached (a first-round loss earns nothing
+# beyond the games themselves).
+DEFAULT_PLAYOFF_ROUND_BONUS = {
+    "first_round": 0.0,
+    "quarterfinal": 0.1,
+    "semifinal": 0.25,
+    "championship": 0.5,
 }
 
-DEFAULT_PLAYOFF_ROUND_PARTICIPATION = {
-    "first_round": 0.04,
-    "quarterfinal": 0.06,
-    "semifinal": 0.08,
-    "championship": 0.14,
+DEFAULT_PRESEASON_WEIGHTS = {
+    "previous_poll": 0.45,
+    "talent": 0.35,
+    "consensus": 0.20,
 }
 
 
@@ -37,54 +37,42 @@ def _normalize(weights: Dict[str, float]) -> Dict[str, float]:
 
 @dataclass
 class ResumeParams:
-    """Poll/resume index weights — separate from BCPI power tuning."""
+    """Poll/resume index settings — separate from BCPI power tuning."""
 
-    resume_weights: Dict[str, float] = field(default_factory=lambda: deepcopy(DEFAULT_RESUME_WEIGHTS))
-    playoff_appearance_bonus: float = 0.05
-    playoff_round_participation: Dict[str, float] = field(
-        default_factory=lambda: deepcopy(DEFAULT_PLAYOFF_ROUND_PARTICIPATION)
+    # Benchmark: the average of the top N teams by solver rating.
+    benchmark_top_n: int = 25
+    # Resume = sor_weight * z(SOR) + (1 - sor_weight) * z(performance).
+    sor_weight: float = 0.8
+    # Preseason share of the poll = K / (K + games); FCS games count as a fraction.
+    preseason_games_k: float = 2.0
+    fcs_game_weight: float = 0.5
+    preseason_weights: Dict[str, float] = field(
+        default_factory=lambda: deepcopy(DEFAULT_PRESEASON_WEIGHTS)
     )
-    playoff_round_win_bonus: float = 0.04
-    playoff_champion_bonus: float = 0.06
-    elite_win_top_n: int = 30
-    loss_penalty_factor: float = 0.65
-    sub500_poll_penalty: float = 0.85
-    resume_min_week: int = 1
-    poll_sample_games: float = 2.0
-    poll_sample_games_bad: float = 1.0
-    preseason_resume_weight: float = 0.45
-    preseason_forward_weight: float = 0.35
-    preseason_consensus_weight: float = 0.20
+    defending_champion_bonus: float = 0.10
+    # A winner within this many poll-score units of the team it beat closes the gap.
+    h2h_window: float = 0.40
+    h2h_max_total: float = 0.40
+    playoff_round_bonus: Dict[str, float] = field(
+        default_factory=lambda: deepcopy(DEFAULT_PLAYOFF_ROUND_BONUS)
+    )
+    playoff_champion_bonus: float = 0.25
+    playoff_bonus_cap: float = 1.0
+    # Off by default: the champion is flagged by the checks, not forced to #1.
+    force_champion_first: bool = True
 
     def normalize(self) -> None:
-        self.resume_weights = _normalize(self.resume_weights)
+        self.preseason_weights = _normalize(self.preseason_weights)
 
     def to_dict(self) -> Dict:
-        return {
-            "resume_weights": self.resume_weights,
-            "playoff_appearance_bonus": self.playoff_appearance_bonus,
-            "playoff_round_participation": self.playoff_round_participation,
-            "playoff_round_win_bonus": self.playoff_round_win_bonus,
-            "playoff_champion_bonus": self.playoff_champion_bonus,
-            "elite_win_top_n": self.elite_win_top_n,
-            "loss_penalty_factor": self.loss_penalty_factor,
-            "sub500_poll_penalty": self.sub500_poll_penalty,
-            "resume_min_week": self.resume_min_week,
-            "poll_sample_games": self.poll_sample_games,
-            "poll_sample_games_bad": self.poll_sample_games_bad,
-            "preseason_resume_weight": self.preseason_resume_weight,
-            "preseason_forward_weight": self.preseason_forward_weight,
-            "preseason_consensus_weight": self.preseason_consensus_weight,
-        }
+        return asdict(self)
 
     @classmethod
     def from_dict(cls, payload: Dict) -> "ResumeParams":
         params = cls()
         for key, value in payload.items():
-            if key == "resume_weights" and isinstance(value, dict):
-                params.resume_weights = value
-            elif key == "playoff_round_participation" and isinstance(value, dict):
-                params.playoff_round_participation = value
+            if isinstance(value, dict) and isinstance(getattr(params, key, None), dict):
+                setattr(params, key, dict(value))
             elif hasattr(params, key):
                 setattr(params, key, value)
         params.normalize()

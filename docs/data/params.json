@@ -1,10 +1,10 @@
 {
   "margin_scale": 19.030666969930408,
-  "matchup_margin_scale": 9.0,
-  "matchup_rank_pt": 0.2,
-  "hfa": 3.639030772307273,
+  "matchup_margin_scale": 13.713612556575404,
+  "matchup_rank_pt": 0.1,
+  "hfa": 2.7672400403836277,
   "hfa_team_max_delta": 1.75,
-  "win_prob_scale": 12.852794776115358,
+  "win_prob_scale": 9.1,
   "team_hfa": {
     "Air Force": 1.8890307723072728,
     "Akron": 1.8890307723072728,

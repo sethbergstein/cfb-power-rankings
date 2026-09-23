@@ -10,7 +10,7 @@ import pandas as pd
 from bcpi.cfbd import CFBDClient
 from bcpi.champions import load_defending_champion
 from bcpi.constants import (
-    FCS_INITIAL_RATING_OFFSET,
+    CONSENSUS_UNRANKED_RANK,
     FCS_OPPONENT_KEY,
     RATING_MEAN,
     RATING_SPREAD,
@@ -45,6 +45,30 @@ def _returning_value(row: dict) -> Optional[float]:
 
 
 RETURNING_Z_CLIP = 1.25
+
+
+def consensus_rank_z(ranks: pd.Series) -> pd.Series:
+    """Z-score AP ranks with unranked teams placed at rank 26 (never above #25)."""
+    filled = ranks.astype(float).fillna(float(CONSENSUS_UNRANKED_RANK))
+    if ranks.notna().sum() == 0:
+        return pd.Series(0.0, index=ranks.index)
+    return _zscore(-filled)
+
+
+def load_consensus_ranks(client: CFBDClient, season: int, schools: List[str]) -> pd.Series:
+    """Preseason (week 1) AP ranks; NaN for unranked teams."""
+    consensus_map: Dict[str, float] = {}
+    try:
+        poll = client.get_rankings(season, week=1, season_type="regular")
+        if poll:
+            ranks = poll[0].get("polls", [])
+            ap = next((p for p in ranks if p.get("poll") == "AP Top 25"), None)
+            if ap:
+                for rank_row in ap.get("ranks", []):
+                    consensus_map[rank_row["school"]] = float(rank_row["rank"])
+    except Exception:
+        pass
+    return pd.Series({school: consensus_map.get(school) for school in schools}, dtype=float)
 
 
 @dataclass
@@ -84,25 +108,12 @@ def load_prior_components(
     except Exception:
         frame["returning"] = None
 
-    consensus_map: Dict[str, float] = {}
-    try:
-        poll = client.get_rankings(season, week=1, season_type="regular")
-        if poll:
-            ranks = poll[0].get("polls", [])
-            ap = next((p for p in ranks if p.get("poll") == "AP Top 25"), None)
-            if ap:
-                for rank_row in ap.get("ranks", []):
-                    consensus_map[rank_row["school"]] = float(rank_row["rank"])
-    except Exception:
-        pass
-    frame["consensus_rank"] = frame.index.map(lambda s: consensus_map.get(s))
+    frame["consensus_rank"] = load_consensus_ranks(client, season, schools)
 
     returning_z = _zscore(frame["returning"].astype(float)).clip(
         -RETURNING_Z_CLIP, RETURNING_Z_CLIP
     )
-    consensus_z = _zscore(
-        frame["consensus_rank"].astype(float).map(lambda r: -r if pd.notna(r) else None)
-    ).fillna(0.0)
+    consensus_z = consensus_rank_z(frame["consensus_rank"])
 
     return PriorComponents(
         schools=schools,
@@ -134,7 +145,7 @@ def blend_prior_components(components: PriorComponents, params: ModelParams) -> 
         school: _rating_from_z(float(composite_z.loc[school]))
         for school in components.schools
     }
-    ratings[FCS_OPPONENT_KEY] = RATING_MEAN + FCS_INITIAL_RATING_OFFSET
+    ratings[FCS_OPPONENT_KEY] = params.fcs_rating
     return ratings
 
 

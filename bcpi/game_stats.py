@@ -8,7 +8,7 @@ from typing import Dict, List, Optional
 import pandas as pd
 
 from bcpi.cfbd import CFBDClient
-from bcpi.constants import RATING_MEAN, RATING_SPREAD
+from bcpi.constants import RATING_MEAN
 from bcpi.games import POSTSEASON_AS_WEEK, GameResult
 from bcpi.params import ModelParams
 from bcpi.recency import recency_weight
@@ -71,11 +71,16 @@ def load_season_game_advanced(
     client: CFBDClient,
     season: int,
     include_postseason: bool = False,
+    exclude_garbage_time: bool = False,
 ) -> List[GameAdvancedStat]:
-    rows = client.get_advanced_game_stats(season, season_type="regular")
+    rows = client.get_advanced_game_stats(
+        season, season_type="regular", exclude_garbage_time=exclude_garbage_time
+    )
     stats = parse_game_advanced_rows(rows)
     if include_postseason:
-        post_rows = client.get_advanced_game_stats(season, season_type="postseason")
+        post_rows = client.get_advanced_game_stats(
+            season, season_type="postseason", exclude_garbage_time=exclude_garbage_time
+        )
         post_stats = parse_game_advanced_rows(post_rows)
         for stat in post_stats:
             stats.append(
@@ -171,118 +176,16 @@ def build_team_game_logs(
     return logs
 
 
-def opponent_quality_multiplier(
-    opp_rating: float,
-    params: ModelParams,
-) -> float:
-    """Scale game quality weight by opponent solver strength (1.0 = average FBS)."""
-    if params.opp_quality_scale <= 0:
-        return 1.0
-    z = (opp_rating - RATING_MEAN) / (RATING_SPREAD / 2.5)
-    mult = 1.0 + params.opp_quality_scale * z
-    return max(params.opp_quality_min, min(params.opp_quality_max, mult))
+QUALITY_METRICS = ("epa_diff", "success_diff", "explosiveness_diff", "passing_diff")
 
 
-def elite_opponent_set(
-    opponent_ratings: Dict[str, float],
-    schools: List[str],
-    top_n: int,
-) -> set:
-    """Teams in the top N by solver rating (elite competition tier)."""
-    rated = [(team, opponent_ratings.get(team, RATING_MEAN)) for team in schools]
-    rated.sort(key=lambda item: item[1], reverse=True)
-    return {team for team, _ in rated[:top_n]}
-
-
-def _empty_totals() -> Dict[str, float]:
+def game_metric_diffs(contrib: GameMetricContrib) -> Dict[str, float]:
+    """Offense minus defense for one game, before any opponent adjustment."""
     return {
-        "off_ppa": 0.0,
-        "off_w": 0.0,
-        "def_ppa": 0.0,
-        "def_w": 0.0,
-        "off_success": 0.0,
-        "off_success_w": 0.0,
-        "def_success": 0.0,
-        "def_success_w": 0.0,
-        "off_expl": 0.0,
-        "off_expl_w": 0.0,
-        "def_expl": 0.0,
-        "def_expl_w": 0.0,
-        "off_pass": 0.0,
-        "off_pass_w": 0.0,
-        "def_pass": 0.0,
-        "def_pass_w": 0.0,
-    }
-
-
-def _accumulate_contrib(
-    totals: Dict[str, float],
-    contrib: GameMetricContrib,
-    weight: float,
-) -> None:
-    w_off = weight * contrib.off_plays
-    w_def = weight * contrib.def_plays
-    totals["off_ppa"] += w_off * contrib.off_ppa
-    totals["off_w"] += w_off
-    totals["def_ppa"] += w_def * contrib.def_ppa
-    totals["def_w"] += w_def
-    totals["off_success"] += w_off * contrib.off_success
-    totals["off_success_w"] += w_off
-    totals["def_success"] += w_def * contrib.def_success
-    totals["def_success_w"] += w_def
-    totals["off_expl"] += w_off * contrib.off_expl
-    totals["off_expl_w"] += w_off
-    totals["def_expl"] += w_def * contrib.def_expl
-    totals["def_expl_w"] += w_def
-    w_pass_off = weight * contrib.off_pass_plays
-    w_pass_def = weight * contrib.def_pass_plays
-    totals["off_pass"] += w_pass_off * contrib.off_pass_ppa
-    totals["off_pass_w"] += w_pass_off
-    totals["def_pass"] += w_pass_def * contrib.def_pass_ppa
-    totals["def_pass_w"] += w_pass_def
-
-
-def _metrics_from_totals(totals: Dict[str, float]) -> Dict[str, float]:
-    if totals["off_w"] <= 0 or totals["def_w"] <= 0:
-        return {
-            "epa_diff": float("nan"),
-            "success_diff": float("nan"),
-            "explosiveness_diff": float("nan"),
-            "passing_diff": float("nan"),
-            "havoc_diff": float("nan"),
-        }
-    off_ppa = totals["off_ppa"] / totals["off_w"]
-    def_ppa = totals["def_ppa"] / totals["def_w"]
-    off_success = totals["off_success"] / totals["off_success_w"]
-    def_success = totals["def_success"] / totals["def_success_w"]
-    off_expl = totals["off_expl"] / totals["off_expl_w"]
-    def_expl = totals["def_expl"] / totals["def_expl_w"]
-    off_pass = totals["off_pass"] / totals["off_pass_w"] if totals["off_pass_w"] else off_ppa
-    def_pass = totals["def_pass"] / totals["def_pass_w"] if totals["def_pass_w"] else def_ppa
-    return {
-        "epa_diff": off_ppa - def_ppa,
-        "success_diff": off_success - def_success,
-        "explosiveness_diff": off_expl - def_expl,
-        "passing_diff": off_pass - def_pass,
-        "havoc_diff": 0.0,
-    }
-
-
-def _blend_metric_rows(
-    elite: Dict[str, float],
-    all_games: Dict[str, float],
-    elite_weight: float,
-    has_elite: bool,
-) -> Dict[str, float]:
-    if not has_elite or elite_weight <= 0:
-        return all_games
-    if elite_weight >= 1:
-        return elite
-    rest_weight = 1.0 - elite_weight
-    keys = all_games.keys()
-    return {
-        key: elite_weight * elite[key] + rest_weight * all_games[key]
-        for key in keys
+        "epa_diff": contrib.off_ppa - contrib.def_ppa,
+        "success_diff": contrib.off_success - contrib.def_success,
+        "explosiveness_diff": contrib.off_expl - contrib.def_expl,
+        "passing_diff": contrib.off_pass_ppa - contrib.def_pass_ppa,
     }
 
 
@@ -294,34 +197,35 @@ def aggregate_game_quality(
     params: ModelParams,
     opponent_ratings: Optional[Dict[str, float]] = None,
 ) -> pd.DataFrame:
-    rows: Dict[str, Dict[str, float]] = {}
+    """
+    Recency-weighted per-game efficiency differentials, adjusted for opponent strength.
 
+    Each game's differential is credited ``slope * opponent strength``, where
+    strength is the opponent's expected margin against an average FBS team, so
+    out-gaining a top-10 defense counts for more than out-gaining a bottom-10 one.
+    The slopes (efficiency per point of expected margin) are fit on 2018-2025.
+    """
     ratings = opponent_ratings or {}
-    elite_set = elite_opponent_set(ratings, schools, params.elite_opponent_top_n)
-
+    mean_rating = (
+        sum(ratings.get(school, RATING_MEAN) for school in schools) / len(schools)
+        if schools
+        else RATING_MEAN
+    )
+    slopes = params.quality_opponent_slopes
+    rows: Dict[str, Dict[str, float]] = {}
     for school in schools:
-        totals_all = _empty_totals()
-        totals_elite = _empty_totals()
-        has_elite = False
-
+        sums = {metric: 0.0 for metric in QUALITY_METRICS}
+        total = 0.0
         for contrib in team_logs.get(school, []):
             if contrib.week > through_week:
                 continue
-            opp_rating = ratings.get(contrib.opponent, RATING_MEAN)
-            opp_mult = opponent_quality_multiplier(opp_rating, params)
-            weight = recency_weight(current_week, contrib.week, params.recency_lambda) * opp_mult
-            _accumulate_contrib(totals_all, contrib, weight)
-            if contrib.opponent in elite_set:
-                has_elite = True
-                _accumulate_contrib(totals_elite, contrib, weight)
-
-        all_metrics = _metrics_from_totals(totals_all)
-        elite_metrics = _metrics_from_totals(totals_elite)
-        rows[school] = _blend_metric_rows(
-            elite_metrics,
-            all_metrics,
-            params.elite_quality_weight,
-            has_elite,
-        )
-
-    return pd.DataFrame.from_dict(rows, orient="index")
+            weight = recency_weight(current_week, contrib.week, params.recency_lambda)
+            strength = (ratings.get(contrib.opponent, RATING_MEAN) - mean_rating) / params.margin_scale
+            for metric, value in game_metric_diffs(contrib).items():
+                sums[metric] += weight * (value + slopes.get(metric, 0.0) * strength)
+            total += weight
+        rows[school] = {
+            metric: (sums[metric] / total if total > 0 else float("nan"))
+            for metric in QUALITY_METRICS
+        }
+    return pd.DataFrame.from_dict(rows, orient="index", columns=list(QUALITY_METRICS))

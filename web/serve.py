@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 from flask import Flask, jsonify, request, send_from_directory
 
@@ -26,7 +26,15 @@ def _enrich_rankings(
     season: int,
     postseason: bool,
 ) -> list:
-    rows = df.sort_values("rank").to_dict(orient="records")
+    def _safe(value: Any) -> Any:
+        if isinstance(value, float) and value != value:
+            return None
+        return value
+
+    rows = [
+        {key: _safe(value) for key, value in row.items()}
+        for row in df.sort_values("rank").to_dict(orient="records")
+    ]
     other_kind = "poll" if kind == "power" else "power"
     week = None
     if "week" in df.columns and len(df):
