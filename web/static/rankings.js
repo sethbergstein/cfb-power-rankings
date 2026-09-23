@@ -36,7 +36,10 @@
     if (col.key === "record") {
       const w = row.wins != null ? row.wins : "-";
       const l = row.losses != null ? row.losses : "-";
-      return `${w}-${l}`;
+      const note = row.result_note
+        ? `<abbr class="result-note" title="${BCPI.esc(row.result_note)}">*</abbr>`
+        : "";
+      return `${w}-${l}${note}`;
     }
     if (col.fmt != null) return BCPI.formatNum(row[col.key], col.fmt);
     return BCPI.esc(row[col.key]);

@@ -1,7 +1,28 @@
 {
-  "violations": [],
+  "violations": [
+    {
+      "check": "2",
+      "name": "bad-loss ceiling",
+      "kind": "invariant",
+      "severity": "warning",
+      "teams": [
+        "Oregon"
+      ],
+      "message": "Poll top-10 team lost to a power #61-or-worse team and has no win over a power top-15 team."
+    },
+    {
+      "check": "4",
+      "name": "record floor",
+      "kind": "invariant",
+      "severity": "warning",
+      "teams": [
+        "Oregon"
+      ],
+      "message": "Poll top-10 team is at or below .500 against FBS and has no win over a power top-10 team."
+    }
+  ],
   "health_errors": 0,
-  "invariant_warnings": 0,
+  "invariant_warnings": 2,
   "kind": "poll",
   "season": 2026,
   "week": 3

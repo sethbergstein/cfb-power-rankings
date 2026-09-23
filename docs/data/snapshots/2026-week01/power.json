@@ -30,7 +30,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 3,
-      "poll_score": 2.1797464529996056
+      "poll_score": 2.178482167978432
     },
     {
       "school": "Indiana",
@@ -56,7 +56,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 4,
-      "poll_score": 2.1248325691223866
+      "poll_score": 2.123203885946856
     },
     {
       "school": "Notre Dame",
@@ -82,7 +82,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 5,
-      "poll_score": 1.9848315971834496
+      "poll_score": 1.983093302577715
     },
     {
       "school": "Georgia",
@@ -108,7 +108,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 2,
-      "poll_score": 2.2817345828275903
+      "poll_score": 2.2810185307229203
     },
     {
       "school": "Texas",
@@ -134,7 +134,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 7,
-      "poll_score": 1.9522209758248168
+      "poll_score": 1.950779907982168
     },
     {
       "school": "Miami",
@@ -160,7 +160,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 6,
-      "poll_score": 1.9737748569920175
+      "poll_score": 1.9721366888135696
     },
     {
       "school": "Texas A&M",
@@ -186,7 +186,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 9,
-      "poll_score": 1.786784801856138
+      "poll_score": 1.785468903778772
     },
     {
       "school": "Oregon",
@@ -212,7 +212,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 1,
-      "poll_score": 2.3441360029884244
+      "poll_score": 2.342142729927556
     },
     {
       "school": "Alabama",
@@ -238,7 +238,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 10,
-      "poll_score": 1.7409455993073957
+      "poll_score": 1.739473962040257
     },
     {
       "school": "Penn State",
@@ -263,8 +263,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 19,
-      "poll_score": 0.9058391247807512
+      "poll_rank": 18,
+      "poll_score": 0.9044718153732142
     },
     {
       "school": "LSU",
@@ -290,7 +290,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 13,
-      "poll_score": 1.3485740239175508
+      "poll_score": 1.346973275972411
     },
     {
       "school": "Oklahoma",
@@ -316,7 +316,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 11,
-      "poll_score": 1.462546923566766
+      "poll_score": 1.461280706561933
     },
     {
       "school": "Ole Miss",
@@ -342,7 +342,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 8,
-      "poll_score": 1.7974814463114246
+      "poll_score": 1.7950404024760402
     },
     {
       "school": "USC",
@@ -368,7 +368,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 14,
-      "poll_score": 1.3294877158337113
+      "poll_score": 1.326932337204409
     },
     {
       "school": "Texas Tech",
@@ -394,7 +394,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 12,
-      "poll_score": 1.4231195499226
+      "poll_score": 1.4224170376335967
     },
     {
       "school": "Utah",
@@ -419,8 +419,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 21,
-      "poll_score": 0.88489566219518
+      "poll_rank": 20,
+      "poll_score": 0.8841814428499084
     },
     {
       "school": "Iowa",
@@ -445,8 +445,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 22,
-      "poll_score": 0.8524475364279411
+      "poll_rank": 21,
+      "poll_score": 0.8511550776232948
     },
     {
       "school": "Tennessee",
@@ -471,8 +471,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 18,
-      "poll_score": 1.0130821364614502
+      "poll_rank": 17,
+      "poll_score": 1.012369332475758
     },
     {
       "school": "South Carolina",
@@ -497,8 +497,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 28,
-      "poll_score": 0.5549365556710573
+      "poll_rank": 27,
+      "poll_score": 0.5537146210056909
     },
     {
       "school": "Washington",
@@ -523,8 +523,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 17,
-      "poll_score": 1.0513196225074817
+      "poll_rank": 16,
+      "poll_score": 1.0496862517081995
     },
     {
       "school": "BYU",
@@ -549,8 +549,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 16,
-      "poll_score": 1.2119329606911322
+      "poll_rank": 15,
+      "poll_score": 1.2112177631100822
     },
     {
       "school": "SMU",
@@ -575,8 +575,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 20,
-      "poll_score": 0.8890396130180247
+      "poll_rank": 19,
+      "poll_score": 0.8868041813484888
     },
     {
       "school": "Florida",
@@ -601,8 +601,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 24,
-      "poll_score": 0.6480950280084063
+      "poll_rank": 23,
+      "poll_score": 0.646833548028988
     },
     {
       "school": "Michigan",
@@ -627,8 +627,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 15,
-      "poll_score": 1.2568684992903425
+      "poll_rank": 29,
+      "poll_score": 0.5200908115759458
     },
     {
       "school": "Missouri",
@@ -653,8 +653,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 23,
-      "poll_score": 0.682525014333039
+      "poll_rank": 22,
+      "poll_score": 0.681814590377301
     },
     {
       "school": "Kansas State",
@@ -680,7 +680,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 45,
-      "poll_score": 0.276164456287484
+      "poll_score": 0.2754470172201566
     },
     {
       "school": "Pittsburgh",
@@ -706,7 +706,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 34,
-      "poll_score": 0.4583892604315995
+      "poll_score": 0.4570878160438403
     },
     {
       "school": "Louisville",
@@ -731,8 +731,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 47,
-      "poll_score": 0.1905837208710291
+      "poll_rank": 48,
+      "poll_score": 0.1921735543541626
     },
     {
       "school": "Virginia",
@@ -757,8 +757,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 27,
-      "poll_score": 0.5580079467871923
+      "poll_rank": 26,
+      "poll_score": 0.5565064081983704
     },
     {
       "school": "Arizona State",
@@ -784,7 +784,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 35,
-      "poll_score": 0.4561177557945657
+      "poll_score": 0.4554011365501305
     },
     {
       "school": "Nebraska",
@@ -809,8 +809,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 29,
-      "poll_score": 0.5452644839278689
+      "poll_rank": 28,
+      "poll_score": 0.5438663638391752
     },
     {
       "school": "Vanderbilt",
@@ -835,8 +835,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 25,
-      "poll_score": 0.642686045657203
+      "poll_rank": 24,
+      "poll_score": 0.6419858219699006
     },
     {
       "school": "James Madison",
@@ -862,7 +862,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 39,
-      "poll_score": 0.383201612183512
+      "poll_score": 0.381598332920948
     },
     {
       "school": "Mississippi State",
@@ -888,7 +888,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 40,
-      "poll_score": 0.3789759194502993
+      "poll_score": 0.3777600266582868
     },
     {
       "school": "South Florida",
@@ -914,7 +914,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 33,
-      "poll_score": 0.4816032915834003
+      "poll_score": 0.4801285814688267
     },
     {
       "school": "Auburn",
@@ -940,7 +940,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 32,
-      "poll_score": 0.513668849325922
+      "poll_score": 0.5118007613213003
     },
     {
       "school": "Minnesota",
@@ -966,7 +966,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 36,
-      "poll_score": 0.4154718767718437
+      "poll_score": 0.414757657426572
     },
     {
       "school": "Arizona",
@@ -992,7 +992,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 38,
-      "poll_score": 0.3839257851119762
+      "poll_score": 0.3832206296389094
     },
     {
       "school": "Duke",
@@ -1018,7 +1018,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 44,
-      "poll_score": 0.3075409976843106
+      "poll_score": 0.3059801981561849
     },
     {
       "school": "Virginia Tech",
@@ -1043,8 +1043,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 57,
-      "poll_score": 0.0494928128201305
+      "poll_rank": 58,
+      "poll_score": 0.0487750855044057
     },
     {
       "school": "Illinois",
@@ -1069,8 +1069,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 26,
-      "poll_score": 0.5879135171624789
+      "poll_rank": 25,
+      "poll_score": 0.5865880666852769
     },
     {
       "school": "UCF",
@@ -1095,8 +1095,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 63,
-      "poll_score": -0.0303723454397337
+      "poll_rank": 64,
+      "poll_score": -0.031089632231323
     },
     {
       "school": "UTSA",
@@ -1121,8 +1121,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 68,
-      "poll_score": -0.1082015944411474
+      "poll_rank": 69,
+      "poll_score": -0.1089072476773132
     },
     {
       "school": "Boise State",
@@ -1147,8 +1147,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 74,
-      "poll_score": -0.2030363158355956
+      "poll_rank": 75,
+      "poll_score": -0.2019669413772995
     },
     {
       "school": "Florida State",
@@ -1173,8 +1173,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 82,
-      "poll_score": -0.3153985086533906
+      "poll_rank": 83,
+      "poll_score": -0.3122375367153144
     },
     {
       "school": "Kansas",
@@ -1199,8 +1199,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 52,
-      "poll_score": 0.1227294127271074
+      "poll_rank": 53,
+      "poll_score": 0.122017239441956
     },
     {
       "school": "Memphis",
@@ -1225,8 +1225,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 30,
-      "poll_score": 0.5219122758197292
+      "poll_rank": 31,
+      "poll_score": 0.5184435306272802
     },
     {
       "school": "Maryland",
@@ -1251,8 +1251,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 61,
-      "poll_score": 0.0326291969277707
+      "poll_rank": 62,
+      "poll_score": 0.0319127600881531
     },
     {
       "school": "Iowa State",
@@ -1278,7 +1278,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 43,
-      "poll_score": 0.3160063473482287
+      "poll_score": 0.315301191875162
     },
     {
       "school": "UConn",
@@ -1303,8 +1303,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 59,
-      "poll_score": 0.0483262257088827
+      "poll_rank": 60,
+      "poll_score": 0.0476128286087493
     },
     {
       "school": "New Mexico",
@@ -1329,8 +1329,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 58,
-      "poll_score": 0.0494518246356441
+      "poll_rank": 59,
+      "poll_score": 0.048186155361475
     },
     {
       "school": "UNLV",
@@ -1356,7 +1356,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 95,
-      "poll_score": -0.5385639079175714
+      "poll_score": -0.5348546960233693
     },
     {
       "school": "UCLA",
@@ -1382,7 +1382,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 42,
-      "poll_score": 0.3210650491267117
+      "poll_score": 0.3196107782555404
     },
     {
       "school": "Louisiana Tech",
@@ -1407,8 +1407,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 81,
-      "poll_score": -0.2991340486366991
+      "poll_rank": 82,
+      "poll_score": -0.2998522919121292
     },
     {
       "school": "Kentucky",
@@ -1434,7 +1434,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 41,
-      "poll_score": 0.362018087247513
+      "poll_score": 0.3613110044478288
     },
     {
       "school": "Wake Forest",
@@ -1460,7 +1460,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 37,
-      "poll_score": 0.4039484978884081
+      "poll_score": 0.4026754082946012
     },
     {
       "school": "TCU",
@@ -1485,8 +1485,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 72,
-      "poll_score": -0.1870176444606952
+      "poll_rank": 73,
+      "poll_score": -0.184067677263946
     },
     {
       "school": "Clemson",
@@ -1511,8 +1511,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 48,
-      "poll_score": 0.172009807845527
+      "poll_rank": 49,
+      "poll_score": 0.1727310682344058
     },
     {
       "school": "Houston",
@@ -1537,8 +1537,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 31,
-      "poll_score": 0.5214353173962847
+      "poll_rank": 30,
+      "poll_score": 0.5200895478055508
     },
     {
       "school": "Georgia Tech",
@@ -1563,8 +1563,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 71,
-      "poll_score": -0.1804520891603927
+      "poll_rank": 72,
+      "poll_score": -0.1773380417728108
     },
     {
       "school": "Baylor",
@@ -1589,8 +1589,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 87,
-      "poll_score": -0.4282240330710172
+      "poll_rank": 88,
+      "poll_score": -0.4255319732555802
     },
     {
       "school": "Cincinnati",
@@ -1615,8 +1615,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 51,
-      "poll_score": 0.1320060820680618
+      "poll_rank": 52,
+      "poll_score": 0.130633392938211
     },
     {
       "school": "Western Michigan",
@@ -1641,8 +1641,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 90,
-      "poll_score": -0.4897874034654015
+      "poll_rank": 46,
+      "poll_score": 0.2474327534019371
     },
     {
       "school": "San Diego State",
@@ -1667,8 +1667,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 64,
-      "poll_score": -0.0390394169937981
+      "poll_rank": 65,
+      "poll_score": -0.0397469548898623
     },
     {
       "school": "Army",
@@ -1694,7 +1694,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 112,
-      "poll_score": -0.8345137527129816
+      "poll_score": -0.8352289502940315
     },
     {
       "school": "North Texas",
@@ -1719,8 +1719,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 55,
-      "poll_score": 0.0730992615851906
+      "poll_rank": 56,
+      "poll_score": 0.0731077013819445
     },
     {
       "school": "Arkansas",
@@ -1745,8 +1745,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 65,
-      "poll_score": -0.0532915439668231
+      "poll_rank": 66,
+      "poll_score": -0.0539905710515188
     },
     {
       "school": "Old Dominion",
@@ -1771,8 +1771,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 56,
-      "poll_score": 0.0680372131019183
+      "poll_rank": 57,
+      "poll_score": 0.067335826872021
     },
     {
       "school": "Wisconsin",
@@ -1797,8 +1797,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 50,
-      "poll_score": 0.1364620332848734
+      "poll_rank": 51,
+      "poll_score": 0.1367237881622093
     },
     {
       "school": "Michigan State",
@@ -1823,8 +1823,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 53,
-      "poll_score": 0.1105530515014289
+      "poll_rank": 54,
+      "poll_score": 0.1090064262087374
     },
     {
       "school": "North Carolina",
@@ -1849,8 +1849,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 49,
-      "poll_score": 0.1620662221425099
+      "poll_rank": 50,
+      "poll_score": 0.1602758809962119
     },
     {
       "school": "Northwestern",
@@ -1875,8 +1875,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 46,
-      "poll_score": 0.2035022963670454
+      "poll_rank": 47,
+      "poll_score": 0.2028038794926991
     },
     {
       "school": "Syracuse",
@@ -1901,8 +1901,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 66,
-      "poll_score": -0.0657176172523697
+      "poll_rank": 67,
+      "poll_score": -0.0664342364968049
     },
     {
       "school": "Tulane",
@@ -1927,8 +1927,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 69,
-      "poll_score": -0.1249666219320728
+      "poll_rank": 70,
+      "poll_score": -0.122546039343474
     },
     {
       "school": "Washington State",
@@ -1953,8 +1953,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 83,
-      "poll_score": -0.3626562627585149
+      "poll_rank": 84,
+      "poll_score": -0.3608720767762215
     },
     {
       "school": "Nevada",
@@ -1979,8 +1979,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 92,
-      "poll_score": -0.5008543802171677
+      "poll_rank": 93,
+      "poll_score": -0.5021386497537181
     },
     {
       "school": "Toledo",
@@ -2006,7 +2006,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 105,
-      "poll_score": -0.729432312697017
+      "poll_score": -0.7266415007392004
     },
     {
       "school": "Colorado",
@@ -2031,8 +2031,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 54,
-      "poll_score": 0.1038997180427439
+      "poll_rank": 55,
+      "poll_score": 0.1020052259352342
     },
     {
       "school": "NC State",
@@ -2057,8 +2057,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 62,
-      "poll_score": -0.0168632149501097
+      "poll_rank": 63,
+      "poll_score": -0.014918451292071
     },
     {
       "school": "Liberty",
@@ -2084,7 +2084,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 115,
-      "poll_score": -0.8918203766732355
+      "poll_score": -0.8894203087303272
     },
     {
       "school": "North Dakota State",
@@ -2109,8 +2109,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 75,
-      "poll_score": -0.2053950646262152
+      "poll_rank": 76,
+      "poll_score": -0.2074158086697443
     },
     {
       "school": "Southern Miss",
@@ -2135,8 +2135,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 80,
-      "poll_score": -0.2945108506522141
+      "poll_rank": 81,
+      "poll_score": -0.2952233440689162
     },
     {
       "school": "App State",
@@ -2162,7 +2162,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 91,
-      "poll_score": -0.4974636587627636
+      "poll_score": -0.4981778781080353
     },
     {
       "school": "Kennesaw State",
@@ -2187,8 +2187,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 76,
-      "poll_score": -0.2268633816833433
+      "poll_rank": 77,
+      "poll_score": -0.2275761856690355
     },
     {
       "school": "Texas State",
@@ -2213,8 +2213,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 84,
-      "poll_score": -0.3833638168246861
+      "poll_rank": 85,
+      "poll_score": -0.3832184699553994
     },
     {
       "school": "Jacksonville State",
@@ -2240,7 +2240,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 113,
-      "poll_score": -0.8693908773022605
+      "poll_score": -0.8658743392812742
     },
     {
       "school": "East Carolina",
@@ -2265,8 +2265,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 70,
-      "poll_score": -0.1353181718928284
+      "poll_rank": 71,
+      "poll_score": -0.134649780173578
     },
     {
       "school": "Georgia Southern",
@@ -2291,8 +2291,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 79,
-      "poll_score": -0.2893399757404656
+      "poll_rank": 80,
+      "poll_score": -0.2900465927052477
     },
     {
       "school": "Louisiana",
@@ -2317,8 +2317,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 89,
-      "poll_score": -0.4522066566674372
+      "poll_rank": 90,
+      "poll_score": -0.4529132736322193
     },
     {
       "school": "Delaware",
@@ -2343,8 +2343,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 100,
-      "poll_score": -0.6801973847454461
+      "poll_rank": 101,
+      "poll_score": -0.6809058005804456
     },
     {
       "school": "Stanford",
@@ -2369,8 +2369,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 73,
-      "poll_score": -0.2002457045202433
+      "poll_rank": 74,
+      "poll_score": -0.1995850084465543
     },
     {
       "school": "West Virginia",
@@ -2395,8 +2395,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 60,
-      "poll_score": 0.0422263664062594
+      "poll_rank": 61,
+      "poll_score": 0.0408882116870013
     },
     {
       "school": "Colorado State",
@@ -2421,8 +2421,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 88,
-      "poll_score": -0.4377219936354493
+      "poll_rank": 89,
+      "poll_score": -0.4389986851314749
     },
     {
       "school": "South Alabama",
@@ -2448,7 +2448,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 98,
-      "poll_score": -0.639697221122271
+      "poll_score": -0.640400820957757
     },
     {
       "school": "Florida International",
@@ -2474,7 +2474,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 108,
-      "poll_score": -0.7681641075534181
+      "poll_score": -0.7657046904887568
     },
     {
       "school": "Navy",
@@ -2500,7 +2500,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 104,
-      "poll_score": -0.6986000005829706
+      "poll_score": -0.6993046478171414
     },
     {
       "school": "Ohio",
@@ -2525,8 +2525,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 101,
-      "poll_score": -0.6809436389878862
+      "poll_rank": 100,
+      "poll_score": -0.6788924876691118
     },
     {
       "school": "Purdue",
@@ -2551,8 +2551,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 67,
-      "poll_score": -0.102121969551511
+      "poll_rank": 68,
+      "poll_score": -0.102825569386997
     },
     {
       "school": "Sacramento State",
@@ -2578,7 +2578,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 130,
-      "poll_score": -1.162646997104137
+      "poll_score": -1.1582530318209037
     },
     {
       "school": "Georgia State",
@@ -2604,7 +2604,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 114,
-      "poll_score": -0.8858105104651959
+      "poll_score": -0.8865239075653292
     },
     {
       "school": "Fresno State",
@@ -2630,7 +2630,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 86,
-      "poll_score": -0.3873350393371837
+      "poll_score": -0.3860550840332407
     },
     {
       "school": "Troy",
@@ -2655,8 +2655,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 77,
-      "poll_score": -0.2600043263286861
+      "poll_rank": 78,
+      "poll_score": -0.2613098237716107
     },
     {
       "school": "San Jos\u00e9 State",
@@ -2682,7 +2682,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 107,
-      "poll_score": -0.7631598080511278
+      "poll_score": -0.761924905625901
     },
     {
       "school": "Hawai'i",
@@ -2708,7 +2708,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 138,
-      "poll_score": -1.9084738128944976
+      "poll_score": -1.8976142905130151
     },
     {
       "school": "Boston College",
@@ -2734,7 +2734,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 117,
-      "poll_score": -0.932441035381594
+      "poll_score": -0.9297835159740816
     },
     {
       "school": "Eastern Michigan",
@@ -2760,7 +2760,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 125,
-      "poll_score": -1.0415997623210955
+      "poll_score": -1.0375484754742836
     },
     {
       "school": "Air Force",
@@ -2786,7 +2786,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 134,
-      "poll_score": -1.2878064904968989
+      "poll_score": -1.2885144727365347
     },
     {
       "school": "Temple",
@@ -2811,8 +2811,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 78,
-      "poll_score": -0.2810868118480307
+      "poll_rank": 79,
+      "poll_score": -0.2817898728357289
     },
     {
       "school": "California",
@@ -2837,8 +2837,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 93,
-      "poll_score": -0.5022525002924829
+      "poll_rank": 92,
+      "poll_score": -0.4994020709397767
     },
     {
       "school": "Marshall",
@@ -2864,7 +2864,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 99,
-      "poll_score": -0.6773412690743703
+      "poll_score": -0.676546698177313
     },
     {
       "school": "Arkansas State",
@@ -2890,7 +2890,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 109,
-      "poll_score": -0.7745234887135846
+      "poll_score": -0.771970514377721
     },
     {
       "school": "Tulsa",
@@ -2915,8 +2915,8 @@
       "season": 2026,
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
-      "poll_rank": 85,
-      "poll_score": -0.3854915080080942
+      "poll_rank": 87,
+      "poll_score": -0.3867720067633419
     },
     {
       "school": "Rutgers",
@@ -2942,7 +2942,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 94,
-      "poll_score": -0.5110523436748639
+      "poll_score": -0.5076366257413165
     },
     {
       "school": "Middle Tennessee",
@@ -2968,7 +2968,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 111,
-      "poll_score": -0.8194527222468526
+      "poll_score": -0.8201557832345507
     },
     {
       "school": "New Mexico State",
@@ -2994,7 +2994,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 132,
-      "poll_score": -1.2403010359574769
+      "poll_score": -1.2370952547367648
     },
     {
       "school": "Coastal Carolina",
@@ -3020,7 +3020,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 123,
-      "poll_score": -1.0059431816072284
+      "poll_score": -1.0028203361837829
     },
     {
       "school": "Oregon State",
@@ -3046,7 +3046,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 124,
-      "poll_score": -1.025161233255688
+      "poll_score": -1.0223901884198665
     },
     {
       "school": "Miami (OH)",
@@ -3072,7 +3072,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 110,
-      "poll_score": -0.784351295498968
+      "poll_score": -0.7825744035455542
     },
     {
       "school": "Western Kentucky",
@@ -3098,7 +3098,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 102,
-      "poll_score": -0.6893781062636657
+      "poll_score": -0.6867307541888308
     },
     {
       "school": "Rice",
@@ -3124,7 +3124,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 96,
-      "poll_score": -0.566606854238266
+      "poll_score": -0.5673120097113327
     },
     {
       "school": "UAB",
@@ -3150,7 +3150,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 122,
-      "poll_score": -0.9878319603760236
+      "poll_score": -0.9852898909922624
     },
     {
       "school": "Missouri State",
@@ -3176,7 +3176,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 97,
-      "poll_score": -0.6363514415217699
+      "poll_score": -0.6357778659025728
     },
     {
       "school": "Buffalo",
@@ -3202,7 +3202,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 103,
-      "poll_score": -0.69261943785591
+      "poll_score": -0.6933100835332211
     },
     {
       "school": "Wyoming",
@@ -3228,7 +3228,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 133,
-      "poll_score": -1.269495573841212
+      "poll_score": -1.2664892542404198
     },
     {
       "school": "Oklahoma State",
@@ -3254,7 +3254,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 127,
-      "poll_score": -1.0960945546508736
+      "poll_score": -1.0929032577349478
     },
     {
       "school": "Sam Houston",
@@ -3280,7 +3280,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 137,
-      "poll_score": -1.452081433811359
+      "poll_score": -1.4488609830608974
     },
     {
       "school": "Northern Illinois",
@@ -3306,7 +3306,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 128,
-      "poll_score": -1.0985228417080304
+      "poll_score": -1.097244403919143
     },
     {
       "school": "Utah State",
@@ -3332,7 +3332,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 121,
-      "poll_score": -0.9626343704502016
+      "poll_score": -0.9604598959808396
     },
     {
       "school": "Akron",
@@ -3358,7 +3358,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 129,
-      "poll_score": -1.159714547831589
+      "poll_score": -1.1570708529859597
     },
     {
       "school": "Central Michigan",
@@ -3384,7 +3384,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 118,
-      "poll_score": -0.944119617567482
+      "poll_score": -0.941580882640494
     },
     {
       "school": "Massachusetts",
@@ -3410,7 +3410,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 120,
-      "poll_score": -0.951480967774341
+      "poll_score": -0.952864102546031
     },
     {
       "school": "Florida Atlantic",
@@ -3436,7 +3436,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 116,
-      "poll_score": -0.9247216650845504
+      "poll_score": -0.9230281092337592
     },
     {
       "school": "UTEP",
@@ -3462,7 +3462,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 126,
-      "poll_score": -1.076957849102816
+      "poll_score": -1.0760239148898156
     },
     {
       "school": "Bowling Green",
@@ -3488,7 +3488,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 131,
-      "poll_score": -1.217645039542687
+      "poll_score": -1.2154737414277583
     },
     {
       "school": "Ball State",
@@ -3514,7 +3514,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 106,
-      "poll_score": -0.7582453209123243
+      "poll_score": -0.7581805250135021
     },
     {
       "school": "Charlotte",
@@ -3540,7 +3540,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 136,
-      "poll_score": -1.4302864367598425
+      "poll_score": -1.4281184346160616
     },
     {
       "school": "UL Monroe",
@@ -3566,7 +3566,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 135,
-      "poll_score": -1.3312411798372406
+      "poll_score": -1.329124081451453
     },
     {
       "school": "Kent State",
@@ -3592,7 +3592,7 @@
       "week": 1,
       "as_of": "2026-09-23T04:13:56Z",
       "poll_rank": 119,
-      "poll_score": -0.9457109825552577
+      "poll_score": -0.9442329875386
     }
   ]
 }

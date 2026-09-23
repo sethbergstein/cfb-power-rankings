@@ -39,6 +39,7 @@ from bcpi.games import (
 )
 from bcpi.head_to_head import head_to_head_adjustments
 from bcpi.params import ModelParams
+from bcpi.result_overrides import forced_winner, poll_team_won, result_notes
 from bcpi.resume_params import ResumeParams, get_resume_params
 from bcpi.solver import TeamRatingState
 
@@ -89,7 +90,7 @@ def game_resumes(
         for team in (game.home_team, game.away_team):
             if team not in out:
                 continue
-            won = team_won(game, team)
+            won = poll_team_won(game, team)
             opponent = opponent_key(game, team)
             margin = effective_margin_for_rating(game, team, params)
             if won is None or opponent is None or margin is None:
@@ -241,7 +242,9 @@ def build_poll_index(
         current_week,
         window=resume.h2h_window,
         max_total=resume.h2h_max_total,
+        winner_of=forced_winner,
     )
+    table["result_note"] = pd.Series(result_notes(played_games, schools)).reindex(table.index).fillna("")
     score = base + table["h2h_adjustment"]
     if resume.force_champion_first and champion in score.index:
         others = score.drop(champion)

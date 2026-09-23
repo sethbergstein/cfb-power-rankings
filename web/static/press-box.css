@@ -706,6 +706,13 @@ a {
   white-space: nowrap;
 }
 
+.result-note {
+  margin-left: 0.15em;
+  color: var(--ink-faint);
+  text-decoration: none;
+  cursor: help;
+}
+
 .col-conf {
   color: var(--ink-muted);
   font-size: 0.8rem;

@@ -18,6 +18,7 @@ def head_to_head_adjustments(
     max_total: float,
     site_adjusted: bool = False,
     params: Optional[ModelParams] = None,
+    winner_of=None,
 ) -> pd.Series:
     """
     Per-team score adjustments from FBS head-to-head results.
@@ -46,7 +47,12 @@ def head_to_head_adjustments(
     decided.sort(key=lambda game: (game.week, game.game_id))
 
     for game in decided:
-        if game.margin_home > 0:
+        forced = winner_of(game) if winner_of is not None else None
+        if forced == game.home_team:
+            winner, loser = game.home_team, game.away_team
+        elif forced == game.away_team:
+            winner, loser = game.away_team, game.home_team
+        elif game.margin_home > 0:
             winner, loser = game.home_team, game.away_team
         else:
             winner, loser = game.away_team, game.home_team
