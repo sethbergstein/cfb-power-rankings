@@ -732,7 +732,37 @@ const BCPI = {
       closeMenu,
     };
   },
+
+  async checkForUpdate() {
+    if (!BCPI.isStatic()) return;
+    const installed = document.querySelector('meta[name="bcpi-build"]')?.content || "";
+    if (!installed || BCPI._updateCheck) return;
+    BCPI._updateCheck = true;
+    try {
+      const res = await fetch(`${BCPI.dataUrl("build.json")}?t=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+      const remote = data.revision || "";
+      if (!remote || remote === installed) return;
+      const url = new URL(window.location.href);
+      url.searchParams.set("v", remote);
+      window.location.replace(url.toString());
+    } catch {
+      /* offline */
+    } finally {
+      BCPI._updateCheck = false;
+    }
+  },
 };
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) window.location.reload();
+  else BCPI.checkForUpdate();
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") BCPI.checkForUpdate();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname.replace(/\.html$/, "");

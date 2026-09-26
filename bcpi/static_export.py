@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import os
 import shutil
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -380,6 +380,34 @@ def _inject_static_config(html: str) -> str:
     return html
 
 
+_STAMPED_ASSETS = (
+    "press-box.css",
+    "theme.js",
+    "nav.js",
+    "shared.js",
+    "matchup.js",
+    "rankings.js",
+)
+
+
+def _stamp_assets(html: str, revision: str) -> str:
+    """Cache-bust local assets so a phone keeps the copy that matches this publish."""
+    meta = f'<meta name="bcpi-build" content="{revision}" />'
+    if 'name="bcpi-build"' not in html:
+        html = html.replace(
+            '<meta charset="utf-8" />',
+            f'<meta charset="utf-8" />\n    {meta}',
+            1,
+        )
+    for asset in _STAMPED_ASSETS:
+        for prefix in ("./static/", "/static/"):
+            plain = f"{prefix}{asset}"
+            stamped = f"{plain}?v={revision}"
+            html = html.replace(stamped, plain)
+            html = html.replace(plain, stamped)
+    return html
+
+
 def _rewrite_asset_paths(html: str) -> str:
     return (
         html.replace('href="/static/', 'href="./static/')
@@ -423,6 +451,10 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
 
     meta = export_data_bundle(season=season, postseason=postseason, refresh=refresh)
     export_all_snapshots()
-    _write_json(DOCS_DIR / "data" / "build.json", {"exported": meta})
+    revision = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+    for name in ("index.html", "power.html", "poll.html"):
+        path = DOCS_DIR / name
+        path.write_text(_stamp_assets(path.read_text(encoding="utf-8"), revision), encoding="utf-8")
+    _write_json(DOCS_DIR / "data" / "build.json", {"revision": revision, "exported": meta})
     (DOCS_DIR / ".nojekyll").touch()
     return DOCS_DIR

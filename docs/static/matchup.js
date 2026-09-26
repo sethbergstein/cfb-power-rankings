@@ -15,6 +15,26 @@
     return BCPI.getSnapshot(snapshotSelect);
   }
 
+  function slateLabel(snap) {
+    if (!snap) return "";
+    if (snap.postseason || !snap.week) return snap.label;
+    return String(snap.label).replace(/week\s+\d+/i, `week ${Number(snap.week) + 1}`);
+  }
+
+  function ratingsNote(snap) {
+    if (!snap || snap.postseason || !snap.week) return snap?.label || "";
+    return `Week ${Number(snap.week) + 1} games · ratings through week ${snap.week}`;
+  }
+
+  function labelSnapshotOptions() {
+    const catalog = BCPI._catalog;
+    if (!snapshotSelect || !catalog?.snapshots) return;
+    [...snapshotSelect.options].forEach((option) => {
+      const snap = catalog.snapshots.find((row) => row.id === option.value);
+      if (snap) option.textContent = slateLabel(snap);
+    });
+  }
+
   function selectedSiteValue() {
     const checked = document.querySelector('input[name="site"]:checked');
     return checked ? checked.value : "neutral";
@@ -113,7 +133,7 @@
       const { rows, bySchool } = await BCPI.fetchTeams(snap);
       teamsBySchool = bySchool;
       initPickers(rows);
-      if (seasonBadge) seasonBadge.textContent = snap.label;
+      if (seasonBadge) seasonBadge.textContent = slateLabel(snap);
       return true;
     } catch (err) {
       console.error(err);
@@ -200,13 +220,10 @@
         ${availabilityHtml(data.availability)}
       </div>`;
 
-    const weekLabel =
-      snap?.postseason ? "postseason" : snap?.week > 0 ? `week ${snap.week}` : "preseason";
-
     board.innerHTML = `
       <div class="board-meta">
         <span>BCPI matchup · power ratings</span>
-        <span>${BCPI.esc(snap?.label || weekLabel)}</span>
+        <span>${BCPI.esc(ratingsNote(snap))}</span>
       </div>
       <div class="board-teams">${teamsHtml}</div>
       ${venueHtml}
@@ -292,6 +309,7 @@
     const ok = await loadTeams();
     if (ok) predict();
   }).then(async () => {
+    labelSnapshotOptions();
     const ok = await loadTeams();
     if (ok) predict();
   });
