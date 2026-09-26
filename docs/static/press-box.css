@@ -532,6 +532,14 @@ a {
   color: var(--accent);
 }
 
+.availability-note {
+  margin: 0.85rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--board-muted);
+}
+
 .win-bar {
   display: flex;
   height: 6px;

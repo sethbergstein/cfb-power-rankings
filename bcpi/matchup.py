@@ -9,6 +9,7 @@ import pandas as pd
 
 from bcpi.cfbd import CFBDClient
 from bcpi.games import load_season_games
+from bcpi.injuries import availability_for_matchup
 from bcpi.home_field import load_team_hfa
 from bcpi.params import ModelParams, get_active_params
 from bcpi.power_index import build_power_index_from_client
@@ -32,6 +33,7 @@ class MatchupPrediction:
     away_win_probability: float
     season: int
     week: int
+    availability: Tuple[dict, ...] = ()
 
     def to_dict(self) -> dict:
         margin = self.predicted_margin_home
@@ -64,6 +66,7 @@ class MatchupPrediction:
             "away_win_probability": round(self.away_win_probability, 4),
             "season": self.season,
             "week": self.week,
+            "availability": list(self.availability),
         }
 
 
@@ -232,6 +235,9 @@ def predict_matchup(
             home_team=home_team,
             team_hfa=team_hfa,
         )
+        margin, notes = _apply_availability(
+            margin, home_team, away_team, season, current_week, include_postseason, client, params
+        )
         home_win = margin_to_win_probability(margin, params.win_prob_scale)
 
         return MatchupPrediction(
@@ -247,10 +253,38 @@ def predict_matchup(
             away_win_probability=1.0 - home_win,
             season=season,
             week=current_week,
+            availability=notes,
         )
     finally:
         if owns_client and client is not None:
             client.close()
+
+
+def _apply_availability(
+    margin: float,
+    home_team: str,
+    away_team: str,
+    season: int,
+    week: int,
+    include_postseason: bool,
+    client: CFBDClient,
+    params: ModelParams,
+) -> Tuple[float, Tuple[dict, ...]]:
+    """Dock the home margin for current-week offensive absences. Postseason skips it."""
+    if include_postseason or week <= 0:
+        return margin, ()
+    try:
+        home_points, away_points, notes = availability_for_matchup(
+            home_team,
+            away_team,
+            season,
+            week,
+            client=client,
+            params=params,
+        )
+    except Exception:
+        return margin, ()
+    return margin - home_points + away_points, tuple(notes)
 
 
 def predict_matchup_from_rankings(
@@ -301,6 +335,9 @@ def predict_matchup_from_rankings(
             home_team=home_team,
             team_hfa=team_hfa,
         )
+        margin, notes = _apply_availability(
+            margin, home_team, away_team, season, current_week, include_postseason, client, params
+        )
         home_win = margin_to_win_probability(margin, params.win_prob_scale)
 
         return MatchupPrediction(
@@ -316,6 +353,7 @@ def predict_matchup_from_rankings(
             away_win_probability=1.0 - home_win,
             season=season,
             week=current_week,
+            availability=notes,
         )
     except Exception:
         return None
@@ -352,4 +390,9 @@ def format_matchup(prediction: MatchupPrediction) -> str:
         f"Win probability: {prediction.home_team} {prediction.home_win_probability:.0%} | "
         f"{prediction.away_team} {prediction.away_win_probability:.0%}"
     )
+    for note in prediction.availability:
+        lines.append(
+            f"Availability: {note['player']} ({note['position']}, {note['status']}) "
+            f"−{note['points']:.1f} for {note['team']}"
+        )
     return "\n".join(lines)

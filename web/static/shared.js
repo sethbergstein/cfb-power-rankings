@@ -197,6 +197,16 @@ const BCPI = {
     return BCPI._params;
   },
 
+  async loadInjuries() {
+    if (BCPI._injuries !== undefined) return BCPI._injuries;
+    try {
+      BCPI._injuries = await BCPI.fetchJsonCached("injuries.json");
+    } catch {
+      BCPI._injuries = null;
+    }
+    return BCPI._injuries;
+  },
+
   async loadPowerRows(snapshot) {
     if (BCPI.isStatic() && snapshot?.id) {
       const data = await BCPI.fetchJsonCached(`snapshots/${snapshot.id}/power.json`);
@@ -322,6 +332,23 @@ const BCPI = {
       marginHome += teamHfa != null ? Number(teamHfa) : params.hfa;
     }
 
+    const injuries = await BCPI.loadInjuries();
+    let availability = [];
+    const injuryWeek = injuries && Number(injuries.rating_week);
+    const useInjuries =
+      injuries &&
+      !snapshot?.postseason &&
+      Number(snapshot?.season) === Number(injuries.season) &&
+      Number(snapshot?.week) === injuryWeek;
+    if (useInjuries) {
+      const homeDock = Number(injuries.teams?.[home]?.points || 0);
+      const awayDock = Number(injuries.teams?.[away]?.points || 0);
+      marginHome = marginHome - homeDock + awayDock;
+      availability = []
+        .concat(injuries.teams?.[home]?.players || [])
+        .concat(injuries.teams?.[away]?.players || []);
+    }
+
     const winHome = 1 / (1 + Math.exp(-marginHome / params.win_prob_scale));
     const manifest = snapshot?.label
       ? { week: snapshot.week, label: snapshot.label }
@@ -330,6 +357,7 @@ const BCPI = {
       team_a: teamA,
       team_b: teamB,
       week: manifest.week,
+      availability,
     };
 
     if (home === teamA) {

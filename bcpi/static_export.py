@@ -333,6 +333,17 @@ def export_data_bundle(
         )
         _write_json(DATA_DIR / "checks.json", check_payload)
 
+        if not postseason and week:
+            try:
+                from bcpi.injuries import load_adjustments
+
+                _write_json(
+                    DATA_DIR / "injuries.json",
+                    load_adjustments(season, int(week), client=client, params=params),
+                )
+            except Exception:
+                pass
+
         _write_json(
             DATA_DIR / "params.json",
             {

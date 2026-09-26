@@ -149,6 +149,17 @@
       </div>`;
   }
 
+  function availabilityHtml(notes) {
+    if (!notes || !notes.length) return "";
+    const lines = notes
+      .map((note) => {
+        const status = note.status === "doubtful" ? "doubtful" : "out";
+        return `${BCPI.esc(note.player)} (${BCPI.esc(note.position)}, ${status}) −${BCPI.formatNum(note.points, 1)} ${BCPI.esc(note.team)}`;
+      })
+      .join(" · ");
+    return `<p class="availability-note">Availability · ${lines}</p>`;
+  }
+
   function renderResult(data, snap) {
     const pctA = Math.round((data.win_prob_a || 0) * 100);
     const pctB = Math.round((data.win_prob_b || 0) * 100);
@@ -186,6 +197,7 @@
           <span>${BCPI.esc(data.team_a)} ${pctA}%</span>
           <span>${pctB}% ${BCPI.esc(data.team_b)}</span>
         </div>
+        ${availabilityHtml(data.availability)}
       </div>`;
 
     const weekLabel =
