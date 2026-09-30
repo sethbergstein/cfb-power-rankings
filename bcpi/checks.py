@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Sequence
+from statistics import median
+from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 import pandas as pd
 
@@ -21,10 +22,18 @@ from bcpi.games import (
 )
 from bcpi.params import ModelParams
 
-# FCS residual health: mean compressed residual by the FBS team's solver rank.
-# Calibrated so 2018-2025 passes at the current FCS rating and fails at 1380.
+# FCS games are scored against one rating. Two different misses get two different responses.
+# A tier mean outside the 2018-2025 band is a warning: those results were more lopsided
+# than the rating expected. The publish fails only when the typical game is far off
+# (bad margins) or the FCS rating is outside the tuned range, 850-1300. A rating of
+# 1380 shifts the median residual by about 12 compressed points; the tier band is 6.
 FCS_RESIDUAL_TIERS = ((1, 25), (26, 50), (51, 80), (81, 200))
 FCS_RESIDUAL_LIMIT = 6.0
+FCS_RESIDUAL_TIER_MIN_GAMES = 8
+FCS_RESIDUAL_BROKEN_LIMIT = 10.0
+FCS_RESIDUAL_MIN_GAMES = 20
+FCS_RATING_MIN = 850.0
+FCS_RATING_MAX = 1300.0
 
 
 @dataclass
@@ -279,18 +288,47 @@ def power_health_checks(
         for g in filter_games_through_week(list(games), week)
         if g.completed and g.involves_fbs and not g.is_fbs_game
     ]
-    residual_flags = _fcs_residual_flags(table, games, week, params) if week >= 4 and len(fcs_games) >= 20 else []
-    if residual_flags:
+    if not FCS_RATING_MIN <= float(params.fcs_rating) <= FCS_RATING_MAX:
         found.append(
             CheckResult(
                 "H3",
-                "FCS residual",
+                "FCS rating",
                 "health",
                 "error",
-                residual_flags,
-                "Mean FCS residual in a rating tier is farther from zero than the calibrated limit.",
+                [f"{params.fcs_rating:.0f}"],
+                (
+                    f"FCS rating {params.fcs_rating:.0f} is outside "
+                    f"{FCS_RATING_MIN:.0f}-{FCS_RATING_MAX:.0f}, the range the model was tuned on."
+                ),
             )
         )
+
+    if week >= 4 and len(fcs_games) >= FCS_RESIDUAL_MIN_GAMES:
+        residuals = _fcs_residuals(table, games, week, params)
+        broken = _fcs_median_flag(residuals)
+        if broken:
+            found.append(
+                CheckResult(
+                    "H3",
+                    "FCS residual",
+                    "health",
+                    "error",
+                    [broken],
+                    "The typical FCS game is too far from the rating for the margins and the FCS rating to describe the same games.",
+                )
+            )
+        tier_flags = _fcs_tier_flags(residuals)
+        if tier_flags:
+            found.append(
+                CheckResult(
+                    "H3",
+                    "FCS residual",
+                    "health",
+                    "warning",
+                    tier_flags,
+                    "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating.",
+                )
+            )
 
     if "solver_max_change" in table.columns:
         max_change = float(table["solver_max_change"].max())
@@ -366,21 +404,22 @@ def poll_health_checks(
     return found
 
 
-def _fcs_residual_flags(
+def _fcs_residuals(
     power: pd.DataFrame,
     games: Sequence[GameResult],
     week: int,
     params: ModelParams,
-) -> List[str]:
+) -> List[Tuple[Optional[str], float]]:
+    """Compressed residual for each FBS-vs-FCS game, tagged with the FBS solver-rank tier."""
     ratings = power["solver_rating"].astype(float).to_dict()
     fcs_rating = params.fcs_rating
-    by_tier: Dict[str, List[float]] = {f"{lo}-{hi}": [] for lo, hi in FCS_RESIDUAL_TIERS}
     ranks = power["rank"].astype(int).to_dict() if "rank" in power.columns else {}
     # Prefer solver rank so the playoff bonus doesn't move a team across tiers.
     if "solver_rating" in power.columns:
         order = sorted(ratings, key=ratings.get, reverse=True)
         ranks = {school: i + 1 for i, school in enumerate(order)}
 
+    residuals: List[Tuple[Optional[str], float]] = []
     for game in filter_games_through_week(list(games), week):
         if not game.completed or not game.involves_fbs or game.is_fbs_game:
             continue
@@ -398,19 +437,41 @@ def _fcs_residual_flags(
                 expected, params.margin_compression
             )
             rank = ranks.get(team, 999)
+            tier = None
             for lo, hi in FCS_RESIDUAL_TIERS:
                 if lo <= rank <= hi:
-                    by_tier[f"{lo}-{hi}"].append(residual)
+                    tier = f"{lo}-{hi}"
                     break
+            residuals.append((tier, residual))
+    return residuals
 
+
+def _fcs_tier_flags(residuals: Sequence[Tuple[Optional[str], float]]) -> List[str]:
+    by_tier: Dict[str, List[float]] = {}
+    for tier, residual in residuals:
+        if tier is None:
+            continue
+        by_tier.setdefault(tier, []).append(residual)
     flags = []
-    for label, values in by_tier.items():
-        if len(values) < 8:
+    for lo, hi in FCS_RESIDUAL_TIERS:
+        label = f"{lo}-{hi}"
+        values = by_tier.get(label, [])
+        if len(values) < FCS_RESIDUAL_TIER_MIN_GAMES:
             continue
         mean = sum(values) / len(values)
         if abs(mean) > FCS_RESIDUAL_LIMIT:
             flags.append(f"{label} mean {mean:+.1f}")
     return flags
+
+
+def _fcs_median_flag(residuals: Sequence[Tuple[Optional[str], float]]) -> Optional[str]:
+    values = [residual for _, residual in residuals]
+    if len(values) < FCS_RESIDUAL_MIN_GAMES:
+        return None
+    center = float(median(values))
+    if abs(center) > FCS_RESIDUAL_BROKEN_LIMIT:
+        return f"median {center:+.1f}"
+    return None
 
 
 def _unmapped_teams(games: Sequence[GameResult], week: int, schools: Sequence[str]) -> List[str]:
