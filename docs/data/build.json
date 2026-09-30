@@ -1,11 +1,11 @@
 {
-  "revision": "20260926173343",
+  "revision": "20260930031000",
   "exported": {
     "season": 2026,
-    "week": 3,
+    "week": 4,
     "postseason": false,
-    "label": "2026 \u00b7 week 3",
-    "power_path": "/Users/sethbergstein/Documents/Projects/College Football Rankings/output/bcpi_power_2026_week03.csv",
-    "poll_path": "/Users/sethbergstein/Documents/Projects/College Football Rankings/output/bcpi_poll_2026_week03.csv"
+    "label": "2026 \u00b7 week 4",
+    "power_path": "/Users/sethbergstein/Documents/Projects/College Football Rankings/output/bcpi_power_2026_week04.csv",
+    "poll_path": "/Users/sethbergstein/Documents/Projects/College Football Rankings/output/bcpi_poll_2026_week04.csv"
   }
 }
