@@ -58,7 +58,7 @@
       "result_note": null,
       "wins": 2,
       "losses": 0,
-      "poll_score": 2.1016771001973193,
+      "poll_score": 2.10167710019732,
       "poll_rating": 1836.2683360315712,
       "rank": 2,
       "conference": "Big Ten",
@@ -178,7 +178,7 @@
       "worst_loss_value": null,
       "playoff_bonus": 0.0,
       "resume_z": 1.396168441213164,
-      "solver_rating": 1898.2561799944012,
+      "solver_rating": 1898.2561799944008,
       "benchmark_rating": 1797.075029568733,
       "preseason_z": 2.2360893631421845,
       "preseason_share": 0.5,
@@ -1161,7 +1161,7 @@
     {
       "school": "Kansas State",
       "sor": 0.0811797664002513,
-      "performance": 7.1640340611192315,
+      "performance": 7.164034061119232,
       "fbs_games": 1,
       "fcs_games": 1,
       "best_win": "Washington State",
@@ -2761,7 +2761,7 @@
     {
       "school": "Rice",
       "sor": -0.2053554744488414,
-      "performance": -18.267297521221735,
+      "performance": -18.26729752122173,
       "fbs_games": 1,
       "fcs_games": 1,
       "best_win": "Houston Christian",
@@ -3241,7 +3241,7 @@
     {
       "school": "Florida Atlantic",
       "sor": -0.5195603664626307,
-      "performance": -26.587662185248572,
+      "performance": -26.58766218524857,
       "fbs_games": 2,
       "fcs_games": 0,
       "best_win": "Navy",
@@ -3337,7 +3337,7 @@
     {
       "school": "Liberty",
       "sor": -0.6344709892234193,
-      "performance": -22.45326316441935,
+      "performance": -22.453263164419354,
       "fbs_games": 1,
       "fcs_games": 1,
       "best_win": "Gardner-Webb",
@@ -3817,7 +3817,7 @@
     {
       "school": "Navy",
       "sor": -0.9330175089664584,
-      "performance": -19.270916157030214,
+      "performance": -19.27091615703021,
       "fbs_games": 1,
       "fcs_games": 1,
       "best_win": "Towson",
@@ -4041,7 +4041,7 @@
     {
       "school": "Utah State",
       "sor": -1.7225547456537331,
-      "performance": -27.98215567140151,
+      "performance": -27.982155671401514,
       "fbs_games": 1,
       "fcs_games": 1,
       "best_win": null,
@@ -4265,7 +4265,7 @@
     {
       "school": "Sacramento State",
       "sor": -1.7298444688677683,
-      "performance": -24.904442235718836,
+      "performance": -24.90444223571884,
       "fbs_games": 2,
       "fcs_games": 1,
       "best_win": "Mississippi Valley State",
@@ -4273,7 +4273,7 @@
       "worst_loss": "Eastern Michigan",
       "worst_loss_value": -0.935840652879428,
       "playoff_bonus": 0.0,
-      "resume_z": -2.036665307167159,
+      "resume_z": -2.0366653071671594,
       "solver_rating": 1335.985368611165,
       "benchmark_rating": 1797.075029568733,
       "preseason_z": -0.7592029999766468,
@@ -4297,7 +4297,7 @@
     {
       "school": "Northern Illinois",
       "sor": -1.5983356893982696,
-      "performance": -37.551746990304395,
+      "performance": -37.5517469903044,
       "fbs_games": 1,
       "fcs_games": 1,
       "best_win": null,
@@ -4393,7 +4393,7 @@
     {
       "school": "Sam Houston",
       "sor": -1.8346436486878592,
-      "performance": -23.778496233701972,
+      "performance": -23.77849623370197,
       "fbs_games": 2,
       "fcs_games": 0,
       "best_win": null,

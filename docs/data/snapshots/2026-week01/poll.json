@@ -59,7 +59,7 @@
       "wins": 1,
       "losses": 0,
       "poll_score": 2.2810185307229203,
-      "poll_rating": 1864.9629649156673,
+      "poll_rating": 1864.9629649156675,
       "rank": 2,
       "conference": "SEC",
       "abbreviation": "UGA",
@@ -68,7 +68,7 @@
       "as_of": "2026-09-23T04:43:42Z",
       "check_flags": null,
       "power_rank": 4,
-      "power_score": 2.30349320909939
+      "power_score": 2.3034932090993894
     },
     {
       "school": "Ohio State",
@@ -114,7 +114,7 @@
       "worst_loss_value": null,
       "playoff_bonus": 0.0,
       "resume_z": 1.0342717307271905,
-      "solver_rating": 1959.3726647184276,
+      "solver_rating": 1959.372664718428,
       "benchmark_rating": 1802.298564595764,
       "preseason_z": 2.6676699635566887,
       "preseason_share": 0.6666666666666666,
@@ -154,7 +154,7 @@
       "result_note": null,
       "wins": 1,
       "losses": 0,
-      "poll_score": 1.983093302577715,
+      "poll_score": 1.9830933025777155,
       "poll_rating": 1817.2949284124345,
       "rank": 5,
       "conference": "FBS Independents",
@@ -489,7 +489,7 @@
     {
       "school": "Washington",
       "sor": 0.1030508524254057,
-      "performance": -4.0096106798008115,
+      "performance": -4.009610679800812,
       "fbs_games": 1,
       "fcs_games": 0,
       "best_win": "Washington State",
@@ -1993,7 +1993,7 @@
     {
       "school": "NC State",
       "sor": -0.6431321172019407,
-      "performance": -29.06778287193223,
+      "performance": -29.067782871932238,
       "fbs_games": 1,
       "fcs_games": 0,
       "best_win": null,
@@ -2217,7 +2217,7 @@
     {
       "school": "Tulane",
       "sor": -0.7446484086620424,
-      "performance": -22.655580649420436,
+      "performance": -22.65558064942044,
       "fbs_games": 1,
       "fcs_games": 0,
       "best_win": null,
@@ -3209,7 +3209,7 @@
     {
       "school": "Delaware",
       "sor": 0.0078177024842073,
-      "performance": -3.6386502938856182,
+      "performance": -3.638650293885618,
       "fbs_games": 0,
       "fcs_games": 1,
       "best_win": "Merrimack",
@@ -3369,7 +3369,7 @@
     {
       "school": "Ball State",
       "sor": -0.2477347137861755,
-      "performance": -30.160320023642132,
+      "performance": -30.16032002364213,
       "fbs_games": 1,
       "fcs_games": 0,
       "best_win": null,
@@ -3721,7 +3721,7 @@
     {
       "school": "Boston College",
       "sor": -0.7928696985181564,
-      "performance": -29.378013992212516,
+      "performance": -29.37801399221252,
       "fbs_games": 1,
       "fcs_games": 0,
       "best_win": null,
@@ -4324,7 +4324,7 @@
       "as_of": "2026-09-23T04:43:42Z",
       "check_flags": null,
       "power_rank": 137,
-      "power_score": -1.8779976535147371
+      "power_score": -1.877997653514737
     },
     {
       "school": "Charlotte",
@@ -4337,7 +4337,7 @@
       "worst_loss": "The Citadel",
       "worst_loss_value": -0.9921822975157928,
       "playoff_bonus": 0.0,
-      "resume_z": -1.9252108511952195,
+      "resume_z": -1.92521085119522,
       "solver_rating": 1163.1957250573923,
       "benchmark_rating": 1802.298564595764,
       "preseason_z": -1.303845330471272,

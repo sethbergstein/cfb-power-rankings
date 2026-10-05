@@ -12,7 +12,7 @@
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 2.480292878174402,
-      "quality_z": 2.3248286663377877,
+      "quality_z": 2.324828666337788,
       "prior_rating": 1964.704102183242,
       "prior_z": 3.2715726357957187,
       "market_z": 0.8555384936510765,
@@ -30,7 +30,7 @@
       "week": 17,
       "as_of": "2026-09-23T04:17:06Z",
       "poll_rank": 4,
-      "poll_score": 2.1561887472029837
+      "poll_score": 2.156188747202984
     },
     {
       "school": "Oregon",
@@ -65,7 +65,7 @@
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 2.5080638175580865,
       "quality_z": 1.998860346879468,
-      "prior_rating": 1868.5026221266571,
+      "prior_rating": 1868.502622126657,
       "prior_z": 2.597261819403766,
       "market_z": 1.27446889254977,
       "fbs_games": 15,
@@ -123,7 +123,7 @@
       "fbs_games": 12,
       "credibility": 1.0,
       "h2h_adjustment": 0.0353899600410403,
-      "power_score": 1.9599512450665315,
+      "power_score": 1.959951245066532,
       "power_rating": 1813.592199210645,
       "wins": 11,
       "losses": 2,
@@ -134,11 +134,11 @@
       "week": 17,
       "as_of": "2026-09-23T04:17:06Z",
       "poll_rank": 8,
-      "poll_score": 1.8780566255103577
+      "poll_score": 1.8780566255103572
     },
     {
       "school": "Penn State",
-      "solver_rating": 1997.8442064501191,
+      "solver_rating": 1997.8442064501196,
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 1.8653789355853856,
@@ -164,7 +164,7 @@
     },
     {
       "school": "Alabama",
-      "solver_rating": 2004.9733014117437,
+      "solver_rating": 2004.973301411744,
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 1.8962154237595117,
@@ -193,7 +193,7 @@
       "solver_rating": 2001.68288931468,
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
-      "solver_z": 1.8819829364290313,
+      "solver_z": 1.8819829364290317,
       "quality_z": 1.4938871622436154,
       "prior_rating": 1760.68297398592,
       "prior_z": 1.841515079144576,
@@ -294,7 +294,7 @@
     },
     {
       "school": "Washington",
-      "solver_rating": 1935.4799505356411,
+      "solver_rating": 1935.479950535641,
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 1.5956259514623092,
@@ -346,7 +346,7 @@
     },
     {
       "school": "Arizona",
-      "solver_rating": 1898.6190184005077,
+      "solver_rating": 1898.619018400508,
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 1.4361861201806527,
@@ -502,7 +502,7 @@
     },
     {
       "school": "Oregon State",
-      "solver_rating": 1807.0038629100195,
+      "solver_rating": 1807.00386291002,
       "solver_iterations": 5,
       "solver_max_change": 2.23050090072344e-07,
       "solver_z": 1.0399100607284395,
@@ -951,7 +951,7 @@
       "quality_z": 0.530555837851053,
       "prior_rating": 1429.4375924522888,
       "prior_z": -0.4803030832852211,
-      "market_z": 1.8205543059676512,
+      "market_z": 1.8205543059676517,
       "fbs_games": 13,
       "credibility": 1.0,
       "h2h_adjustment": 0.0,
@@ -3291,7 +3291,7 @@
       "quality_z": -1.4165987958696329,
       "prior_rating": 1345.2804522778715,
       "prior_z": -1.0701907842108676,
-      "market_z": -1.8092567796505656,
+      "market_z": -1.8092567796505652,
       "fbs_games": 11,
       "credibility": 1.0,
       "h2h_adjustment": 0.0,

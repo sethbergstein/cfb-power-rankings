@@ -1,20 +1,6 @@
 {
   "season": 2026,
-  "rating_week": 4,
-  "fetched_at": "2026-09-30T03:09:59+00:00",
-  "teams": {
-    "Penn State": {
-      "points": 1.73,
-      "players": [
-        {
-          "team": "Penn State",
-          "player": "Koby Howard",
-          "position": "WR",
-          "status": "out",
-          "points": 1.73,
-          "conference": "B10"
-        }
-      ]
-    }
-  }
+  "rating_week": 5,
+  "fetched_at": "2026-10-05T20:22:21+00:00",
+  "teams": {}
 }

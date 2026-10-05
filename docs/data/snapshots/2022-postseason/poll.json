@@ -35,7 +35,7 @@
       "as_of": "2026-09-23T04:17:05Z",
       "check_flags": null,
       "power_rank": 1,
-      "power_score": 2.7429173419350374
+      "power_score": 2.742917341935037
     },
     {
       "school": "TCU",
@@ -132,7 +132,7 @@
     },
     {
       "school": "Tennessee",
-      "sor": 1.8749252062695092,
+      "sor": 1.8749252062695088,
       "performance": 7.395225061374076,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -141,7 +141,7 @@
       "worst_loss": "South Carolina",
       "worst_loss_value": -0.6972471023393008,
       "playoff_bonus": 0.0,
-      "resume_z": 2.0538675622207876,
+      "resume_z": 2.053867562220788,
       "solver_rating": 2078.382437747579,
       "benchmark_rating": 1907.794427774903,
       "preseason_z": 0.0,
@@ -163,7 +163,7 @@
     },
     {
       "school": "Alabama",
-      "sor": 1.8838154500847977,
+      "sor": 1.8838154500847972,
       "performance": 7.598297983618431,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -180,7 +180,7 @@
       "h2h_adjustment": -0.0064647893561762,
       "wins": 11,
       "losses": 2,
-      "poll_score": 2.0538675622207876,
+      "poll_score": 2.053867562220788,
       "poll_rating": 1828.618809955326,
       "rank": 6,
       "conference": "SEC",
@@ -297,7 +297,7 @@
       "worst_loss_value": -0.6779351155176848,
       "playoff_bonus": 0.0,
       "resume_z": 1.5439943766242952,
-      "solver_rating": 1928.7776367965555,
+      "solver_rating": 1928.777636796556,
       "benchmark_rating": 1907.794427774903,
       "preseason_z": 0.0,
       "preseason_share": 0.0,
@@ -783,7 +783,7 @@
     },
     {
       "school": "Illinois",
-      "sor": -2.5087136249953215,
+      "sor": -2.508713624995321,
       "performance": -5.252953934366484,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -876,7 +876,7 @@
     },
     {
       "school": "Kentucky",
-      "sor": -2.2689352615545797,
+      "sor": -2.26893526155458,
       "performance": -9.9227272220979,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -1000,7 +1000,7 @@
     },
     {
       "school": "Maryland",
-      "sor": -1.8099166578711856,
+      "sor": -1.8099166578711852,
       "performance": -8.83096932052277,
       "fbs_games": 13,
       "fcs_games": 0,
@@ -1341,7 +1341,7 @@
     },
     {
       "school": "UCF",
-      "sor": -2.6408299473349492,
+      "sor": -2.640829947334949,
       "performance": -8.823569694893097,
       "fbs_games": 13,
       "fcs_games": 1,
@@ -1496,7 +1496,7 @@
     },
     {
       "school": "Auburn",
-      "sor": -2.7808959137933877,
+      "sor": -2.780895913793388,
       "performance": -12.170438576030172,
       "fbs_games": 11,
       "fcs_games": 1,
@@ -1806,7 +1806,7 @@
     },
     {
       "school": "East Carolina",
-      "sor": -3.3413723690899833,
+      "sor": -3.3413723690899837,
       "performance": -13.222925269188051,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -1899,7 +1899,7 @@
     },
     {
       "school": "Ohio",
-      "sor": -2.6592479520963375,
+      "sor": -2.659247952096337,
       "performance": -19.160177249809607,
       "fbs_games": 13,
       "fcs_games": 1,
@@ -2582,7 +2582,7 @@
     {
       "school": "Indiana",
       "sor": -4.6375912344041,
-      "performance": -20.273288978694513,
+      "performance": -20.273288978694517,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Illinois",
@@ -2613,7 +2613,7 @@
     {
       "school": "Southern Miss",
       "sor": -4.850675008912725,
-      "performance": -20.799632309253113,
+      "performance": -20.799632309253116,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "Tulane",
@@ -2892,7 +2892,7 @@
     {
       "school": "UNLV",
       "sor": -5.991354673028087,
-      "performance": -24.949897832882172,
+      "performance": -24.94989783288217,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "North Texas",
@@ -3046,7 +3046,7 @@
     },
     {
       "school": "Stanford",
-      "sor": -5.8478364626258275,
+      "sor": -5.847836462625828,
       "performance": -21.28179140290026,
       "fbs_games": 11,
       "fcs_games": 1,
@@ -3140,7 +3140,7 @@
     {
       "school": "Miami (OH)",
       "sor": -6.143512969051333,
-      "performance": -25.663602415767212,
+      "performance": -25.66360241576721,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "Northwestern",
@@ -3202,7 +3202,7 @@
     {
       "school": "Bowling Green",
       "sor": -5.75430111755133,
-      "performance": -29.638674605624455,
+      "performance": -29.638674605624452,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "Marshall",
@@ -3233,7 +3233,7 @@
     {
       "school": "Florida Atlantic",
       "sor": -6.145055733437825,
-      "performance": -21.039711011118396,
+      "performance": -21.0397110111184,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "UAB",
@@ -3884,7 +3884,7 @@
     {
       "school": "Northern Illinois",
       "sor": -8.270817482992706,
-      "performance": -28.999994505145676,
+      "performance": -28.99999450514568,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Eastern Michigan",
@@ -3915,7 +3915,7 @@
     {
       "school": "South Florida",
       "sor": -8.884805465386904,
-      "performance": -27.062765230749317,
+      "performance": -27.06276523074932,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Howard",

@@ -8,7 +8,7 @@
           "kind": "health",
           "severity": "warning",
           "teams": [
-            "51-80 mean +8.1"
+            "51-80 mean +9.8"
           ],
           "message": "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating."
         }
@@ -17,7 +17,7 @@
       "invariant_warnings": 0,
       "kind": "power",
       "season": 2026,
-      "week": 4
+      "week": 5
     },
     {
       "violations": [
@@ -27,28 +27,18 @@
           "kind": "health",
           "severity": "warning",
           "teams": [
-            "51-80 mean +8.1"
+            "51-80 mean +9.8"
           ],
           "message": "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating."
-        },
-        {
-          "check": "5",
-          "name": "head-to-head",
-          "kind": "invariant",
-          "severity": "warning",
-          "teams": [
-            "LSU over Ole Miss"
-          ],
-          "message": "Winner with no more losses than the loser is ranked 1-3 spots behind that loser in the poll top 25."
         }
       ],
       "health_errors": 0,
-      "invariant_warnings": 1,
+      "invariant_warnings": 0,
       "kind": "poll",
       "season": 2026,
-      "week": 4
+      "week": 5
     }
   ],
   "health_errors": 0,
-  "invariant_warnings": 1
+  "invariant_warnings": 0
 }

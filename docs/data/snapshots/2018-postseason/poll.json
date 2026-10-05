@@ -8,7 +8,7 @@
   "rows": [
     {
       "school": "Clemson",
-      "sor": 3.789159128843679,
+      "sor": 3.78915912884368,
       "performance": 13.443418085068464,
       "fbs_games": 14,
       "fcs_games": 1,
@@ -57,7 +57,7 @@
       "wins": 14,
       "losses": 1,
       "poll_score": 2.780192723381348,
-      "poll_rating": 1944.8308357410156,
+      "poll_rating": 1944.830835741016,
       "rank": 2,
       "conference": "SEC",
       "abbreviation": "ALA",
@@ -266,7 +266,7 @@
       "worst_loss_value": -0.6508416673328286,
       "playoff_bonus": 0.0,
       "resume_z": 1.5386218406744578,
-      "solver_rating": 1962.6307130064456,
+      "solver_rating": 1962.6307130064451,
       "benchmark_rating": 1935.2779153818951,
       "preseason_z": 0.0,
       "preseason_share": 0.0,
@@ -297,7 +297,7 @@
       "worst_loss_value": -0.8399899763827517,
       "playoff_bonus": 0.0,
       "resume_z": 1.532810810409493,
-      "solver_rating": 1865.7347788475051,
+      "solver_rating": 1865.734778847505,
       "benchmark_rating": 1935.2779153818951,
       "preseason_z": 0.0,
       "preseason_share": 0.0,
@@ -412,7 +412,7 @@
     {
       "school": "Mississippi State",
       "sor": -0.7868713394828348,
-      "performance": 2.2027909236436716,
+      "performance": 2.202790923643672,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "Texas A&M",
@@ -452,7 +452,7 @@
       "worst_loss_value": -0.8853204342180766,
       "playoff_bonus": 0.0,
       "resume_z": 1.060534076731123,
-      "solver_rating": 1931.3422061785732,
+      "solver_rating": 1931.3422061785727,
       "benchmark_rating": 1935.2779153818951,
       "preseason_z": 0.0,
       "preseason_share": 0.0,
@@ -660,7 +660,7 @@
     {
       "school": "Utah State",
       "sor": -0.9156347266757684,
-      "performance": -2.9773286191833015,
+      "performance": -2.977328619183301,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "BYU",
@@ -1093,7 +1093,7 @@
     },
     {
       "school": "UAB",
-      "sor": -1.8068877576011435,
+      "sor": -1.806887757601144,
       "performance": -13.24284750493838,
       "fbs_games": 13,
       "fcs_games": 1,
@@ -1403,7 +1403,7 @@
     },
     {
       "school": "Michigan State",
-      "sor": -2.9260587611068836,
+      "sor": -2.926058761106884,
       "performance": -10.520836779174696,
       "fbs_games": 13,
       "fcs_games": 0,
@@ -1465,7 +1465,7 @@
     },
     {
       "school": "Pittsburgh",
-      "sor": -3.0867470688163237,
+      "sor": -3.086747068816324,
       "performance": -11.47465876820312,
       "fbs_games": 13,
       "fcs_games": 1,
@@ -1558,7 +1558,7 @@
     },
     {
       "school": "Oklahoma State",
-      "sor": -2.9943500789455557,
+      "sor": -2.994350078945556,
       "performance": -8.29852625878518,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -1620,7 +1620,7 @@
     },
     {
       "school": "Ole Miss",
-      "sor": -3.2656960798878396,
+      "sor": -3.26569607988784,
       "performance": -12.597667848913623,
       "fbs_games": 11,
       "fcs_games": 1,
@@ -1651,7 +1651,7 @@
     },
     {
       "school": "Miami",
-      "sor": -3.8285483891209826,
+      "sor": -3.828548389120983,
       "performance": -9.264321928838148,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -1899,7 +1899,7 @@
     },
     {
       "school": "North Texas",
-      "sor": -3.1202801256607815,
+      "sor": -3.120280125660781,
       "performance": -15.768178080568834,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -2365,7 +2365,7 @@
     {
       "school": "Hawai'i",
       "sor": -4.47944639531934,
-      "performance": -25.111797004198532,
+      "performance": -25.11179700419853,
       "fbs_games": 13,
       "fcs_games": 1,
       "best_win": "San Diego State",
@@ -2395,7 +2395,7 @@
     },
     {
       "school": "BYU",
-      "sor": -3.986401406118571,
+      "sor": -3.986401406118572,
       "performance": -13.402771810863737,
       "fbs_games": 12,
       "fcs_games": 1,
@@ -2613,7 +2613,7 @@
     {
       "school": "San Diego State",
       "sor": -4.349296110696618,
-      "performance": -21.25751483819339,
+      "performance": -21.257514838193394,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "Boise State",
@@ -2706,7 +2706,7 @@
     {
       "school": "Colorado",
       "sor": -5.309012356542601,
-      "performance": -18.552755599870977,
+      "performance": -18.552755599870974,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Nebraska",
@@ -2923,7 +2923,7 @@
     {
       "school": "Florida Atlantic",
       "sor": -5.362004047426863,
-      "performance": -20.057400713226716,
+      "performance": -20.05740071322672,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Florida International",
@@ -3047,7 +3047,7 @@
     {
       "school": "UCLA",
       "sor": -6.37164215030447,
-      "performance": -20.590604181858037,
+      "performance": -20.59060418185804,
       "fbs_games": 12,
       "fcs_games": 0,
       "best_win": "California",
@@ -3233,7 +3233,7 @@
     {
       "school": "Akron",
       "sor": -6.553367752547738,
-      "performance": -28.304858328539993,
+      "performance": -28.304858328539996,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Northwestern",
@@ -3357,7 +3357,7 @@
     {
       "school": "Colorado State",
       "sor": -7.301610737677591,
-      "performance": -31.941271754696572,
+      "performance": -31.94127175469657,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Arkansas",
@@ -3481,7 +3481,7 @@
     {
       "school": "Navy",
       "sor": -8.049496392222956,
-      "performance": -25.653493247840757,
+      "performance": -25.65349324784076,
       "fbs_games": 12,
       "fcs_games": 1,
       "best_win": "Memphis",
@@ -3512,7 +3512,7 @@
     {
       "school": "Old Dominion",
       "sor": -7.431257580171838,
-      "performance": -30.346458151529134,
+      "performance": -30.34645815152913,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "Virginia Tech",
@@ -3543,7 +3543,7 @@
     {
       "school": "Tulsa",
       "sor": -7.9353992249782515,
-      "performance": -28.030198359793676,
+      "performance": -28.03019835979368,
       "fbs_games": 11,
       "fcs_games": 1,
       "best_win": "SMU",
@@ -3985,7 +3985,7 @@
       "worst_loss": "UTEP",
       "worst_loss_value": -0.9954142897283452,
       "playoff_bonus": 0.0,
-      "resume_z": -1.9958998803181491,
+      "resume_z": -1.9958998803181487,
       "solver_rating": 1136.2685849658849,
       "benchmark_rating": 1935.2779153818951,
       "preseason_z": 0.0,

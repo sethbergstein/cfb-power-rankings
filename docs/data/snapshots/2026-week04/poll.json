@@ -36,7 +36,7 @@
       "as_of": "2026-09-30T03:09:19Z",
       "check_flags": null,
       "power_rank": 5,
-      "power_score": 2.0265670809521477
+      "power_score": 2.026567080952148
     },
     {
       "school": "Georgia",
@@ -132,7 +132,7 @@
       "as_of": "2026-09-30T03:09:19Z",
       "check_flags": null,
       "power_rank": 7,
-      "power_score": 1.9483113766497595
+      "power_score": 1.94831137664976
     },
     {
       "school": "Notre Dame",
@@ -178,7 +178,7 @@
       "worst_loss_value": null,
       "playoff_bonus": 0.0,
       "resume_z": 1.4152221849426836,
-      "solver_rating": 1888.8854288423397,
+      "solver_rating": 1888.88542884234,
       "benchmark_rating": 1788.206704737719,
       "preseason_z": 2.4330014937459468,
       "preseason_share": 0.3636363636363636,
@@ -196,7 +196,7 @@
       "as_of": "2026-09-30T03:09:19Z",
       "check_flags": null,
       "power_rank": 6,
-      "power_score": 2.0088166763469033
+      "power_score": 2.0088166763469038
     },
     {
       "school": "Ohio State",
@@ -212,7 +212,7 @@
       "resume_z": 1.0545943654114898,
       "solver_rating": 1939.3278024043104,
       "benchmark_rating": 1788.206704737719,
-      "preseason_z": 2.8451019575306975,
+      "preseason_z": 2.845101957530697,
       "preseason_share": 0.3333333333333333,
       "h2h_adjustment": 0.0,
       "result_note": null,
@@ -242,7 +242,7 @@
       "worst_loss_value": -0.8138426319003325,
       "playoff_bonus": 0.0,
       "resume_z": 0.8364567734068045,
-      "solver_rating": 1839.8575998279412,
+      "solver_rating": 1839.8575998279407,
       "benchmark_rating": 1788.206704737719,
       "preseason_z": 3.036440393884306,
       "preseason_share": 0.3636363636363636,
@@ -338,7 +338,7 @@
       "worst_loss_value": -0.5190030672201028,
       "playoff_bonus": 0.0,
       "resume_z": 1.2657059441262108,
-      "solver_rating": 1832.7836513300197,
+      "solver_rating": 1832.78365133002,
       "benchmark_rating": 1788.206704737719,
       "preseason_z": 1.4942624303009855,
       "preseason_share": 0.3333333333333333,
@@ -1161,7 +1161,7 @@
     {
       "school": "Missouri",
       "sor": -0.3826728703253425,
-      "performance": -5.0086421841919915,
+      "performance": -5.008642184191992,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "Kansas",
@@ -1577,7 +1577,7 @@
     {
       "school": "UCF",
       "sor": -0.3215341685286382,
-      "performance": -1.9506770812168837,
+      "performance": -1.950677081216884,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "TCU",
@@ -3049,7 +3049,7 @@
     {
       "school": "Arkansas State",
       "sor": -1.4745137711860687,
-      "performance": -19.274435532401434,
+      "performance": -19.274435532401437,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "Kennesaw State",
@@ -3369,7 +3369,7 @@
     {
       "school": "Troy",
       "sor": -1.5232214027338349,
-      "performance": -20.755444799528338,
+      "performance": -20.75544479952833,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "Sam Houston",
@@ -3529,7 +3529,7 @@
     {
       "school": "San Diego State",
       "sor": -2.086003705934504,
-      "performance": -19.80772299138923,
+      "performance": -19.807722991389237,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "Portland State",
@@ -3593,7 +3593,7 @@
     {
       "school": "Buffalo",
       "sor": -1.3885094850388002,
-      "performance": -31.408716843422397,
+      "performance": -31.4087168434224,
       "fbs_games": 2,
       "fcs_games": 2,
       "best_win": "UAlbany",
@@ -3817,7 +3817,7 @@
     {
       "school": "Kennesaw State",
       "sor": -2.2990947659263297,
-      "performance": -19.690183761601418,
+      "performance": -19.69018376160141,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "West Georgia",
@@ -3944,7 +3944,7 @@
     },
     {
       "school": "Southern Miss",
-      "sor": -2.3867051910890194,
+      "sor": -2.38670519108902,
       "performance": -22.942675520269308,
       "fbs_games": 3,
       "fcs_games": 1,
@@ -3977,7 +3977,7 @@
     {
       "school": "Ball State",
       "sor": -2.03065201687249,
-      "performance": -30.648889671847535,
+      "performance": -30.64888967184753,
       "fbs_games": 3,
       "fcs_games": 1,
       "best_win": "Stony Brook",
@@ -4073,7 +4073,7 @@
     {
       "school": "Hawai'i",
       "sor": -2.6740331311464978,
-      "performance": -27.644884915722713,
+      "performance": -27.644884915722717,
       "fbs_games": 4,
       "fcs_games": 0,
       "best_win": "New Mexico State",
@@ -4137,7 +4137,7 @@
     {
       "school": "Eastern Michigan",
       "sor": -2.4279645468325284,
-      "performance": -27.058808276337015,
+      "performance": -27.05880827633701,
       "fbs_games": 4,
       "fcs_games": 1,
       "best_win": "Sacramento State",
@@ -4232,7 +4232,7 @@
     },
     {
       "school": "Nevada",
-      "sor": -2.785099497019075,
+      "sor": -2.7850994970190754,
       "performance": -22.09564257604523,
       "fbs_games": 3,
       "fcs_games": 1,
@@ -4369,7 +4369,7 @@
       "worst_loss": "Eastern Michigan",
       "worst_loss_value": -0.9430249040796784,
       "playoff_bonus": 0.0,
-      "resume_z": -2.4564197152566556,
+      "resume_z": -2.456419715256656,
       "solver_rating": 1269.8427943957588,
       "benchmark_rating": 1788.206704737719,
       "preseason_z": -0.7592029999766468,
@@ -4378,7 +4378,7 @@
       "result_note": null,
       "wins": 1,
       "losses": 4,
-      "poll_score": -1.9341991874781912,
+      "poll_score": -1.9341991874781916,
       "poll_rating": 1190.5281300034894,
       "rank": 137,
       "conference": "Mid-American",
@@ -4401,7 +4401,7 @@
       "worst_loss": "SE Louisiana",
       "worst_loss_value": -0.991476774358294,
       "playoff_bonus": 0.0,
-      "resume_z": -2.5213792292814476,
+      "resume_z": -2.521379229281448,
       "solver_rating": 1145.7656768909512,
       "benchmark_rating": 1788.206704737719,
       "preseason_z": -1.3111911021311984,
