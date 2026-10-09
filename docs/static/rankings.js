@@ -33,6 +33,16 @@
 
   function activeColumns(polls) {
     const cols = (kind === "poll" ? pollColumns : powerColumns).slice();
+    if (polls?.fpi) {
+      cols.push({
+        key: "fpi_rank",
+        label: "FPI",
+        title: "ESPN Football Power Index",
+        cls: "col-num",
+        align: "center",
+        external: true,
+      });
+    }
     if (polls?.ap) {
       cols.push({
         key: "ap_rank",
@@ -59,11 +69,13 @@
   function applyExternalPolls(rows, polls) {
     const ap = polls?.ap || null;
     const cfp = polls?.cfp || null;
-    if (!ap && !cfp) return rows;
+    const fpi = polls?.fpi || null;
+    if (!ap && !cfp && !fpi) return rows;
     return rows.map((row) => {
       const next = { ...row };
       if (ap) next.ap_rank = ap[row.school] ?? null;
       if (cfp) next.cfp_rank = cfp[row.school] ?? null;
+      if (fpi) next.fpi_rank = fpi[row.school] ?? null;
       return next;
     });
   }
