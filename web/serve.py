@@ -9,6 +9,7 @@ from flask import Flask, jsonify, request, send_from_directory
 
 from bcpi.cfbd import CFBDClient
 from bcpi.constants import TARGET_SEASON
+from bcpi.external_polls import load_external_polls_for_request
 from bcpi.matchup import predict_matchup, resolve_team_name
 from bcpi.params import get_active_params
 from bcpi.rankings_io import load_rankings_df
@@ -167,6 +168,9 @@ def create_app() -> Flask:
                     "postseason": postseason,
                     "week": as_of_week,
                     "as_of": rows[0].get("as_of") if rows else None,
+                    "external_polls": load_external_polls_for_request(
+                        season, as_of_week, postseason
+                    ),
                     "rows": top25,
                     "also_ran": also_ran,
                 }

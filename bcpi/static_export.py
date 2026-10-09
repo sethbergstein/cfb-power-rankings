@@ -13,6 +13,7 @@ import pandas as pd
 
 from bcpi.cfbd import CFBDClient
 from bcpi.config import OUTPUT_DIR, PROJECT_ROOT
+from bcpi.external_polls import load_external_polls
 from bcpi.constants import TARGET_SEASON
 from bcpi.home_field import load_team_hfa
 from bcpi.params import get_active_params
@@ -181,6 +182,15 @@ def export_snapshot_bundle(
                 "rows": poll_rows,
             },
         )
+        _write_json(
+            snap_dir / "external_polls.json",
+            {
+                "season": snap.season,
+                "week": snap.week,
+                "postseason": snap.postseason,
+                **load_external_polls(client, snap.season, snap.week, snap.postseason),
+            },
+        )
         return {"id": snap.id, "label": snap.label, "as_of": as_of}
     finally:
         if owns_client and client is not None:
@@ -317,6 +327,15 @@ def export_data_bundle(
                 "label": label,
                 "as_of": as_of,
                 "rows": poll_rows,
+            },
+        )
+        _write_json(
+            DATA_DIR / "external_polls.json",
+            {
+                "season": season,
+                "week": week,
+                "postseason": postseason,
+                **load_external_polls(client, season, week, postseason),
             },
         )
         check_payload = {"snapshots": []}

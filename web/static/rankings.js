@@ -9,6 +9,7 @@
   let teamsBySchool = {};
   let lastTop25 = [];
   let lastAlsoRan = [];
+  let lastPolls = null;
 
   const powerColumns = [
     { key: "rank", label: "Rank", cls: "col-rank" },
@@ -30,7 +31,42 @@
     { key: "power_rank", label: "Power #", cls: "col-num", fmt: 0, align: "center" },
   ];
 
-  const columns = kind === "poll" ? pollColumns : powerColumns;
+  function activeColumns(polls) {
+    const cols = (kind === "poll" ? pollColumns : powerColumns).slice();
+    if (polls?.ap) {
+      cols.push({
+        key: "ap_rank",
+        label: "AP",
+        title: "AP Top 25",
+        cls: "col-num",
+        align: "center",
+        external: true,
+      });
+    }
+    if (polls?.cfp) {
+      cols.push({
+        key: "cfp_rank",
+        label: "CFP",
+        title: "CFP committee ranking",
+        cls: "col-num",
+        align: "center",
+        external: true,
+      });
+    }
+    return cols;
+  }
+
+  function applyExternalPolls(rows, polls) {
+    const ap = polls?.ap || null;
+    const cfp = polls?.cfp || null;
+    if (!ap && !cfp) return rows;
+    return rows.map((row) => {
+      const next = { ...row };
+      if (ap) next.ap_rank = ap[row.school] ?? null;
+      if (cfp) next.cfp_rank = cfp[row.school] ?? null;
+      return next;
+    });
+  }
 
   function cellValue(row, col) {
     if (col.key === "record") {
@@ -40,6 +76,13 @@
         ? `<abbr class="result-note" title="${BCPI.esc(row.result_note)}">*</abbr>`
         : "";
       return `${w}-${l}${note}`;
+    }
+    if (col.external) {
+      const value = row[col.key];
+      if (value == null || value === "") {
+        return `<span class="external-blank" title="Unranked">—</span>`;
+      }
+      return BCPI.esc(String(value));
     }
     if (col.fmt != null) return BCPI.formatNum(row[col.key], col.fmt);
     return BCPI.esc(row[col.key]);
@@ -66,11 +109,12 @@
       </div>`;
   }
 
-  function renderTableSection(rows, { compact = false } = {}) {
+  function renderTableSection(rows, { compact = false, columns } = {}) {
     const head = columns
       .map((c) => {
         const align = c.align === "left" ? " col-left" : " col-center";
-        return `<th class="${c.cls}${align}">${BCPI.esc(c.label)}</th>`;
+        const title = c.title ? ` title="${BCPI.esc(c.title)}"` : "";
+        return `<th class="${c.cls}${align}"${title}>${BCPI.esc(c.label)}</th>`;
       })
       .join("");
 
@@ -97,16 +141,18 @@
       </table>`;
   }
 
-  function renderRankings(top25, alsoRan) {
-    lastTop25 = top25;
-    lastAlsoRan = alsoRan;
-    let html = renderTableSection(top25);
-    if (alsoRan.length) {
+  function renderRankings(top25, alsoRan, polls) {
+    lastPolls = polls || null;
+    const columns = activeColumns(lastPolls);
+    lastTop25 = applyExternalPolls(top25, lastPolls);
+    lastAlsoRan = applyExternalPolls(alsoRan, lastPolls);
+    let html = renderTableSection(lastTop25, { columns });
+    if (lastAlsoRan.length) {
       html += `
         <div class="also-ran-section">
           <h3 class="also-ran-title">Just outside the top 25</h3>
-          <p class="also-ran-sub">Ranks 26 through ${25 + alsoRan.length}.</p>
-          ${renderTableSection(alsoRan, { compact: true })}
+          <p class="also-ran-sub">Ranks 26 through ${25 + lastAlsoRan.length}.</p>
+          ${renderTableSection(lastAlsoRan, { compact: true, columns })}
         </div>`;
     }
     tableWrap.innerHTML = html;
@@ -163,13 +209,21 @@
     if (refreshBtn) refreshBtn.hidden = BCPI.isStatic();
 
     try {
-      const [{ bySchool }, data] = await Promise.all([
+      const externalPromise = BCPI.isStatic()
+        ? fetchExternalPolls(snapshot)
+        : Promise.resolve(null);
+      const [{ bySchool }, data, staticPolls] = await Promise.all([
         BCPI.fetchTeams(snapshot),
         BCPI.fetchRankings(kind, { snapshot, refresh }),
+        externalPromise,
       ]);
       teamsBySchool = bySchool;
       if (seasonBadge) seasonBadge.textContent = snapshot.label;
-      renderRankings(data.rows || [], data.also_ran || []);
+      renderRankings(
+        data.rows || [],
+        data.also_ran || [],
+        data.external_polls || staticPolls
+      );
       renderMeta(data, snapshot);
     } catch (err) {
       tableWrap.innerHTML = `<div class="loading-row">${BCPI.esc(err.message)}</div>`;
@@ -178,9 +232,19 @@
     }
   }
 
+  async function fetchExternalPolls(snapshot) {
+    if (!snapshot?.id) return null;
+    const path = `snapshots/${snapshot.id}/external_polls.json`;
+    try {
+      return await BCPI.fetchJsonCached(path);
+    } catch {
+      return null;
+    }
+  }
+
   refreshBtn?.addEventListener("click", () => loadRankings(true));
   document.addEventListener("bcpi-theme-change", () => {
-    if (lastTop25.length) renderRankings(lastTop25, lastAlsoRan);
+    if (lastTop25.length) renderRankings(lastTop25, lastAlsoRan, lastPolls);
   });
 
   BCPI.initSnapshotSelect(snapshotSelect, () => loadRankings(false)).then(() =>

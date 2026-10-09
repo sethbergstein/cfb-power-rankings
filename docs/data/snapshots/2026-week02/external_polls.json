@@ -1,0 +1,33 @@
+{
+  "season": 2026,
+  "week": 2,
+  "postseason": false,
+  "ap": {
+    "Texas": 1,
+    "Georgia": 2,
+    "Notre Dame": 3,
+    "Indiana": 4,
+    "Miami": 5,
+    "Ohio State": 6,
+    "LSU": 7,
+    "Ole Miss": 8,
+    "Texas A&M": 9,
+    "Alabama": 10,
+    "BYU": 11,
+    "USC": 12,
+    "Texas Tech": 13,
+    "Penn State": 14,
+    "Tennessee": 15,
+    "SMU": 16,
+    "Utah": 17,
+    "Iowa": 18,
+    "Michigan": 19,
+    "Missouri": 20,
+    "Oregon": 21,
+    "Houston": 22,
+    "Louisville": 23,
+    "Oklahoma": 24,
+    "Virginia": 25
+  },
+  "cfp": null
+}
