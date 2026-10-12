@@ -8,7 +8,8 @@
           "kind": "health",
           "severity": "warning",
           "teams": [
-            "51-80 mean +9.8"
+            "51-80 mean +9.3",
+            "81-200 mean +6.2"
           ],
           "message": "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating."
         }
@@ -17,7 +18,7 @@
       "invariant_warnings": 0,
       "kind": "power",
       "season": 2026,
-      "week": 5
+      "week": 7
     },
     {
       "violations": [
@@ -27,7 +28,8 @@
           "kind": "health",
           "severity": "warning",
           "teams": [
-            "51-80 mean +9.8"
+            "51-80 mean +9.3",
+            "81-200 mean +6.2"
           ],
           "message": "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating."
         }
@@ -36,7 +38,7 @@
       "invariant_warnings": 0,
       "kind": "poll",
       "season": 2026,
-      "week": 5
+      "week": 7
     }
   ],
   "health_errors": 0,
