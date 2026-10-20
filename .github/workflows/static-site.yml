@@ -23,25 +23,40 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Build rankings and static site
+      # Retry the whole publish. A dropped CFBD response fails export-site
+      # before anything is committed, and the client does not retry that itself.
+      - name: Build, check, and publish
+        timeout-minutes: 30
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
           BCPI_SITE_URL: ${{ vars.BCPI_SITE_URL }}
-        run: python run_bcpi.py export-site --refresh
-
-      - name: Check rankings
-        env:
-          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
-        run: python run_bcpi.py check
-
-      - name: Commit site and rankings
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/ output/
-          if git diff --staged --quiet; then
-            echo "No changes to publish."
-          else
-            git commit -m "Publish BCPI site and rankings [automated]"
-            git push
-          fi
+          set -uo pipefail
+          attempts=3
+          for attempt in 1 2 3; do
+            echo "Publish attempt ${attempt} of ${attempts}"
+            if python run_bcpi.py export-site --refresh && python run_bcpi.py check; then
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add docs/ output/
+              if git diff --staged --quiet; then
+                ahead="$(git rev-list --count '@{upstream}..HEAD' 2>/dev/null || echo 0)"
+                if [ "$ahead" != "0" ]; then
+                  git push
+                else
+                  echo "No changes to publish."
+                fi
+              else
+                git commit -m "Publish BCPI site and rankings [automated]"
+                git push
+              fi
+              exit 0
+            fi
+            if [ "$attempt" -eq "$attempts" ]; then
+              echo "Publish failed after ${attempts} attempts"
+              exit 1
+            fi
+            delay=$((attempt * 45))
+            echo "Publish failed. Retrying the job in ${delay}s."
+            sleep "$delay"
+          done
