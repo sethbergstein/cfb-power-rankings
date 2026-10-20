@@ -47,10 +47,12 @@ jobs:
                   echo "No changes to publish."
                 fi
               else
-                git commit -m "Publish BCPI site and rankings [automated]"
-                git push
+                git commit -m "Publish BCPI site and rankings [automated]" && git push
               fi
-              exit 0
+              if [ "$?" -eq 0 ]; then
+                exit 0
+              fi
+              echo "Git publish failed."
             fi
             if [ "$attempt" -eq "$attempts" ]; then
               echo "Publish failed after ${attempts} attempts"
