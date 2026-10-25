@@ -1,0 +1,13 @@
+{
+  "default": "2026-week07",
+  "snapshots": [
+    {
+      "id": "2026-week07",
+      "season": 2026,
+      "week": 7,
+      "label": "2026 \u00b7 week 7"
+    }
+  ],
+  "min_season": 2026,
+  "max_season": 2026
+}

@@ -20,6 +20,8 @@ from bcpi.teams import get_fbs_teams
 
 WEB_DIR = Path(__file__).resolve().parent
 STATIC_DIR = WEB_DIR / "static"
+PROJECT_ROOT = WEB_DIR.parent
+NFL_SITE_DATA = PROJECT_ROOT / "nfl" / "site_data"
 
 
 def _enrich_rankings(
@@ -112,6 +114,20 @@ def create_app() -> Flask:
     @app.get("/poll.html")
     def poll_page() -> object:
         return send_from_directory(WEB_DIR, "poll.html")
+
+    @app.get("/nfl-power")
+    @app.get("/nfl-power.html")
+    def nfl_power_page() -> object:
+        return send_from_directory(WEB_DIR, "nfl-power.html")
+
+    @app.get("/nfl-matchup")
+    @app.get("/nfl-matchup.html")
+    def nfl_matchup_page() -> object:
+        return send_from_directory(WEB_DIR, "nfl-matchup.html")
+
+    @app.get("/data/nfl/<path:filename>")
+    def nfl_data(filename: str) -> object:
+        return send_from_directory(NFL_SITE_DATA, filename)
 
     @app.get("/apple-touch-icon.png")
     @app.get("/favicon.svg")

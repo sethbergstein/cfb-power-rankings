@@ -753,12 +753,19 @@ const BCPI = {
       if (value != null && value !== "") query.set(key, String(value));
     });
     const tail = query.toString() ? `?${query.toString()}` : "";
+    const fileFor = {
+      matchup: "index.html",
+      power: "power.html",
+      poll: "poll.html",
+      "nfl-power": "nfl-power.html",
+      "nfl-matchup": "nfl-matchup.html",
+    };
     if (BCPI.isStatic()) {
-      const file = page === "matchup" ? "index.html" : `${page}.html`;
+      const file = fileFor[page] || `${page}.html`;
       return `./${file}${tail}`;
     }
     if (page === "matchup") return `/${tail}`;
-    return `/${page}.html${tail}`;
+    return `/${fileFor[page] || `${page}.html`}${tail}`;
   },
 
   async loadModelParams() {

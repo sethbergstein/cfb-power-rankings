@@ -465,9 +465,12 @@ _STAMPED_ASSETS = (
     "press-box.css",
     "theme.js",
     "nav.js",
+    "shell.js",
     "shared.js",
     "matchup.js",
     "rankings.js",
+    "nfl-rankings.js",
+    "nfl-matchup.js",
 )
 
 
@@ -498,6 +501,8 @@ def _rewrite_asset_paths(html: str) -> str:
         .replace('href="/favicon.ico"', 'href="./favicon.ico"')
         .replace('href="/power.html"', 'href="./power.html"')
         .replace('href="/poll.html"', 'href="./poll.html"')
+        .replace('href="/nfl-power.html"', 'href="./nfl-power.html"')
+        .replace('href="/nfl-matchup.html"', 'href="./nfl-matchup.html"')
         .replace('href="/"', 'href="./index.html"')
     )
 
@@ -558,7 +563,13 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
     og_meta = brand.get("og_meta") or {}
     week = int(og_meta.get("week") or meta.get("week") or 0)
     revision = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
-    page_keys = {"index.html": "matchup", "power.html": "power", "poll.html": "poll"}
+    page_keys = {
+        "index.html": "matchup",
+        "power.html": "power",
+        "poll.html": "poll",
+        "nfl-power.html": "nfl-power",
+        "nfl-matchup.html": "nfl-matchup",
+    }
     for name, page in page_keys.items():
         src = WEB_DIR / name
         html = src.read_text(encoding="utf-8")
@@ -574,6 +585,18 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
         html = _inject_static_config(html)
         html = _stamp_assets(html, revision)
         (DOCS_DIR / name).write_text(html, encoding="utf-8")
+
+    # NFL power data lives in nfl/site_data and is copied after the docs wipe.
+    try:
+        import sys
+
+        if str(PROJECT_ROOT) not in sys.path:
+            sys.path.insert(0, str(PROJECT_ROOT))
+        from nfl.publish import sync_to_docs
+
+        sync_to_docs()
+    except Exception as exc:  # pragma: no cover - publish should not fail CFB export
+        print(f"warning: NFL site data not synced: {exc}")
 
     _write_json(DOCS_DIR / "data" / "build.json", {"revision": revision, "exported": meta})
     (DOCS_DIR / ".nojekyll").touch()

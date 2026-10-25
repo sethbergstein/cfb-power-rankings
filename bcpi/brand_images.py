@@ -509,14 +509,22 @@ def apply_brand_meta(html: str, *, page: str, site: str, og_file: str, week: int
         "power": f"{site}/power.html",
         "poll": f"{site}/poll.html",
         "matchup": f"{site}/",
+        "nfl-power": f"{site}/nfl-power.html",
+        "nfl-matchup": f"{site}/nfl-matchup.html",
     }.get(page, f"{site}/")
     title = {
-        "power": "Bergstein College Football Rankings",
-        "poll": "Bergstein College Football Rankings",
-        "matchup": "Bergstein College Football Rankings",
-    }[page if page in ("power", "poll", "matchup") else "power"]
-    description = "Power rankings, poll, and matchup picks. Updated every week."
-    alt = f"Bergstein Week {week} power rankings, top five teams" if week > 0 else "Bergstein college football rankings"
+        "power": "Bergstein · The Football Journal",
+        "poll": "Bergstein · The Football Journal",
+        "matchup": "Bergstein · The Football Journal",
+        "nfl-power": "Bergstein · NFL Power",
+        "nfl-matchup": "Bergstein · NFL Matchup",
+    }.get(page, "Bergstein · The Football Journal")
+    description = "College and NFL power rankings, poll, and matchup picks. Updated every week."
+    alt = (
+        f"Bergstein Week {week} power rankings, top five teams"
+        if week > 0 and page in ("power", "poll", "matchup")
+        else "Bergstein football rankings"
+    )
     image_url = f"{site}/{og_file}"
 
     block = f"""    <meta property="og:site_name" content="Bergstein" />
@@ -561,9 +569,9 @@ def apply_brand_meta(html: str, *, page: str, site: str, og_file: str, week: int
 
 def write_manifest(out_dir: Path) -> Path:
     payload = {
-        "name": "Bergstein College Football",
+        "name": "Bergstein · The Football Journal",
         "short_name": "Bergstein",
-        "description": "College football power rankings, poll, and matchups.",
+        "description": "College and NFL power rankings, poll, and matchups.",
         "start_url": "./index.html",
         "scope": "./",
         "display": "standalone",

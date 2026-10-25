@@ -1,7 +1,7 @@
 {
-  "name": "Bergstein College Football",
+  "name": "Bergstein · The Football Journal",
   "short_name": "Bergstein",
-  "description": "College football power rankings, poll, and matchups.",
+  "description": "College and NFL power rankings, poll, and matchups.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

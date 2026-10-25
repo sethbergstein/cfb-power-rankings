@@ -1,0 +1,4 @@
+data/*.parquet
+data/*.part
+__pycache__/
+*.pyc

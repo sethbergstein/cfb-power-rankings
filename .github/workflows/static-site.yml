@@ -5,6 +5,8 @@ on:
     # Monday noon UTC — after Sunday slate; Tuesday catches rare Monday games.
     - cron: "0 12 * * 1"
     - cron: "0 12 * * 2"
+    # Wednesday noon UTC — NFL after Monday Night Football + early week injury reports.
+    - cron: "0 12 * * 3"
   workflow_dispatch:
 
 permissions:
@@ -21,12 +23,14 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install -r nfl/requirements.txt
 
       # Retry the whole publish. A dropped CFBD response fails export-site
       # before anything is committed, and the client does not retry that itself.
       - name: Build, check, and publish
-        timeout-minutes: 30
+        timeout-minutes: 45
         env:
           CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
           BCPI_SITE_URL: ${{ vars.BCPI_SITE_URL }}
@@ -35,10 +39,14 @@ jobs:
           attempts=3
           for attempt in 1 2 3; do
             echo "Publish attempt ${attempt} of ${attempts}"
-            if python run_bcpi.py export-site --refresh && python run_bcpi.py check; then
+            # Refresh NFL first (archives week into nfl/site_data). CFB export
+            # wipes docs/ then copies NFL site_data into docs/data/nfl/.
+            if python -m nfl.publish --refresh \
+              && python run_bcpi.py export-site --refresh \
+              && python run_bcpi.py check; then
               git config user.name "github-actions[bot]"
               git config user.email "github-actions[bot]@users.noreply.github.com"
-              git add docs/ output/
+              git add docs/ output/ nfl/site_data/ nfl/overrides.csv
               if git diff --staged --quiet; then
                 ahead="$(git rev-list --count '@{upstream}..HEAD' 2>/dev/null || echo 0)"
                 if [ "$ahead" != "0" ]; then
@@ -47,7 +55,7 @@ jobs:
                   echo "No changes to publish."
                 fi
               else
-                git commit -m "Publish BCPI site and rankings [automated]" && git push
+                git commit -m "Publish Football Journal site and rankings [automated]" && git push
               fi
               if [ "$?" -eq 0 ]; then
                 exit 0

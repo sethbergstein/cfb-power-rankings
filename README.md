@@ -1,11 +1,22 @@
-# Bergstein CFB Power Index (BCPI)
+# Bergstein · The Football Journal
 
-Two rankings for FBS college football, built from the same games:
+Newspaper-style rankings site for **college football** and the **NFL**.
+
+### College (BCPI)
+
+Two rankings for FBS, built from the same games:
 
 - **Power** estimates who would win a game on a neutral field.
 - **Poll** estimates who has earned the highest ranking so far.
 
 They share a solver (opponent-adjusted, recency-weighted ratings) and then answer different questions.
+
+### NFL
+
+- **NFL Power** — points better than an average team on a neutral field (no betting-market inputs).
+- **NFL Matchup** — predicted margin and win probability from those power scores.
+
+Engine code and weekly refresh live in `nfl/`. See `nfl/README.md`.
 
 ## Methodology
 
@@ -75,7 +86,7 @@ Coordinate search from the active params, then refits the matchup scale, home fi
 1. Push this repo to GitHub.
 2. In the repo: **Settings → Secrets and variables → Actions → New repository secret**
 3. Name: `CFBD_API_KEY`, value: your CollegeFootballData API key
-4. The workflow runs **Monday and Tuesday at noon UTC** and commits updated `output/` and `docs/` files.
+4. The workflow runs **Monday–Wednesday at noon UTC** (college Mon/Tue; NFL refresh Wed after MNF) and commits updated `output/`, `nfl/site_data/`, and `docs/` files.
 
 You can also trigger manually from the **Actions** tab (`workflow_dispatch`).
 
@@ -88,11 +99,19 @@ python run_bcpi.py serve
 # → http://127.0.0.1:8765
 ```
 
-On phones/tablets the layout switches to a bottom tab bar (Power · Poll · Matchup), touch-sized controls, and horizontally scrollable ranking tables.
+On phones/tablets the layout switches to a bottom tab bar (College Power · Poll · Match · NFL · NFL Match), touch-sized controls, and horizontally scrollable ranking tables.
+
+Manual NFL refresh (after games / injury report):
+
+```bash
+python3 -m nfl.publish --refresh
+# then publish the site, or wait for the scheduled Actions job
+python run_bcpi.py export-site
+```
 
 ### Free hosting (GitHub Pages — recommended for mobile)
 
-Rankings publish automatically **Monday and Tuesday at noon UTC** via `.github/workflows/static-site.yml` (Tuesday catches rare Monday games). The workflow runs `export-site`, commits `docs/`, and you serve from GitHub Pages — no Netlify, no Render, no API key on your phone.
+Rankings publish automatically **Monday–Wednesday at noon UTC** via `.github/workflows/static-site.yml` (Tue catches rare Monday CFB; Wed refreshes NFL after MNF). The workflow refreshes NFL power, runs `export-site`, commits `docs/`, and you serve from GitHub Pages — no Netlify, no Render, no API key on your phone.
 
 **One-time setup:**
 1. Push repo to GitHub with `CFBD_API_KEY` in **Settings → Secrets → Actions**

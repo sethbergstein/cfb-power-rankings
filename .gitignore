@@ -17,6 +17,13 @@ venv/
 # Data cache (raw API pulls)
 data/cache/
 
+# NFL engine downloads (nflverse parquet)
+nfl/data/*.parquet
+nfl/data/*.part
+
+# Scratch import from zip
+_nfl_import/
+
 # IDE
 .idea/
 .vscode/
