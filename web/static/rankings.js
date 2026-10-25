@@ -795,7 +795,13 @@
         ...extra,
       });
     }
+    const indexName = kind === "poll" ? "Bergstein Poll" : "Bergstein Power Index";
+    const shareTitle = `${row.school}: No. ${row.rank} in the ${indexName}`;
     document.title = `Bergstein · ${row.school}`;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", shareTitle);
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute("content", shareTitle);
     window.scrollTo(0, 0);
   }
 

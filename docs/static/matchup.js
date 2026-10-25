@@ -3,6 +3,7 @@
   const slotA = document.getElementById("slot-a");
   const slotB = document.getElementById("slot-b");
   const venue = document.getElementById("venue");
+  const venueDetail = document.getElementById("venue-detail");
   const projection = document.getElementById("projection");
   const ratings = document.getElementById("ratings-asof");
 
@@ -56,6 +57,18 @@
     });
   }
 
+  function venueInfo(school) {
+    const team = teamsBySchool[school] || {};
+    let stadium = team.venue_name || (school ? `${school} Stadium` : "");
+    const location =
+      team.venue_location ||
+      [team.venue_city, team.venue_state].filter(Boolean).join(", ");
+    if (location && stadium.includes(`(${location})`)) {
+      stadium = stadium.replace(` (${location})`, "").trim();
+    }
+    return { stadium, location };
+  }
+
   function paintVenue() {
     const options = [
       { id: "neutral", label: "Neutral" },
@@ -76,6 +89,35 @@
         predict();
       });
     });
+    paintVenueDetail();
+  }
+
+  function formatCapacity(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return "";
+    return n.toLocaleString("en-US");
+  }
+
+  function paintVenueDetail() {
+    if (!venueDetail) return;
+    if (site === "neutral") {
+      venueDetail.innerHTML = `Neutral site<span class="venue-city">No home field</span>`;
+      return;
+    }
+    const school = site === "home_a" ? schoolA : schoolB;
+    const team = teamsBySchool[school] || {};
+    const info = venueInfo(school);
+    if (!info.stadium && !info.location) {
+      venueDetail.innerHTML = `${esc(school)} home`;
+      return;
+    }
+    const capacity = formatCapacity(team.venue_capacity);
+    const meta = [info.location, capacity ? `Seats ${capacity}` : ""]
+      .filter(Boolean)
+      .join(" · ");
+    venueDetail.innerHTML = `${esc(info.stadium || `${school} Stadium`)}${
+      meta ? `<span class="venue-city">${esc(meta)}</span>` : ""
+    }`;
   }
 
   function paint() {
@@ -85,9 +127,10 @@
   }
 
   function venueName() {
-    if (site === "home_a") return `At ${schoolA}`;
-    if (site === "home_b") return `At ${schoolB}`;
-    return "Neutral";
+    if (site === "neutral") return "Neutral";
+    const school = site === "home_a" ? schoolA : schoolB;
+    const info = venueInfo(school);
+    return info.stadium || `At ${school}`;
   }
 
   function pointsLabel(value, homeName) {

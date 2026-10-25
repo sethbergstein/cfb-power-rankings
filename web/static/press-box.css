@@ -746,6 +746,29 @@ img {
   color: var(--paper);
 }
 
+.venue-detail {
+  margin: 10px 0 0;
+  font-family: var(--mast);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.venue-detail .venue-city {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .ratings-asof {
   margin: 12px 0;
   color: var(--muted);

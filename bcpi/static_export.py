@@ -493,6 +493,9 @@ def _rewrite_asset_paths(html: str) -> str:
     return (
         html.replace('href="/static/', 'href="./static/')
         .replace('src="/static/', 'src="./static/')
+        .replace('href="/apple-touch-icon.png"', 'href="./apple-touch-icon.png"')
+        .replace('href="/favicon.svg"', 'href="./favicon.svg"')
+        .replace('href="/favicon.ico"', 'href="./favicon.ico"')
         .replace('href="/power.html"', 'href="./power.html"')
         .replace('href="/poll.html"', 'href="./poll.html"')
         .replace('href="/"', 'href="./index.html"')
@@ -508,6 +511,8 @@ def _apply_site_url(html: str) -> str:
 
 def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Path:
     """Publish docs/ for GitHub Pages."""
+    from bcpi.brand_images import apply_brand_meta, generate_all, write_manifest
+
     season = season or infer_season()
     postseason = infer_postseason()
 
@@ -517,26 +522,59 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
 
     shutil.copytree(WEB_DIR / "static", DOCS_DIR / "static")
 
-    manifest_src = WEB_DIR / "manifest.webmanifest"
-    if manifest_src.exists():
-        shutil.copy2(manifest_src, DOCS_DIR / "manifest.webmanifest")
+    meta = export_data_bundle(season=season, postseason=postseason, refresh=refresh)
+    export_all_snapshots()
+    write_schedules()
 
-    for name in ("index.html", "power.html", "poll.html"):
+    # Brand images need the published power/teams JSON for the weekly OG card.
+    brand = generate_all(
+        out_dir=WEB_DIR,
+        power_path=DATA_DIR / "power.json",
+        teams_path=DATA_DIR / "teams.json",
+    )
+    # Copy root brand assets into docs/ (GitHub Pages serves /docs as the site root).
+    for name in (
+        "apple-touch-icon.png",
+        "icon-192.png",
+        "icon-512.png",
+        "icon-maskable-512.png",
+        "favicon-32.png",
+        "favicon.svg",
+        "favicon.ico",
+        "og-default.png",
+        "manifest.webmanifest",
+    ):
         src = WEB_DIR / name
-        dst = DOCS_DIR / name
+        if src.exists():
+            shutil.copy2(src, DOCS_DIR / name)
+    weekly = brand.get("og-weekly")
+    if weekly and Path(weekly).exists():
+        shutil.copy2(weekly, DOCS_DIR / Path(weekly).name)
+        shutil.copy2(weekly, DOCS_DIR / "static" / "og-preview.png")
+    write_manifest(WEB_DIR)
+    write_manifest(DOCS_DIR)
+
+    og_file = str(brand.get("og_filename") or "og-default.png")
+    og_meta = brand.get("og_meta") or {}
+    week = int(og_meta.get("week") or meta.get("week") or 0)
+    revision = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+    page_keys = {"index.html": "matchup", "power.html": "power", "poll.html": "poll"}
+    for name, page in page_keys.items():
+        src = WEB_DIR / name
         html = src.read_text(encoding="utf-8")
         html = _rewrite_asset_paths(html)
         html = _apply_site_url(html)
+        html = apply_brand_meta(
+            html,
+            page=page,
+            site=site_url(),
+            og_file=og_file,
+            week=week,
+        )
         html = _inject_static_config(html)
-        dst.write_text(html, encoding="utf-8")
+        html = _stamp_assets(html, revision)
+        (DOCS_DIR / name).write_text(html, encoding="utf-8")
 
-    meta = export_data_bundle(season=season, postseason=postseason, refresh=refresh)
-    export_all_snapshots()
-    revision = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
-    for name in ("index.html", "power.html", "poll.html"):
-        path = DOCS_DIR / name
-        path.write_text(_stamp_assets(path.read_text(encoding="utf-8"), revision), encoding="utf-8")
     _write_json(DOCS_DIR / "data" / "build.json", {"revision": revision, "exported": meta})
-    write_schedules()
     (DOCS_DIR / ".nojekyll").touch()
     return DOCS_DIR

@@ -113,6 +113,23 @@ def create_app() -> Flask:
     def poll_page() -> object:
         return send_from_directory(WEB_DIR, "poll.html")
 
+    @app.get("/apple-touch-icon.png")
+    @app.get("/favicon.svg")
+    @app.get("/favicon.ico")
+    @app.get("/favicon-32.png")
+    @app.get("/icon-192.png")
+    @app.get("/icon-512.png")
+    @app.get("/icon-maskable-512.png")
+    @app.get("/og-default.png")
+    @app.get("/manifest.webmanifest")
+    def brand_asset() -> object:
+        name = request.path.lstrip("/")
+        return send_from_directory(WEB_DIR, name)
+
+    @app.get("/og-<path:name>")
+    def og_asset(name: str) -> object:
+        return send_from_directory(WEB_DIR, f"og-{name}")
+
     @app.get("/api/teams")
     def api_teams() -> object:
         season = _season()

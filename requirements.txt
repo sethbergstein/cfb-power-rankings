@@ -6,3 +6,5 @@ pyarrow>=14.0.0,<18
 click>=8.1.0,<9
 flask>=3.0.0,<4
 gunicorn>=22.0.0,<24
+Pillow>=10.0.0,<12
+fonttools>=4.40.0,<5

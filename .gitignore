@@ -27,3 +27,7 @@ data/cache/
 .pytest_cache/
 .coverage
 htmlcov/
+# Brand image build cache
+data/cache/logos/
+data/fonts/*-Variable.ttf
+data/fonts/_tmp_*

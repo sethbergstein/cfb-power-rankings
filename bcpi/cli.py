@@ -7,6 +7,7 @@ import click
 
 from bcpi.backtest import BacktestMetrics, run_backtest
 from bcpi.checks import format_annotations
+from bcpi.config import PROJECT_ROOT
 from bcpi.constants import BACKTEST_END_SEASON, BACKTEST_START_SEASON, TARGET_SEASON
 from bcpi.params import ModelParams, TUNED_PARAMS_PATH, get_active_params
 from bcpi.matchup import format_matchup, predict_matchup
@@ -135,6 +136,39 @@ def export_site(season: Optional[int], refresh: bool) -> None:
     path = export_site_tree(refresh=refresh, season=season)
     click.echo(f"Static site written to {path}")
     click.echo("Enable GitHub Pages: Settings → Pages → Deploy from branch → main → /docs")
+
+
+@cli.command("brand-images")
+def brand_images() -> None:
+    """Regenerate OG preview images and home-screen icons from the latest published rankings."""
+    from bcpi.brand_images import generate_all, write_manifest
+
+    written = generate_all()
+    write_manifest(PROJECT_ROOT / "web")
+    # Mirror into docs/ when a published tree is present.
+    docs = PROJECT_ROOT / "docs"
+    if docs.exists():
+        import shutil
+
+        for key, path in written.items():
+            if key in ("og_filename", "og_meta"):
+                continue
+            if not hasattr(path, "exists") or not path.exists():
+                continue
+            shutil.copy2(path, docs / path.name)
+            static = docs / "static"
+            if static.exists():
+                shutil.copy2(path, static / path.name)
+        weekly = written.get("og-weekly")
+        if weekly and weekly.exists():
+            shutil.copy2(weekly, docs / "static" / "og-preview.png")
+        write_manifest(docs)
+    click.echo("Wrote brand images:")
+    for key, path in written.items():
+        if key in ("og_filename", "og_meta"):
+            click.echo(f"  {key}: {path}")
+        else:
+            click.echo(f"  {path}")
 
 
 @cli.command("serve")
