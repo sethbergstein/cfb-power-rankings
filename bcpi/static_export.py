@@ -373,6 +373,12 @@ def export_data_bundle(
                 "hfa_team_max_delta": params.hfa_team_max_delta,
                 "win_prob_scale": params.win_prob_scale,
                 "team_hfa": team_hfa,
+                "power_sample_games": params.power_sample_games,
+                "power_weights": {
+                    "solver": params.power_weights.get("solver", 0.0),
+                    "quality": params.power_weights.get("quality", 0.0),
+                    "market": params.power_weights.get("market", 0.0),
+                },
             },
         )
 
@@ -389,11 +395,67 @@ def export_data_bundle(
             client.close()
 
 
+def write_schedules() -> List[int]:
+    """Publish compact FBS schedules from the local CFBD cache. No ranking math."""
+    import hashlib
+
+    from bcpi.config import CACHE_DIR
+
+    def cached(endpoint: str, params: Dict[str, Any]) -> Optional[list]:
+        key = json.dumps({"endpoint": endpoint, "params": params}, sort_keys=True)
+        digest = hashlib.sha256(key.encode("utf-8")).hexdigest()
+        path = CACHE_DIR / f"{digest}.json"
+        if not path.exists():
+            return None
+        with path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+        return payload if isinstance(payload, list) else None
+
+    written: List[int] = []
+    for season in range(2018, TARGET_SEASON + 1):
+        games: List[Dict[str, Any]] = []
+        for season_type, post in (("regular", False), ("postseason", True)):
+            raw = cached("/games", {"year": season, "seasonType": season_type})
+            if not raw:
+                continue
+            for game in raw:
+                home_fbs = game.get("homeClassification") == "fbs"
+                away_fbs = game.get("awayClassification") == "fbs"
+                if not home_fbs and not away_fbs:
+                    continue
+                home_points = game.get("homePoints")
+                away_points = game.get("awayPoints")
+                games.append(
+                    {
+                        "week": game.get("week"),
+                        "date": game.get("startDate"),
+                        "tbd": bool(game.get("startTimeTBD")),
+                        "neutral": bool(game.get("neutralSite")),
+                        "home": game.get("homeTeam"),
+                        "away": game.get("awayTeam"),
+                        "homeScore": home_points,
+                        "awayScore": away_points,
+                        "done": bool(game.get("completed")) and home_points is not None and away_points is not None,
+                        "post": post,
+                    }
+                )
+        if not games:
+            continue
+        _write_json(DATA_DIR / "schedules" / f"{season}.json", {"season": season, "games": games})
+        written.append(season)
+    return written
+
+
 def _inject_static_config(html: str) -> str:
     snippet = '<script>window.BCPI_CONFIG={mode:"static",dataUrl:"./data"};</script>'
     if snippet in html:
         return html
-    for marker in ('<script src="./static/theme.js"', '<script src="/static/theme.js"'):
+    for marker in (
+        '<script src="./static/shared.js"',
+        '<script src="/static/shared.js"',
+        '<script src="./static/theme.js"',
+        '<script src="/static/theme.js"',
+    ):
         if marker in html:
             return html.replace(marker, f"{snippet}\n    {marker}")
     return html
@@ -475,5 +537,6 @@ def export_site_tree(refresh: bool = False, season: Optional[int] = None) -> Pat
         path = DOCS_DIR / name
         path.write_text(_stamp_assets(path.read_text(encoding="utf-8"), revision), encoding="utf-8")
     _write_json(DOCS_DIR / "data" / "build.json", {"revision": revision, "exported": meta})
+    write_schedules()
     (DOCS_DIR / ".nojekyll").touch()
     return DOCS_DIR

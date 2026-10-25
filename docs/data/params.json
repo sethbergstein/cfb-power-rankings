@@ -144,5 +144,11 @@
     "Western Michigan": 2.110222376598559,
     "Wisconsin": 1.9363483152709495,
     "Wyoming": 3.9313046546849773
+  },
+  "power_sample_games": 6.0,
+  "power_weights": {
+    "solver": 0.5499999999999999,
+    "quality": 0.45000000000000007,
+    "market": 0.0
   }
 }

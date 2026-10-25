@@ -2,82 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
-    <meta name="theme-color" content="#141210" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F3EFE4" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="BCPI" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="description" content="Neutral-field strength rankings. Who is best right now?" />
+    <meta name="apple-mobile-web-app-title" content="Bergstein" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content="Who wins on a neutral field. Bergstein power rankings." />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="BCPI" />
-    <meta property="og:title" content="BCPI · Power Rankings" />
-    <meta property="og:description" content="Neutral-field strength rankings. Who is best right now?" />
+    <meta property="og:site_name" content="Bergstein" />
+    <meta property="og:title" content="Bergstein · Power" />
+    <meta property="og:description" content="Who wins on a neutral field." />
     <meta property="og:url" content="https://sethbergstein.github.io/cfb-power-rankings/power.html" />
     <meta property="og:image" content="https://sethbergstein.github.io/cfb-power-rankings/static/og-preview.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BCPI · Power Rankings" />
-    <meta name="twitter:description" content="Neutral-field strength rankings. Who is best right now?" />
-    <meta name="twitter:image" content="https://sethbergstein.github.io/cfb-power-rankings/static/og-preview.png" />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/static/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/static/apple-touch-icon.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <title>BCPI · Power Index</title>
+    <title>Bergstein · Power</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,400..900&family=Archivo:ital,wdth,wght@0,62..125,500..900;1,62..125,700..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/static/press-box.css" />
-    <link rel="preload" href="./data/catalog.json" as="fetch" crossorigin />
-    <link rel="prefetch" href="./power.html" />
-    <link rel="prefetch" href="./poll.html" />
-    <link rel="prefetch" href="./index.html" />
-    <script src="/static/theme.js" defer></script>
-    <script src="/static/nav.js" defer></script>
   </head>
-  <body data-rankings-kind="power">
-    <header class="site-chrome">
-      <div class="site-brand">
-        <a class="wordmark" href="/">BC<span>PI</span></a>
-        <span class="wordmark-expansion">Bergstein CFB Power Index</span>
+  <body data-page="power">
+    <div class="sheet">
+      <div class="banner">
+        <span class="banner-name">College Football Extra</span>
+        <span class="banner-side">The rankings inside</span>
       </div>
-      <nav class="site-nav">
-        <a href="/power.html">Power</a>
-        <a href="/poll.html">Poll</a>
-        <a href="/">Matchup</a>
-      </nav>
-      <div class="chrome-actions">
-        <span class="season-badge" id="season-badge">2025 season</span>
-        <button type="button" class="btn-ghost" id="theme-toggle" data-theme-label>
-          Dark mode
-        </button>
-      </div>
-    </header>
-
-    <main class="page">
-      <header class="page-header">
-        <h1 class="page-title">Power index</h1>
-        <p class="page-sub">
-          Who is strongest on a neutral field right now.
-        </p>
+      <header class="masthead">
+        <h1>Bergstein</h1>
+        <p class="mast-kicker">Power · Poll · Matchups</p>
       </header>
-
-      <div class="rankings-controls">
-        <div class="select-wrap">
-          <select class="field" id="snapshot-select" aria-label="Season snapshot"></select>
+      <div class="dateline">
+        <span id="dateline-season">2026 season</span>
+        <em id="dateline-edition">Week edition</em>
+        <span id="dateline-date"></span>
+      </div>
+      <nav class="rail" aria-label="Section">
+        <div class="rail-tabs">
+          <a class="active" href="/power.html" aria-current="page">Power</a>
+          <a href="/poll.html">Poll</a>
+          <a href="/">Matchup</a>
         </div>
-        <button type="button" class="btn-ghost" id="refresh-btn">Recalculate</button>
-      </div>
-
-      <div class="rankings-meta" id="rankings-meta"></div>
-
-      <div class="ledger-table-wrap" id="rankings-table">
-        <div class="loading-row">Loading power rankings…</div>
-      </div>
-    </main>
-
+      </nav>
+      <main id="view">
+        <p class="status">Loading the power rankings.</p>
+      </main>
+    </div>
     <script src="/static/shared.js"></script>
     <script src="/static/rankings.js"></script>
   </body>

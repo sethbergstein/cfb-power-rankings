@@ -1,18 +1,24 @@
 {
-  "name": "Bergstein CFB Power Index",
-  "short_name": "BCPI",
-  "description": "College football power rankings, poll index, and matchup predictor.",
+  "name": "Bergstein",
+  "short_name": "Bergstein",
+  "description": "College football power rankings, poll, and matchups.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#141210",
-  "theme_color": "#141210",
+  "background_color": "#F3EFE4",
+  "theme_color": "#F3EFE4",
   "icons": [
     {
       "src": "./static/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "./static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

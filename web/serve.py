@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any, Optional
 
@@ -159,8 +160,6 @@ def create_app() -> Flask:
                 refresh=refresh,
             )
             rows = _enrich_rankings(kind, df, season, postseason)
-            top25 = rows[:25]
-            also_ran = rows[25:35]
             return jsonify(
                 {
                     "kind": kind,
@@ -171,8 +170,7 @@ def create_app() -> Flask:
                     "external_polls": load_external_polls_for_request(
                         season, as_of_week, postseason
                     ),
-                    "rows": top25,
-                    "also_ran": also_ran,
+                    "rows": rows,
                 }
             )
         except Exception as exc:
@@ -248,6 +246,28 @@ def create_app() -> Flask:
             return jsonify({"error": str(exc)}), 400
         finally:
             client.close()
+
+    @app.get("/api/model-params")
+    def api_model_params() -> object:
+        params = get_active_params()
+        return jsonify(
+            {
+                "power_sample_games": params.power_sample_games,
+                "power_weights": {
+                    "solver": params.power_weights.get("solver", 0.0),
+                    "quality": params.power_weights.get("quality", 0.0),
+                    "market": params.power_weights.get("market", 0.0),
+                },
+            }
+        )
+
+    @app.get("/api/schedule")
+    def api_schedule() -> object:
+        season = _season()
+        path = WEB_DIR.parent / "docs" / "data" / "schedules" / f"{season}.json"
+        if not path.exists():
+            return jsonify({"season": season, "games": []})
+        return jsonify(json.loads(path.read_text(encoding="utf-8")))
 
     return app
 

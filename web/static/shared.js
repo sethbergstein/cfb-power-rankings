@@ -156,17 +156,7 @@ const BCPI = {
         root = document.createElement("div");
         root.id = "bcpi-loader";
         root.className = "bcpi-loader";
-        root.innerHTML = `
-          <div class="bcpi-loader-stage" aria-hidden="true">
-            <svg class="bcpi-loader-trophy" viewBox="0 0 64 96" role="img" aria-label="">
-              <path d="M18 8h28v10c0 8-4 14-10 17 6 3 10 9 10 17v6H18v-6c0-8 4-14 10-17-6-3-10-9-10-17V8z" fill="currentColor"/>
-              <rect x="24" y="58" width="16" height="8" rx="1" fill="currentColor"/>
-              <rect x="20" y="66" width="24" height="6" rx="1" fill="currentColor"/>
-              <rect x="16" y="72" width="32" height="8" rx="1" fill="currentColor"/>
-              <path d="M8 12h8c2 8 2 16 0 22h-8V12zm48 0h8v22h-8c-2-6-2-14 0-22z" fill="currentColor" opacity="0.85"/>
-            </svg>
-          </div>
-          <p class="bcpi-loader-text"></p>`;
+        root.innerHTML = `<p class="bcpi-loader-text"></p>`;
         document.body.appendChild(root);
       }
       const text = root.querySelector(".bcpi-loader-text");
@@ -259,8 +249,7 @@ const BCPI = {
         week: data.week,
         label: data.label,
         as_of: data.as_of,
-        rows: rows.slice(0, 25),
-        also_ran: rows.slice(25, 35),
+        rows,
       };
     }
     if (!snapshot) throw new Error("Select a season snapshot");
@@ -327,8 +316,8 @@ const BCPI = {
     const rankMargin = (Number(awayRow.rank) - Number(homeRow.rank)) * rankPt;
     let marginHome =
       rankMargin >= 0 ? Math.max(ratingMargin, rankMargin) : Math.min(ratingMargin, rankMargin);
+    const teamHfa = neutral ? null : params.team_hfa?.[home];
     if (!neutral) {
-      const teamHfa = params.team_hfa?.[home];
       marginHome += teamHfa != null ? Number(teamHfa) : params.hfa;
     }
 
@@ -353,11 +342,21 @@ const BCPI = {
     const manifest = snapshot?.label
       ? { week: snapshot.week, label: snapshot.label }
       : await BCPI.loadManifest();
+    const sign = home === teamA ? 1 : -1;
+    const hfaPoints = neutral
+      ? 0
+      : teamHfa != null
+        ? Number(teamHfa)
+        : Number(params.hfa) || 0;
+    const baseMargin =
+      rankMargin >= 0 ? Math.max(ratingMargin, rankMargin) : Math.min(ratingMargin, rankMargin);
     const payload = {
       team_a: teamA,
       team_b: teamB,
       week: manifest.week,
       availability,
+      power_gap_a: sign * baseMargin,
+      home_field_a: sign * hfaPoints,
     };
 
     if (home === teamA) {
@@ -368,6 +367,8 @@ const BCPI = {
       payload.rank_b = b.rank;
       payload.power_rating_a = a.power_rating;
       payload.power_rating_b = b.power_rating;
+      payload.power_score_a = a.power_score;
+      payload.power_score_b = b.power_score;
     } else {
       payload.predicted_margin_a = -marginHome;
       payload.win_prob_a = 1 - winHome;
@@ -376,6 +377,8 @@ const BCPI = {
       payload.rank_b = b.rank;
       payload.power_rating_a = a.power_rating;
       payload.power_rating_b = b.power_rating;
+      payload.power_score_a = a.power_score;
+      payload.power_score_b = b.power_score;
     }
     return BCPI.attachProfiles(payload, teamsBySchool);
   },
@@ -545,7 +548,7 @@ const BCPI = {
           logoWrap.appendChild(img);
         }
         nameEl.textContent = team.school;
-        nameEl.style.color = BCPI.teamDisplayColor(team.color) || "";
+        nameEl.style.color = "";
         abbrEl.textContent = team.abbreviation || "";
       } else {
         nameEl.textContent = "Select team";
@@ -570,7 +573,7 @@ const BCPI = {
           const active = t.school === selected ? " active" : "";
           return `<li class="team-picker-option${active}" data-school="${BCPI.esc(t.school)}" role="option">
             ${logo ? `<img class="team-picker-option-logo" src="${BCPI.esc(logo)}" alt="" />` : ""}
-            <span class="team-picker-option-name" style="color:${BCPI.esc(BCPI.teamDisplayColor(t.color) || "inherit")}">${BCPI.esc(t.school)}</span>
+            <span class="team-picker-option-name">${BCPI.esc(t.school)}</span>
             <span class="team-picker-option-abbr">${BCPI.esc(t.abbreviation || "")}</span>
           </li>`;
         })
@@ -730,7 +733,106 @@ const BCPI = {
         return allTeams.find((t) => t.school === selected) || null;
       },
       closeMenu,
+      open: openMenu,
     };
+  },
+
+  slugify(school) {
+    return String(school || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/&/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  },
+
+  pageUrl(page, params) {
+    const query = new URLSearchParams();
+    Object.entries(params || {}).forEach(([key, value]) => {
+      if (value != null && value !== "") query.set(key, String(value));
+    });
+    const tail = query.toString() ? `?${query.toString()}` : "";
+    if (BCPI.isStatic()) {
+      const file = page === "matchup" ? "index.html" : `${page}.html`;
+      return `./${file}${tail}`;
+    }
+    if (page === "matchup") return `/${tail}`;
+    return `/${page}.html${tail}`;
+  },
+
+  async loadModelParams() {
+    if (BCPI._modelParams) return BCPI._modelParams;
+    if (!BCPI.isStatic()) {
+      const res = await fetch("/api/model-params");
+      if (!res.ok) throw new Error("Failed to load weights");
+      BCPI._modelParams = await res.json();
+      return BCPI._modelParams;
+    }
+    BCPI._modelParams = await BCPI.loadParams();
+    return BCPI._modelParams;
+  },
+
+  pickTeam({ teams = [], title = "Teams" } = {}) {
+    return new Promise((resolve) => {
+      const sorted = [...teams].sort((a, b) => a.school.localeCompare(b.school));
+      const sheet = document.createElement("div");
+      sheet.className = "picker-sheet";
+      sheet.innerHTML = `
+        <div class="picker-bar">
+          <p class="picker-title">${BCPI.esc(title)}</p>
+          <button type="button" class="picker-done">Done</button>
+        </div>
+        <input type="search" class="picker-search" placeholder="Search teams" autocomplete="off" enterkeyhint="search" />
+        <ul class="picker-list"></ul>`;
+      document.body.appendChild(sheet);
+      const list = sheet.querySelector(".picker-list");
+      const search = sheet.querySelector(".picker-search");
+
+      function draw(filter) {
+        const q = filter.trim().toLowerCase();
+        const rows = q
+          ? sorted.filter(
+              (team) =>
+                team.school.toLowerCase().includes(q) ||
+                (team.abbreviation || "").toLowerCase().includes(q)
+            )
+          : sorted;
+        list.innerHTML = rows
+          .map((team) => {
+            const logo = team.logo || "";
+            return `<li><button type="button" data-school="${BCPI.esc(team.school)}">
+              ${logo ? `<img src="${BCPI.esc(logo)}" alt="" />` : `<span class="picker-logo-blank"></span>`}
+              <span>${BCPI.esc(team.school)}</span>
+            </button></li>`;
+          })
+          .join("");
+        if (!rows.length) {
+          list.innerHTML = `<li class="picker-empty">No teams match</li>`;
+        }
+      }
+
+      function close(school) {
+        sheet.remove();
+        document.removeEventListener("keydown", onKey);
+        resolve(school || null);
+      }
+
+      function onKey(event) {
+        if (event.key === "Escape") close(null);
+      }
+
+      sheet.querySelector(".picker-done").addEventListener("click", () => close(null));
+      search.addEventListener("input", () => draw(search.value));
+      list.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-school]");
+        if (!button) return;
+        close(button.dataset.school);
+      });
+      document.addEventListener("keydown", onKey);
+      draw("");
+      search.focus();
+    });
   },
 
   async checkForUpdate() {
