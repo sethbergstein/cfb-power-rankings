@@ -1,33 +1,33 @@
 team,rank,pd,o,e,qb_exp,qb_qual,inj_new_loss,power,starter,alt_qb,p_starter,qb_note,record,pt_diff
-SF,1,5.097,0.107,0.002,-0.01,0.03,1.056,6.512,B.Purdy,B.Purdy,1.0,last game QB,6-0,67
-JAX,2,4.791,0.086,-0.02,0.001,-0.0,0.0,6.387,T.Lawrence,T.Lawrence,1.0,last game QB,4-2,50
-BUF,3,3.569,0.125,0.022,0.004,0.003,0.0,6.269,J.Allen,J.Allen,1.0,last game QB,5-1,26
-KC,4,3.948,0.068,-0.007,0.044,0.011,1.241,4.692,P.Mahomes,P.Mahomes,1.0,last game QB,5-0,57
-MIN,5,4.367,-0.055,-0.057,0.161,0.014,0.109,4.292,K.Murray,K.Murray,1.0,last game QB,5-0,45
-DET,6,2.426,0.09,0.019,0.002,0.0,0.714,4.012,J.Goff,J.Goff,1.0,last game QB,3-2,16
-CIN,7,1.84,0.035,-0.008,0.051,0.03,0.0,3.83,J.Burrow,J.Burrow,1.0,last game QB,3-2,19
-CHI,8,2.238,0.032,0.014,0.056,0.007,0.0,3.739,C.Williams,C.Williams,1.0,played week 7; next report not out,5-2,37
-SEA,9,4.456,-0.019,-0.054,0.041,-0.001,0.765,3.603,S.Darnold,S.Darnold,1.0,last game QB,3-3,26
-NE,10,2.209,0.035,-0.005,0.007,0.003,0.0,3.466,D.Maye,D.Maye,1.0,played week 7; next report not out,4-3,17
-LA,11,2.576,0.047,-0.045,0.005,0.0,1.529,2.567,M.Stafford,M.Stafford,1.0,last game QB,2-4,-3
-DEN,12,3.012,-0.004,-0.045,0.001,0.0,0.791,2.544,B.Nix,B.Nix,1.0,last game QB,4-2,-11
-HOU,13,1.605,0.004,-0.039,0.013,0.011,1.178,1.508,C.Stroud,C.Stroud,1.0,last game QB,2-4,1
-CAR,14,0.123,0.032,0.008,-0.004,-0.001,0.92,0.829,B.Young,B.Young,1.0,last game QB,3-2,23
-GB,15,0.642,0.008,-0.004,0.019,0.005,1.434,0.521,J.Love,J.Love,1.0,last game QB,4-2,2
-PIT,16,0.335,-0.033,-0.0,0.018,0.003,0.329,0.436,A.Rodgers,A.Rodgers,1.0,last game QB,4-2,9
-BAL,17,1.103,0.064,0.01,-0.233,-0.081,1.572,-0.796,T.Huntley,T.Huntley,1.0,last game QB,4-2,24
-DAL,18,-2.099,0.03,0.052,0.011,0.001,1.032,-0.93,D.Prescott,D.Prescott,1.0,last game QB,2-4,-8
-NYJ,19,-2.629,-0.051,-0.007,0.113,0.016,0.622,-1.784,G.Smith,G.Smith,1.0,last game QB,2-4,-10
-LV,20,-3.072,-0.042,0.021,0.082,0.024,0.455,-1.848,K.Cousins,K.Cousins,1.0,last game QB,3-3,0
-WAS,21,-3.573,-0.014,0.026,-0.017,0.014,0.0,-1.952,J.Daniels,J.Daniels,1.0,last game QB,1-4-1,-40
-NO,22,-2.593,-0.051,-0.006,0.005,0.01,0.583,-2.366,T.Shough,T.Shough,1.0,last game QB,2-4,-26
-IND,23,-1.653,-0.02,0.023,0.036,-0.011,2.361,-2.805,D.Jones,D.Jones,1.0,last game QB,2-4,-20
-LAC,24,-3.124,-0.096,-0.024,0.025,0.003,0.0,-3.158,J.Herbert,J.Herbert,1.0,last game QB,0-6,-61
-TB,25,-0.481,-0.05,-0.022,-0.206,-0.008,1.789,-3.184,B.Mayfield,J.Daniels,0.393,established QB still Questionable,1-5,-19
-CLE,26,-4.068,-0.099,-0.002,0.153,0.027,0.691,-3.511,D.Watson,D.Watson,1.0,last game QB,4-2,-16
-ARI,27,-3.259,-0.003,0.01,-0.002,-0.004,2.265,-3.737,J.Brissett,J.Brissett,1.0,last game QB,2-4,-52
-ATL,28,-1.068,-0.03,-0.002,-0.097,0.006,4.408,-4.791,M.Penix,M.Penix,1.0,last game QB,2-4,-11
-NYG,29,-3.682,-0.036,0.034,0.157,0.003,3.749,-5.054,J.Winston,J.Winston,1.0,last game QB,3-2-1,-4
-PHI,30,-0.592,-0.05,-0.021,-0.466,-0.019,2.184,-5.18,T.McKee,T.McKee,1.0,last game QB,2-4,-31
-TEN,31,-6.653,-0.102,0.038,0.003,-0.0,0.52,-6.67,C.Ward,C.Ward,1.0,last game QB,1-5,-45
-MIA,32,-7.221,-0.056,0.077,-0.154,-0.032,0.418,-7.442,M.Willis,M.Willis,1.0,last game QB,0-5,-62
+SF,1,4.305,0.098,0.002,-0.01,0.03,0.0,5.852,B.Purdy,B.Purdy,1.0,played week 7; next report not out,6-1,58
+JAX,2,4.952,0.083,-0.021,0.001,-0.0,0.0,5.664,T.Lawrence,T.Lawrence,1.0,last game QB,4-2,50
+BUF,3,3.513,0.123,0.022,0.004,0.003,0.0,5.371,J.Allen,J.Allen,1.0,last game QB,5-1,26
+CIN,4,3.359,0.049,-0.013,0.051,0.03,0.0,4.488,J.Burrow,J.Burrow,1.0,played week 7; next report not out,4-2,41
+SEA,5,5.466,-0.009,-0.057,0.041,-0.001,0.0,4.473,S.Darnold,S.Darnold,1.0,played week 7; next report not out,4-3,43
+KC,6,2.84,0.059,-0.004,0.044,0.011,0.0,3.946,P.Mahomes,P.Mahomes,1.0,played week 7; next report not out,5-1,40
+LA,7,3.117,0.051,-0.047,0.005,0.0,0.0,3.635,M.Stafford,M.Stafford,1.0,played week 7; next report not out,3-4,11
+MIN,8,4.514,-0.06,-0.059,0.161,0.014,0.0,3.593,K.Murray,K.Murray,1.0,played week 7; next report not out,6-0,51
+DET,9,2.289,0.076,0.019,0.002,0.0,0.0,3.451,J.Goff,J.Goff,1.0,played week 7; next report not out,4-2,19
+DEN,10,3.444,0.005,-0.048,0.001,0.0,0.0,2.964,B.Nix,B.Nix,1.0,played week 7; next report not out,5-2,3
+CHI,11,2.162,0.028,0.014,0.056,0.007,0.0,2.814,C.Williams,C.Williams,1.0,played week 7; next report not out,5-2,37
+NE,12,2.197,0.032,-0.006,0.007,0.003,0.0,2.592,D.Maye,D.Maye,1.0,played week 7; next report not out,4-3,17
+TB,13,1.6,-0.036,-0.03,0.204,0.008,0.0,1.913,B.Mayfield,B.Mayfield,1.0,played week 7; next report not out,2-5,11
+HOU,14,1.031,-0.005,-0.033,0.013,0.011,0.0,1.123,C.Stroud,C.Stroud,1.0,played week 7; next report not out,2-5,-5
+GB,15,0.678,0.006,-0.01,0.019,0.005,0.0,0.991,J.Love,J.Love,1.0,played week 7; next report not out,4-3,-1
+PIT,16,0.762,-0.025,0.0,0.018,0.003,0.0,0.43,A.Rodgers,A.Rodgers,1.0,played week 7; next report not out,5-2,15
+ATL,17,-0.279,-0.029,-0.005,-0.097,0.006,0.0,-1.013,M.Penix,M.Penix,1.0,played week 7; next report not out,3-4,-2
+CAR,18,-1.886,0.012,0.013,-0.004,-0.001,0.0,-1.093,B.Young,B.Young,1.0,played week 7; next report not out,3-3,-7
+BAL,19,-0.231,0.051,0.014,-0.233,-0.081,0.0,-1.496,T.Huntley,T.Huntley,1.0,played week 7; next report not out,4-3,2
+DAL,20,-2.027,0.028,0.051,0.011,0.001,1.032,-1.722,D.Prescott,D.Prescott,1.0,last game QB,2-4,-8
+IND,21,-1.859,-0.027,0.021,0.036,-0.011,0.0,-1.788,D.Jones,D.Jones,1.0,played week 7; next report not out,2-5,-26
+NYJ,22,-3.174,-0.041,0.0,0.113,0.016,0.0,-2.251,G.Smith,G.Smith,1.0,played week 7; next report not out,2-5,-13
+NO,23,-2.753,-0.047,-0.003,0.005,0.01,0.0,-2.701,T.Shough,T.Shough,1.0,played week 7; next report not out,2-5,-32
+WAS,24,-3.521,-0.016,0.025,-0.017,0.014,0.0,-2.752,J.Daniels,J.Daniels,1.0,last game QB,1-4-1,-40
+LV,25,-3.622,-0.049,0.022,0.082,0.024,0.0,-2.812,K.Cousins,K.Cousins,1.0,played week 7; next report not out,3-4,-14
+ARI,26,-3.692,-0.011,0.013,-0.002,-0.004,0.0,-3.001,J.Brissett,J.Brissett,1.0,played week 7; next report not out,2-5,-66
+CLE,27,-4.168,-0.088,-0.002,0.153,0.027,0.0,-3.56,D.Watson,D.Watson,1.0,played week 7; next report not out,5-2,-13
+LAC,28,-3.174,-0.099,-0.025,0.025,0.003,0.0,-4.055,J.Herbert,J.Herbert,1.0,last game QB,0-6,-61
+NYG,29,-2.937,-0.018,0.03,-0.303,-0.039,0.0,-4.672,J.McCarthy,J.McCarthy,1.0,played week 7; next report not out,4-2-1,2
+PHI,30,-0.696,-0.053,-0.021,-0.466,-0.019,2.184,-6.123,T.McKee,T.McKee,1.0,last game QB,2-4,-31
+TEN,31,-6.783,-0.103,0.043,0.003,-0.0,0.0,-7.122,C.Ward,C.Ward,1.0,played week 7; next report not out,1-6,-48
+MIA,32,-6.855,-0.033,0.081,-0.154,-0.032,0.0,-7.14,M.Willis,M.Willis,1.0,played week 7; next report not out,1-5,-59
