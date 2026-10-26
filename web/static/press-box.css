@@ -343,6 +343,17 @@ img {
   font-size: 15px;
 }
 
+.editor-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.banner-side.banner-date {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
 .stepper {
   display: flex;
   justify-content: space-between;

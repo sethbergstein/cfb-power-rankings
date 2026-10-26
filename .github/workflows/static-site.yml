@@ -2,11 +2,8 @@ name: Publish static site
 
 on:
   schedule:
-    # Monday noon UTC — after Sunday slate; Tuesday catches rare Monday games.
-    - cron: "0 12 * * 1"
-    - cron: "0 12 * * 2"
-    # Wednesday noon UTC — NFL after Monday Night Football + early week injury reports.
-    - cron: "0 12 * * 3"
+    # Daily noon UTC — CFB + NFL refresh after overnight games and injury reports.
+    - cron: "0 12 * * *"
   workflow_dispatch:
 
 permissions:
@@ -25,10 +22,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          # NFL engine lives at the repo root in nfl/ (not a separate checkout).
           pip install -r nfl/requirements.txt
 
-      # Retry the whole publish. A dropped CFBD response fails export-site
-      # before anything is committed, and the client does not retry that itself.
+      # Retry the whole publish. A dropped CFBD or in-season nflverse response
+      # fails the job before anything is committed; retries cover transient
+      # network blips. A missing or gameless NFL play-by-play file does not.
       - name: Build, check, and publish
         timeout-minutes: 45
         env:
@@ -36,34 +35,45 @@ jobs:
           BCPI_SITE_URL: ${{ vars.BCPI_SITE_URL }}
         run: |
           set -uo pipefail
+          summary_file="${RUNNER_TEMP:-/tmp}/nfl_refresh_summary.md"
+          append_nfl_summary() {
+            if [ -n "${GITHUB_STEP_SUMMARY:-}" ] && [ -f "$summary_file" ]; then
+              cat "$summary_file" >> "$GITHUB_STEP_SUMMARY" || echo "Could not write the NFL section of the job summary."
+            fi
+          }
           attempts=3
           for attempt in 1 2 3; do
             echo "Publish attempt ${attempt} of ${attempts}"
-            # Refresh NFL first (archives week into nfl/site_data). CFB export
-            # wipes docs/ then copies NFL site_data into docs/data/nfl/.
+            # nfl.publish computes the season in America/Los_Angeles and runs
+            # python3 engine/refresh.py --season <year>. March through the first
+            # games of September, a missing or empty play-by-play file skips NFL
+            # (exit 0) and leaves the last published file in place. CFB export
+            # then wipes docs/ and copies that file into docs/data/nfl/.
             if python -m nfl.publish --refresh \
               && python run_bcpi.py export-site --refresh \
               && python run_bcpi.py check; then
+              if ! python scripts/ratings_changed.py; then
+                echo "Ratings unchanged; skipping commit."
+                append_nfl_summary
+                exit 0
+              fi
               git config user.name "github-actions[bot]"
               git config user.email "github-actions[bot]@users.noreply.github.com"
               git add docs/ output/ nfl/site_data/ nfl/overrides.csv
               if git diff --staged --quiet; then
-                ahead="$(git rev-list --count '@{upstream}..HEAD' 2>/dev/null || echo 0)"
-                if [ "$ahead" != "0" ]; then
-                  git push
-                else
-                  echo "No changes to publish."
-                fi
-              else
-                git commit -m "Publish Football Journal site and rankings [automated]" && git push
+                echo "Ratings reported changed but nothing staged; skipping commit."
+                append_nfl_summary
+                exit 0
               fi
-              if [ "$?" -eq 0 ]; then
+              if git commit -m "Publish Football Journal site and rankings [automated]" && git push; then
+                append_nfl_summary
                 exit 0
               fi
               echo "Git publish failed."
             fi
             if [ "$attempt" -eq "$attempts" ]; then
               echo "Publish failed after ${attempts} attempts"
+              append_nfl_summary
               exit 1
             fi
             delay=$((attempt * 45))

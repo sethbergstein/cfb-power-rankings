@@ -4,18 +4,25 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from zoneinfo import ZoneInfo
 
 HERE = Path(__file__).resolve().parent
 SITE_DATA = HERE / "site_data"
 ENGINE = HERE / "engine"
 PROJECT_ROOT = HERE.parent
 DOCS_NFL = PROJECT_ROOT / "docs" / "data" / "nfl"
+LA = ZoneInfo("America/Los_Angeles")
+PBP_URL = (
+    "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.parquet"
+)
+SUMMARY_NAME = "nfl_refresh_summary.md"
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -36,13 +43,118 @@ def _snap_label(season: int, week: int) -> str:
 
 
 def infer_nfl_season(today: Optional[date] = None) -> int:
-    today = today or date.today()
-    # NFL season year is the year of the regular season opener (Sept).
-    if today.month >= 8:
+    """Season year is the year the NFL season starts.
+
+    March or later uses the current year. January and February use the previous
+    year. The clock is America/Los_Angeles unless a date is passed in.
+    """
+    if today is None:
+        today = datetime.now(LA).date()
+    if today.month >= 3:
         return today.year
-    if today.month <= 2:
-        return today.year - 1
-    return today.year
+    return today.year - 1
+
+
+def pbp_http_status(season: int) -> str:
+    """HTTP status of this season's nflverse play-by-play file. Raises on network failure."""
+    url = PBP_URL.format(season=season)
+    proc = subprocess.run(
+        ["curl", "-sS", "-I", "-L", "-o", "/dev/null", "-w", "%{http_code}", url],
+        capture_output=True,
+        text=True,
+        timeout=90,
+    )
+    code = (proc.stdout or "").strip()
+    if proc.returncode != 0 or not code or code == "000":
+        detail = (proc.stderr or "").strip() or f"curl exit {proc.returncode}"
+        raise RuntimeError(f"could not check play-by-play for {season}: {detail}")
+    return code
+
+
+def completed_reg_games(path: Path, season: int) -> int:
+    """Regular-season games in a play-by-play file that have a final score."""
+    import pandas as pd
+
+    if not path.exists() or path.stat().st_size == 0:
+        return 0
+    frame = pd.read_parquet(
+        path, columns=["game_id", "season", "season_type", "home_score", "away_score"]
+    )
+    if frame.empty:
+        return 0
+    regular = frame[(frame["season"] == season) & (frame["season_type"].astype(str) == "REG")]
+    done = regular[regular["home_score"].notna() & regular["away_score"].notna()]
+    if done.empty:
+        return 0
+    return int(done["game_id"].nunique())
+
+
+def skip_reason_for_pbp(season: int, output: str, pbp_path: Path) -> Optional[str]:
+    """Why to skip after a failed refresh, or None when the failure is real."""
+    if f"play_by_play_{season}" in output and "404" in output:
+        return f"play-by-play for {season} is not published yet"
+    if not pbp_path.exists():
+        return None
+    try:
+        games = completed_reg_games(pbp_path, season)
+    except Exception as exc:
+        print(f"warning: could not read {pbp_path.name}: {exc}", file=sys.stderr)
+        return None
+    if games == 0:
+        return f"play-by-play for {season} has no completed games"
+    return None
+
+
+def _qb_markdown(output: str) -> str:
+    marker = "QB situations to confirm"
+    idx = output.find(marker)
+    if idx < 0:
+        return "None. This refresh did not flag any quarterback situations."
+    return "```\n" + output[idx:].strip() + "\n```"
+
+
+def _overrides_markdown() -> str:
+    path = HERE / "overrides.csv"
+    try:
+        raw = path.read_text(encoding="utf-8")
+    except OSError as exc:
+        return f"Could not read `nfl/overrides.csv` ({exc})."
+    text = raw.strip()
+    if not text or text == "team,starter,p_start,note":
+        return "No rows. The file has only the header."
+    return "```csv\n" + text + "\n```"
+
+
+def write_refresh_summary(season: int, note: str, qb_text: str) -> None:
+    """Write the QB check and current overrides for the Actions job summary.
+
+    The workflow appends this file to $GITHUB_STEP_SUMMARY. A write failure is
+    logged and does not fail the refresh.
+    """
+    try:
+        lines = [
+            "## NFL refresh",
+            "",
+            note.strip(),
+            "",
+            "## QB situations to confirm",
+            "",
+            qb_text.strip(),
+            "",
+            "## overrides.csv",
+            "",
+            "Current rows in `nfl/overrides.csv`:",
+            "",
+            _overrides_markdown(),
+            "",
+        ]
+        text = "\n".join(lines)
+        base = os.environ.get("RUNNER_TEMP") or "/tmp"
+        path = Path(base) / SUMMARY_NAME
+        path.write_text(text, encoding="utf-8")
+        print(f"Wrote NFL job summary to {path}")
+    except Exception as exc:
+        print(f"warning: could not write the NFL job summary: {exc}", file=sys.stderr)
 
 
 def archive_power(power: Dict[str, Any], site_data: Path = SITE_DATA) -> str:
@@ -100,15 +212,69 @@ def sync_to_docs(site_data: Path = SITE_DATA, dest: Path = DOCS_NFL) -> Path:
 
 
 def run_refresh(season: Optional[int] = None, through_week: Optional[int] = None) -> Dict[str, Any]:
-    """Run the engine refresh, then archive + sync."""
-    season = season or infer_nfl_season()
+    """Run the engine refresh, then archive.
+
+    The season year is computed when omitted. If that season's play-by-play file
+    is not published yet, or it has no completed games, the last published
+    rankings are left untouched and the result is marked skipped.
+    """
+    season = int(season) if season is not None else infer_nfl_season()
+    print(f"NFL season {season} (America/Los_Angeles)")
+    status = pbp_http_status(season)
+    if status == "404":
+        reason = f"play-by-play for {season} is not published yet"
+        write_refresh_summary(
+            season,
+            f"Season {season} was skipped: {reason}. Last published NFL rankings were kept.",
+            "No new list. The NFL refresh did not run.",
+        )
+        return {"skipped": True, "season": season, "reason": reason}
+    if status != "200":
+        raise RuntimeError(f"play-by-play check for {season} returned HTTP {status}")
+
     cmd = [sys.executable, str(ENGINE / "refresh.py"), "--season", str(season)]
     if through_week is not None:
         cmd.extend(["--through-week", str(through_week)])
-    subprocess.run(cmd, cwd=str(HERE), check=True)
+    shown = ["python3", "engine/refresh.py", "--season", str(season)]
+    if through_week is not None:
+        shown.extend(["--through-week", str(through_week)])
+    print("Running:", " ".join(shown))
+    proc = subprocess.run(cmd, cwd=str(HERE), capture_output=True, text=True)
+    if proc.stdout:
+        print(proc.stdout, end="" if proc.stdout.endswith("\n") else "\n")
+    if proc.stderr:
+        print(proc.stderr, file=sys.stderr, end="" if proc.stderr.endswith("\n") else "\n")
+    output = proc.stdout or ""
+    if proc.returncode != 0:
+        combined = output + "\n" + (proc.stderr or "")
+        reason = skip_reason_for_pbp(season, combined, HERE / "data" / f"pbp_{season}.parquet")
+        if reason:
+            write_refresh_summary(
+                season,
+                f"Season {season} was skipped: {reason}. Last published NFL rankings were kept.",
+                "No new list. The NFL refresh did not run.",
+            )
+            return {"skipped": True, "season": season, "reason": reason}
+        write_refresh_summary(
+            season,
+            f"Season {season} refresh failed. See the step log.",
+            "No list. The refresh failed before it finished.",
+        )
+        raise SystemExit(proc.returncode)
+
     power = _read_json(SITE_DATA / "nfl_power.json")
     snap_id = archive_power(power)
-    return {"season": season, "snapshot": snap_id, "through_week": power["meta"]["through_week"]}
+    write_refresh_summary(
+        season,
+        f"Season {season} refresh finished. Snapshot {snap_id}.",
+        _qb_markdown(output),
+    )
+    return {
+        "skipped": False,
+        "season": season,
+        "snapshot": snap_id,
+        "through_week": power["meta"]["through_week"],
+    }
 
 
 def main() -> None:
@@ -122,7 +288,13 @@ def main() -> None:
 
     if args.refresh:
         info = run_refresh(season=args.season, through_week=args.through_week)
-        print(f"refreshed NFL power → {info['snapshot']}")
+        if info.get("skipped"):
+            print(
+                f"Skipping NFL refresh ({info['season']}): {info['reason']}. "
+                "Keeping the last published NFL rankings."
+            )
+        else:
+            print(f"refreshed NFL power → {info['snapshot']}")
     elif args.archive_only or (SITE_DATA / "nfl_power.json").exists():
         power = _read_json(SITE_DATA / "nfl_power.json")
         snap_id = archive_power(power)

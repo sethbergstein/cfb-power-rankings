@@ -34,11 +34,13 @@ def fetch(D, season, full=False):
         if os.path.exists(path) and not always: continue
         tmp = path + '.part'
         r = subprocess.run(['curl', '-sS', '-L', '-f', '-o', tmp, f'{REL}/{rel}/{src}'], capture_output=True, text=True)
-        if r.returncode == 0: shutil.move(tmp, path)
+        if r.returncode == 0:
+            shutil.move(tmp, path)
         else:
             if os.path.exists(tmp): os.remove(tmp)
-            print(f'  could not download {src}: {r.stderr.strip()}', file=sys.stderr)
-            if not os.path.exists(path): sys.exit(f'missing required file {dst}')
+            detail = (r.stderr or r.stdout or '').strip() or f'curl exit {r.returncode}'
+            # Always fail the refresh when a required download fails — never keep going on stale data.
+            sys.exit(f'failed to download {src}: {detail}')
 
 
 TEAM_NAMES = {'ARI': 'Arizona Cardinals', 'ATL': 'Atlanta Falcons', 'BAL': 'Baltimore Ravens', 'BUF': 'Buffalo Bills', 'CAR': 'Carolina Panthers',

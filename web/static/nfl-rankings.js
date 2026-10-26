@@ -139,6 +139,12 @@
     return `<p class="note">Through week ${week}: early rankings still lean on last year and roster change. The engine is least sharp here.</p>`;
   }
 
+  function editorFootnote(pack) {
+    const applied = Number(pack && pack.meta && pack.meta.overrides_applied);
+    if (!Number.isFinite(applied) || applied <= 0) return "";
+    return `<p class="caption editor-note">Some quarterback statuses are set by the editor.</p>`;
+  }
+
   function pickerHtml(snap) {
     const seasons = seasonsInCatalog();
     const weeks = snapsForSeason(snap.season);
@@ -215,7 +221,8 @@
         <div class="board-head cols-power"><span>No.</span><span>Team</span><span class="rec">Rec</span><span class="score">Score</span></div>
         ${rows}
       </div>
-      <p class="caption">Tap any team to see what's behind its score. Record and point differential are display-only.</p>`;
+      <p class="caption">Tap any team to see what's behind its score. Record and point differential are display-only.</p>
+      ${editorFootnote(pack)}`;
     bindPickers(snap);
   }
 
@@ -326,7 +333,8 @@
         )}</div></div>
         <div class="stat"><div class="lbl">${esc(gapLabel)}</div><div class="val">${esc(gapValue)}</div></div>
       </div>
-      ${breakdown}`;
+      ${breakdown}
+      ${editorFootnote(pack)}`;
   }
 
   async function boot() {

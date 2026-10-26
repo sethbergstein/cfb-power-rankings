@@ -38,7 +38,7 @@ Ratings live on a 1500-centered scale. Expected margin is the rating gap divided
 
 Your Mac has **Python 3.9.6**, which is enough to run BCPI locally.
 
-GitHub Actions uses **Python 3.11** for weekly automated runs — you do **not** need to upgrade your laptop for the cron job to work.
+GitHub Actions uses **Python 3.11** for daily automated runs — you do **not** need to upgrade your laptop for the cron job to work.
 
 Optional: install a newer Python later with [python.org](https://www.python.org/downloads/) or `brew install python@3.11` if you want faster local development.
 
@@ -81,12 +81,12 @@ python run_bcpi.py tune --holdout 2024 --holdout 2025 --no-save
 Coordinate search from the active params, then refits the matchup scale, home field, and win-probability curve. Saves `config/tuned_params.json` unless `--no-save`.
 
 
-## GitHub Actions (weekly cron)
+## GitHub Actions (daily cron)
 
 1. Push this repo to GitHub.
 2. In the repo: **Settings → Secrets and variables → Actions → New repository secret**
 3. Name: `CFBD_API_KEY`, value: your CollegeFootballData API key
-4. The workflow runs **Monday–Wednesday at noon UTC** (college Mon/Tue; NFL refresh Wed after MNF) and commits updated `output/`, `nfl/site_data/`, and `docs/` files.
+4. The workflow runs **daily at noon UTC**, refreshes CFB and NFL, and commits `output/`, `nfl/site_data/`, and `docs/` only when ratings changed. A failed college download fails the job. The NFL season year is computed in America/Los_Angeles (March or later: this year; January or February: last year) and passed to `engine/refresh.py --season`. From March until that season has a completed game, the NFL step is skipped and the last published NFL file is kept.
 
 You can also trigger manually from the **Actions** tab (`workflow_dispatch`).
 
@@ -111,7 +111,7 @@ python run_bcpi.py export-site
 
 ### Free hosting (GitHub Pages — recommended for mobile)
 
-Rankings publish automatically **Monday–Wednesday at noon UTC** via `.github/workflows/static-site.yml` (Tue catches rare Monday CFB; Wed refreshes NFL after MNF). The workflow refreshes NFL power, runs `export-site`, commits `docs/`, and you serve from GitHub Pages — no Netlify, no Render, no API key on your phone.
+Rankings publish automatically **daily at noon UTC** via `.github/workflows/static-site.yml`. The workflow refreshes NFL and CFB and commits only when ratings changed. A failed college download fails the job. If the NFL season's play-by-play file is not published yet or has no completed games, that step is skipped and the previous NFL rankings stay up. The job summary lists quarterbacks to confirm and the current `nfl/overrides.csv` rows. You serve from GitHub Pages — no Netlify, no Render, no API key on your phone.
 
 **One-time setup:**
 1. Push repo to GitHub with `CFBD_API_KEY` in **Settings → Secrets → Actions**
