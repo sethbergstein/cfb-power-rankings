@@ -1,6 +1,6 @@
 {
-  "name": "Bergstein · The Football Journal",
-  "short_name": "Bergstein",
+  "name": "The Press Box | The Allegheny Herald",
+  "short_name": "Press Box",
   "description": "College and NFL power rankings, poll, and matchups.",
   "start_url": "./index.html",
   "scope": "./",

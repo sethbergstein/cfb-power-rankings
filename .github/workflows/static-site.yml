@@ -65,7 +65,7 @@ jobs:
                 append_nfl_summary
                 exit 0
               fi
-              if git commit -m "Publish Football Journal site and rankings [automated]" && git push; then
+              if git commit -m "Publish The Press Box site and rankings [automated]" && git push; then
                 append_nfl_summary
                 exit 0
               fi

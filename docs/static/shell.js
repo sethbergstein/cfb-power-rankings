@@ -1,4 +1,4 @@
-/** Shared masthead / rail chrome for The Football Journal. */
+/** Shared masthead / rail chrome for The Press Box. */
 (function () {
   const staticSite = window.BCPI_CONFIG?.mode === "static";
   const path = (window.location.pathname.replace(/\.html$/, "") || "/").replace(/\/$/, "") || "/";
@@ -23,9 +23,10 @@
   }
 
   window.BCPI_SHELL = {
-    paperName: "The Football Journal",
+    paperName: "The Allegheny Herald",
     paperSide: "College & Pro",
-    kicker: "College · NFL · Rankings",
+    kicker: "Your Only Resource for Fall Weekends",
+    siteTitle: "The Press Box | The Allegheny Herald",
     railHtml() {
       return `
         <div class="rail-sport">

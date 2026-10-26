@@ -130,17 +130,18 @@ img {
 }
 
 .masthead h1 {
-  font-size: 54px;
+  font-size: 48px;
 }
 
 .mast-kicker {
   margin: 8px 0 0;
   font-family: var(--sans);
-  font-weight: 800;
+  font-weight: 700;
   font-stretch: 75%;
-  font-size: 13px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ink-2);
 }
 
 .dateline {

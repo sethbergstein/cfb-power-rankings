@@ -313,7 +313,7 @@
     view.innerHTML = `
       <div class="inside-bar">
         <a class="back" href="${esc(listUrl(snap))}">‹ NFL power rankings</a>
-        <a class="mini-mark" href="${esc(listUrl(snap))}">Bergstein</a>
+        <a class="mini-mark" href="${esc(listUrl(snap))}">The Press Box</a>
       </div>
       <p class="sec-label"><span>No. ${esc(row.rank)} · ${esc(team.conference || "")} · ${esc(
       row.record || "—"

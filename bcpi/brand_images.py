@@ -174,7 +174,7 @@ def _draw_banner(draw: ImageDraw.ImageDraw, width: int, height: int, week_label:
     left = _font("banner", 28)
     right = _font("label", 22)
     inset = 48
-    left_text = "COLLEGE FOOTBALL EXTRA"
+    left_text = "THE ALLEGHENY HERALD"
     right_text = week_label
     left_box = draw.textbbox((0, 0), left_text, font=left)
     right_box = draw.textbbox((0, 0), right_text, font=right)
@@ -309,8 +309,8 @@ def render_og(
         edition = f"Week {week} Edition"
 
     banner_h = _draw_banner(draw, width, height, week_label)
-    mast = _font("mast", 118)
-    _center_text(draw, "Bergstein", mast, width / 2, banner_h + 78, INK)
+    mast = _font("mast", 96)
+    _center_text(draw, "The Press Box", mast, width / 2, banner_h + 78, INK)
     y = _draw_dateline(draw, banner_h + 140, width, season, edition, format_updated(as_of))
 
     if top_teams:
@@ -375,7 +375,7 @@ def render_favicon_svg() -> str:
     width = glyph_set[name].width
     upem = font["head"].unitsPerEm
     scale = 280 / upem
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bergstein">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="The Press Box">
   <rect width="512" height="512" fill="#F3EFE4"/>
   <rect x="0" y="0" width="512" height="82" fill="#B5121B"/>
   <rect x="72" y="82" width="368" height="18" fill="#161412"/>
@@ -512,22 +512,16 @@ def apply_brand_meta(html: str, *, page: str, site: str, og_file: str, week: int
         "nfl-power": f"{site}/nfl-power.html",
         "nfl-matchup": f"{site}/nfl-matchup.html",
     }.get(page, f"{site}/")
-    title = {
-        "power": "Bergstein · The Football Journal",
-        "poll": "Bergstein · The Football Journal",
-        "matchup": "Bergstein · The Football Journal",
-        "nfl-power": "Bergstein · NFL Power",
-        "nfl-matchup": "Bergstein · NFL Matchup",
-    }.get(page, "Bergstein · The Football Journal")
+    title = "The Press Box | The Allegheny Herald"
     description = "College and NFL power rankings, poll, and matchup picks. Updated every week."
     alt = (
-        f"Bergstein Week {week} power rankings, top five teams"
+        f"The Press Box Week {week} power rankings, top five teams"
         if week > 0 and page in ("power", "poll", "matchup")
-        else "Bergstein football rankings"
+        else "The Press Box football rankings"
     )
     image_url = f"{site}/{og_file}"
 
-    block = f"""    <meta property="og:site_name" content="Bergstein" />
+    block = f"""    <meta property="og:site_name" content="The Allegheny Herald" />
     <meta property="og:title" content="{title}" />
     <meta property="og:description" content="{description}" />
     <meta property="og:type" content="website" />
@@ -544,7 +538,7 @@ def apply_brand_meta(html: str, *, page: str, site: str, og_file: str, week: int
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./favicon.ico" sizes="32x32" />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <meta name="apple-mobile-web-app-title" content="Bergstein" />"""
+    <meta name="apple-mobile-web-app-title" content="The Press Box" />"""
 
     # Drop any prior og / twitter / icon / manifest tags so the block is clean.
     import re
@@ -569,8 +563,8 @@ def apply_brand_meta(html: str, *, page: str, site: str, og_file: str, week: int
 
 def write_manifest(out_dir: Path) -> Path:
     payload = {
-        "name": "Bergstein · The Football Journal",
-        "short_name": "Bergstein",
+        "name": "The Press Box | The Allegheny Herald",
+        "short_name": "Press Box",
         "description": "College and NFL power rankings, poll, and matchups.",
         "start_url": "./index.html",
         "scope": "./",

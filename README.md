@@ -1,4 +1,4 @@
-# Bergstein · The Football Journal
+# The Press Box | The Allegheny Herald
 
 Newspaper-style rankings site for **college football** and the **NFL**.
 

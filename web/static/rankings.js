@@ -451,7 +451,7 @@
     view.innerHTML = `
       <div class="inside-bar">
         <a class="back" href="${esc(listUrl(snap))}">‹ Power rankings</a>
-        <a class="mini-mark" href="${esc(listUrl(snap))}">Bergstein</a>
+        <a class="mini-mark" href="${esc(listUrl(snap))}">The Press Box</a>
       </div>
       <p class="sec-label"><span>No. ${esc(row.rank)} · ${esc(row.conference || "")} · ${record(row)}</span><i></i></p>
       <div class="team-lockup">
@@ -565,7 +565,7 @@
     view.innerHTML = `
       <div class="inside-bar">
         <a class="back" href="${esc(listUrl(snap))}">‹ The poll</a>
-        <a class="mini-mark" href="${esc(listUrl(snap))}">Bergstein</a>
+        <a class="mini-mark" href="${esc(listUrl(snap))}">The Press Box</a>
       </div>
       <p class="sec-label"><span>No. ${esc(row.rank)} in the poll · ${esc(row.conference || "")} · ${record(row)}</span><i></i></p>
       <div class="team-lockup">
@@ -738,7 +738,7 @@
     else renderPollList(pack, snaps, index, deck, teams.bySchool, priorRanks);
     bindList(snaps, index);
     restoreScroll(snap);
-    document.title = kind === "poll" ? "Bergstein · Poll" : "Bergstein · Power";
+    document.title = "The Press Box | The Allegheny Herald";
   }
 
   async function showTeam(snap, slug) {
@@ -753,7 +753,7 @@
       view.innerHTML = `
         <div class="inside-bar">
           <a class="back" href="${esc(listUrl(snap))}">‹ ${kind === "poll" ? "The poll" : "Power rankings"}</a>
-          <a class="mini-mark" href="${esc(listUrl(snap))}">Bergstein</a>
+          <a class="mini-mark" href="${esc(listUrl(snap))}">The Press Box</a>
         </div>
         <p class="status">That team is not in this edition.</p>`;
       return;
@@ -797,7 +797,7 @@
     }
     const indexName = kind === "poll" ? "Bergstein Poll" : "Bergstein Power Index";
     const shareTitle = `${row.school}: No. ${row.rank} in the ${indexName}`;
-    document.title = `Bergstein · ${row.school}`;
+    document.title = `${row.school} | The Press Box`;
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", shareTitle);
     const twTitle = document.querySelector('meta[name="twitter:title"]');
