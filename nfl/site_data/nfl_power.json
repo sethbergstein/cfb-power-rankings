@@ -2,8 +2,8 @@
   "meta": {
     "season": 2026,
     "through_week": 7,
-    "injury_report_week": 7,
-    "generated_utc": "2026-10-27T17:36Z",
+    "injury_report_week": 8,
+    "generated_utc": "2026-10-28T17:58Z",
     "engine": "nfl power engine v2",
     "units": "points vs an average team on a neutral field",
     "home_field": 1.45,
@@ -15,13 +15,13 @@
       "rank": 1,
       "team": "SF",
       "name": "San Francisco 49ers",
-      "power": 5.76,
+      "power": 5.7,
       "record": "6-1",
       "point_diff": 58,
       "components": {
         "results_margin": 3.4,
         "offense": 1.93,
-        "quarterback": 0.43,
+        "quarterback": 0.37,
         "injuries": -0.0
       },
       "ratings": {
@@ -32,20 +32,20 @@
       "starter": "B.Purdy",
       "alt_qb": "B.Purdy",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 2,
       "team": "JAX",
       "name": "Jacksonville Jaguars",
-      "power": 5.51,
+      "power": 5.49,
       "record": "4-2",
       "point_diff": 50,
       "components": {
         "results_margin": 3.86,
         "offense": 1.63,
-        "quarterback": 0.02,
+        "quarterback": 0.0,
         "injuries": -0.0
       },
       "ratings": {
@@ -63,13 +63,13 @@
       "rank": 3,
       "team": "BUF",
       "name": "Buffalo Bills",
-      "power": 5.27,
+      "power": 5.25,
       "record": "5-1",
       "point_diff": 26,
       "components": {
         "results_margin": 2.78,
         "offense": 2.41,
-        "quarterback": 0.08,
+        "quarterback": 0.06,
         "injuries": -0.0
       },
       "ratings": {
@@ -85,39 +85,15 @@
     },
     {
       "rank": 4,
-      "team": "CIN",
-      "name": "Cincinnati Bengals",
-      "power": 4.38,
-      "record": "4-2",
-      "point_diff": 41,
-      "components": {
-        "results_margin": 2.65,
-        "offense": 0.98,
-        "quarterback": 0.76,
-        "injuries": -0.0
-      },
-      "ratings": {
-        "margin_rating": 3.35,
-        "offense_epa_per_play": 0.049,
-        "defense_epa_allowed_per_play": -0.013
-      },
-      "starter": "J.Burrow",
-      "alt_qb": "J.Burrow",
-      "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
-      "injury_starters_newly_lost": 0.0
-    },
-    {
-      "rank": 5,
       "team": "SEA",
       "name": "Seattle Seahawks",
-      "power": 4.38,
+      "power": 4.35,
       "record": "4-3",
       "point_diff": 43,
       "components": {
         "results_margin": 4.31,
         "offense": -0.16,
-        "quarterback": 0.22,
+        "quarterback": 0.2,
         "injuries": -0.0
       },
       "ratings": {
@@ -128,20 +104,44 @@
       "starter": "S.Darnold",
       "alt_qb": "S.Darnold",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 5,
+      "team": "CIN",
+      "name": "Cincinnati Bengals",
+      "power": 4.3,
+      "record": "4-2",
+      "point_diff": 41,
+      "components": {
+        "results_margin": 2.65,
+        "offense": 0.98,
+        "quarterback": 0.68,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": 3.35,
+        "offense_epa_per_play": 0.049,
+        "defense_epa_allowed_per_play": -0.013
+      },
+      "starter": "J.Burrow",
+      "alt_qb": "J.Burrow",
+      "starter_prob": 1.0,
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 6,
       "team": "KC",
       "name": "Kansas City Chiefs",
-      "power": 3.84,
+      "power": 3.78,
       "record": "5-1",
       "point_diff": 40,
       "components": {
         "results_margin": 2.25,
         "offense": 1.17,
-        "quarterback": 0.43,
+        "quarterback": 0.37,
         "injuries": -0.0
       },
       "ratings": {
@@ -152,44 +152,20 @@
       "starter": "P.Mahomes",
       "alt_qb": "P.Mahomes",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 7,
-      "team": "MIN",
-      "name": "Minnesota Vikings",
-      "power": 3.5,
-      "record": "6-0",
-      "point_diff": 51,
-      "components": {
-        "results_margin": 3.57,
-        "offense": -1.16,
-        "quarterback": 1.09,
-        "injuries": -0.0
-      },
-      "ratings": {
-        "margin_rating": 4.52,
-        "offense_epa_per_play": -0.061,
-        "defense_epa_allowed_per_play": -0.059
-      },
-      "starter": "K.Murray",
-      "alt_qb": "K.Murray",
-      "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
-      "injury_starters_newly_lost": 0.0
-    },
-    {
-      "rank": 8,
       "team": "LA",
       "name": "Los Angeles Rams",
-      "power": 3.48,
+      "power": 3.45,
       "record": "3-4",
       "point_diff": 11,
       "components": {
         "results_margin": 2.42,
         "offense": 1.0,
-        "quarterback": 0.06,
+        "quarterback": 0.03,
         "injuries": -0.0
       },
       "ratings": {
@@ -200,20 +176,44 @@
       "starter": "M.Stafford",
       "alt_qb": "M.Stafford",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 8,
+      "team": "MIN",
+      "name": "Minnesota Vikings",
+      "power": 3.35,
+      "record": "6-0",
+      "point_diff": 51,
+      "components": {
+        "results_margin": 3.57,
+        "offense": -1.16,
+        "quarterback": 0.94,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": 4.52,
+        "offense_epa_per_play": -0.061,
+        "defense_epa_allowed_per_play": -0.059
+      },
+      "starter": "K.Murray",
+      "alt_qb": "K.Murray",
+      "starter_prob": 1.0,
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 9,
       "team": "DET",
       "name": "Detroit Lions",
-      "power": 3.35,
+      "power": 3.33,
       "record": "4-2",
       "point_diff": 19,
       "components": {
         "results_margin": 1.82,
         "offense": 1.49,
-        "quarterback": 0.04,
+        "quarterback": 0.02,
         "injuries": -0.0
       },
       "ratings": {
@@ -224,20 +224,20 @@
       "starter": "J.Goff",
       "alt_qb": "J.Goff",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 10,
       "team": "DEN",
       "name": "Denver Broncos",
-      "power": 2.85,
+      "power": 2.83,
       "record": "5-2",
       "point_diff": 3,
       "components": {
         "results_margin": 2.71,
         "offense": 0.12,
-        "quarterback": 0.02,
+        "quarterback": 0.0,
         "injuries": -0.0
       },
       "ratings": {
@@ -248,20 +248,20 @@
       "starter": "B.Nix",
       "alt_qb": "B.Nix",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 11,
       "team": "CHI",
       "name": "Chicago Bears",
-      "power": 2.65,
+      "power": 2.63,
       "record": "5-2",
       "point_diff": 37,
       "components": {
         "results_margin": 1.67,
         "offense": 0.56,
-        "quarterback": 0.42,
+        "quarterback": 0.4,
         "injuries": -0.0
       },
       "ratings": {
@@ -272,20 +272,20 @@
       "starter": "C.Williams",
       "alt_qb": "C.Williams",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 12,
       "team": "NE",
       "name": "New England Patriots",
-      "power": 2.48,
+      "power": 2.45,
       "record": "4-3",
       "point_diff": 17,
       "components": {
         "results_margin": 1.74,
         "offense": 0.65,
-        "quarterback": 0.09,
+        "quarterback": 0.07,
         "injuries": -0.0
       },
       "ratings": {
@@ -296,20 +296,20 @@
       "starter": "D.Maye",
       "alt_qb": "D.Maye",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 13,
       "team": "TB",
       "name": "Tampa Bay Buccaneers",
-      "power": 1.88,
+      "power": 1.87,
       "record": "2-5",
       "point_diff": 11,
       "components": {
         "results_margin": 1.35,
         "offense": -0.69,
-        "quarterback": 1.22,
+        "quarterback": 1.21,
         "injuries": -0.0
       },
       "ratings": {
@@ -320,20 +320,20 @@
       "starter": "B.Mayfield",
       "alt_qb": "B.Mayfield",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 14,
       "team": "HOU",
       "name": "Houston Texans",
-      "power": 1.09,
+      "power": 1.05,
       "record": "2-5",
       "point_diff": -5,
       "components": {
         "results_margin": 0.9,
         "offense": -0.08,
-        "quarterback": 0.26,
+        "quarterback": 0.22,
         "injuries": -0.0
       },
       "ratings": {
@@ -344,20 +344,20 @@
       "starter": "C.Stroud",
       "alt_qb": "C.Stroud",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 15,
       "team": "GB",
       "name": "Green Bay Packers",
-      "power": 0.94,
+      "power": 0.9,
       "record": "4-3",
       "point_diff": -1,
       "components": {
         "results_margin": 0.62,
         "offense": 0.13,
-        "quarterback": 0.19,
+        "quarterback": 0.16,
         "injuries": -0.0
       },
       "ratings": {
@@ -368,20 +368,20 @@
       "starter": "J.Love",
       "alt_qb": "J.Love",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 16,
       "team": "DAL",
       "name": "Dallas Cowboys",
-      "power": 0.37,
+      "power": 0.34,
       "record": "3-4",
       "point_diff": 9,
       "components": {
         "results_margin": -0.67,
         "offense": 0.95,
-        "quarterback": 0.09,
+        "quarterback": 0.06,
         "injuries": -0.0
       },
       "ratings": {
@@ -392,20 +392,20 @@
       "starter": "D.Prescott",
       "alt_qb": "D.Prescott",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 17,
       "team": "PIT",
       "name": "Pittsburgh Steelers",
-      "power": 0.33,
+      "power": 0.29,
       "record": "5-2",
       "point_diff": 15,
       "components": {
         "results_margin": 0.63,
         "offense": -0.46,
-        "quarterback": 0.16,
+        "quarterback": 0.13,
         "injuries": -0.0
       },
       "ratings": {
@@ -416,20 +416,20 @@
       "starter": "A.Rodgers",
       "alt_qb": "A.Rodgers",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 18,
       "team": "ATL",
       "name": "Atlanta Falcons",
-      "power": -1.1,
+      "power": -1.04,
       "record": "3-4",
       "point_diff": -2,
       "components": {
         "results_margin": -0.18,
         "offense": -0.53,
-        "quarterback": -0.39,
+        "quarterback": -0.33,
         "injuries": -0.0
       },
       "ratings": {
@@ -440,44 +440,20 @@
       "starter": "M.Penix",
       "alt_qb": "M.Penix",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 19,
-      "team": "CAR",
-      "name": "Carolina Panthers",
-      "power": -1.27,
-      "record": "3-3",
-      "point_diff": -7,
-      "components": {
-        "results_margin": -1.5,
-        "offense": 0.25,
-        "quarterback": -0.02,
-        "injuries": -0.0
-      },
-      "ratings": {
-        "margin_rating": -1.97,
-        "offense_epa_per_play": 0.011,
-        "defense_epa_allowed_per_play": 0.013
-      },
-      "starter": "B.Young",
-      "alt_qb": "B.Young",
-      "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
-      "injury_starters_newly_lost": 0.0
-    },
-    {
-      "rank": 20,
       "team": "BAL",
       "name": "Baltimore Ravens",
-      "power": -1.55,
+      "power": -1.24,
       "record": "4-3",
       "point_diff": 2,
       "components": {
         "results_margin": -0.1,
         "offense": 1.01,
-        "quarterback": -2.46,
+        "quarterback": -2.15,
         "injuries": -0.0
       },
       "ratings": {
@@ -488,20 +464,44 @@
       "starter": "T.Huntley",
       "alt_qb": "T.Huntley",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 20,
+      "team": "CAR",
+      "name": "Carolina Panthers",
+      "power": -1.28,
+      "record": "3-3",
+      "point_diff": -7,
+      "components": {
+        "results_margin": -1.5,
+        "offense": 0.25,
+        "quarterback": -0.03,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": -1.97,
+        "offense_epa_per_play": 0.011,
+        "defense_epa_allowed_per_play": 0.013
+      },
+      "starter": "B.Young",
+      "alt_qb": "B.Young",
+      "starter_prob": 1.0,
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 21,
       "team": "IND",
       "name": "Indianapolis Colts",
-      "power": -1.89,
+      "power": -1.91,
       "record": "2-5",
       "point_diff": -26,
       "components": {
         "results_margin": -1.42,
         "offense": -0.5,
-        "quarterback": 0.03,
+        "quarterback": 0.01,
         "injuries": -0.0
       },
       "ratings": {
@@ -512,20 +512,20 @@
       "starter": "D.Jones",
       "alt_qb": "D.Jones",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 22,
       "team": "NYJ",
       "name": "New York Jets",
-      "power": -2.36,
+      "power": -2.44,
       "record": "2-5",
       "point_diff": -13,
       "components": {
         "results_margin": -2.46,
         "offense": -0.77,
-        "quarterback": 0.87,
+        "quarterback": 0.79,
         "injuries": -0.0
       },
       "ratings": {
@@ -536,20 +536,20 @@
       "starter": "G.Smith",
       "alt_qb": "G.Smith",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 23,
       "team": "NO",
       "name": "New Orleans Saints",
-      "power": -2.78,
+      "power": -2.8,
       "record": "2-5",
       "point_diff": -32,
       "components": {
         "results_margin": -2.1,
         "offense": -0.89,
-        "quarterback": 0.21,
+        "quarterback": 0.2,
         "injuries": -0.0
       },
       "ratings": {
@@ -560,20 +560,20 @@
       "starter": "T.Shough",
       "alt_qb": "T.Shough",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 24,
       "team": "WAS",
       "name": "Washington Commanders",
-      "power": -2.86,
+      "power": -2.88,
       "record": "1-4-1",
       "point_diff": -40,
       "components": {
         "results_margin": -2.71,
         "offense": -0.3,
-        "quarterback": 0.15,
+        "quarterback": 0.13,
         "injuries": -0.0
       },
       "ratings": {
@@ -591,13 +591,13 @@
       "rank": 25,
       "team": "LV",
       "name": "Las Vegas Raiders",
-      "power": -2.91,
+      "power": -3.02,
       "record": "3-4",
       "point_diff": -14,
       "components": {
         "results_margin": -2.79,
         "offense": -0.94,
-        "quarterback": 0.83,
+        "quarterback": 0.72,
         "injuries": -0.0
       },
       "ratings": {
@@ -608,20 +608,20 @@
       "starter": "K.Cousins",
       "alt_qb": "K.Cousins",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 26,
       "team": "ARI",
       "name": "Arizona Cardinals",
-      "power": -3.11,
+      "power": -3.12,
       "record": "2-5",
       "point_diff": -66,
       "components": {
         "results_margin": -2.86,
         "offense": -0.19,
-        "quarterback": -0.06,
+        "quarterback": -0.07,
         "injuries": -0.0
       },
       "ratings": {
@@ -632,20 +632,20 @@
       "starter": "J.Brissett",
       "alt_qb": "J.Brissett",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 27,
       "team": "CLE",
       "name": "Cleveland Browns",
-      "power": -3.67,
+      "power": -3.8,
       "record": "5-2",
       "point_diff": -13,
       "components": {
         "results_margin": -3.23,
         "offense": -1.69,
-        "quarterback": 1.25,
+        "quarterback": 1.13,
         "injuries": -0.0
       },
       "ratings": {
@@ -656,20 +656,20 @@
       "starter": "D.Watson",
       "alt_qb": "D.Watson",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 28,
       "team": "LAC",
       "name": "Los Angeles Chargers",
-      "power": -4.15,
+      "power": -4.18,
       "record": "0-6",
       "point_diff": -61,
       "components": {
         "results_margin": -2.45,
         "offense": -1.9,
-        "quarterback": 0.19,
+        "quarterback": 0.17,
         "injuries": -0.0
       },
       "ratings": {
@@ -687,13 +687,13 @@
       "rank": 29,
       "team": "NYG",
       "name": "New York Giants",
-      "power": -4.71,
+      "power": -4.45,
       "record": "4-2-1",
       "point_diff": 2,
       "components": {
         "results_margin": -2.19,
         "offense": -0.33,
-        "quarterback": -2.18,
+        "quarterback": -1.92,
         "injuries": -0.0
       },
       "ratings": {
@@ -704,20 +704,20 @@
       "starter": "J.McCarthy",
       "alt_qb": "J.McCarthy",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 30,
       "team": "PHI",
       "name": "Philadelphia Eagles",
-      "power": -5.17,
+      "power": -4.89,
       "record": "2-5",
       "point_diff": -48,
       "components": {
         "results_margin": -1.38,
         "offense": -1.05,
-        "quarterback": -2.74,
+        "quarterback": -2.46,
         "injuries": -0.0
       },
       "ratings": {
@@ -728,20 +728,20 @@
       "starter": "T.McKee",
       "alt_qb": "T.McKee",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 31,
       "team": "MIA",
       "name": "Miami Dolphins",
-      "power": -7.26,
+      "power": -7.08,
       "record": "1-5",
       "point_diff": -59,
       "components": {
         "results_margin": -5.34,
         "offense": -0.63,
-        "quarterback": -1.29,
+        "quarterback": -1.11,
         "injuries": -0.0
       },
       "ratings": {
@@ -752,20 +752,20 @@
       "starter": "M.Willis",
       "alt_qb": "M.Willis",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 32,
       "team": "TEN",
       "name": "Tennessee Titans",
-      "power": -7.27,
+      "power": -7.29,
       "record": "1-6",
       "point_diff": -48,
       "components": {
         "results_margin": -5.3,
         "offense": -1.99,
-        "quarterback": 0.03,
+        "quarterback": 0.01,
         "injuries": -0.0
       },
       "ratings": {
@@ -776,7 +776,7 @@
       "starter": "C.Ward",
       "alt_qb": "C.Ward",
       "starter_prob": 1.0,
-      "qb_note": "played week 7; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     }
   ]

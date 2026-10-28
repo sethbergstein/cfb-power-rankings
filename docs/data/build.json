@@ -1,11 +1,11 @@
 {
-  "revision": "20261027173749",
+  "revision": "20261028180143",
   "exported": {
     "season": 2026,
-    "week": 8,
+    "week": 9,
     "postseason": false,
-    "label": "2026 \u00b7 week 8",
-    "power_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_power_2026_week08.csv",
-    "poll_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_poll_2026_week08.csv"
+    "label": "2026 \u00b7 week 9",
+    "power_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_power_2026_week09.csv",
+    "poll_path": "/home/runner/work/cfb-power-rankings/cfb-power-rankings/output/bcpi_poll_2026_week09.csv"
   }
 }
