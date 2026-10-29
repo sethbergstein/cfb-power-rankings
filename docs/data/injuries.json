@@ -1,6 +1,208 @@
 {
   "season": 2026,
   "rating_week": 9,
-  "fetched_at": "2026-10-28T18:00:26+00:00",
-  "teams": {}
+  "fetched_at": "2026-10-29T18:17:47+00:00",
+  "teams": {
+    "Ole Miss": {
+      "points": 0.54,
+      "players": [
+        {
+          "team": "Ole Miss",
+          "player": "Kewan Lacy",
+          "position": "RB",
+          "status": "out",
+          "points": 0.54,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Mississippi State": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Mississippi State",
+          "player": "Kamario Taylor",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Illinois": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Illinois",
+          "player": "Katin Houser",
+          "position": "QB",
+          "status": "doubtful",
+          "points": 6.0,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Rutgers": {
+      "points": 7.85,
+      "players": [
+        {
+          "team": "Rutgers",
+          "player": "KJ Duff",
+          "position": "WR",
+          "status": "doubtful",
+          "points": 4.0,
+          "conference": "B10"
+        },
+        {
+          "team": "Rutgers",
+          "player": "Dylan Lonergan",
+          "position": "QB",
+          "status": "out",
+          "points": 3.85,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Oregon": {
+      "points": 2.96,
+      "players": [
+        {
+          "team": "Oregon",
+          "player": "Jeremiah McClellan",
+          "position": "WR",
+          "status": "out",
+          "points": 0.94,
+          "conference": "B10"
+        },
+        {
+          "team": "Oregon",
+          "player": "Dante Moore",
+          "position": "QB",
+          "status": "out",
+          "points": 2.02,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Ohio State": {
+      "points": 1.01,
+      "players": [
+        {
+          "team": "Ohio State",
+          "player": "Ja\u2019Kobi Jackson",
+          "position": "RB",
+          "status": "out",
+          "points": 1.01,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Syracuse": {
+      "points": 2.26,
+      "players": [
+        {
+          "team": "Syracuse",
+          "player": "Amari Odom",
+          "position": "QB",
+          "status": "out",
+          "points": 1.99,
+          "conference": "ACC"
+        },
+        {
+          "team": "Syracuse",
+          "player": "Malachi Nelson",
+          "position": "QB",
+          "status": "out",
+          "points": 0.27,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Virginia": {
+      "points": 2.22,
+      "players": [
+        {
+          "team": "Virginia",
+          "player": "Jekail Middlebrook",
+          "position": "RB",
+          "status": "doubtful",
+          "points": 2.22,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Florida State": {
+      "points": 1.28,
+      "players": [
+        {
+          "team": "Florida State",
+          "player": "Samuel Singleton Jr.",
+          "position": "RB",
+          "status": "out",
+          "points": 1.28,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Pittsburgh",
+          "player": "Mason Heintschel",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Colorado": {
+      "points": 3.51,
+      "players": [
+        {
+          "team": "Colorado",
+          "player": "Julian Lewis",
+          "position": "QB",
+          "status": "doubtful",
+          "points": 2.99,
+          "conference": "B12"
+        },
+        {
+          "team": "Colorado",
+          "player": "Micah Welch",
+          "position": "RB",
+          "status": "out",
+          "points": 0.52,
+          "conference": "B12"
+        }
+      ]
+    },
+    "BYU": {
+      "points": 1.1,
+      "players": [
+        {
+          "team": "BYU",
+          "player": "LJ Martin",
+          "position": "RB",
+          "status": "out",
+          "points": 1.1,
+          "conference": "B12"
+        }
+      ]
+    },
+    "TCU": {
+      "points": 1.66,
+      "players": [
+        {
+          "team": "TCU",
+          "player": "Jeremy Payne",
+          "position": "RB",
+          "status": "doubtful",
+          "points": 1.66,
+          "conference": "B12"
+        }
+      ]
+    }
+  }
 }
