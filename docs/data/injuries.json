@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "rating_week": 9,
-  "fetched_at": "2026-10-29T18:17:47+00:00",
+  "fetched_at": "2026-10-30T17:57:14+00:00",
   "teams": {
     "Ole Miss": {
       "points": 0.54,
@@ -125,7 +125,7 @@
           "team": "Virginia",
           "player": "Jekail Middlebrook",
           "position": "RB",
-          "status": "doubtful",
+          "status": "out",
           "points": 2.22,
           "conference": "ACC"
         }
@@ -164,7 +164,7 @@
           "team": "Colorado",
           "player": "Julian Lewis",
           "position": "QB",
-          "status": "doubtful",
+          "status": "out",
           "points": 2.99,
           "conference": "B12"
         },
@@ -198,7 +198,7 @@
           "team": "TCU",
           "player": "Jeremy Payne",
           "position": "RB",
-          "status": "doubtful",
+          "status": "out",
           "points": 1.66,
           "conference": "B12"
         }
