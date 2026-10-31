@@ -6,8 +6,8 @@
       "kind": "health",
       "severity": "warning",
       "teams": [
-        "51-80 mean +8.6",
-        "81-200 mean +6.6"
+        "51-80 mean +9.2",
+        "81-200 mean +6.5"
       ],
       "message": "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating."
     }

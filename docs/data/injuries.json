@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "rating_week": 9,
-  "fetched_at": "2026-10-30T17:57:14+00:00",
+  "fetched_at": "2026-10-31T17:09:27+00:00",
   "teams": {
     "Ole Miss": {
       "points": 0.54,
@@ -12,6 +12,19 @@
           "position": "RB",
           "status": "out",
           "points": 0.54,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Florida": {
+      "points": 0.48,
+      "players": [
+        {
+          "team": "Florida",
+          "player": "Duke Clark",
+          "position": "RB",
+          "status": "out",
+          "points": 0.48,
           "conference": "SEC"
         }
       ]
@@ -29,30 +42,9 @@
         }
       ]
     },
-    "Illinois": {
-      "points": 6.0,
-      "players": [
-        {
-          "team": "Illinois",
-          "player": "Katin Houser",
-          "position": "QB",
-          "status": "doubtful",
-          "points": 6.0,
-          "conference": "B10"
-        }
-      ]
-    },
     "Rutgers": {
-      "points": 7.85,
+      "points": 3.85,
       "players": [
-        {
-          "team": "Rutgers",
-          "player": "KJ Duff",
-          "position": "WR",
-          "status": "doubtful",
-          "points": 4.0,
-          "conference": "B10"
-        },
         {
           "team": "Rutgers",
           "player": "Dylan Lonergan",
@@ -64,7 +56,7 @@
       ]
     },
     "Oregon": {
-      "points": 2.96,
+      "points": 3.85,
       "players": [
         {
           "team": "Oregon",
@@ -80,6 +72,27 @@
           "position": "QB",
           "status": "out",
           "points": 2.02,
+          "conference": "B10"
+        },
+        {
+          "team": "Oregon",
+          "player": "Messiah Hampton",
+          "position": "WR",
+          "status": "out",
+          "points": 0.89,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Penn State": {
+      "points": 0.76,
+      "players": [
+        {
+          "team": "Penn State",
+          "player": "Koby Howard",
+          "position": "WR",
+          "status": "doubtful",
+          "points": 0.76,
           "conference": "B10"
         }
       ]
@@ -157,17 +170,35 @@
         }
       ]
     },
-    "Colorado": {
-      "points": 3.51,
+    "UCF": {
+      "points": 0.24,
       "players": [
         {
-          "team": "Colorado",
-          "player": "Julian Lewis",
-          "position": "QB",
+          "team": "UCF",
+          "player": "Taevion Swint",
+          "position": "RB",
           "status": "out",
-          "points": 2.99,
+          "points": 0.24,
           "conference": "B12"
-        },
+        }
+      ]
+    },
+    "Arizona": {
+      "points": 0.29,
+      "players": [
+        {
+          "team": "Arizona",
+          "player": "Ismail Mahdi",
+          "position": "RB",
+          "status": "out",
+          "points": 0.29,
+          "conference": "B12"
+        }
+      ]
+    },
+    "Colorado": {
+      "points": 0.52,
+      "players": [
         {
           "team": "Colorado",
           "player": "Micah Welch",
