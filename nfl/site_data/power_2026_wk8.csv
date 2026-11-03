@@ -1,33 +1,33 @@
 team,rank,pd,o,e,qb_exp,qb_qual,inj_new_loss,power,starter,alt_qb,p_starter,qb_note,record,pt_diff
-JAX,1,6.447,0.089,-0.031,0.001,-0.0,0.0,6.948,T.Lawrence,T.Lawrence,1.0,played week 8; next report not out,5-2,85
-BUF,2,4.967,0.117,0.012,0.004,0.003,0.0,6.398,J.Allen,J.Allen,1.0,played week 8; next report not out,6-1,52
-SF,3,4.372,0.101,0.003,-0.008,0.026,0.0,5.93,B.Purdy,B.Purdy,1.0,last game QB,6-1,58
-CIN,4,3.359,0.057,-0.006,0.046,0.028,0.0,4.601,J.Burrow,J.Burrow,1.0,played week 8; next report not out,5-2,48
-LA,5,3.627,0.047,-0.054,0.005,0.0,0.0,3.971,M.Stafford,M.Stafford,1.0,played week 8; next report not out,4-4,26
-KC,6,2.586,0.07,-0.001,0.04,0.01,0.0,3.939,P.Mahomes,P.Mahomes,1.0,played week 8; next report not out,5-2,36
-DET,7,2.755,0.074,0.018,0.002,0.0,0.0,3.795,J.Goff,J.Goff,1.0,played week 8; next report not out,5-2,23
-DEN,8,3.798,0.013,-0.043,0.001,0.0,0.0,3.407,B.Nix,B.Nix,1.0,played week 8; next report not out,6-2,7
-MIN,9,4.099,-0.062,-0.059,0.143,0.012,0.0,3.112,K.Murray,K.Murray,1.0,played week 8; next report not out,6-1,47
-NE,10,2.243,0.035,-0.007,0.006,0.002,0.0,2.682,D.Maye,D.Maye,1.0,played week 8; next report not out,5-3,22
-TB,11,2.379,-0.043,-0.039,0.206,0.008,0.0,2.425,B.Mayfield,B.Mayfield,1.0,played week 8; next report not out,3-5,27
-SEA,12,5.504,-0.007,-0.056,0.038,-0.0,2.516,2.302,S.Darnold,S.Darnold,1.0,last game QB,4-3,43
-CHI,13,1.851,0.03,0.015,0.053,0.007,0.478,2.182,C.Williams,C.Williams,1.0,last game QB,5-2,37
-GB,14,1.026,0.01,-0.013,0.017,0.004,0.0,1.333,J.Love,J.Love,1.0,played week 8; next report not out,5-3,7
-PIT,15,1.578,-0.014,-0.002,0.017,0.003,0.0,1.275,A.Rodgers,A.Rodgers,1.0,played week 8; next report not out,6-2,36
-HOU,16,1.117,-0.003,-0.032,0.012,0.01,0.0,1.226,C.Stroud,C.Stroud,1.0,last game QB,2-5,-5
-DAL,17,-1.223,0.042,0.052,0.01,0.001,0.0,0.116,D.Prescott,D.Prescott,1.0,played week 8; next report not out,3-5,6
-CAR,18,-2.417,0.004,0.015,-0.002,-0.001,0.0,-1.662,B.Young,B.Young,1.0,played week 8; next report not out,3-4,-15
-WAS,19,-2.537,-0.013,0.021,-0.017,0.014,0.0,-1.921,J.Daniels,J.Daniels,1.0,played week 8; next report not out,2-4-1,-23
-ATL,20,-1.221,-0.051,-0.007,-0.084,0.008,0.0,-2.094,M.Penix,M.Penix,1.0,played week 8; next report not out,3-5,-18
-NYJ,21,-3.467,-0.022,0.006,0.103,0.016,0.0,-2.172,G.Smith,G.Smith,1.0,played week 8; next report not out,2-6,-18
-LV,22,-3.237,-0.032,0.03,0.075,0.02,0.0,-2.246,K.Cousins,K.Cousins,1.0,played week 8; next report not out,4-4,-9
-ARI,23,-3.222,-0.008,0.01,-0.002,-0.004,0.0,-2.559,J.Brissett,J.Brissett,1.0,played week 8; next report not out,3-5,-63
-NO,24,-2.868,-0.045,-0.001,0.007,0.01,0.0,-2.73,T.Shough,T.Shough,1.0,last game QB,2-5,-32
-IND,25,-3.5,-0.05,0.024,0.033,-0.011,0.0,-3.508,D.Jones,D.Jones,1.0,played week 8; next report not out,2-6,-61
-BAL,26,-1.663,0.024,0.012,-0.519,-0.036,0.0,-3.952,J.Fagnano,J.Fagnano,1.0,played week 8; next report not out,4-4,-24
-NYG,27,-2.818,-0.015,0.03,-0.27,-0.032,0.0,-4.239,J.McCarthy,J.McCarthy,1.0,last game QB,4-2-1,2
-CLE,28,-5.029,-0.098,0.002,0.14,0.025,0.0,-4.522,D.Watson,D.Watson,1.0,played week 8; next report not out,5-3,-34
-LAC,29,-3.548,-0.116,-0.027,0.025,0.003,0.0,-4.679,J.Herbert,J.Herbert,1.0,played week 8; next report not out,0-7,-76
-PHI,30,-2.849,-0.064,-0.013,-0.407,-0.019,0.0,-5.735,T.McKee,T.McKee,1.0,played week 8; next report not out,2-6,-65
-MIA,31,-6.529,-0.034,0.08,-0.134,-0.026,0.0,-6.692,M.Willis,M.Willis,1.0,played week 8; next report not out,1-6,-64
-TEN,32,-7.009,-0.085,0.046,0.003,-0.0,0.0,-6.931,C.Ward,C.Ward,1.0,played week 8; next report not out,1-7,-55
+JAX,1,6.474,0.089,-0.031,0.001,-0.0,0.0,6.884,T.Lawrence,T.Lawrence,1.0,played week 8; next report not out,5-2,85
+BUF,2,4.969,0.117,0.012,0.004,0.003,0.0,6.316,J.Allen,J.Allen,1.0,played week 8; next report not out,6-1,52
+SF,3,4.285,0.1,0.004,-0.008,0.026,0.0,5.77,B.Purdy,B.Purdy,1.0,last game QB,6-1,58
+CIN,4,3.353,0.057,-0.006,0.046,0.028,0.0,4.512,J.Burrow,J.Burrow,1.0,played week 8; next report not out,5-2,48
+LA,5,3.624,0.047,-0.054,0.005,0.0,0.0,3.883,M.Stafford,M.Stafford,1.0,played week 8; next report not out,4-4,26
+KC,6,2.467,0.07,-0.0,0.04,0.01,0.0,3.754,P.Mahomes,P.Mahomes,1.0,played week 8; next report not out,5-2,36
+CHI,7,3.106,0.043,0.011,0.053,0.007,0.0,3.751,C.Williams,C.Williams,1.0,played week 8; next report not out,6-2,54
+DET,8,2.785,0.074,0.018,0.002,0.0,0.0,3.735,J.Goff,J.Goff,1.0,played week 8; next report not out,5-2,23
+SEA,9,4.263,-0.018,-0.051,0.038,-0.0,0.0,3.279,S.Darnold,S.Darnold,1.0,played week 8; next report not out,4-4,26
+DEN,10,3.687,0.013,-0.043,0.001,0.0,0.0,3.228,B.Nix,B.Nix,1.0,played week 8; next report not out,6-2,7
+MIN,11,4.183,-0.062,-0.06,0.143,0.012,0.0,3.099,K.Murray,K.Murray,1.0,played week 8; next report not out,6-1,47
+NE,12,2.23,0.035,-0.007,0.006,0.002,0.0,2.586,D.Maye,D.Maye,1.0,played week 8; next report not out,5-3,22
+TB,13,2.422,-0.043,-0.039,0.206,0.008,0.0,2.376,B.Mayfield,B.Mayfield,1.0,played week 8; next report not out,3-5,27
+GB,14,1.132,0.01,-0.013,0.017,0.004,0.0,1.338,J.Love,J.Love,1.0,played week 8; next report not out,5-3,7
+PIT,15,1.584,-0.014,-0.002,0.017,0.003,0.0,1.196,A.Rodgers,A.Rodgers,1.0,played week 8; next report not out,6-2,36
+HOU,16,1.128,-0.003,-0.032,0.012,0.01,0.0,1.151,C.Stroud,C.Stroud,1.0,last game QB,2-5,-5
+DAL,17,-1.22,0.042,0.052,0.01,0.001,0.0,0.034,D.Prescott,D.Prescott,1.0,played week 8; next report not out,3-5,6
+CAR,18,-2.321,0.004,0.015,-0.002,-0.001,0.0,-1.664,B.Young,B.Young,1.0,played week 8; next report not out,3-4,-15
+WAS,19,-2.606,-0.013,0.022,-0.017,0.014,0.0,-2.066,J.Daniels,J.Daniels,1.0,played week 8; next report not out,2-4-1,-23
+ATL,20,-1.132,-0.051,-0.007,-0.084,0.008,0.0,-2.103,M.Penix,M.Penix,1.0,played week 8; next report not out,3-5,-18
+NYJ,21,-3.382,-0.022,0.006,0.103,0.016,0.0,-2.186,G.Smith,G.Smith,1.0,played week 8; next report not out,2-6,-18
+LV,22,-3.247,-0.032,0.03,0.075,0.02,0.0,-2.338,K.Cousins,K.Cousins,1.0,played week 8; next report not out,4-4,-9
+ARI,23,-3.337,-0.008,0.011,-0.002,-0.004,0.0,-2.739,J.Brissett,J.Brissett,1.0,played week 8; next report not out,3-5,-63
+NO,24,-2.845,-0.045,-0.001,0.007,0.01,0.0,-2.795,T.Shough,T.Shough,1.0,last game QB,2-5,-32
+IND,25,-3.524,-0.05,0.024,0.033,-0.011,0.0,-3.611,D.Jones,D.Jones,1.0,played week 8; next report not out,2-6,-61
+BAL,26,-1.677,0.024,0.012,-0.519,-0.036,0.0,-4.046,J.Fagnano,J.Fagnano,1.0,played week 8; next report not out,4-4,-24
+NYG,27,-2.817,-0.015,0.03,-0.27,-0.032,0.0,-4.324,J.McCarthy,J.McCarthy,1.0,last game QB,4-2-1,2
+CLE,28,-5.033,-0.098,0.002,0.14,0.025,0.0,-4.608,D.Watson,D.Watson,1.0,played week 8; next report not out,5-3,-34
+LAC,29,-3.665,-0.117,-0.027,0.025,0.003,0.0,-4.863,J.Herbert,J.Herbert,1.0,played week 8; next report not out,0-7,-76
+PHI,30,-2.771,-0.063,-0.013,-0.407,-0.019,0.0,-5.755,T.McKee,T.McKee,1.0,played week 8; next report not out,2-6,-65
+MIA,31,-6.543,-0.034,0.08,-0.134,-0.026,0.0,-6.787,M.Willis,M.Willis,1.0,played week 8; next report not out,1-6,-64
+TEN,32,-7.001,-0.085,0.046,0.003,-0.0,0.0,-7.008,C.Ward,C.Ward,1.0,played week 8; next report not out,1-7,-55
