@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "rating_week": 10,
-  "fetched_at": "2026-11-05T19:46:45+00:00",
+  "fetched_at": "2026-11-06T19:10:47+00:00",
   "teams": {
     "Texas A&M": {
       "points": 0.95,
@@ -212,19 +212,6 @@
         }
       ]
     },
-    "BYU": {
-      "points": 0.93,
-      "players": [
-        {
-          "team": "BYU",
-          "player": "LJ Martin",
-          "position": "RB",
-          "status": "doubtful",
-          "points": 0.93,
-          "conference": "B12"
-        }
-      ]
-    },
     "Kansas State": {
       "points": 1.27,
       "players": [
@@ -234,6 +221,19 @@
           "position": "QB",
           "status": "out",
           "points": 1.27,
+          "conference": "B12"
+        }
+      ]
+    },
+    "UCF": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "UCF",
+          "player": "Keyone Jenkins",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
           "conference": "B12"
         }
       ]
