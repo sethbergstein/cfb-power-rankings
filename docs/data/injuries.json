@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "rating_week": 10,
-  "fetched_at": "2026-11-06T19:10:47+00:00",
+  "fetched_at": "2026-11-07T17:43:33+00:00",
   "teams": {
     "Texas A&M": {
       "points": 0.95,
@@ -49,7 +49,7 @@
           "team": "Florida",
           "player": "Vernell Brown III",
           "position": "WR",
-          "status": "doubtful",
+          "status": "out",
           "points": 0.22,
           "conference": "SEC"
         }
@@ -105,6 +105,19 @@
         }
       ]
     },
+    "Penn State": {
+      "points": 0.64,
+      "players": [
+        {
+          "team": "Penn State",
+          "player": "Koby Howard",
+          "position": "WR",
+          "status": "out",
+          "points": 0.64,
+          "conference": "B10"
+        }
+      ]
+    },
     "Rutgers": {
       "points": 6.35,
       "players": [
@@ -112,7 +125,7 @@
           "team": "Rutgers",
           "player": "KJ Duff",
           "position": "WR",
-          "status": "doubtful",
+          "status": "out",
           "points": 3.08,
           "conference": "B10"
         },
@@ -139,6 +152,19 @@
         }
       ]
     },
+    "Northwestern": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Northwestern",
+          "player": "Aidan Chiles",
+          "position": "QB",
+          "status": "doubtful",
+          "points": 6.0,
+          "conference": "B10"
+        }
+      ]
+    },
     "Michigan State": {
       "points": 1.05,
       "players": [
@@ -153,8 +179,16 @@
       ]
     },
     "Clemson": {
-      "points": 2.85,
+      "points": 3.68,
       "players": [
+        {
+          "team": "Clemson",
+          "player": "Tyler Brown",
+          "position": "WR",
+          "status": "out",
+          "points": 0.83,
+          "conference": "ACC"
+        },
         {
           "team": "Clemson",
           "player": "Gideon Davidson",
@@ -209,6 +243,19 @@
           "status": "out",
           "points": 0.21,
           "conference": "ACC"
+        }
+      ]
+    },
+    "Arizona": {
+      "points": 0.23,
+      "players": [
+        {
+          "team": "Arizona",
+          "player": "Ismail Mahdi",
+          "position": "RB",
+          "status": "out",
+          "points": 0.23,
+          "conference": "B12"
         }
       ]
     },
