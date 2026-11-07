@@ -1,33 +1,33 @@
 team,rank,pd,o,e,qb_exp,qb_qual,inj_new_loss,power,starter,alt_qb,p_starter,qb_note,record,pt_diff
-JAX,1,7.377,0.086,-0.038,0.006,0.0,0.0,7.565,T.Lawrence,T.Lawrence,1.0,played week 9; next report not out,6-2,108
-BUF,2,4.93,0.117,0.013,0.004,0.002,0.0,6.287,J.Allen,J.Allen,1.0,last game QB,6-1,52
-SF,3,4.298,0.101,0.004,-0.008,0.026,0.0,5.785,B.Purdy,B.Purdy,1.0,last game QB,6-1,58
-CIN,4,3.348,0.058,-0.005,0.043,0.026,0.0,4.478,J.Burrow,J.Burrow,1.0,last game QB,5-2,48
-LA,5,3.646,0.048,-0.054,0.005,0.0,0.0,3.906,M.Stafford,M.Stafford,1.0,last game QB,4-4,26
-CHI,6,3.107,0.043,0.011,0.051,0.007,0.0,3.746,C.Williams,C.Williams,1.0,last game QB,6-2,54
-DET,7,2.785,0.075,0.018,0.002,0.0,0.0,3.739,J.Goff,J.Goff,1.0,last game QB,5-2,23
-KC,8,2.465,0.07,-0.0,0.036,0.009,0.0,3.725,P.Mahomes,P.Mahomes,1.0,last game QB,5-2,36
-DEN,9,3.746,0.014,-0.043,0.001,0.0,0.0,3.288,B.Nix,B.Nix,1.0,last game QB,6-2,7
-SEA,10,4.287,-0.017,-0.051,0.035,-0.0,0.0,3.285,S.Darnold,S.Darnold,1.0,last game QB,4-4,26
-MIN,11,4.168,-0.062,-0.06,0.131,0.01,0.0,3.006,K.Murray,K.Murray,1.0,last game QB,6-1,47
-NE,12,2.266,0.036,-0.007,0.006,0.002,0.0,2.626,D.Maye,D.Maye,1.0,last game QB,5-3,22
-TB,13,2.43,-0.042,-0.039,0.211,0.008,0.0,2.416,B.Mayfield,B.Mayfield,1.0,last game QB,3-5,27
-GB,14,1.124,0.011,-0.013,0.016,0.004,0.0,1.323,J.Love,J.Love,1.0,last game QB,5-3,7
-HOU,15,1.188,-0.002,-0.032,0.012,0.01,0.0,1.21,C.Stroud,C.Stroud,1.0,last game QB,2-5,-5
-PIT,16,1.577,-0.014,-0.002,0.015,0.002,0.0,1.183,A.Rodgers,A.Rodgers,1.0,last game QB,6-2,36
-DAL,17,-1.266,0.043,0.052,0.009,0.001,0.0,0.002,D.Prescott,D.Prescott,1.0,last game QB,3-5,6
-CAR,18,-2.332,0.005,0.015,-0.001,-0.001,0.0,-1.664,B.Young,B.Young,1.0,last game QB,3-4,-15
-WAS,19,-2.59,-0.013,0.022,-0.011,0.012,0.0,-2.049,J.Daniels,J.Daniels,1.0,last game QB,2-4-1,-23
-ATL,20,-1.188,-0.05,-0.006,-0.074,0.002,0.0,-2.174,M.Penix,M.Penix,1.0,last game QB,3-5,-18
-NYJ,21,-3.385,-0.022,0.006,0.096,0.015,0.0,-2.228,G.Smith,G.Smith,1.0,last game QB,2-6,-18
-LV,22,-3.25,-0.031,0.03,0.069,0.019,0.0,-2.393,K.Cousins,K.Cousins,1.0,last game QB,4-4,-9
-ARI,23,-3.351,-0.008,0.011,0.002,-0.005,0.0,-2.742,J.Brissett,J.Brissett,1.0,last game QB,3-5,-63
-NO,24,-2.897,-0.044,-0.001,0.007,0.01,0.0,-2.829,T.Shough,T.Shough,1.0,last game QB,2-5,-32
-IND,25,-3.538,-0.049,0.024,0.033,-0.01,0.0,-3.596,D.Jones,D.Jones,1.0,last game QB,2-6,-61
-NYG,26,-2.811,-0.015,0.03,-0.27,-0.032,0.0,-4.316,J.McCarthy,J.McCarthy,1.0,last game QB,4-2-1,2
-CLE,27,-5.052,-0.097,0.003,0.132,0.023,0.0,-4.682,D.Watson,D.Watson,1.0,last game QB,5-3,-34
-BAL,28,-2.521,0.006,0.011,-0.469,-0.039,0.0,-4.838,J.Fagnano,J.Fagnano,1.0,played week 9; next report not out,4-5,-47
-LAC,29,-3.671,-0.116,-0.027,0.022,0.002,0.0,-4.881,J.Herbert,J.Herbert,1.0,last game QB,0-7,-76
-PHI,30,-2.718,-0.062,-0.013,-0.357,-0.023,0.0,-5.495,T.McKee,T.McKee,1.0,last game QB,2-6,-65
-MIA,31,-6.552,-0.034,0.081,-0.116,-0.023,0.0,-6.644,M.Willis,M.Willis,1.0,last game QB,1-6,-64
-TEN,32,-7.049,-0.084,0.047,0.003,-0.0,0.0,-7.04,C.Ward,C.Ward,1.0,last game QB,1-7,-55
+JAX,1,10.019,0.093,-0.077,0.006,0.0,0.0,9.694,T.Lawrence,T.Lawrence,1.0,played week 9; next report not out,6-2,108
+SF,2,5.391,0.116,-0.017,-0.008,0.026,0.0,6.875,B.Purdy,B.Purdy,1.0,last game QB,6-1,58
+CIN,3,5.371,0.083,0.001,0.043,0.026,0.0,6.464,J.Burrow,J.Burrow,1.0,last game QB,5-2,48
+BUF,4,5.199,0.112,0.042,0.004,0.002,0.0,6.33,J.Allen,J.Allen,1.0,last game QB,6-1,52
+CHI,5,5.748,0.058,-0.009,0.051,0.007,0.0,6.041,C.Williams,C.Williams,1.0,last game QB,6-2,54
+NE,6,4.042,0.042,-0.01,0.006,0.002,0.0,4.073,D.Maye,D.Maye,1.0,last game QB,5-3,22
+KC,7,2.5,0.082,0.001,0.036,0.009,0.0,3.907,P.Mahomes,P.Mahomes,1.0,last game QB,5-2,36
+MIN,8,5.218,-0.069,-0.103,0.131,0.01,0.0,3.61,K.Murray,K.Murray,1.0,last game QB,6-1,47
+DET,9,2.552,0.073,0.066,0.002,0.0,0.0,3.456,J.Goff,J.Goff,1.0,last game QB,5-2,23
+TB,10,3.731,-0.054,-0.102,0.211,0.008,0.0,3.133,B.Mayfield,B.Mayfield,1.0,last game QB,3-5,27
+PIT,11,3.393,-0.011,-0.033,0.015,0.002,0.0,2.579,A.Rodgers,A.Rodgers,1.0,last game QB,6-2,36
+GB,12,1.917,0.003,-0.055,0.016,0.004,0.0,1.727,J.Love,J.Love,1.0,last game QB,5-3,7
+LA,13,1.5,0.023,-0.069,0.005,0.0,0.0,1.684,M.Stafford,M.Stafford,1.0,last game QB,4-4,26
+SEA,14,2.798,-0.037,-0.065,0.035,-0.0,0.0,1.676,S.Darnold,S.Darnold,1.0,last game QB,4-4,26
+DEN,15,1.793,-0.002,-0.032,0.001,0.0,0.0,1.397,B.Nix,B.Nix,1.0,last game QB,6-2,7
+DAL,16,-1.133,0.062,0.103,0.009,0.001,0.0,0.405,D.Prescott,D.Prescott,1.0,last game QB,3-5,6
+HOU,17,-0.031,-0.0,0.005,0.012,0.01,0.0,0.225,C.Stroud,C.Stroud,1.0,last game QB,2-5,-5
+LV,18,-1.377,0.011,0.048,0.069,0.019,0.0,-0.18,K.Cousins,K.Cousins,1.0,last game QB,4-4,-9
+CAR,19,-1.255,0.029,0.025,-0.001,-0.001,0.0,-0.41,B.Young,B.Young,1.0,last game QB,3-4,-15
+NYJ,20,-2.029,0.015,0.008,0.096,0.015,0.0,-0.525,G.Smith,G.Smith,1.0,last game QB,2-6,-18
+ATL,21,-0.661,-0.057,-0.032,-0.074,0.002,0.0,-1.961,M.Penix,M.Penix,1.0,last game QB,3-5,-18
+CLE,22,-2.868,-0.045,-0.008,0.132,0.023,0.0,-2.031,D.Watson,D.Watson,1.0,last game QB,5-3,-34
+NO,23,-3.225,-0.026,0.057,0.007,0.01,0.0,-2.802,T.Shough,T.Shough,1.0,last game QB,2-5,-32
+WAS,24,-4.054,-0.025,0.03,-0.011,0.012,0.0,-3.497,J.Daniels,J.Daniels,1.0,last game QB,2-4-1,-23
+NYG,25,-2.011,-0.015,0.009,-0.27,-0.032,0.0,-3.756,J.McCarthy,J.McCarthy,1.0,last game QB,4-2-1,2
+ARI,26,-6.019,-0.014,0.043,0.002,-0.005,0.0,-5.008,J.Brissett,J.Brissett,1.0,last game QB,3-5,-63
+MIA,27,-5.006,-0.025,0.058,-0.116,-0.023,0.0,-5.335,M.Willis,M.Willis,1.0,last game QB,1-6,-64
+IND,28,-5.589,-0.071,0.041,0.033,-0.01,0.0,-5.701,D.Jones,D.Jones,1.0,last game QB,2-6,-61
+BAL,29,-4.305,-0.024,0.001,-0.469,-0.039,0.0,-6.895,J.Fagnano,J.Fagnano,1.0,played week 9; next report not out,4-5,-47
+TEN,30,-7.302,-0.07,0.062,0.003,-0.0,0.0,-7.028,C.Ward,C.Ward,1.0,last game QB,1-7,-55
+LAC,31,-7.752,-0.159,-0.041,0.022,0.002,0.0,-8.975,J.Herbert,J.Herbert,1.0,last game QB,0-7,-76
+PHI,32,-6.553,-0.094,0.054,-0.357,-0.023,0.0,-9.174,T.McKee,T.McKee,1.0,last game QB,2-6,-65

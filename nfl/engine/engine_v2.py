@@ -16,6 +16,8 @@ NORM = {'OAK': 'LV', 'SD': 'LAC', 'STL': 'LA'}
 nm = lambda t: NORM.get(t, t)
 PRIOR_FEATS = lambda c: [c + '1', c + '2', 'coach_new', 'ret_off', 'ret_def', 'inc_off', 'inc_def']
 PRIOR_LAMBDA = 5.0
+PRIOR_FADE_GAMES = 5
+THIS_YEAR_ALPHA = 4.0  # light shrink toward a league-average team, same penalty as end-of-season ratings
 GRP = {'T': 'OL', 'G': 'OL', 'C': 'OL', 'OL': 'OL', 'OT': 'OL', 'DE': 'DL', 'DT': 'DL', 'NT': 'DL', 'DL': 'DL', 'LB': 'LB', 'ILB': 'LB',
        'OLB': 'LB', 'MLB': 'LB', 'CB': 'CB', 'DB': 'CB', 'S': 'S', 'FS': 'S', 'SS': 'S', 'WR': 'WR', 'TE': 'TE', 'RB': 'RB', 'FB': 'RB', 'HB': 'RB'}
 
@@ -83,13 +85,29 @@ def prior_for(F, model, s):
 
 # ------------------------------------------------------------------------------------------ ratings with that prior
 def ratings_v2(T, prior, p, s, W):
-    """Opponent-adjusted ratings after week W of season s, ridge-shrunk toward the preseason prior (W=0: the prior)."""
+    """Opponent-adjusted ratings after week W of season s.
+
+    This year's games are fit with a light shrink toward a league-average team. That fit is blended
+    with the preseason prior by games played: the prior is the whole rating before any game, then loses
+    an equal share each game, and is gone once the team has played `prior_fade_games` (default 5).
+    A team on a bye is counted by games played, not by the league week. W=0 returns the prior.
+    """
     teams = list(T.tmap[s].keys()); n = len(teams)
     pr = prior.reindex([nm(t) for t in teams]); mpd, mo, me = pr.pd.values, pr.o.values, pr.e.values
+    fade_n = float(p.get('prior_fade_games', PRIOR_FADE_GAMES))
+    alpha = float(p.get('this_year_alpha', THIS_YEAR_ALPHA))
     sub = T.panel[(T.panel.season == s) & (T.panel.week <= W)]
-    if len(sub) == 0: r, o, e = mpd, mo, me
+    if len(sub) == 0 or fade_n <= 0:
+        r, o, e = mpd, mo, me
     else:
-        r = _fit_margin(sub, n, p['am'], 1.0, mpd); o, e = _fit_epa(sub, n, p['ao'], 1.0, p['ad'], 1.0, mo, me)
+        z = np.zeros(n)
+        r = _fit_margin(sub, n, alpha, 0.0, z); o, e = _fit_epa(sub, n, alpha, 0.0, alpha, 0.0, z, z)
+        counts = sub.groupby('t_i').size()
+        games = np.array([float(counts.get(i, 0.0)) for i in range(n)])
+        share = np.minimum(1.0, games / fade_n)
+        r = share * r + (1.0 - share) * mpd
+        o = share * o + (1.0 - share) * mo
+        e = share * e + (1.0 - share) * me
     return pd.DataFrame({'season': s, 'W': W, 'team': teams, 'pd': r, 'o': o, 'e': e})
 
 

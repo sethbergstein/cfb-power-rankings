@@ -27,9 +27,12 @@ See `CURSOR_INTEGRATION.md` for the data format and the notes for wiring this in
 - **Margin rating, offense rating**: opponent-adjusted (ridge regression) over all plays and games of the season, every game
   weighted equally. Garbage-time filtering and recency weighting both tested worse, so neither is used. Defense shows up
   through points allowed inside the margin rating.
-- **Preseason prior**: ratings are shrunk toward a preseason expectation, which fades as games accumulate. The expectation is a
-  ridge regression of a team's final rating on: last two seasons' ratings, new head coach, share of last year's offensive and
-  defensive snaps retained on the week 1 roster, share arriving from other teams. (Draft capital added nothing and was dropped.)
+- **Preseason prior**: before the season, each team starts at a preseason expectation. That expectation is a ridge regression
+  of a team's final rating on: last two seasons' ratings, new head coach, share of last year's offensive and defensive snaps
+  retained on the week 1 roster, share arriving from other teams. (Draft capital added nothing and was dropped.) It fades by
+  games played, not by the league week: 80% after one game, 60% after two, 40% after three, 20% after four, and gone once the
+  team has played five. From the fifth game on, the rating is this year's opponent-adjusted results only, with a light shrink
+  toward a league-average team so a short sample cannot invent a huge rating. That shrink does not know last year.
 - **QB delta**: starter minus the QB already built into the team's rating. Experience = career dropbacks n/(n+1500); quality =
   career EPA/dropback shrunk with 1200 dropbacks.
 - **Who starts**: from the official injury report plus recent usage (`engine/qb_status.py`). Ruled out/doubtful: never started in
@@ -39,6 +42,9 @@ See `CURSOR_INTEGRATION.md` for the data format and the notes for wiring this in
   0.38 if Questionable). Players already ruled out the week before are excluded, because that is already in recent results.
 
 ## Backtest (2019-2025, 1,871 games, leave-one-season-out, r with actual margin)
+
+This table is the previous engine, which kept a constant shrink toward the preseason expectation all season. It has not been
+re-run since the prior was changed to a five-game fade.
 
 | | wk 1-2 | wk 1-5 | wk 6+ | all | avg miss (pts, rmse) |
 |---|---|---|---|---|---|

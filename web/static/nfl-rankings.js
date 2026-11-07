@@ -5,7 +5,7 @@
   const COMPONENT_COPY = {
     results_margin: {
       title: "Results & Margin",
-      copy: "How the team has scored and allowed points, adjusted for opponent strength. Defense lives here. Early weeks still lean on a preseason expectation that fades as games pile up.",
+      copy: "How the team has scored and allowed points, adjusted for opponent strength. Defense lives here. A preseason expectation fades across the first five games, then this year's games are the whole rating.",
     },
     offense: {
       title: "Offense",

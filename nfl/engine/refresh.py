@@ -126,7 +126,8 @@ def main():
                                injury_starters_newly_lost=round(float(r.inj_new_loss), 2)))
     meta = dict(season=s, through_week=W, injury_report_week=rep_w, generated_utc=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
                 engine='nfl power engine v2', units='points vs an average team on a neutral field', home_field=round(spec['home_field'], 2),
-                win_prob_sigma=spec['win_prob_sigma'], overrides_applied=int(out.qb_note.str.startswith('OVERRIDE').sum()))
+                win_prob_sigma=spec['win_prob_sigma'], prior_fade_games=int(P.get('prior_fade_games', 5)),
+                overrides_applied=int(out.qb_note.str.startswith('OVERRIDE').sum()))
     os.makedirs(a.out, exist_ok=True)
     json.dump(dict(meta=meta, teams=teams_json), open(f'{a.out}/nfl_power.json', 'w'), indent=1)
     print(f'ratings through week {W}; injury report week {rep_w}; wrote {f} and {a.out}/nfl_power.json')

@@ -5,7 +5,9 @@
   "ad": 32,
   "ke": 1500,
   "kq": 1200,
-  "K": 4
+  "K": 4,
+  "prior_fade_games": 5,
+  "this_year_alpha": 4.0
  },
  "weights": {
   "pd": 0.7811924140448553,

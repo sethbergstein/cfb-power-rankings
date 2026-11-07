@@ -32,7 +32,7 @@ rankings are independent.
 
 Component meanings, in plain terms for the site:
 - **results_margin**: how the team has actually scored and allowed points, adjusted for opponent strength, anchored to a
-  preseason expectation that fades over the first several weeks. Defense is inside this.
+  preseason expectation. That expectation fades across the team's first five games and is gone after that. Defense is inside this.
 - **offense**: how efficient the offense is on a per-play basis, opponent-adjusted.
 - **quarterback**: who is expected to play QB this week compared with the QB the team's results so far were built on.
 - **injuries**: starters newly ruled out or questionable this week, compared with the league average. Because it is
@@ -64,8 +64,8 @@ margins, not guarantees: a typical miss is about 13 points, so a 3-point favorit
 
 ## What the site should say honestly
 
-- Label the date: "through week N". Early in the season (first 4 to 5 weeks) rankings lean on last year plus roster changes, and
-  the engine is least accurate then. A one-line note is enough.
+- Label the date: "through week N". A preseason expectation fades across each team's first five games and is gone after the
+  fifth. The engine is least accurate during those games. A one-line note is enough.
 - Show a QB flag when `starter_prob < 1`, with `starter` and `alt_qb`. These are the cases where a lineup change moves a team
   several points. The weekly check against the news (below) settles most of them.
 - Record and point differential are display-only. They do not feed the score.
