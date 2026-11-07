@@ -364,7 +364,8 @@ img {
 
 .stepper button,
 .picker-done,
-.change {
+.change,
+.board-more {
   min-height: 44px;
   background: transparent;
   border: 2px solid var(--ink);
@@ -375,9 +376,26 @@ img {
   text-transform: uppercase;
 }
 
-.stepper button {
+.stepper button,
+.board-more {
   padding: 0 12px;
   font-size: 13px;
+}
+
+.board-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.board.is-full .cols-power {
+  grid-template-columns: 44px minmax(0, 1fr) 46px 58px;
+}
+
+.board.is-full .cols-poll {
+  grid-template-columns: 44px minmax(0, 1fr) 44px 40px 52px;
 }
 
 .stepper button:disabled {

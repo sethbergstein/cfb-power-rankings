@@ -302,55 +302,111 @@
       </span>`;
   }
 
-  function renderPowerList(pack, snaps, index, deck, teamsBySchool) {
-    const top = (pack.rows || []).filter((row) => Number(row.rank) <= 25);
-    const rows = top
-      .map((row) => {
-        const team = teamsBySchool[row.school] || {};
-        return `<a class="board-row cols-power" href="${esc(teamUrl(snaps[index], row.school))}">
+  function orderedRows(rows) {
+    return (rows || [])
+      .filter((row) => Number.isFinite(Number(row.rank)))
+      .slice()
+      .sort((a, b) => Number(a.rank) - Number(b.rank) || String(a.school).localeCompare(String(b.school)));
+  }
+
+  function fullKey(snap) {
+    return `bcpi-list-full:${kind}:${snap.id}`;
+  }
+
+  function wantsFull(snap) {
+    try {
+      return sessionStorage.getItem(fullKey(snap)) === "1";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function setFull(snap, open) {
+    try {
+      if (open) sessionStorage.setItem(fullKey(snap), "1");
+      else sessionStorage.removeItem(fullKey(snap));
+    } catch (error) {
+      /* private mode */
+    }
+  }
+
+  function rankingRow(row, snap, team, mode, priorRanks) {
+    const move =
+      mode === "poll"
+        ? `<span class="move">${esc(movement(Number(row.rank), priorRanks[row.school]))}</span>`
+        : "";
+    const score = mode === "poll" ? row.poll_score : row.power_score;
+    return `<a class="board-row cols-${mode}" href="${esc(teamUrl(snap, row.school))}">
           <span class="num">${esc(row.rank)}</span>
           ${teamCell(row, team)}
           <span class="rec">${record(row)}</span>
-          <span class="score">${esc(points(row.power_score))}</span>
+          ${move}
+          <span class="score">${esc(points(score))}</span>
         </a>`;
-      })
+  }
+
+  function rankingRows(rows, snap, teamsBySchool, mode, priorRanks) {
+    return rows
+      .map((row) => rankingRow(row, snap, teamsBySchool[row.school] || {}, mode, priorRanks || {}))
       .join("");
+  }
+
+  function renderRankingList({ kicker, headline, deck, snaps, index, teamsBySchool, rows, mode, priorRanks, caption }) {
+    const snap = snaps[index];
+    const ordered = orderedRows(rows);
+    const top = ordered.filter((row) => Number(row.rank) <= 25);
+    const rest = ordered.filter((row) => Number(row.rank) > 25);
+    const open = rest.length > 0 && wantsFull(snap);
+    const head =
+      mode === "poll"
+        ? `<div class="board-head cols-poll"><span>No.</span><span>Team</span><span class="rec">Rec</span><span class="move">±</span><span class="score">Score</span></div>`
+        : `<div class="board-head cols-power"><span>No.</span><span>Team</span><span class="rec">Rec</span><span class="score">Score</span></div>`;
+    const more = rest.length
+      ? `<button type="button" class="board-more" aria-expanded="${open ? "true" : "false"}" data-total="${ordered.length}">${
+          open ? "Top 25" : `Full ranking · ${ordered.length}`
+        }</button>`
+      : "";
     view.innerHTML = `
-      <p class="sec-label"><span>Power rankings</span><i></i></p>
-      <h2 class="headline">Who wins on a neutral field</h2>
+      <p class="sec-label"><span>${kicker}</span><i></i></p>
+      <h2 class="headline">${headline}</h2>
       <p class="deck">${esc(deck)}</p>
       ${stepper(snaps, index)}
-      <div class="board">
-        <div class="board-head cols-power"><span>No.</span><span>Team</span><span class="rec">Rec</span><span class="score">Score</span></div>
-        ${rows}
+      <div class="board${open ? " is-full" : ""}">
+        ${head}
+        ${rankingRows(top, snap, teamsBySchool, mode, priorRanks)}
+        <div class="board-rest"${open ? "" : " hidden"}>${rankingRows(rest, snap, teamsBySchool, mode, priorRanks)}</div>
       </div>
-      <p class="caption">Tap any team to see what's behind its score.</p>`;
+      ${more}
+      <p class="caption">${caption}</p>`;
+  }
+
+  function renderPowerList(pack, snaps, index, deck, teamsBySchool) {
+    renderRankingList({
+      kicker: "Power rankings",
+      headline: "Who wins on a neutral field",
+      deck,
+      snaps,
+      index,
+      teamsBySchool,
+      rows: pack.rows || [],
+      mode: "power",
+      caption: "Tap any team to see what's behind its score.",
+    });
   }
 
   function renderPollList(pack, snaps, index, deck, teamsBySchool, priorRanks) {
-    const top = (pack.rows || []).filter((row) => Number(row.rank) <= 25);
-    const rows = top
-      .map((row) => {
-        const team = teamsBySchool[row.school] || {};
-        return `<a class="board-row cols-poll" href="${esc(teamUrl(snaps[index], row.school))}">
-          <span class="num">${esc(row.rank)}</span>
-          ${teamCell(row, team)}
-          <span class="rec">${record(row)}</span>
-          <span class="move">${esc(movement(Number(row.rank), priorRanks[row.school]))}</span>
-          <span class="score">${esc(points(row.poll_score))}</span>
-        </a>`;
-      })
-      .join("");
-    view.innerHTML = `
-      <p class="sec-label"><span>The poll</span><i></i></p>
-      <h2 class="headline">Who has earned it so far</h2>
-      <p class="deck">${esc(deck)}</p>
-      ${stepper(snaps, index)}
-      <div class="board">
-        <div class="board-head cols-poll"><span>No.</span><span>Team</span><span class="rec">Rec</span><span class="move">±</span><span class="score">Score</span></div>
-        ${rows}
-      </div>
-      <p class="caption">Tap any team to see the résumé.</p>`;
+    renderRankingList({
+      kicker: "The poll",
+      headline: "Who has earned it so far",
+      deck,
+      snaps,
+      index,
+      teamsBySchool,
+      rows: pack.rows || [],
+      mode: "poll",
+      priorRanks,
+      caption: "Tap any team to see the résumé.",
+    });
   }
 
   function splitBar(parts) {
@@ -714,6 +770,18 @@
     });
     view.querySelectorAll(".board-row").forEach((link) => {
       link.addEventListener("click", () => rememberScroll(snaps[index]));
+    });
+    const more = view.querySelector(".board-more");
+    if (!more) return;
+    more.addEventListener("click", () => {
+      const open = more.getAttribute("aria-expanded") !== "true";
+      const board = view.querySelector(".board");
+      const rest = view.querySelector(".board-rest");
+      more.setAttribute("aria-expanded", open ? "true" : "false");
+      more.textContent = open ? "Top 25" : `Full ranking · ${more.dataset.total}`;
+      if (board) board.classList.toggle("is-full", open);
+      if (rest) rest.hidden = !open;
+      setFull(snaps[index], open);
     });
   }
 
