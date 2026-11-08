@@ -6,7 +6,7 @@
       "kind": "health",
       "severity": "warning",
       "teams": [
-        "51-80 mean +10.1",
+        "51-80 mean +10.2",
         "81-200 mean +6.3"
       ],
       "message": "Mean FCS residual in a rating tier is outside the 2018-2025 band at the current FCS rating."
@@ -17,8 +17,8 @@
       "kind": "invariant",
       "severity": "warning",
       "teams": [
-        "Ohio State over Texas",
-        "Notre Dame over BYU"
+        "Oregon over UCLA",
+        "Ohio State over USC"
       ],
       "message": "Winner with no more losses than the loser is ranked 1-3 spots behind that loser in the poll top 25."
     }
