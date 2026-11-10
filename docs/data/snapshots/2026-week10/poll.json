@@ -4,7 +4,7 @@
   "week": 10,
   "postseason": false,
   "label": "2026 \u00b7 week 10",
-  "as_of": "2026-11-09T22:02:03Z",
+  "as_of": "2026-11-10T19:25:30Z",
   "rows": [
     {
       "school": "Georgia",
@@ -33,7 +33,7 @@
       "abbreviation": "UGA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 1,
       "power_score": 2.279314976454763
@@ -65,7 +65,7 @@
       "abbreviation": "ND",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 2,
       "power_score": 2.04323422353037
@@ -97,7 +97,7 @@
       "abbreviation": "ALA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 3,
       "power_score": 2.0210799856408714
@@ -129,7 +129,7 @@
       "abbreviation": "MIA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 6,
       "power_score": 1.8732091367117647
@@ -161,7 +161,7 @@
       "abbreviation": "TEX",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 7,
       "power_score": 1.7981109777282962
@@ -193,7 +193,7 @@
       "abbreviation": "IU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 8,
       "power_score": 1.7169706865381968
@@ -225,7 +225,7 @@
       "abbreviation": "UTAH",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 9,
       "power_score": 1.4982684591993003
@@ -257,7 +257,7 @@
       "abbreviation": "ORE",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 15,
       "power_score": 1.253568726690965
@@ -289,7 +289,7 @@
       "abbreviation": "UCLA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 13,
       "power_score": 1.33161920128335
@@ -321,7 +321,7 @@
       "abbreviation": "OSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 5,
       "power_score": 1.894818140189355
@@ -353,7 +353,7 @@
       "abbreviation": "MISS",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 11,
       "power_score": 1.431034304052525
@@ -385,7 +385,7 @@
       "abbreviation": "USC",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 17,
       "power_score": 1.2094363029959203
@@ -417,7 +417,7 @@
       "abbreviation": "TENN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 10,
       "power_score": 1.46224294945547
@@ -449,7 +449,7 @@
       "abbreviation": "UK",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 33,
       "power_score": 0.7934793489590916
@@ -481,7 +481,7 @@
       "abbreviation": "TTU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 21,
       "power_score": 0.916911714571313
@@ -513,7 +513,7 @@
       "abbreviation": "WAKE",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 12,
       "power_score": 1.3765121469410802
@@ -545,7 +545,7 @@
       "abbreviation": "BYU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 20,
       "power_score": 0.9365505816916098
@@ -577,7 +577,7 @@
       "abbreviation": "LSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 4,
       "power_score": 1.9101929299397165
@@ -609,7 +609,7 @@
       "abbreviation": "IOWA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 14,
       "power_score": 1.2835773232214038
@@ -641,7 +641,7 @@
       "abbreviation": "BOIS",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 26,
       "power_score": 0.8649647610477291
@@ -673,7 +673,7 @@
       "abbreviation": "HOU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 31,
       "power_score": 0.828800871083948
@@ -705,7 +705,7 @@
       "abbreviation": "SC",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 18,
       "power_score": 1.0204161302382369
@@ -737,7 +737,7 @@
       "abbreviation": "OU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 25,
       "power_score": 0.9030947834600684
@@ -769,7 +769,7 @@
       "abbreviation": "ARIZ",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 28,
       "power_score": 0.8612784573688599
@@ -801,7 +801,7 @@
       "abbreviation": "MIZ",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 29,
       "power_score": 0.8436772320093602
@@ -833,7 +833,7 @@
       "abbreviation": "WIS",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 34,
       "power_score": 0.7548890927238725
@@ -865,7 +865,7 @@
       "abbreviation": "UNM",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 35,
       "power_score": 0.7356801452265758
@@ -897,7 +897,7 @@
       "abbreviation": "LOU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 16,
       "power_score": 1.2215786948056897
@@ -929,7 +929,7 @@
       "abbreviation": "FLA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 39,
       "power_score": 0.647711372797711
@@ -961,7 +961,7 @@
       "abbreviation": "NU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 22,
       "power_score": 0.910184213188318
@@ -993,7 +993,7 @@
       "abbreviation": "SMU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 27,
       "power_score": 0.8630465255159717
@@ -1025,7 +1025,7 @@
       "abbreviation": "UNT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 46,
       "power_score": 0.5231109099280922
@@ -1057,7 +1057,7 @@
       "abbreviation": "AUB",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 48,
       "power_score": 0.4465846909288159
@@ -1089,7 +1089,7 @@
       "abbreviation": "ILL",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 49,
       "power_score": 0.4450668932537061
@@ -1121,7 +1121,7 @@
       "abbreviation": "JMU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 42,
       "power_score": 0.5820624920985847
@@ -1153,7 +1153,7 @@
       "abbreviation": "CLEM",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 55,
       "power_score": 0.1841757994576893
@@ -1185,7 +1185,7 @@
       "abbreviation": "DUKE",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 32,
       "power_score": 0.8003799598124166
@@ -1217,7 +1217,7 @@
       "abbreviation": "TA&M",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 30,
       "power_score": 0.8418904944057946
@@ -1249,7 +1249,7 @@
       "abbreviation": "LIB",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 24,
       "power_score": 0.9037994932532076
@@ -1281,7 +1281,7 @@
       "abbreviation": "UNC",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 41,
       "power_score": 0.5987372263175328
@@ -1313,7 +1313,7 @@
       "abbreviation": "BAY",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 37,
       "power_score": 0.7048026959293202
@@ -1345,7 +1345,7 @@
       "abbreviation": "UTSA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 72,
       "power_score": -0.0757556578454313
@@ -1377,7 +1377,7 @@
       "abbreviation": "MEM",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 44,
       "power_score": 0.5371978913074362
@@ -1409,7 +1409,7 @@
       "abbreviation": "PITT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 43,
       "power_score": 0.5696913810601683
@@ -1441,7 +1441,7 @@
       "abbreviation": "LT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 53,
       "power_score": 0.2132405616304665
@@ -1473,7 +1473,7 @@
       "abbreviation": "MINN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 68,
       "power_score": -0.0098574495772911
@@ -1505,7 +1505,7 @@
       "abbreviation": "OKST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 23,
       "power_score": 0.9042053811766404
@@ -1537,7 +1537,7 @@
       "abbreviation": "PSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 38,
       "power_score": 0.699270031409956
@@ -1569,7 +1569,7 @@
       "abbreviation": "MSST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 51,
       "power_score": 0.3348460660573077
@@ -1601,7 +1601,7 @@
       "abbreviation": "TOL",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 69,
       "power_score": -0.0127224349818022
@@ -1633,7 +1633,7 @@
       "abbreviation": "NEB",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 19,
       "power_score": 0.9718803486434427
@@ -1665,7 +1665,7 @@
       "abbreviation": "MICH",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 36,
       "power_score": 0.7059622982052682
@@ -1697,7 +1697,7 @@
       "abbreviation": "NDSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 56,
       "power_score": 0.1658573504404932
@@ -1729,7 +1729,7 @@
       "abbreviation": "WASH",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 47,
       "power_score": 0.5008025469920864
@@ -1761,7 +1761,7 @@
       "abbreviation": "OHIO",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 80,
       "power_score": -0.2556275962359908
@@ -1793,7 +1793,7 @@
       "abbreviation": "VT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 57,
       "power_score": 0.1309173503243227
@@ -1825,7 +1825,7 @@
       "abbreviation": "WMU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 87,
       "power_score": -0.3175235492839728
@@ -1857,7 +1857,7 @@
       "abbreviation": "JXST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 59,
       "power_score": 0.1068025149813335
@@ -1889,7 +1889,7 @@
       "abbreviation": "ASU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 62,
       "power_score": 0.0359178145014748
@@ -1921,7 +1921,7 @@
       "abbreviation": "UCF",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 63,
       "power_score": 0.0295169624442621
@@ -1953,7 +1953,7 @@
       "abbreviation": "FSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 50,
       "power_score": 0.4132470345923638
@@ -1985,7 +1985,7 @@
       "abbreviation": "WVU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 76,
       "power_score": -0.1362878996498761
@@ -2017,7 +2017,7 @@
       "abbreviation": "ISU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 67,
       "power_score": -0.0073391197524977
@@ -2049,7 +2049,7 @@
       "abbreviation": "USF",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 66,
       "power_score": 0.0107366479616586
@@ -2081,7 +2081,7 @@
       "abbreviation": "CIN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 60,
       "power_score": 0.0948354720984231
@@ -2113,7 +2113,7 @@
       "abbreviation": "TXST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 45,
       "power_score": 0.5252387473887152
@@ -2145,7 +2145,7 @@
       "abbreviation": "UL",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 73,
       "power_score": -0.0932816031250664
@@ -2177,7 +2177,7 @@
       "abbreviation": "AF",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 78,
       "power_score": -0.1765730783057447
@@ -2209,7 +2209,7 @@
       "abbreviation": "FAU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 90,
       "power_score": -0.3332372631540649
@@ -2241,7 +2241,7 @@
       "abbreviation": "STAN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 119,
       "power_score": -1.0502806928791366
@@ -2273,7 +2273,7 @@
       "abbreviation": "TCU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 40,
       "power_score": 0.6005278720205947
@@ -2305,7 +2305,7 @@
       "abbreviation": "VAN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 75,
       "power_score": -0.1332736654992256
@@ -2337,7 +2337,7 @@
       "abbreviation": "UVA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 64,
       "power_score": 0.0278572612831981
@@ -2369,7 +2369,7 @@
       "abbreviation": "ARK",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 65,
       "power_score": 0.0243831500979882
@@ -2401,7 +2401,7 @@
       "abbreviation": "FRES",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 77,
       "power_score": -0.1427375976914205
@@ -2433,7 +2433,7 @@
       "abbreviation": "GASO",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 58,
       "power_score": 0.1092926346588105
@@ -2465,7 +2465,7 @@
       "abbreviation": "ECU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 92,
       "power_score": -0.3821066388118509
@@ -2497,7 +2497,7 @@
       "abbreviation": "ORST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 54,
       "power_score": 0.2087520606221064
@@ -2529,7 +2529,7 @@
       "abbreviation": "NCSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 82,
       "power_score": -0.26665552087163
@@ -2561,7 +2561,7 @@
       "abbreviation": "BUF",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 116,
       "power_score": -0.9796653114302856
@@ -2593,7 +2593,7 @@
       "abbreviation": "WYO",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 93,
       "power_score": -0.5439304203649635
@@ -2625,7 +2625,7 @@
       "abbreviation": "SYR",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 70,
       "power_score": -0.0251178483738008
@@ -2657,7 +2657,7 @@
       "abbreviation": "MSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 61,
       "power_score": 0.0618000344516506
@@ -2689,7 +2689,7 @@
       "abbreviation": "ARMY",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 81,
       "power_score": -0.2563884305704254
@@ -2721,7 +2721,7 @@
       "abbreviation": "UNLV",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 94,
       "power_score": -0.5736395305639391
@@ -2753,7 +2753,7 @@
       "abbreviation": "TLSA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 71,
       "power_score": -0.0410198624220237
@@ -2785,7 +2785,7 @@
       "abbreviation": "PUR",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 79,
       "power_score": -0.1835410461143669
@@ -2817,7 +2817,7 @@
       "abbreviation": "UAB",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 99,
       "power_score": -0.6919166880422909
@@ -2849,7 +2849,7 @@
       "abbreviation": "GAST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 88,
       "power_score": -0.321188264729887
@@ -2881,7 +2881,7 @@
       "abbreviation": "COLO",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 89,
       "power_score": -0.3251144706951713
@@ -2913,7 +2913,7 @@
       "abbreviation": "USU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 85,
       "power_score": -0.3045835609019958
@@ -2945,7 +2945,7 @@
       "abbreviation": "MRSH",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 108,
       "power_score": -0.8765477619489506
@@ -2977,7 +2977,7 @@
       "abbreviation": "M-OH",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 103,
       "power_score": -0.7558788089046713
@@ -3009,7 +3009,7 @@
       "abbreviation": "KU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 52,
       "power_score": 0.2615735739851913
@@ -3041,7 +3041,7 @@
       "abbreviation": "BC",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 84,
       "power_score": -0.2970622740462428
@@ -3073,7 +3073,7 @@
       "abbreviation": "APP",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 100,
       "power_score": -0.7039204365392173
@@ -3105,7 +3105,7 @@
       "abbreviation": "TULN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 113,
       "power_score": -0.9106534495175808
@@ -3137,7 +3137,7 @@
       "abbreviation": "KSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 74,
       "power_score": -0.1041455960886406
@@ -3169,7 +3169,7 @@
       "abbreviation": "SDSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 117,
       "power_score": -1.0222552442014934
@@ -3201,7 +3201,7 @@
       "abbreviation": "MD",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 91,
       "power_score": -0.3615183919731094
@@ -3233,7 +3233,7 @@
       "abbreviation": "CMU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 105,
       "power_score": -0.7934016163481263
@@ -3265,7 +3265,7 @@
       "abbreviation": "CAL",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 106,
       "power_score": -0.8161711418654184
@@ -3297,7 +3297,7 @@
       "abbreviation": "CONN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 86,
       "power_score": -0.3138979544282084
@@ -3329,7 +3329,7 @@
       "abbreviation": "MTSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 123,
       "power_score": -1.087875310113712
@@ -3361,7 +3361,7 @@
       "abbreviation": "TROY",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 112,
       "power_score": -0.9099965950134514
@@ -3393,7 +3393,7 @@
       "abbreviation": "USA",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 114,
       "power_score": -0.9117090602963464
@@ -3425,7 +3425,7 @@
       "abbreviation": "FIU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 101,
       "power_score": -0.7278603908446513
@@ -3457,7 +3457,7 @@
       "abbreviation": "ARST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 97,
       "power_score": -0.6552383910014963
@@ -3489,7 +3489,7 @@
       "abbreviation": "RUTG",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 96,
       "power_score": -0.6548398883687592
@@ -3521,7 +3521,7 @@
       "abbreviation": "MASS",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 118,
       "power_score": -1.0350016424243962
@@ -3553,7 +3553,7 @@
       "abbreviation": "SJSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 121,
       "power_score": -1.0753354665555737
@@ -3585,7 +3585,7 @@
       "abbreviation": "NAVY",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 83,
       "power_score": -0.2710039374533974
@@ -3617,7 +3617,7 @@
       "abbreviation": "WKU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 124,
       "power_score": -1.1346622278427216
@@ -3649,7 +3649,7 @@
       "abbreviation": "DEL",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 98,
       "power_score": -0.685904200424167
@@ -3681,7 +3681,7 @@
       "abbreviation": "GT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 95,
       "power_score": -0.6323042351146713
@@ -3713,7 +3713,7 @@
       "abbreviation": "KENN",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 102,
       "power_score": -0.7362296073207758
@@ -3745,7 +3745,7 @@
       "abbreviation": "MOST",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 125,
       "power_score": -1.196451226863129
@@ -3777,7 +3777,7 @@
       "abbreviation": "NEV",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 104,
       "power_score": -0.7577843988639147
@@ -3809,7 +3809,7 @@
       "abbreviation": "KENT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 136,
       "power_score": -1.7642178096726564
@@ -3841,7 +3841,7 @@
       "abbreviation": "BALL",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 128,
       "power_score": -1.2780507168412747
@@ -3873,7 +3873,7 @@
       "abbreviation": "CSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 126,
       "power_score": -1.2250045750718137
@@ -3905,7 +3905,7 @@
       "abbreviation": "HAW",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 109,
       "power_score": -0.8856669342125285
@@ -3937,7 +3937,7 @@
       "abbreviation": "USM",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 127,
       "power_score": -1.2513468828776346
@@ -3969,7 +3969,7 @@
       "abbreviation": "NMSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 122,
       "power_score": -1.081546578628201
@@ -4001,7 +4001,7 @@
       "abbreviation": "ODU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 107,
       "power_score": -0.8634148484006043
@@ -4033,7 +4033,7 @@
       "abbreviation": "CCU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 111,
       "power_score": -0.9080953881986392
@@ -4065,7 +4065,7 @@
       "abbreviation": "EMU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 130,
       "power_score": -1.383880185392488
@@ -4097,7 +4097,7 @@
       "abbreviation": "TEM",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 110,
       "power_score": -0.901016658139282
@@ -4129,7 +4129,7 @@
       "abbreviation": "WSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 115,
       "power_score": -0.9183883799004684
@@ -4161,7 +4161,7 @@
       "abbreviation": "RICE",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 120,
       "power_score": -1.0651336104119735
@@ -4193,7 +4193,7 @@
       "abbreviation": "BGSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 129,
       "power_score": -1.2801965043573242
@@ -4225,7 +4225,7 @@
       "abbreviation": "ULM",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 131,
       "power_score": -1.5108086853249008
@@ -4257,7 +4257,7 @@
       "abbreviation": "UTEP",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 137,
       "power_score": -1.8872828006400464
@@ -4289,7 +4289,7 @@
       "abbreviation": "CLT",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 138,
       "power_score": -1.9031787745257245
@@ -4321,7 +4321,7 @@
       "abbreviation": "SHSU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 134,
       "power_score": -1.6569160037241737
@@ -4353,7 +4353,7 @@
       "abbreviation": "AKR",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 132,
       "power_score": -1.54448648305629
@@ -4385,7 +4385,7 @@
       "abbreviation": "SAC",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 133,
       "power_score": -1.636994815257479
@@ -4417,7 +4417,7 @@
       "abbreviation": "NIU",
       "season": 2026,
       "week": 10,
-      "as_of": "2026-11-09T22:02:26Z",
+      "as_of": "2026-11-10T19:25:41Z",
       "check_flags": null,
       "power_rank": 135,
       "power_score": -1.7477769481116394
