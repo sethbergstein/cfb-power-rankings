@@ -1,6 +1,54 @@
 {
   "season": 2026,
-  "rating_week": 10,
-  "fetched_at": "2026-11-10T19:26:35+00:00",
-  "teams": {}
+  "rating_week": 11,
+  "fetched_at": "2026-11-11T19:21:58+00:00",
+  "teams": {
+    "Florida State": {
+      "points": 1.58,
+      "players": [
+        {
+          "team": "Florida State",
+          "player": "Samuel Singleton Jr.",
+          "position": "RB",
+          "status": "out",
+          "points": 1.06,
+          "conference": "ACC"
+        },
+        {
+          "team": "Florida State",
+          "player": "Ousmane Kromah",
+          "position": "RB",
+          "status": "out",
+          "points": 0.52,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Pittsburgh",
+          "player": "Mason Heintschel",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Colorado": {
+      "points": 0.39,
+      "players": [
+        {
+          "team": "Colorado",
+          "player": "Micah Welch",
+          "position": "RB",
+          "status": "out",
+          "points": 0.39,
+          "conference": "B12"
+        }
+      ]
+    }
+  }
 }

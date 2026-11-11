@@ -2,8 +2,8 @@
   "meta": {
     "season": 2026,
     "through_week": 9,
-    "injury_report_week": 9,
-    "generated_utc": "2026-11-10T19:25Z",
+    "injury_report_week": 10,
+    "generated_utc": "2026-11-11T19:19Z",
     "engine": "nfl power engine v2",
     "units": "points vs an average team on a neutral field",
     "home_field": 1.45,
@@ -16,13 +16,13 @@
       "rank": 1,
       "team": "JAX",
       "name": "Jacksonville Jaguars",
-      "power": 9.97,
+      "power": 9.95,
       "record": "6-2",
       "point_diff": 108,
       "components": {
         "results_margin": 7.95,
         "offense": 1.78,
-        "quarterback": 0.24,
+        "quarterback": 0.22,
         "injuries": -0.0
       },
       "ratings": {
@@ -33,20 +33,20 @@
       "starter": "T.Lawrence",
       "alt_qb": "T.Lawrence",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 2,
       "team": "SF",
       "name": "San Francisco 49ers",
-      "power": 8.15,
+      "power": 8.12,
       "record": "7-1",
       "point_diff": 79,
       "components": {
         "results_margin": 5.26,
         "offense": 2.32,
-        "quarterback": 0.57,
+        "quarterback": 0.53,
         "injuries": -0.0
       },
       "ratings": {
@@ -57,20 +57,20 @@
       "starter": "B.Purdy",
       "alt_qb": "B.Purdy",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 3,
       "team": "CIN",
       "name": "Cincinnati Bengals",
-      "power": 7.96,
+      "power": 7.9,
       "record": "6-2",
       "point_diff": 65,
       "components": {
         "results_margin": 5.03,
         "offense": 2.09,
-        "quarterback": 0.84,
+        "quarterback": 0.78,
         "injuries": -0.0
       },
       "ratings": {
@@ -81,20 +81,20 @@
       "starter": "J.Burrow",
       "alt_qb": "J.Burrow",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 4,
       "team": "BUF",
       "name": "Buffalo Bills",
-      "power": 7.4,
+      "power": 7.38,
       "record": "7-1",
       "point_diff": 69,
       "components": {
         "results_margin": 5.08,
         "offense": 2.06,
-        "quarterback": 0.26,
+        "quarterback": 0.24,
         "injuries": -0.0
       },
       "ratings": {
@@ -105,20 +105,20 @@
       "starter": "J.Allen",
       "alt_qb": "J.Allen",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 5,
       "team": "CHI",
       "name": "Chicago Bears",
-      "power": 5.74,
+      "power": 5.69,
       "record": "7-2",
       "point_diff": 57,
       "components": {
         "results_margin": 4.25,
         "offense": 0.91,
-        "quarterback": 0.59,
+        "quarterback": 0.53,
         "injuries": -0.0
       },
       "ratings": {
@@ -129,20 +129,20 @@
       "starter": "C.Williams",
       "alt_qb": "C.Williams",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 6,
       "team": "KC",
       "name": "Kansas City Chiefs",
-      "power": 5.38,
+      "power": 5.34,
       "record": "6-2",
       "point_diff": 59,
       "components": {
         "results_margin": 3.17,
         "offense": 1.68,
-        "quarterback": 0.54,
+        "quarterback": 0.5,
         "injuries": -0.0
       },
       "ratings": {
@@ -153,14 +153,14 @@
       "starter": "P.Mahomes",
       "alt_qb": "P.Mahomes",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 7,
       "team": "DET",
       "name": "Detroit Lions",
-      "power": 3.58,
+      "power": 3.57,
       "record": "6-2",
       "point_diff": 33,
       "components": {
@@ -177,20 +177,20 @@
       "starter": "J.Goff",
       "alt_qb": "J.Goff",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 8,
       "team": "GB",
       "name": "Green Bay Packers",
-      "power": 3.33,
+      "power": 3.31,
       "record": "6-3",
       "point_diff": 25,
       "components": {
         "results_margin": 2.44,
         "offense": 0.54,
-        "quarterback": 0.35,
+        "quarterback": 0.33,
         "injuries": -0.0
       },
       "ratings": {
@@ -201,20 +201,20 @@
       "starter": "J.Love",
       "alt_qb": "J.Love",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 9,
       "team": "TB",
       "name": "Tampa Bay Buccaneers",
-      "power": 2.97,
+      "power": 2.83,
       "record": "3-6",
       "point_diff": 24,
       "components": {
         "results_margin": 2.79,
         "offense": -1.26,
-        "quarterback": 1.45,
+        "quarterback": 1.3,
         "injuries": -0.0
       },
       "ratings": {
@@ -225,7 +225,7 @@
       "starter": "B.Mayfield",
       "alt_qb": "B.Mayfield",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
@@ -249,20 +249,20 @@
       "starter": "D.Maye",
       "alt_qb": "D.Maye",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 11,
       "team": "PIT",
       "name": "Pittsburgh Steelers",
-      "power": 2.53,
+      "power": 2.51,
       "record": "6-2",
       "point_diff": 36,
       "components": {
         "results_margin": 2.45,
         "offense": -0.25,
-        "quarterback": 0.33,
+        "quarterback": 0.31,
         "injuries": -0.0
       },
       "ratings": {
@@ -280,13 +280,13 @@
       "rank": 12,
       "team": "HOU",
       "name": "Houston Texans",
-      "power": 2.36,
+      "power": 2.35,
       "record": "3-5",
       "point_diff": 17,
       "components": {
         "results_margin": 1.28,
         "offense": 0.65,
-        "quarterback": 0.43,
+        "quarterback": 0.41,
         "injuries": -0.0
       },
       "ratings": {
@@ -297,20 +297,20 @@
       "starter": "C.Stroud",
       "alt_qb": "C.Stroud",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 13,
       "team": "DEN",
       "name": "Denver Broncos",
-      "power": 2.11,
+      "power": 2.1,
       "record": "7-2",
       "point_diff": 12,
       "components": {
         "results_margin": 1.79,
         "offense": 0.12,
-        "quarterback": 0.21,
+        "quarterback": 0.19,
         "injuries": -0.0
       },
       "ratings": {
@@ -321,20 +321,20 @@
       "starter": "B.Nix",
       "alt_qb": "B.Nix",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 14,
       "team": "LA",
       "name": "Los Angeles Rams",
-      "power": 2.08,
+      "power": 2.06,
       "record": "5-4",
       "point_diff": 33,
       "components": {
         "results_margin": 1.35,
         "offense": 0.5,
-        "quarterback": 0.24,
+        "quarterback": 0.22,
         "injuries": -0.0
       },
       "ratings": {
@@ -345,20 +345,20 @@
       "starter": "M.Stafford",
       "alt_qb": "M.Stafford",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 15,
       "team": "MIN",
       "name": "Minnesota Vikings",
-      "power": 1.7,
+      "power": 1.65,
       "record": "6-2",
       "point_diff": 30,
       "components": {
         "results_margin": 2.89,
         "offense": -2.11,
-        "quarterback": 0.92,
+        "quarterback": 0.87,
         "injuries": -0.0
       },
       "ratings": {
@@ -369,20 +369,20 @@
       "starter": "C.Wentz",
       "alt_qb": "C.Wentz",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 16,
       "team": "SEA",
       "name": "Seattle Seahawks",
-      "power": 1.01,
+      "power": 1.13,
       "record": "5-4",
       "point_diff": 40,
       "components": {
         "results_margin": 2.6,
         "offense": -0.59,
-        "quarterback": -1.0,
+        "quarterback": -0.88,
         "injuries": -0.0
       },
       "ratings": {
@@ -393,20 +393,20 @@
       "starter": "D.Lock",
       "alt_qb": "D.Lock",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 17,
       "team": "DAL",
       "name": "Dallas Cowboys",
-      "power": 0.91,
+      "power": 0.89,
       "record": "4-5",
       "point_diff": 10,
       "components": {
         "results_margin": -0.71,
         "offense": 1.36,
-        "quarterback": 0.26,
+        "quarterback": 0.25,
         "injuries": -0.0
       },
       "ratings": {
@@ -417,20 +417,20 @@
       "starter": "D.Prescott",
       "alt_qb": "D.Prescott",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 18,
       "team": "CAR",
       "name": "Carolina Panthers",
-      "power": -0.1,
+      "power": -0.11,
       "record": "3-5",
       "point_diff": -20,
       "components": {
         "results_margin": -1.13,
         "offense": 0.85,
-        "quarterback": 0.18,
+        "quarterback": 0.17,
         "injuries": -0.0
       },
       "ratings": {
@@ -441,20 +441,20 @@
       "starter": "B.Young",
       "alt_qb": "B.Young",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 19,
       "team": "LV",
       "name": "Las Vegas Raiders",
-      "power": -1.43,
+      "power": -1.49,
       "record": "4-5",
       "point_diff": -30,
       "components": {
         "results_margin": -2.19,
         "offense": -0.1,
-        "quarterback": 0.86,
+        "quarterback": 0.8,
         "injuries": -0.0
       },
       "ratings": {
@@ -465,20 +465,20 @@
       "starter": "K.Cousins",
       "alt_qb": "K.Cousins",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 20,
       "team": "ATL",
       "name": "Atlanta Falcons",
-      "power": -2.01,
+      "power": -1.98,
       "record": "3-6",
       "point_diff": -35,
       "components": {
         "results_margin": -1.08,
         "offense": -0.78,
-        "quarterback": -0.15,
+        "quarterback": -0.13,
         "injuries": -0.0
       },
       "ratings": {
@@ -489,20 +489,20 @@
       "starter": "M.Penix",
       "alt_qb": "M.Penix",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 21,
       "team": "NYJ",
       "name": "New York Jets",
-      "power": -2.25,
+      "power": -2.33,
       "record": "2-7",
       "point_diff": -41,
       "components": {
         "results_margin": -3.05,
         "offense": -0.15,
-        "quarterback": 0.95,
+        "quarterback": 0.87,
         "injuries": -0.0
       },
       "ratings": {
@@ -513,20 +513,20 @@
       "starter": "G.Smith",
       "alt_qb": "G.Smith",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 22,
       "team": "NO",
       "name": "New Orleans Saints",
-      "power": -2.71,
+      "power": -2.74,
       "record": "3-5",
       "point_diff": -31,
       "components": {
         "results_margin": -2.65,
         "offense": -0.46,
-        "quarterback": 0.4,
+        "quarterback": 0.37,
         "injuries": -0.0
       },
       "ratings": {
@@ -537,20 +537,20 @@
       "starter": "T.Shough",
       "alt_qb": "T.Shough",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 23,
       "team": "WAS",
       "name": "Washington Commanders",
-      "power": -3.12,
+      "power": -3.15,
       "record": "2-5-1",
       "point_diff": -30,
       "components": {
         "results_margin": -3.01,
         "offense": -0.44,
-        "quarterback": 0.33,
+        "quarterback": 0.31,
         "injuries": -0.0
       },
       "ratings": {
@@ -561,20 +561,20 @@
       "starter": "J.Daniels",
       "alt_qb": "J.Daniels",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 24,
       "team": "NYG",
       "name": "New York Giants",
-      "power": -3.27,
+      "power": -3.18,
       "record": "5-2-1",
       "point_diff": 10,
       "components": {
         "results_margin": -1.17,
         "offense": -0.38,
-        "quarterback": -1.72,
+        "quarterback": -1.63,
         "injuries": -0.0
       },
       "ratings": {
@@ -585,20 +585,20 @@
       "starter": "J.McCarthy",
       "alt_qb": "J.McCarthy",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 25,
       "team": "ARI",
       "name": "Arizona Cardinals",
-      "power": -5.06,
+      "power": -5.08,
       "record": "3-6",
       "point_diff": -77,
       "components": {
         "results_margin": -4.93,
         "offense": -0.26,
-        "quarterback": 0.13,
+        "quarterback": 0.11,
         "injuries": -0.0
       },
       "ratings": {
@@ -609,20 +609,20 @@
       "starter": "G.Minshew",
       "alt_qb": "G.Minshew",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 26,
       "team": "IND",
       "name": "Indianapolis Colts",
-      "power": -5.57,
+      "power": -5.59,
       "record": "2-7",
       "point_diff": -65,
       "components": {
         "results_margin": -4.18,
         "offense": -1.61,
-        "quarterback": 0.22,
+        "quarterback": 0.21,
         "injuries": -0.0
       },
       "ratings": {
@@ -633,20 +633,20 @@
       "starter": "D.Jones",
       "alt_qb": "D.Jones",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 27,
       "team": "MIA",
       "name": "Miami Dolphins",
-      "power": -5.86,
+      "power": -5.81,
       "record": "1-7",
       "point_diff": -74,
       "components": {
         "results_margin": -4.31,
         "offense": -0.8,
-        "quarterback": -0.76,
+        "quarterback": -0.71,
         "injuries": -0.0
       },
       "ratings": {
@@ -657,20 +657,20 @@
       "starter": "M.Willis",
       "alt_qb": "M.Willis",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 28,
       "team": "CLE",
       "name": "Cleveland Browns",
-      "power": -6.21,
+      "power": -5.9,
       "record": "5-4",
       "point_diff": -35,
       "components": {
         "results_margin": -2.58,
         "offense": -1.02,
-        "quarterback": -2.61,
+        "quarterback": -2.3,
         "injuries": -0.0
       },
       "ratings": {
@@ -681,20 +681,20 @@
       "starter": "S.Sanders",
       "alt_qb": "S.Sanders",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 29,
       "team": "BAL",
       "name": "Baltimore Ravens",
-      "power": -6.54,
+      "power": -6.51,
       "record": "4-5",
       "point_diff": -47,
       "components": {
         "results_margin": -3.25,
         "offense": -0.4,
-        "quarterback": -2.88,
+        "quarterback": -2.85,
         "injuries": -0.0
       },
       "ratings": {
@@ -705,20 +705,20 @@
       "starter": "J.Fagnano",
       "alt_qb": "J.Fagnano",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 30,
       "team": "TEN",
       "name": "Tennessee Titans",
-      "power": -6.72,
+      "power": -6.73,
       "record": "1-7",
       "point_diff": -55,
       "components": {
         "results_margin": -5.61,
         "offense": -1.32,
-        "quarterback": 0.22,
+        "quarterback": 0.2,
         "injuries": -0.0
       },
       "ratings": {
@@ -736,13 +736,13 @@
       "rank": 31,
       "team": "LAC",
       "name": "Los Angeles Chargers",
-      "power": -9.47,
+      "power": -9.43,
       "record": "0-8",
       "point_diff": -98,
       "components": {
         "results_margin": -6.84,
         "offense": -2.99,
-        "quarterback": 0.36,
+        "quarterback": 0.4,
         "injuries": -0.0
       },
       "ratings": {
@@ -753,20 +753,20 @@
       "starter": "J.Herbert",
       "alt_qb": "J.Herbert",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     },
     {
       "rank": 32,
       "team": "PHI",
       "name": "Philadelphia Eagles",
-      "power": -9.56,
+      "power": -9.45,
       "record": "2-7",
       "point_diff": -73,
       "components": {
         "results_margin": -5.26,
         "offense": -2.07,
-        "quarterback": -2.24,
+        "quarterback": -2.13,
         "injuries": -0.0
       },
       "ratings": {
@@ -777,7 +777,7 @@
       "starter": "J.Milton",
       "alt_qb": "J.Milton",
       "starter_prob": 1.0,
-      "qb_note": "played week 9; next report not out",
+      "qb_note": "last game QB",
       "injury_starters_newly_lost": 0.0
     }
   ]
