@@ -1,8 +1,188 @@
 {
   "season": 2026,
   "rating_week": 11,
-  "fetched_at": "2026-11-11T19:21:58+00:00",
+  "fetched_at": "2026-11-12T19:50:55+00:00",
   "teams": {
+    "Mississippi State": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Mississippi State",
+          "player": "Kamario Taylor",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Texas A&M": {
+      "points": 0.83,
+      "players": [
+        {
+          "team": "Texas A&M",
+          "player": "Terry Bussey",
+          "position": "WR",
+          "status": "out",
+          "points": 0.83,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Ole Miss": {
+      "points": 0.79,
+      "players": [
+        {
+          "team": "Ole Miss",
+          "player": "Kewan Lacy",
+          "position": "RB",
+          "status": "out",
+          "points": 0.79,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Florida": {
+      "points": 0.41,
+      "players": [
+        {
+          "team": "Florida",
+          "player": "Vernell Brown III",
+          "position": "WR",
+          "status": "out",
+          "points": 0.41,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Northwestern": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Northwestern",
+          "player": "Aidan Chiles",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Ohio State": {
+      "points": 6.67,
+      "players": [
+        {
+          "team": "Ohio State",
+          "player": "Julian Sayin",
+          "position": "QB",
+          "status": "out",
+          "points": 5.89,
+          "conference": "B10"
+        },
+        {
+          "team": "Ohio State",
+          "player": "Ja\u2019Kobi Jackson",
+          "position": "RB",
+          "status": "out",
+          "points": 0.78,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Rutgers": {
+      "points": 6.3,
+      "players": [
+        {
+          "team": "Rutgers",
+          "player": "KJ Duff",
+          "position": "WR",
+          "status": "out",
+          "points": 2.87,
+          "conference": "B10"
+        },
+        {
+          "team": "Rutgers",
+          "player": "Dylan Lonergan",
+          "position": "QB",
+          "status": "out",
+          "points": 3.43,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Indiana": {
+      "points": 1.02,
+      "players": [
+        {
+          "team": "Indiana",
+          "player": "Turbo Richard",
+          "position": "RB",
+          "status": "out",
+          "points": 1.02,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Oregon": {
+      "points": 2.12,
+      "players": [
+        {
+          "team": "Oregon",
+          "player": "Jordon Davison",
+          "position": "RB",
+          "status": "out",
+          "points": 1.55,
+          "conference": "B10"
+        },
+        {
+          "team": "Oregon",
+          "player": "Dante Moore",
+          "position": "QB",
+          "status": "out",
+          "points": 0.57,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Michigan State": {
+      "points": 0.9,
+      "players": [
+        {
+          "team": "Michigan State",
+          "player": "Jaziun Patterson",
+          "position": "RB",
+          "status": "doubtful",
+          "points": 0.9,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Penn State": {
+      "points": 0.41,
+      "players": [
+        {
+          "team": "Penn State",
+          "player": "Koby Howard",
+          "position": "WR",
+          "status": "out",
+          "points": 0.41,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Iowa": {
+      "points": 1.48,
+      "players": [
+        {
+          "team": "Iowa",
+          "player": "Kamari Moulton",
+          "position": "RB",
+          "status": "out",
+          "points": 1.48,
+          "conference": "B10"
+        }
+      ]
+    },
     "Florida State": {
       "points": 1.58,
       "players": [
@@ -37,6 +217,45 @@
         }
       ]
     },
+    "Miami": {
+      "points": 0.99,
+      "players": [
+        {
+          "team": "Miami",
+          "player": "Malachi Toney",
+          "position": "WR",
+          "status": "out",
+          "points": 0.99,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "Syracuse": {
+      "points": 1.05,
+      "players": [
+        {
+          "team": "Syracuse",
+          "player": "Amari Odom",
+          "position": "QB",
+          "status": "out",
+          "points": 1.05,
+          "conference": "ACC"
+        }
+      ]
+    },
+    "NC State": {
+      "points": 0.64,
+      "players": [
+        {
+          "team": "NC State",
+          "player": "Will Wilson",
+          "position": "QB",
+          "status": "out",
+          "points": 0.64,
+          "conference": "ACC"
+        }
+      ]
+    },
     "Colorado": {
       "points": 0.39,
       "players": [
@@ -46,6 +265,45 @@
           "position": "RB",
           "status": "out",
           "points": 0.39,
+          "conference": "B12"
+        }
+      ]
+    },
+    "Kansas State": {
+      "points": 6.0,
+      "players": [
+        {
+          "team": "Kansas State",
+          "player": "Avery Johnson",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "B12"
+        }
+      ]
+    },
+    "Kansas": {
+      "points": 0.46,
+      "players": [
+        {
+          "team": "Kansas",
+          "player": "Jalen Dupree",
+          "position": "RB",
+          "status": "out",
+          "points": 0.46,
+          "conference": "B12"
+        }
+      ]
+    },
+    "Arizona": {
+      "points": 0.23,
+      "players": [
+        {
+          "team": "Arizona",
+          "player": "Ismail Mahdi",
+          "position": "RB",
+          "status": "out",
+          "points": 0.23,
           "conference": "B12"
         }
       ]
