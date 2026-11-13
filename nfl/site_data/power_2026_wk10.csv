@@ -1,0 +1,33 @@
+team,rank,pd,o,e,qb_exp,qb_qual,inj_new_loss,power,starter,alt_qb,p_starter,qb_note,record,pt_diff
+JAX,1,10.183,0.091,-0.077,0.006,0.0,0.0,9.993,T.Lawrence,T.Lawrence,1.0,last game QB,6-2,108
+SF,2,6.784,0.119,-0.037,-0.007,0.024,0.0,8.179,B.Purdy,B.Purdy,1.0,last game QB,7-1,79
+CIN,3,6.427,0.107,0.014,0.04,0.024,0.0,7.92,J.Burrow,J.Burrow,1.0,last game QB,6-2,65
+BUF,4,6.495,0.105,0.002,0.004,0.002,0.0,7.406,J.Allen,J.Allen,1.0,last game QB,7-1,69
+CHI,5,5.445,0.047,-0.02,0.048,0.006,0.0,5.729,C.Williams,C.Williams,1.0,last game QB,7-2,57
+KC,6,4.065,0.086,-0.018,0.033,0.008,0.0,5.38,P.Mahomes,P.Mahomes,1.0,last game QB,6-2,59
+DET,7,2.567,0.069,0.056,0.004,0.0,0.0,3.601,J.Goff,J.Goff,1.0,last game QB,6-2,33
+GB,8,3.115,0.028,-0.055,0.014,0.004,0.0,3.335,J.Love,J.Love,1.0,last game QB,6-3,25
+TB,9,3.566,-0.065,-0.114,0.19,0.006,0.0,2.858,B.Mayfield,B.Mayfield,1.0,last game QB,3-6,24
+PIT,10,3.132,-0.013,-0.029,0.015,0.003,0.0,2.539,A.Rodgers,A.Rodgers,1.0,last game QB,6-2,36
+HOU,11,1.599,0.033,0.005,0.012,0.01,0.0,2.339,C.Stroud,C.Stroud,1.0,last game QB,3-5,17
+SEA,12,3.378,-0.031,-0.069,0.009,-0.0,0.0,2.309,S.Darnold,D.Lock,0.848,established QB cleared after missing time,5-4,40
+DEN,13,2.291,0.006,-0.022,0.0,0.0,0.0,2.136,B.Nix,B.Nix,1.0,last game QB,7-2,12
+LA,14,1.736,0.025,-0.07,0.004,0.0,0.0,2.09,M.Stafford,M.Stafford,1.0,last game QB,5-4,33
+MIN,15,3.693,-0.108,-0.103,0.131,0.011,0.0,1.869,K.Murray,C.Wentz,0.848,established QB cleared after missing time,6-2,30
+DAL,16,-0.914,0.069,0.087,0.008,0.001,0.0,0.913,D.Prescott,D.Prescott,1.0,last game QB,4-5,10
+NE,17,2.096,0.04,0.02,0.008,0.003,2.728,0.286,D.Maye,D.Maye,1.0,last game QB,5-4,4
+CAR,18,-1.44,0.044,0.031,-0.001,-0.001,0.0,-0.073,B.Young,B.Young,1.0,last game QB,3-5,-20
+LV,19,-2.809,-0.005,0.056,0.064,0.017,0.0,-1.461,K.Cousins,K.Cousins,1.0,last game QB,4-5,-30
+ATL,20,-1.374,-0.04,-0.012,-0.065,0.002,0.0,-1.95,M.Penix,M.Penix,1.0,last game QB,3-6,-35
+NYJ,21,-3.913,-0.008,0.02,0.089,0.013,0.0,-2.309,G.Smith,G.Smith,1.0,last game QB,2-7,-41
+WAS,22,-3.456,-0.019,0.037,-0.006,0.01,0.0,-2.719,J.Daniels,J.Daniels,1.0,played week 10; next report not out,3-5-1,-27
+NO,23,-3.425,-0.024,0.055,0.008,0.009,0.0,-2.74,T.Shough,T.Shough,1.0,last game QB,3-5,-31
+NYG,24,-1.883,-0.014,-0.007,-0.25,-0.032,0.0,-3.327,J.McCarthy,J.McCarthy,1.0,played week 10; next report not out,5-3-1,7
+ARI,25,-6.346,-0.014,0.049,-0.073,0.02,0.0,-5.081,G.Minshew,G.Minshew,1.0,last game QB,3-6,-77
+IND,26,-5.324,-0.084,0.046,0.031,-0.01,0.0,-5.544,D.Jones,D.Jones,1.0,last game QB,2-7,-65
+MIA,27,-5.509,-0.041,0.057,-0.102,-0.023,0.0,-5.777,M.Willis,M.Willis,1.0,last game QB,1-7,-74
+CLE,28,-3.324,-0.053,-0.004,-0.341,-0.044,0.0,-5.879,S.Sanders,S.Sanders,1.0,last game QB,5-4,-35
+BAL,29,-4.177,-0.021,0.003,-0.433,-0.048,0.0,-6.48,J.Fagnano,J.Fagnano,1.0,last game QB,4-5,-47
+TEN,30,-7.228,-0.068,0.065,0.003,-0.0,0.0,-6.736,C.Ward,C.Ward,1.0,last game QB,1-7,-55
+LAC,31,-8.759,-0.154,-0.012,0.033,0.003,0.0,-9.393,J.Herbert,J.Herbert,1.0,last game QB,0-8,-98
+PHI,32,-6.687,-0.108,0.048,-0.39,-0.017,0.0,-9.412,J.Milton,J.Milton,1.0,last game QB,2-7,-73

@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "rating_week": 11,
-  "fetched_at": "2026-11-12T19:50:55+00:00",
+  "fetched_at": "2026-11-13T19:31:47+00:00",
   "teams": {
     "Mississippi State": {
       "points": 6.0,
@@ -51,6 +51,19 @@
           "position": "WR",
           "status": "out",
           "points": 0.41,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "South Carolina": {
+      "points": 0.26,
+      "players": [
+        {
+          "team": "South Carolina",
+          "player": "Nyck Harbor",
+          "position": "WR",
+          "status": "doubtful",
+          "points": 0.26,
           "conference": "SEC"
         }
       ]
