@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "rating_week": 11,
-  "fetched_at": "2026-11-13T19:31:47+00:00",
+  "fetched_at": "2026-11-14T17:57:57+00:00",
   "teams": {
     "Mississippi State": {
       "points": 6.0,
@@ -12,6 +12,19 @@
           "position": "QB",
           "status": "out",
           "points": 6.0,
+          "conference": "SEC"
+        }
+      ]
+    },
+    "Tennessee": {
+      "points": 0.68,
+      "players": [
+        {
+          "team": "Tennessee",
+          "player": "Daune Morris",
+          "position": "RB",
+          "status": "out",
+          "points": 0.68,
           "conference": "SEC"
         }
       ]
@@ -62,7 +75,7 @@
           "team": "South Carolina",
           "player": "Nyck Harbor",
           "position": "WR",
-          "status": "doubtful",
+          "status": "out",
           "points": 0.26,
           "conference": "SEC"
         }
@@ -103,14 +116,14 @@
       ]
     },
     "Rutgers": {
-      "points": 6.3,
+      "points": 7.06,
       "players": [
         {
           "team": "Rutgers",
           "player": "KJ Duff",
           "position": "WR",
           "status": "out",
-          "points": 2.87,
+          "points": 3.21,
           "conference": "B10"
         },
         {
@@ -118,7 +131,7 @@
           "player": "Dylan Lonergan",
           "position": "QB",
           "status": "out",
-          "points": 3.43,
+          "points": 3.85,
           "conference": "B10"
         }
       ]
@@ -184,27 +197,27 @@
       ]
     },
     "Iowa": {
-      "points": 1.48,
+      "points": 1.66,
       "players": [
         {
           "team": "Iowa",
           "player": "Kamari Moulton",
           "position": "RB",
           "status": "out",
-          "points": 1.48,
+          "points": 1.66,
           "conference": "B10"
         }
       ]
     },
     "Florida State": {
-      "points": 1.58,
+      "points": 1.37,
       "players": [
         {
           "team": "Florida State",
           "player": "Samuel Singleton Jr.",
           "position": "RB",
           "status": "out",
-          "points": 1.06,
+          "points": 0.92,
           "conference": "ACC"
         },
         {
@@ -212,20 +225,20 @@
           "player": "Ousmane Kromah",
           "position": "RB",
           "status": "out",
-          "points": 0.52,
+          "points": 0.45,
           "conference": "ACC"
         }
       ]
     },
     "Pittsburgh": {
-      "points": 6.0,
+      "points": 5.71,
       "players": [
         {
           "team": "Pittsburgh",
           "player": "Mason Heintschel",
           "position": "QB",
           "status": "out",
-          "points": 6.0,
+          "points": 5.71,
           "conference": "ACC"
         }
       ]
@@ -269,15 +282,36 @@
         }
       ]
     },
+    "Clemson": {
+      "points": 3.12,
+      "players": [
+        {
+          "team": "Clemson",
+          "player": "Tyler Brown",
+          "position": "WR",
+          "status": "out",
+          "points": 0.54,
+          "conference": "ACC"
+        },
+        {
+          "team": "Clemson",
+          "player": "Gideon Davidson",
+          "position": "RB",
+          "status": "out",
+          "points": 2.58,
+          "conference": "ACC"
+        }
+      ]
+    },
     "Colorado": {
-      "points": 0.39,
+      "points": 0.29,
       "players": [
         {
           "team": "Colorado",
           "player": "Micah Welch",
           "position": "RB",
           "status": "out",
-          "points": 0.39,
+          "points": 0.29,
           "conference": "B12"
         }
       ]
