@@ -39,7 +39,8 @@
           "kind": "invariant",
           "severity": "warning",
           "teams": [
-            "Oregon over UCLA"
+            "Oregon over UCLA",
+            "Oklahoma over South Carolina"
           ],
           "message": "Winner with no more losses than the loser is ranked 1-3 spots behind that loser in the poll top 25."
         }
