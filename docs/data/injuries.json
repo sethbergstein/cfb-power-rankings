@@ -1,6 +1,70 @@
 {
   "season": 2026,
-  "rating_week": 11,
-  "fetched_at": "2026-11-17T20:33:50+00:00",
-  "teams": {}
+  "rating_week": 12,
+  "fetched_at": "2026-11-18T20:07:16+00:00",
+  "teams": {
+    "Oregon": {
+      "points": 1.4,
+      "players": [
+        {
+          "team": "Oregon",
+          "player": "Jordon Davison",
+          "position": "RB",
+          "status": "out",
+          "points": 1.17,
+          "conference": "B10"
+        },
+        {
+          "team": "Oregon",
+          "player": "Dante Moore",
+          "position": "QB",
+          "status": "out",
+          "points": 0.23,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Michigan State": {
+      "points": 3.92,
+      "players": [
+        {
+          "team": "Michigan State",
+          "player": "Alessio Milivojevic",
+          "position": "QB",
+          "status": "out",
+          "points": 2.68,
+          "conference": "B10"
+        },
+        {
+          "team": "Michigan State",
+          "player": "Jayden Savoury",
+          "position": "TE",
+          "status": "out",
+          "points": 1.24,
+          "conference": "B10"
+        }
+      ]
+    },
+    "Clemson": {
+      "points": 7.93,
+      "players": [
+        {
+          "team": "Clemson",
+          "player": "Tait Reynolds",
+          "position": "QB",
+          "status": "out",
+          "points": 6.0,
+          "conference": "ACC"
+        },
+        {
+          "team": "Clemson",
+          "player": "Christopher Vizzina",
+          "position": "QB",
+          "status": "out",
+          "points": 1.93,
+          "conference": "ACC"
+        }
+      ]
+    }
+  }
 }
