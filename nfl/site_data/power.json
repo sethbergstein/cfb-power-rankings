@@ -1,9 +1,9 @@
 {
   "meta": {
     "season": 2026,
-    "through_week": 10,
+    "through_week": 11,
     "injury_report_week": 11,
-    "generated_utc": "2026-11-19T20:04Z",
+    "generated_utc": "2026-11-20T19:41Z",
     "engine": "nfl power engine v2",
     "units": "points vs an average team on a neutral field",
     "home_field": 1.45,
@@ -16,19 +16,19 @@
       "rank": 1,
       "team": "JAX",
       "name": "Jacksonville Jaguars",
-      "power": 9.97,
+      "power": 9.91,
       "record": "7-2",
       "point_diff": 125,
       "components": {
-        "results_margin": 7.82,
-        "offense": 1.62,
+        "results_margin": 7.83,
+        "offense": 1.64,
         "quarterback": 0.43,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 10.01,
-        "offense_epa_per_play": 0.083,
-        "defense_epa_allowed_per_play": -0.058
+        "margin_rating": 10.03,
+        "offense_epa_per_play": 0.084,
+        "defense_epa_allowed_per_play": -0.057
       },
       "starter": "T.Lawrence",
       "alt_qb": "T.Lawrence",
@@ -40,18 +40,18 @@
       "rank": 2,
       "team": "CIN",
       "name": "Cincinnati Bengals",
-      "power": 9.0,
+      "power": 8.99,
       "record": "7-2",
       "point_diff": 85,
       "components": {
-        "results_margin": 5.8,
-        "offense": 2.19,
+        "results_margin": 5.88,
+        "offense": 2.2,
         "quarterback": 0.91,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 7.43,
-        "offense_epa_per_play": 0.112,
+        "margin_rating": 7.53,
+        "offense_epa_per_play": 0.113,
         "defense_epa_allowed_per_play": 0.007
       },
       "starter": "J.Burrow",
@@ -62,19 +62,43 @@
     },
     {
       "rank": 3,
+      "team": "BUF",
+      "name": "Buffalo Bills",
+      "power": 8.28,
+      "record": "8-1",
+      "point_diff": 88,
+      "components": {
+        "results_margin": 5.91,
+        "offense": 1.92,
+        "quarterback": 0.45,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": 7.57,
+        "offense_epa_per_play": 0.099,
+        "defense_epa_allowed_per_play": -0.006
+      },
+      "starter": "J.Allen",
+      "alt_qb": "J.Allen",
+      "starter_prob": 1.0,
+      "qb_note": "last game QB",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 4,
       "team": "SF",
       "name": "San Francisco 49ers",
-      "power": 8.27,
+      "power": 8.16,
       "record": "8-1",
       "point_diff": 85,
       "components": {
-        "results_margin": 5.11,
+        "results_margin": 5.09,
         "offense": 2.38,
         "quarterback": 0.69,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 6.54,
+        "margin_rating": 6.51,
         "offense_epa_per_play": 0.122,
         "defense_epa_allowed_per_play": -0.013
       },
@@ -85,46 +109,22 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 4,
-      "team": "BUF",
-      "name": "Buffalo Bills",
-      "power": 8.26,
-      "record": "8-1",
-      "point_diff": 88,
-      "components": {
-        "results_margin": 5.81,
-        "offense": 1.91,
-        "quarterback": 0.45,
-        "injuries": 0.09
-      },
-      "ratings": {
-        "margin_rating": 7.44,
-        "offense_epa_per_play": 0.098,
-        "defense_epa_allowed_per_play": -0.006
-      },
-      "starter": "J.Allen",
-      "alt_qb": "J.Allen",
-      "starter_prob": 1.0,
-      "qb_note": "last game QB",
-      "injury_starters_newly_lost": 0.0
-    },
-    {
       "rank": 5,
       "team": "KC",
       "name": "Kansas City Chiefs",
-      "power": 6.65,
+      "power": 6.48,
       "record": "7-2",
       "point_diff": 81,
       "components": {
-        "results_margin": 4.29,
+        "results_margin": 4.21,
         "offense": 1.61,
         "quarterback": 0.67,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 5.49,
+        "margin_rating": 5.39,
         "offense_epa_per_play": 0.083,
-        "defense_epa_allowed_per_play": -0.035
+        "defense_epa_allowed_per_play": -0.034
       },
       "starter": "P.Mahomes",
       "alt_qb": "P.Mahomes",
@@ -136,17 +136,17 @@
       "rank": 6,
       "team": "CHI",
       "name": "Chicago Bears",
-      "power": 5.49,
+      "power": 5.37,
       "record": "7-2",
       "point_diff": 57,
       "components": {
-        "results_margin": 3.95,
+        "results_margin": 3.93,
         "offense": 0.71,
         "quarterback": 0.74,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 5.06,
+        "margin_rating": 5.02,
         "offense_epa_per_play": 0.036,
         "defense_epa_allowed_per_play": -0.006
       },
@@ -160,17 +160,17 @@
       "rank": 7,
       "team": "DET",
       "name": "Detroit Lions",
-      "power": 5.47,
+      "power": 5.36,
       "record": "7-2",
       "point_diff": 58,
       "components": {
-        "results_margin": 3.58,
-        "offense": 1.35,
+        "results_margin": 3.57,
+        "offense": 1.36,
         "quarterback": 0.43,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 4.59,
+        "margin_rating": 4.57,
         "offense_epa_per_play": 0.07,
         "defense_epa_allowed_per_play": 0.029
       },
@@ -184,19 +184,19 @@
       "rank": 8,
       "team": "MIN",
       "name": "Minnesota Vikings",
-      "power": 4.15,
+      "power": 3.98,
       "record": "7-2",
       "point_diff": 50,
       "components": {
-        "results_margin": 4.19,
+        "results_margin": 4.11,
         "offense": -1.36,
         "quarterback": 1.23,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 5.37,
+        "margin_rating": 5.26,
         "offense_epa_per_play": -0.07,
-        "defense_epa_allowed_per_play": -0.094
+        "defense_epa_allowed_per_play": -0.093
       },
       "starter": "K.Murray",
       "alt_qb": "K.Cousins",
@@ -208,17 +208,17 @@
       "rank": 9,
       "team": "LA",
       "name": "Los Angeles Rams",
-      "power": 3.89,
+      "power": 3.81,
       "record": "6-4",
       "point_diff": 61,
       "components": {
-        "results_margin": 2.62,
-        "offense": 0.74,
+        "results_margin": 2.64,
+        "offense": 0.75,
         "quarterback": 0.43,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 3.36,
+        "margin_rating": 3.38,
         "offense_epa_per_play": 0.038,
         "defense_epa_allowed_per_play": -0.08
       },
@@ -232,17 +232,17 @@
       "rank": 10,
       "team": "TB",
       "name": "Tampa Bay Buccaneers",
-      "power": 3.08,
+      "power": 2.98,
       "record": "3-6",
       "point_diff": 24,
       "components": {
-        "results_margin": 2.63,
+        "results_margin": 2.61,
         "offense": -1.14,
         "quarterback": 1.5,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 3.36,
+        "margin_rating": 3.35,
         "offense_epa_per_play": -0.058,
         "defense_epa_allowed_per_play": -0.091
       },
@@ -254,19 +254,43 @@
     },
     {
       "rank": 11,
+      "team": "HOU",
+      "name": "Houston Texans",
+      "power": 2.94,
+      "record": "4-6",
+      "point_diff": 37,
+      "components": {
+        "results_margin": 1.88,
+        "offense": 0.47,
+        "quarterback": 0.59,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": 2.41,
+        "offense_epa_per_play": 0.024,
+        "defense_epa_allowed_per_play": -0.011
+      },
+      "starter": "C.Stroud",
+      "alt_qb": "C.Stroud",
+      "starter_prob": 1.0,
+      "qb_note": "played week 11; next report not out",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 12,
       "team": "DEN",
       "name": "Denver Broncos",
-      "power": 2.67,
+      "power": 2.59,
       "record": "7-2",
       "point_diff": 12,
       "components": {
         "results_margin": 2.04,
         "offense": 0.14,
         "quarterback": 0.4,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 2.61,
+        "margin_rating": 2.62,
         "offense_epa_per_play": 0.007,
         "defense_epa_allowed_per_play": -0.022
       },
@@ -277,22 +301,22 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 12,
+      "rank": 13,
       "team": "GB",
       "name": "Green Bay Packers",
-      "power": 1.99,
+      "power": 1.87,
       "record": "6-4",
       "point_diff": 5,
       "components": {
-        "results_margin": 1.22,
+        "results_margin": 1.2,
         "offense": 0.15,
         "quarterback": 0.52,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 1.56,
+        "margin_rating": 1.53,
         "offense_epa_per_play": 0.008,
-        "defense_epa_allowed_per_play": -0.028
+        "defense_epa_allowed_per_play": -0.027
       },
       "starter": "J.Love",
       "alt_qb": "J.Love",
@@ -301,20 +325,20 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 13,
+      "rank": 14,
       "team": "SEA",
       "name": "Seattle Seahawks",
-      "power": 1.67,
+      "power": 1.56,
       "record": "6-4",
       "point_diff": 48,
       "components": {
-        "results_margin": 2.59,
-        "offense": -0.46,
+        "results_margin": 2.57,
+        "offense": -0.45,
         "quarterback": -0.56,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 3.31,
+        "margin_rating": 3.29,
         "offense_epa_per_play": -0.023,
         "defense_epa_allowed_per_play": -0.065
       },
@@ -325,22 +349,22 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 14,
+      "rank": 15,
       "team": "PIT",
       "name": "Pittsburgh Steelers",
-      "power": 1.57,
+      "power": 1.42,
       "record": "6-3",
       "point_diff": 16,
       "components": {
-        "results_margin": 1.14,
+        "results_margin": 1.08,
         "offense": -0.19,
         "quarterback": 0.53,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": 1.45,
+        "margin_rating": 1.39,
         "offense_epa_per_play": -0.01,
-        "defense_epa_allowed_per_play": -0.004
+        "defense_epa_allowed_per_play": -0.003
       },
       "starter": "A.Rodgers",
       "alt_qb": "A.Rodgers",
@@ -349,45 +373,21 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 15,
-      "team": "HOU",
-      "name": "Houston Texans",
-      "power": 1.13,
-      "record": "3-6",
-      "point_diff": 14,
-      "components": {
-        "results_margin": 0.87,
-        "offense": 0.44,
-        "quarterback": 0.59,
-        "injuries": -0.76
-      },
-      "ratings": {
-        "margin_rating": 1.11,
-        "offense_epa_per_play": 0.023,
-        "defense_epa_allowed_per_play": 0.001
-      },
-      "starter": "C.Stroud",
-      "alt_qb": "C.Stroud",
-      "starter_prob": 1.0,
-      "qb_note": "last game QB",
-      "injury_starters_newly_lost": 0.96
-    },
-    {
       "rank": 16,
       "team": "DAL",
       "name": "Dallas Cowboys",
-      "power": 1.03,
+      "power": 0.96,
       "record": "4-6",
       "point_diff": 4,
       "components": {
         "results_margin": -0.8,
-        "offense": 1.29,
+        "offense": 1.31,
         "quarterback": 0.45,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
         "margin_rating": -1.03,
-        "offense_epa_per_play": 0.066,
+        "offense_epa_per_play": 0.067,
         "defense_epa_allowed_per_play": 0.093
       },
       "starter": "D.Prescott",
@@ -400,19 +400,19 @@
       "rank": 17,
       "team": "CAR",
       "name": "Carolina Panthers",
-      "power": -0.23,
+      "power": -0.32,
       "record": "4-5",
       "point_diff": -17,
       "components": {
         "results_margin": -1.16,
-        "offense": 0.45,
+        "offense": 0.46,
         "quarterback": 0.38,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
         "margin_rating": -1.48,
         "offense_epa_per_play": 0.023,
-        "defense_epa_allowed_per_play": 0.012
+        "defense_epa_allowed_per_play": 0.013
       },
       "starter": "B.Young",
       "alt_qb": "B.Young",
@@ -424,19 +424,19 @@
       "rank": 18,
       "team": "CLE",
       "name": "Cleveland Browns",
-      "power": -1.63,
+      "power": -1.62,
       "record": "6-4",
       "point_diff": -32,
       "components": {
-        "results_margin": -2.41,
-        "offense": -0.79,
+        "results_margin": -2.32,
+        "offense": -0.77,
         "quarterback": 1.48,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -3.08,
-        "offense_epa_per_play": -0.041,
-        "defense_epa_allowed_per_play": -0.006
+        "margin_rating": -2.97,
+        "offense_epa_per_play": -0.04,
+        "defense_epa_allowed_per_play": -0.005
       },
       "starter": "D.Watson",
       "alt_qb": "D.Watson",
@@ -448,19 +448,19 @@
       "rank": 19,
       "team": "NE",
       "name": "New England Patriots",
-      "power": -2.04,
+      "power": -2.13,
       "record": "5-5",
       "point_diff": -21,
       "components": {
         "results_margin": -0.09,
-        "offense": 0.2,
+        "offense": 0.21,
         "quarterback": -2.24,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -0.12,
-        "offense_epa_per_play": 0.01,
-        "defense_epa_allowed_per_play": 0.027
+        "margin_rating": -0.11,
+        "offense_epa_per_play": 0.011,
+        "defense_epa_allowed_per_play": 0.028
       },
       "starter": "T.DeVito",
       "alt_qb": "T.DeVito",
@@ -472,17 +472,17 @@
       "rank": 20,
       "team": "WAS",
       "name": "Washington Commanders",
-      "power": -2.26,
+      "power": -2.43,
       "record": "3-5-1",
       "point_diff": -27,
       "components": {
-        "results_margin": -2.56,
+        "results_margin": -2.65,
         "offense": -0.32,
         "quarterback": 0.53,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -3.28,
+        "margin_rating": -3.39,
         "offense_epa_per_play": -0.016,
         "defense_epa_allowed_per_play": 0.027
       },
@@ -494,19 +494,43 @@
     },
     {
       "rank": 21,
+      "team": "NYG",
+      "name": "New York Giants",
+      "power": -2.72,
+      "record": "5-3-1",
+      "point_diff": 7,
+      "components": {
+        "results_margin": -1.36,
+        "offense": -0.21,
+        "quarterback": -1.14,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": -1.74,
+        "offense_epa_per_play": -0.011,
+        "defense_epa_allowed_per_play": 0.001
+      },
+      "starter": "J.McCarthy",
+      "alt_qb": "J.McCarthy",
+      "starter_prob": 1.0,
+      "qb_note": "last game QB",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 22,
       "team": "NO",
       "name": "New Orleans Saints",
-      "power": -2.71,
+      "power": -2.83,
       "record": "3-6",
       "point_diff": -34,
       "components": {
-        "results_margin": -2.67,
+        "results_margin": -2.7,
         "offense": -0.69,
         "quarterback": 0.56,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -3.41,
+        "margin_rating": -3.45,
         "offense_epa_per_play": -0.035,
         "defense_epa_allowed_per_play": 0.032
       },
@@ -517,44 +541,20 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 22,
-      "team": "NYG",
-      "name": "New York Giants",
-      "power": -2.71,
-      "record": "5-3-1",
-      "point_diff": 7,
-      "components": {
-        "results_margin": -1.43,
-        "offense": -0.23,
-        "quarterback": -1.14,
-        "injuries": 0.09
-      },
-      "ratings": {
-        "margin_rating": -1.83,
-        "offense_epa_per_play": -0.012,
-        "defense_epa_allowed_per_play": 0.001
-      },
-      "starter": "J.McCarthy",
-      "alt_qb": "J.McCarthy",
-      "starter_prob": 1.0,
-      "qb_note": "last game QB",
-      "injury_starters_newly_lost": 0.0
-    },
-    {
       "rank": 23,
       "team": "ATL",
       "name": "Atlanta Falcons",
-      "power": -3.17,
+      "power": -3.3,
       "record": "3-7",
       "point_diff": -57,
       "components": {
-        "results_margin": -2.25,
+        "results_margin": -2.28,
         "offense": -1.09,
         "quarterback": 0.07,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -2.88,
+        "margin_rating": -2.92,
         "offense_epa_per_play": -0.056,
         "defense_epa_allowed_per_play": -0.001
       },
@@ -568,19 +568,19 @@
       "rank": 24,
       "team": "BAL",
       "name": "Baltimore Ravens",
-      "power": -3.43,
+      "power": -3.57,
       "record": "4-6",
       "point_diff": -50,
       "components": {
-        "results_margin": -3.62,
+        "results_margin": -3.67,
         "offense": -0.3,
         "quarterback": 0.4,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -4.64,
+        "margin_rating": -4.7,
         "offense_epa_per_play": -0.015,
-        "defense_epa_allowed_per_play": 0.007
+        "defense_epa_allowed_per_play": 0.008
       },
       "starter": "J.Brissett",
       "alt_qb": "J.Brissett",
@@ -592,19 +592,19 @@
       "rank": 25,
       "team": "LV",
       "name": "Las Vegas Raiders",
-      "power": -5.49,
+      "power": -5.58,
       "record": "4-6",
       "point_diff": -38,
       "components": {
         "results_margin": -2.17,
         "offense": -0.18,
         "quarterback": -3.23,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -2.77,
+        "margin_rating": -2.78,
         "offense_epa_per_play": -0.009,
-        "defense_epa_allowed_per_play": 0.051
+        "defense_epa_allowed_per_play": 0.052
       },
       "starter": "F.Mendoza",
       "alt_qb": "F.Mendoza",
@@ -616,17 +616,17 @@
       "rank": 26,
       "team": "NYJ",
       "name": "New York Jets",
-      "power": -5.88,
+      "power": -5.98,
       "record": "2-8",
       "point_diff": -60,
       "components": {
         "results_margin": -3.54,
         "offense": -0.37,
         "quarterback": -2.06,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -4.53,
+        "margin_rating": -4.54,
         "offense_epa_per_play": -0.019,
         "defense_epa_allowed_per_play": 0.032
       },
@@ -640,19 +640,19 @@
       "rank": 27,
       "team": "TEN",
       "name": "Tennessee Titans",
-      "power": -6.11,
+      "power": -6.16,
       "record": "1-8",
       "point_diff": -72,
       "components": {
-        "results_margin": -5.58,
-        "offense": -1.03,
+        "results_margin": -5.56,
+        "offense": -1.01,
         "quarterback": 0.41,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -7.15,
-        "offense_epa_per_play": -0.053,
-        "defense_epa_allowed_per_play": 0.062
+        "margin_rating": -7.12,
+        "offense_epa_per_play": -0.052,
+        "defense_epa_allowed_per_play": 0.063
       },
       "starter": "C.Ward",
       "alt_qb": "C.Ward",
@@ -662,21 +662,45 @@
     },
     {
       "rank": 28,
+      "team": "IND",
+      "name": "Indianapolis Colts",
+      "power": -6.27,
+      "record": "3-8",
+      "point_diff": -86,
+      "components": {
+        "results_margin": -4.89,
+        "offense": -1.81,
+        "quarterback": 0.43,
+        "injuries": -0.0
+      },
+      "ratings": {
+        "margin_rating": -6.26,
+        "offense_epa_per_play": -0.093,
+        "defense_epa_allowed_per_play": 0.02
+      },
+      "starter": "D.Jones",
+      "alt_qb": "D.Jones",
+      "starter_prob": 1.0,
+      "qb_note": "played week 11; next report not out",
+      "injury_starters_newly_lost": 0.0
+    },
+    {
+      "rank": 29,
       "team": "MIA",
       "name": "Miami Dolphins",
-      "power": -6.28,
+      "power": -6.46,
       "record": "1-8",
       "point_diff": -76,
       "components": {
-        "results_margin": -4.24,
+        "results_margin": -4.32,
         "offense": -0.92,
         "quarterback": -1.21,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -5.42,
+        "margin_rating": -5.54,
         "offense_epa_per_play": -0.047,
-        "defense_epa_allowed_per_play": 0.027
+        "defense_epa_allowed_per_play": 0.028
       },
       "starter": "K.McCord",
       "alt_qb": "K.McCord",
@@ -685,45 +709,21 @@
       "injury_starters_newly_lost": 0.0
     },
     {
-      "rank": 29,
-      "team": "IND",
-      "name": "Indianapolis Colts",
-      "power": -7.21,
-      "record": "3-7",
-      "point_diff": -63,
-      "components": {
-        "results_margin": -3.98,
-        "offense": -1.6,
-        "quarterback": 0.43,
-        "injuries": -2.07
-      },
-      "ratings": {
-        "margin_rating": -5.09,
-        "offense_epa_per_play": -0.082,
-        "defense_epa_allowed_per_play": 0.018
-      },
-      "starter": "D.Jones",
-      "alt_qb": "D.Jones",
-      "starter_prob": 1.0,
-      "qb_note": "last game QB",
-      "injury_starters_newly_lost": 2.42
-    },
-    {
       "rank": 30,
       "team": "LAC",
       "name": "Los Angeles Chargers",
-      "power": -7.74,
+      "power": -7.71,
       "record": "1-8",
       "point_diff": -95,
       "components": {
-        "results_margin": -6.19,
-        "offense": -2.24,
+        "results_margin": -6.09,
+        "offense": -2.22,
         "quarterback": 0.6,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -7.92,
-        "offense_epa_per_play": -0.115,
+        "margin_rating": -7.79,
+        "offense_epa_per_play": -0.114,
         "defense_epa_allowed_per_play": -0.009
       },
       "starter": "J.Herbert",
@@ -736,17 +736,17 @@
       "rank": 31,
       "team": "PHI",
       "name": "Philadelphia Eagles",
-      "power": -8.59,
+      "power": -8.7,
       "record": "2-7",
       "point_diff": -73,
       "components": {
-        "results_margin": -5.12,
+        "results_margin": -5.13,
         "offense": -1.65,
         "quarterback": -1.92,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -6.55,
+        "margin_rating": -6.57,
         "offense_epa_per_play": -0.085,
         "defense_epa_allowed_per_play": 0.038
       },
@@ -760,18 +760,18 @@
       "rank": 32,
       "team": "ARI",
       "name": "Arizona Cardinals",
-      "power": -8.81,
+      "power": -8.88,
       "record": "3-7",
       "point_diff": -105,
       "components": {
-        "results_margin": -5.85,
+        "results_margin": -5.82,
         "offense": -0.61,
         "quarterback": -2.44,
-        "injuries": 0.09
+        "injuries": -0.0
       },
       "ratings": {
-        "margin_rating": -7.49,
-        "offense_epa_per_play": -0.032,
+        "margin_rating": -7.45,
+        "offense_epa_per_play": -0.031,
         "defense_epa_allowed_per_play": 0.051
       },
       "starter": "C.Beck",
